@@ -25,10 +25,10 @@ author:
   avatar           : "profile.png"
   name             : "Yuanxing Cheng"
   pronouns         : # example: "she/her"
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Applied Math Ph.D."
   location         : "Chicago, IL"
   employer         : "Illinois Tech"
-  uri              : "www.iit.edu"
+  uri              : #
   email            : "xavierowenvegan@gmail.com"
 
   # Academic websites
