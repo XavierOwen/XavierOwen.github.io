@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Title counters for sections and subsections
+   ========================================================================== */
+
+.page__content {
+  /* Define and initialize the main counter */
+  counter-reset: section;
+}
+
+.page__content h2 {
+  /* Increment the main counter and reset the subsection counter */
+  counter-increment: section;
+  counter-reset: subsection;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+.page__content h2::before {
+  /* Display the main counter using counter() */
+  content: counter(section) ". ";
+}
+
+.page__content h3 {
+  /* Increment the subsection counter */
+  counter-increment: subsection;
+}
+
+.page__content h3::before {
+  /* Display the nested counters using counters() */
+  content: counter(section) "." counter(subsection) " ";
+}

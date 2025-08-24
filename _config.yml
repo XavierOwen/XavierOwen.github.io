@@ -87,6 +87,17 @@ publication_category:
   conferences:
     title: 'Conference Papers'
 
+# Note Category - The following the list of note categories and their headings
+note_category:
+  algorithms:
+    title: 'Algorithms'
+  math:
+    title: 'Math'
+  personal:
+    title: 'Personal'
+  exercise:
+    titles: 'Exercise'
+
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
@@ -229,6 +240,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  notes:
+    output: true
+    permalink: /:collection/:path/
 
 
 # These settings control how pages and collections are included in the site
@@ -269,6 +283,15 @@ defaults:
       author_profile: true
       share: true
       comments: true
+  # _notes
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
   # _portfolio
   - scope:
       path: ""

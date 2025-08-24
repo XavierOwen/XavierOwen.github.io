@@ -1,0 +1,31 @@
+---
+layout: archive
+title: "Notes"
+permalink: /notes/
+author_profile: true
+---
+
+Welcome to my notes collection. Here you'll find all my notes entries listed below.
+
+{% include base_path %}
+
+<!-- New style rendering if note categories are defined -->
+{% if site.note_category %}
+  {% for category in site.note_category  %}
+    {% assign title_shown = false %}
+    {% for post in site.notes reversed %}
+      {% if post.category != category[0] %}
+        {% continue %}
+      {% endif %}
+      {% unless title_shown %}
+        <h2>{{ category[1].title }}</h2><hr />
+        {% assign title_shown = true %}
+      {% endunless %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% endfor %}
+{% else %}
+  {% for post in site.notes reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
