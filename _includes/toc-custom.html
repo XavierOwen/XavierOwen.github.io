@@ -1,0 +1,42 @@
+{%- if page.toc -%}
+  <nav class="toc__left" id="toc">
+    <div class="toc__header">
+      <span class="toc__title">Contents</span>
+      <button class="toc__toggle" onclick="toggleToc()" aria-label="Toggle table of contents">[<span class="toc__toggle-text">hide</span>]</button>
+    </div>
+    <div class="toc__divider"></div>
+  </nav>
+
+  <script>
+    function toggleToc() {
+      const toc = document.getElementById('toc');
+      const toggleText = document.querySelector('.toc__toggle-text');
+      const article = document.querySelector('article.page');
+
+      if (toc.classList.contains('toc--hidden')) {
+        toc.classList.remove('toc--hidden');
+        toggleText.textContent = 'hide';
+        article.style.maxWidth = '';
+        localStorage.setItem('toc-state', 'shown');
+      } else {
+        toc.classList.add('toc--hidden');
+        toggleText.textContent = 'show';
+        article.style.maxWidth = '100%';
+        localStorage.setItem('toc-state', 'hidden');
+      }
+    }
+
+    // Restore TOC state on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedState = localStorage.getItem('toc-state');
+      if (savedState === 'hidden') {
+        const toc = document.getElementById('toc');
+        const toggleText = document.querySelector('.toc__toggle-text');
+        const article = document.querySelector('article.page');
+        toc.classList.add('toc--hidden');
+        toggleText.textContent = 'show';
+        article.style.maxWidth = '100%';
+      }
+    });
+  </script>
+{%- endif -%}

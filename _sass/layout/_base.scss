@@ -6,6 +6,7 @@ html {
   position: relative;
   min-height: 100%;
   scroll-padding-top: $masthead-height; /* Offset for fixed header when jumping to anchors */
+  scroll-behavior: auto; /* Force instant scrolling instead of smooth */
 }
 
 body {

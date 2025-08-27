@@ -31,13 +31,10 @@
             if (!target) return;
             e.preventDefault();
             // 临时暂停自动滚动定位（避免互相抢）
-            pauseSpy(600);
-            try {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            } catch (error) {
-                // Fallback for browsers that don't support smooth scrolling
-                window.scrollTo(0, target.offsetTop);
-            }
+            pauseSpy(200);
+            const rect = target.getBoundingClientRect();
+            const endY = rect.top + window.scrollY;
+            window.scrollTo(0, endY);
             history.replaceState(null, '', '#' + id);
             setActive(a);
         });
