@@ -5,6 +5,7 @@ html {
   /* sticky footer fix */
   position: relative;
   min-height: 100%;
+  scroll-padding-top: $masthead-height; /* Offset for fixed header when jumping to anchors */
 }
 
 body {
@@ -323,13 +324,13 @@ nav {
 
    @-webkit-keyframes intro {
     0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+    opacity: 0;
   }
-  
+  100% {
+    opacity: 1;
+  }
+  }
+
   @keyframes intro {
     0% {
       opacity: 0;

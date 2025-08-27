@@ -5,6 +5,7 @@ category: algorithms
 excerpt: "Notes on Algorithm, based on [hello-algo](https://github.com/krahets/hello-algo)"
 permalink: "/note/Hello Algorithm 笔记"
 date: 2025-08-23
+toc: true
 ---
 
 # Hello Algorithm notes

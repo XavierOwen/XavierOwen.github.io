@@ -2,12 +2,12 @@
 permalink: /markdown/
 title: "Markdown"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /md/
   - /markdown.html
 ---
 
-{% include toc %}
+{% include toc.html html=content sanitize=true class="toc__left" h_min=2 %}
 
 ## Locations of key files/directories
 
@@ -27,13 +27,13 @@ redirect_from:
 ## Tips and hints
 
 * Name a file ".md" to have it render in markdown, name it ".html" to render in HTML.
-* Go to the [commit list](https://github.com/academicpages/academicpages.github.io/commits/master) (on your repo) to find the last version GitHub built with Jekyll. 
+* Go to the [commit list](https://github.com/academicpages/academicpages.github.io/commits/master) (on your repo) to find the last version GitHub built with Jekyll.
   * Green check: successful build
   * Orange circle: building
   * Red X: error
   * No icon: not built
 
-* Academic Pages uses [Jekyll Kramdown](https://jekyllrb.com/docs/configuration/markdown/), GitHub Flavored Markdown (GFM) parser, which is similar to the version of Markdown used on GitHub, but may have some minor differences. 
+* Academic Pages uses [Jekyll Kramdown](https://jekyllrb.com/docs/configuration/markdown/), GitHub Flavored Markdown (GFM) parser, which is similar to the version of Markdown used on GitHub, but may have some minor differences.
   * Some of emoji supported on GitHub should be supposed via the [Jemoji](https://github.com/jekyll/jemoji) plugin :computer:.
   * The best list of the supported emoji can be found in the [Emojis for Jekyll via Jemoji](https://www.fabriziomusacchio.com/blog/2021-08-16-emojis_for_Jekyll/#computer) blog post.
 
@@ -44,7 +44,7 @@ redirect_from:
 
  * The [Liquid syntax guide](https://shopify.github.io/liquid/tags/control-flow/) is a useful guide for those that want to add functionality to the template or to become contributors to the [template on GitHub](https://github.com/academicpages/academicpages.github.io).
 
-## MathJax 
+## MathJax
 
 Support for MathJax (version 3.* via [jsDelivr](https://www.jsdelivr.com/), [documentation](https://docs.mathjax.org/en/latest/)) is included in the template:
 
@@ -159,7 +159,7 @@ Essentially what is taking place is that the [Plotly attributes](https://plotly.
       "name": "Team B",
       "text": ["B-a", "B-b", "B-c", "B-d", "B-e"],
       "marker": { "size": 12 }
-    }    
+    }
   ],
   "layout": {
     "xaxis": {
@@ -195,7 +195,7 @@ Essentially what is taking place is that the [Plotly attributes](https://plotly.
     },
     "title": {
       "text": "Simple Subplot"
-    }    
+    }
   }
 }
 ```
@@ -220,7 +220,7 @@ Essentially what is taking place is that the [Plotly attributes](https://plotly.
 
 ## Markdown guide
 
-Academic Pages uses [kramdown](https://kramdown.gettalong.org/index.html) for Markdown rendering, which has some differences from other Markdown implementations such as GitHub's. In addition to this guide, please see the [kramdown Syntax page](https://kramdown.gettalong.org/syntax.html) for full documentation.  
+Academic Pages uses [kramdown](https://kramdown.gettalong.org/index.html) for Markdown rendering, which has some differences from other Markdown implementations such as GitHub's. In addition to this guide, please see the [kramdown Syntax page](https://kramdown.gettalong.org/syntax.html) for full documentation.
 
 ### Header three
 
@@ -275,8 +275,8 @@ Do It Live
 
 ## Unordered Lists (Nested)
 
-  * List item one 
-      * List item one 
+  * List item one
+      * List item one
           * List item one
           * List item two
           * List item three
@@ -290,8 +290,8 @@ Do It Live
 
 ## Ordered List (Nested)
 
-  1. List item one 
-      1. List item one 
+  1. List item one
+      1. List item one
           1. List item one
           2. List item two
           3. List item three
@@ -453,4 +453,3 @@ This allows you to denote <var>variables</var>.
 **Footnotes**
 
 The footnotes in the page will be returned following this line, return to the section on <a href="#footnotes">Markdown Footnotes</a>.
-

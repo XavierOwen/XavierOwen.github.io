@@ -5,7 +5,7 @@ modified: 2016-06-06
 ---
 
 {% include base_path %}
-{% include toc %}
+{% include toc.html html=content sanitize=true class="toc__left" h_min=2 %}
 
 ## Privacy Policy
 
