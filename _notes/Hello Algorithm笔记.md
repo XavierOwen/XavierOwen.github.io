@@ -897,3 +897,25 @@ $$
 | 空间局部性 (Spatial Locality) | 高度集中，加载的数据附近很可能被访问 | 数据离散，局部性差 |
 | 总体缓存效率 (Cache Efficiency) | 命中率更高，操作效率更佳 | 命中率较低，访问效率受限 |
 | 适用场景 (Use Case) | 数据规模可估计，注重效率和随机访问，例如算法题、基于数组的栈 | 数据规模大且动态性高，预估困难时更合适，例如基于链表的栈 |
+
+## 栈与队列
+
+### 栈 Stack
+
+一种遵循先入后出逻辑的线性数据结构，first in last out FILO, or LIFO，类似于在桌面上摞盘子。如果想取出底部的盘子，则需要先将上面的盘子依次移走。
+
+![stack operation]({{ site.baseurl }}/images/notes/stack_operations.png)
+
+入栈，出栈，访问栈顶元素的时间复杂度都是\\(O(1)\\)。
+
+### 栈的实现
+
+|数据结构|图示|`push()`|`pop()`|
+|:-:|:-:|:-:|:-:|
+|链表|![linkedlist stack step1]({{ site.baseurl }}/images/notes/linkedlist_stack_step1_edit.png)|![linkedlist stack step2 push]({{ site.baseurl }}/images/notes/linkedlist_stack_step2_push_edit.png)|![linkedlist stack step3 pop]({{ site.baseurl }}/images/notes/linkedlist_stack_step3_pop_edit.png)|
+|数组|![array stack step1]({{ site.baseurl }}/images/notes/array_stack_step1_edit.png)|![array stack step2 push]({{ site.baseurl }}/images/notes/array_stack_step2_push_edit.png)|![array stack step3 pop]({{ site.baseurl }}/images/notes/array_stack_step3_pop_edit.png)|
+
+|对比|时间效率|空间效率|
+|:-:|:-:|:-:|
+|链表|||
+|数组|||
