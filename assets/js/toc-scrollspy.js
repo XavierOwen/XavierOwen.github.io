@@ -23,19 +23,60 @@
         map.set(id, a);
     });
 
-    // 2) 平滑滚动（点击 TOC 时）
+    // 2) 平滑滚动（点击 TOC 时） - "Bait and Switch" to prevent jQuery error
     links.forEach(a => {
-        a.addEventListener('click', (e) => {
-            const id = decodeURIComponent(a.getAttribute('href').slice(1));
+        // On mousedown, before the click is processed by other scripts,
+        // store the real href and replace it with something harmless.
+        a.addEventListener('mousedown', e => {
+            const href = a.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                a.setAttribute('data-original-href', href);
+                a.setAttribute('href', 'javascript:void(0)');
+            }
+        });
+
+        // On click, do our custom scrolling.
+        a.addEventListener('click', e => {
+            // Restore the original href from the data attribute.
+            const href = a.getAttribute('data-original-href');
+
+            // It's good practice to restore the href attribute immediately.
+            if (href) {
+                a.setAttribute('href', href);
+                a.removeAttribute('data-original-href');
+            }
+
+            if (!href || !href.startsWith('#')) {
+                return; // Not a TOC link we should handle.
+            }
+
+            const id = decodeURIComponent(href.slice(1));
             const target = document.getElementById(id);
-            if (!target) return;
+
+            if (!target) {
+                return;
+            }
+
             e.preventDefault();
-            // 临时暂停自动滚动定位（避免互相抢）
+            e.stopImmediatePropagation(); // Prevent any other click handlers from running.
+
+            // Pause the scrollspy to avoid conflicts.
             pauseSpy(200);
-            const rect = target.getBoundingClientRect();
-            const endY = rect.top + window.scrollY;
+
+            // Calculate the scroll position, accounting for the masthead and an extra offset.
+            const masthead = document.querySelector('.masthead');
+            const mastheadHeight = masthead ? masthead.offsetHeight : 0;
+            const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+            const extraOffset = 0.5 * fontSize; // 0.5em in pixels
+            const endY = target.getBoundingClientRect().top + window.scrollY - mastheadHeight + extraOffset;
+
+            // Scroll to the target instantly.
             window.scrollTo(0, endY);
-            history.replaceState(null, '', '#' + id);
+
+            // Update the URL hash.
+            history.replaceState(null, '', href);
+
+            // Set the active link in the TOC.
             setActive(a);
         });
     });

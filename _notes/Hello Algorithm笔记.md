@@ -66,7 +66,7 @@ toc: true
 示例：\\(1+2+3+\cdots+n\\)，\\(\sum_{i=1}^n\sum_{j=1}^n f(i,j)\\)
 
 <details markdown="1">
-<summary>示例代码</summary>
+<summary>循环计算示例</summary>
 
 ```python
 def for_loop(n: int) -> int:
@@ -106,6 +106,9 @@ def nested_for_loop(n: int) -> str:
 
 普通递归示例：\\(1+2+3+\cdots+n\\)
 
+<details markdown="1">
+<summary>递归示例</summary>
+
 ```python
 def recur(n: int) -> int:
     """递归"""
@@ -117,12 +120,17 @@ def recur(n: int) -> int:
     # 归：返回结果
     return n + res
 ```
+</details>
+
 
 ![sum recursion]({{ site.baseurl }}/images/notes/recursion_sum.png)
 
 递归的特点就是每次调用自身，但是会在内存中记录当前的调用，称为"栈帧空间"。比如`recur(5)`就会凭空产生`recur(5)`，`recur(4)`，`recur(3)`，`recur(2)`，`recur(1)`，所以更耗费内存。且由于涉及函数调用，所以比循环更废时间。为此定义**递归深度**：*在触发终止条件前，同时存在的未返回的递归函数个数*。过深的递归可能导致栈溢出错误。
 
 这段代码的存栈过程和空间释放过程可以用下面这段代码理解。
+
+<details markdown="1">
+<summary>数组模拟递归</summary>
 
 ```python
 def for_loop_recur(n: int) -> int:
@@ -142,10 +150,15 @@ def for_loop_recur(n: int) -> int:
     # res = 1+2+3+...+n
     return res
 ```
+</details>
+
 
 #### 尾递归 Tail Recursion
 
 定义**尾递归**：*如果函数在返回前的最后一步才进行递归调用*，则该函数可以被编译器或解释器优化，使其在空间效率上与迭代相当。通过示例分析一下
+
+<details markdown="1">
+<summary>尾递归示例</summary>
 
 ```python
 def tail_recur(n, res=0):
@@ -157,8 +170,13 @@ def tail_recur(n, res=0):
     res += n
     return tail_recur(n - 1, res)
 ```
+</details>
+
 
 之前的代码的return可以简写为`return n+recur(n - 1)`，所以递归调用recur(n - 1)返回后，还要再做一次加法运算`+n`。尾递归的代码是先计算`+n`，再return。模拟如下
+
+<details markdown="1">
+<summary>显式栈模拟尾递归</summary>
 
 ```python
 def tail_recur_stack(n: int) -> int:
@@ -172,6 +190,8 @@ def tail_recur_stack(n: int) -> int:
         # 尾递归：只需更新参数后再压栈
         stack.append((n - 1, res + n))
 ```
+</details>
+
 
 ![tail sum recursion]({{ site.baseurl }}/images/notes/tail_recursion_sum.png)
 
@@ -180,6 +200,9 @@ def tail_recur_stack(n: int) -> int:
 #### 递归树 Recursion Tree
 
 示例：求斐波那契数列\\(f(n) = f(n-1)+f(n-2),f(1)=0,f(2)=1\\)。这种的也可以尾递归优化。
+
+<details markdown="1">
+<summary>递归，尾递归求斐波那契数列</summary>
 
 ```python
 def fib(n: int) -> int:
@@ -203,6 +226,7 @@ def fib_tail(n: int, a: int = 0, b: int = 1) -> int:
         return b
     return fib_tail(n - 1, b, a + b)
 ```
+</details>
 
 前者产生深度为n的递归树
 
@@ -234,7 +258,8 @@ graph LR
 
 ![time complexity common types]({{ site.baseurl }}/images/notes/time_complexity_common_types.png)
 
-示例
+<details markdown="1">
+<summary>示例代码</summary>
 
 ```python
 def constant(n: int) -> int:
@@ -269,9 +294,7 @@ def array_traversal(nums: list[int]) -> int:
     for num in nums:
         count += 1
     return count
-```
 
-```python
 def linear_log_recur(n: int) -> int:
     """线性对数阶"""
     if n <= 1:
@@ -304,9 +327,7 @@ def bubble_sort(nums: list[int]) -> int:
                 nums[j + 1] = tmp
                 count += 3  # 元素交换包含 3 个单元操作
     return count
-```
 
-```python
 def exponential(n: int) -> int:
     """指数阶(循环实现)"""
     count = 0
@@ -333,6 +354,8 @@ def factorial_recur(n: int) -> int:
         count += factorial_recur(n - 1)
     return count
 ```
+</details>
+
 
 算法的时间效率往往不是固定的，而是与输入数据的分布有关。为此定义算法的**最差时间复杂度**为\\(O(n)\\)，**最佳时间复杂度**为\\(\Omega(n)\\)。最简单的例子，在数组中寻找元素\\(1\\)出现的第一个索引。数组如果第一个元素就是\\(1\\)，就达到了最佳时间复杂度；若仅有一个元素\\(1\\)且排在最后，那就达到最差时间复杂度。在随机输入数据下的运行效率则定义为**平均时间复杂度**，使用记号\\(\Theta(n)\\)。
 
@@ -352,7 +375,8 @@ def factorial_recur(n: int) -> int:
 - 输入数据情况最差，比如说真要是循环起来，一定要到最后一个元素
 - 以算法运行中的峰值内存为准
 
-示例
+<details markdown="1">
+<summary>示例代码</summary>
 
 ```python
 def function() -> int:
@@ -370,6 +394,7 @@ def recur(n: int):
         return
     return recur(n - 1)
 ```
+</details>
 
 |函数|时间复杂度|空间复杂度|
 |:-|:-|:-|
@@ -384,7 +409,8 @@ def recur(n: int):
 4. 平方阶\\(O(n^2)\\)：常见于矩阵和图，元素数量与\\(n\\)成平方关系
 5. 指数阶\\(O(2^n)\\)：常见于常见于二叉树
 
-示例
+<details markdown="1">
+<summary>示例代码</summary>
 
 ```python
 def linear(n: int):
@@ -412,9 +438,7 @@ def quadratic_recur(n: int) -> int:
     # 数组 nums 长度为 n, n-1, ..., 2, 1
     nums = [0] * n
     return quadratic_recur(n - 1)
-```
 
-```python
 def build_tree(n: int) -> TreeNode | None:
     """指数阶(建立满二叉树)"""
     if n == 0:
@@ -455,6 +479,8 @@ def merge(left: list[int], right: list[int]) -> list[int]:
     res.extend(right[j:])
     return res
 ```
+</details>
+
 
 归并排序的递归树图
 
@@ -678,7 +704,7 @@ $$
 
 注意字符串如何在文件中存储或在网络中传输是不同的问题。在文件存储或网络传输中，我们通常会将字符串编码为UTF-8格式，以达到最优的兼容性和空间效率。
 
-## <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" style="vertical-align:middle"><path d="M3 5v14h17V5H3m4 2v2H5V7h2m-2 6v-2h2v2H5m0 2h2v2H5v-2m13 2H9v-2h9v2m0-4H9v-2h9v2m0-4H9V7h9v2Z"/></svg> 数组与链表 Array and Linked List
+## 数组与链表 Array and Linked List
 
 ### 数组 Array
 
@@ -749,6 +775,9 @@ $$
 
 ![linkedlist common type]({{ site.baseurl }}/images/notes/linkedlist_common_types.png)
 
+<details markdown="1">
+<summary>链表类构造示例</summary>
+
 ```python
 class ListNode1:
     """链表节点类"""
@@ -762,6 +791,8 @@ class ListNode2:
         self.next: ListNode | None = None  # 指向后继节点的引用
         self.prev: ListNode | None = None  # 指向前驱节点的引用
 ```
+</details>
+
 
 #### 典型链表应用
 
@@ -938,9 +969,12 @@ class ListNode2:
 |链表|入栈/出栈无需扩容，效率稳定，但每次入栈需新建节点并修改指针，速度相对较慢，除非作为节点对象入栈|节点需额外存储指针，单个元素占用空间较大|
 |数组|入栈/出栈在连续内存中完成，缓存友好，平均效率较高；但扩容时单次操作会\\(O(n)\\)|初始化及扩容可能分配多余空间，存在一定浪费|
 
+<details markdown="1">
+<summary>基于链表/数组实现栈的示例</summary>
+
 ```python
 class LinkedListStack:
-    """基于链表实现的栈"""
+    """使用链表实现的栈"""
 
     def __init__(self):
         """构造方法"""
@@ -985,7 +1019,7 @@ class LinkedListStack:
         arr.reverse()
         return arr
 class ArrayStack:
-    """基于数组实现的栈"""
+    """使用数组实现的栈"""
 
     def __init__(self):
         """构造方法"""
@@ -1019,6 +1053,7 @@ class ArrayStack:
         """返回列表用于打印"""
         return self._stack
 ```
+</details>
 
 典型应用有
 
@@ -1055,9 +1090,12 @@ class ArrayStack:
 - 出队：只需将 `front` 增加 1 ，并将 `size` 减少 1 。
 - 注意到，`front` 和 `rear` 整体都在增加，最后会导致无法入队。所以 `front` 或 `rear` 在越过数组尾部时，直接回到数组头部继续遍历，需要加上取余操作。
 
+<details markdown="1">
+<summary>使用链表/数组实现队列的示例</summary>
+
 ```python
 class LinkedListQueue:
-    """基于链表实现的队列"""
+    """使用链表实现的队列"""
 
     def __init__(self):
         """构造方法"""
@@ -1111,7 +1149,7 @@ class LinkedListQueue:
         return queue
 
 class ArrayQueue:
-    """基于环形数组实现的队列"""
+    """使用环形数组实现的队列"""
 
     def __init__(self, size: int):
         """构造方法"""
@@ -1165,6 +1203,7 @@ class ArrayQueue:
             j += 1
         return res
 ```
+</details>
 
 | 实现方式       | 入队（push/append） | 出队（pop/popleft） | 访问队首（peek/front） | 时间复杂度 | 内存开销 | 优点 | 缺点 |
 |----------------|--------------------|---------------------|------------------------|------------|----------|------|------|
