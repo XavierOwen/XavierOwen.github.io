@@ -99,6 +99,8 @@ note_category:
 project_category:
   game:
     title: 'Game'
+  scraper:
+    title: 'Scraper'
 
 
 # Site Settings

@@ -2,7 +2,7 @@
 title: "Simple Room Tour Game"
 collection: projects
 category: game
-excerpt: "a simple room tour game made with GoDot, location: 214 W 31st ST, Chicago. [link](https://github.com/krahets/hello-algo)"
+excerpt: "a simple room tour game made with GoDot, location: 214 W 31st ST, Chicago"
 permalink: "/games/simple-room-tour-game"
 date: 2025-08-25
 ---

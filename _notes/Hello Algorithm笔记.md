@@ -65,6 +65,9 @@ toc: true
 
 示例：\\(1+2+3+\cdots+n\\)，\\(\sum_{i=1}^n\sum_{j=1}^n f(i,j)\\)
 
+<details markdown="1">
+<summary>示例代码</summary>
+
 ```python
 def for_loop(n: int) -> int:
     """for 循环"""
@@ -92,6 +95,7 @@ def nested_for_loop(n: int) -> str:
             res += f({i}, {j})
     return res
 ```
+</details>
 
 ### 递归 Recursion
 
