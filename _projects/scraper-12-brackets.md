@@ -1,9 +1,9 @@
 ---
-title: "Simple scraper for High wenli union Bible 深文理和合本圣经"
+title: "Simple scraper for 十二篮"
 collection: projects
 category: scraper
-excerpt: "a simple scraper to obtain High wenli union Bible 深文理和合本圣经 from [维基文库](https://zh.wikisource.org/zh-hans/%E8%81%96%E7%B6%93_(%E6%96%87%E7%90%86%E5%92%8C%E5%90%88))"
-permalink: "/games/scrapy-high-wenli-union-Bible"
+excerpt: "a simple scraper to obtain passages of 12 brackets from [this website](https://pages.uoregon.edu/fyin/%E7%81%B5%E7%B2%AE/%E5%8D%81%E4%BA%8C%E7%AF%AE/%E5%8D%81%E4%BA%8C%E7%AF%AE%20%E7%9B%AE%E5%BD%95.htm)"
+permalink: "/games/scraper-12-brackets"
 date: 2025-08-25
 ---
 

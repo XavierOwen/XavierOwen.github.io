@@ -1,9 +1,9 @@
 ---
-title: "Simple scraper for 十二篮"
+title: "Simple scraper for High wenli union Bible 深文理和合本圣经"
 collection: projects
 category: scraper
-excerpt: "a simple scraper to obtain passages of 12 brackets from [this website](https://pages.uoregon.edu/fyin/%E7%81%B5%E7%B2%AE/%E5%8D%81%E4%BA%8C%E7%AF%AE/%E5%8D%81%E4%BA%8C%E7%AF%AE%20%E7%9B%AE%E5%BD%95.htm)"
-permalink: "/games/scraper-12-brackets"
+excerpt: "a simple scraper to obtain High wenli union Bible 深文理和合本圣经 from [维基文库](https://zh.wikisource.org/zh-hans/%E8%81%96%E7%B6%93_(%E6%96%87%E7%90%86%E5%92%8C%E5%90%88))"
+permalink: "/games/scrapy-high-wenli-union-Bible"
 date: 2025-08-25
 ---
 
@@ -14,13 +14,6 @@ date: 2025-08-25
 [代码链接](https://github.com/XavierOwen/Practicing-simple-spider/blob/main/scrapy-high-wenli-union-Bible.py)
 
 ## 步骤
-
-1. 从主目录页中提取所有圣经书卷链接
-2. 再提取每卷书中的文章
-3. 处理为规范化 `Markdown`
-4. 最终合并生成一个 **bible.md** 文件，结构清晰，带目录、标题和原文链接
-
-## 脚本演进
 
 1. join得到正确书卷链接，提取所有书卷
 2. 找到 h2 并转为 ##
