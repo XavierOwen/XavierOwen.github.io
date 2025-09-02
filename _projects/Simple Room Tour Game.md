@@ -1,7 +1,10 @@
 ---
-layout: single
-title: 我的 Godot 小游戏
-permalink: /games/mygame/
+title: "Simple Room Tour Game"
+collection: projects
+category: game
+excerpt: "a simple room tour game made with GoDot, location: 214 W 31st ST, Chicago. [link](https://github.com/krahets/hello-algo)"
+permalink: "/games/simple-room-tour-game"
+date: 2025-08-25
 ---
 <style>
   .game-wrap{position:relative;width:100%;max-width:1100px;margin:0 auto;}
