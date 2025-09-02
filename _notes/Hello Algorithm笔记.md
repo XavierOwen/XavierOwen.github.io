@@ -745,6 +745,20 @@ $$
 
 ![linkedlist common type]({{ site.baseurl }}/images/notes/linkedlist_common_types.png)
 
+```python
+class ListNode1:
+    """链表节点类"""
+    def __init__(self, val: int):
+        self.val: int = val               # 节点值
+        self.next: ListNode | None = None # 指向下一节点的引用
+class ListNode2:
+    """双向链表节点类"""
+    def __init__(self, val: int):
+        self.val: int = val                # 节点值
+        self.next: ListNode | None = None  # 指向后继节点的引用
+        self.prev: ListNode | None = None  # 指向前驱节点的引用
+```
+
 #### 典型链表应用
 
 单向链表通常用于实现栈、队列、哈希表和图等数据结构
@@ -898,7 +912,7 @@ $$
 | 总体缓存效率 (Cache Efficiency) | 命中率更高，操作效率更佳 | 命中率较低，访问效率受限 |
 | 适用场景 (Use Case) | 数据规模可估计，注重效率和随机访问，例如算法题、基于数组的栈 | 数据规模大且动态性高，预估困难时更合适，例如基于链表的栈 |
 
-## 栈与队列
+## 栈与队列 Stack and Queue
 
 ### 栈 Stack
 
@@ -908,7 +922,7 @@ $$
 
 入栈，出栈，访问栈顶元素的时间复杂度都是\\(O(1)\\)。
 
-### 栈的实现
+#### 栈的实现
 
 |数据结构|图示|`push()`|`pop()`|
 |:-:|:-:|:-:|:-:|
@@ -917,5 +931,244 @@ $$
 
 |对比|时间效率|空间效率|
 |:-:|:-:|:-:|
-|链表|||
-|数组|||
+|链表|入栈/出栈无需扩容，效率稳定，但每次入栈需新建节点并修改指针，速度相对较慢，除非作为节点对象入栈|节点需额外存储指针，单个元素占用空间较大|
+|数组|入栈/出栈在连续内存中完成，缓存友好，平均效率较高；但扩容时单次操作会\\(O(n)\\)|初始化及扩容可能分配多余空间，存在一定浪费|
+
+```python
+class LinkedListStack:
+    """基于链表实现的栈"""
+
+    def __init__(self):
+        """构造方法"""
+        self._peek: ListNode | None = None
+        self._size: int = 0
+
+    def size(self) -> int:
+        """获取栈的长度"""
+        return self._size
+
+    def is_empty(self) -> bool:
+        """判断栈是否为空"""
+        return self._size == 0
+
+    def push(self, val: int):
+        """入栈"""
+        node = ListNode(val)
+        node.next = self._peek
+        self._peek = node
+        self._size += 1
+
+    def pop(self) -> int:
+        """出栈"""
+        num = self.peek()
+        self._peek = self._peek.next
+        self._size -= 1
+        return num
+
+    def peek(self) -> int:
+        """访问栈顶元素"""
+        if self.is_empty():
+            raise IndexError("栈为空")
+        return self._peek.val
+
+    def to_list(self) -> list[int]:
+        """转化为列表用于打印"""
+        arr = []
+        node = self._peek
+        while node:
+            arr.append(node.val)
+            node = node.next
+        arr.reverse()
+        return arr
+class ArrayStack:
+    """基于数组实现的栈"""
+
+    def __init__(self):
+        """构造方法"""
+        self._stack: list[int] = []
+
+    def size(self) -> int:
+        """获取栈的长度"""
+        return len(self._stack)
+
+    def is_empty(self) -> bool:
+        """判断栈是否为空"""
+        return self.size() == 0
+
+    def push(self, item: int):
+        """入栈"""
+        self._stack.append(item)
+
+    def pop(self) -> int:
+        """出栈"""
+        if self.is_empty():
+            raise IndexError("栈为空")
+        return self._stack.pop()
+
+    def peek(self) -> int:
+        """访问栈顶元素"""
+        if self.is_empty():
+            raise IndexError("栈为空")
+        return self._stack[-1]
+
+    def to_list(self) -> list[int]:
+        """返回列表用于打印"""
+        return self._stack
+```
+
+典型应用有
+
+- 浏览器中的后退与前进
+- 软件中的撤销与重做
+- 程序内存管理：每次调用函数时，系统都会在栈顶添加一个栈帧，用于记录函数的上下文信息。比如递归，向下递推阶段会不断执行入栈操作，而向上回溯阶段则会不断执行出栈操作。
+
+### 队列 Queue
+
+一种遵循先入先出逻辑的线性数据结构，first in first out FIFO, or LILO，类似于排队打饭，先到先吃。
+
+![queue operation]({{ site.baseurl }}/images/notes/queue_operations.png)
+
+入队，出队，访问队首元素的时间复杂度都是\\(O(1)\\)。
+
+#### 队列的实现
+
+|数据结构|图示|`push()`|`pop()`|
+|:-:|:-:|:-:|:-:|
+|链表|![linkedlist queue step1]({{ site.baseurl }}/images/notes/linkedlist_queue_step1_edit.png)|![linkedlist queue step2 push]({{ site.baseurl }}/images/notes/linkedlist_queue_step2_push_edit.png)|![linkedlist queue step3 pop]({{ site.baseurl }}/images/notes/linkedlist_queue_step3_pop_edit.png)|
+|数组|![array queue step1]({{ site.baseurl }}/images/notes/array_queue_step1_edit.png)|![array queue step2 push]({{ site.baseurl }}/images/notes/array_queue_step2_push_edit.png)|![array queue step3 pop]({{ site.baseurl }}/images/notes/array_queue_step3_pop_edit.png)|
+
+数组由于删除首元素的时间复杂度为\\(O(n)\\)，需要一些巧妙的方法。如何避免？一个简单的例子如下：
+
+| 操作        | 数组状态   | `front` | `size` | `rear= front+size` |
+|-------------|------------|-------|------|------|
+| 初始              | [ , ]      | 0     | 0    | 0    |
+| 入队 1 于 index 0 | [1, ]      | 0     | 1    | 1    |
+| 入队 2 于 index 1 | [1, 2]     | 0     | 2    | 2    |
+| 出队 → 1         | [ , 2]     | 1     | 1    | 2    |
+| 出队 → 2         | [ , ]      | 2     | 0    | 2    |
+
+- 入队：将输入元素赋值给 `rear` 索引处，并将 `size` 增加 1 。
+- 出队：只需将 `front` 增加 1 ，并将 `size` 减少 1 。
+- 注意到，`front` 和 `rear` 整体都在增加，最后会导致无法入队。所以 `front` 或 `rear` 在越过数组尾部时，直接回到数组头部继续遍历，需要加上取余操作。
+
+```python
+class LinkedListQueue:
+    """基于链表实现的队列"""
+
+    def __init__(self):
+        """构造方法"""
+        self._front: ListNode | None = None  # 头节点 front
+        self._rear: ListNode | None = None  # 尾节点 rear
+        self._size: int = 0
+
+    def size(self) -> int:
+        """获取队列的长度"""
+        return self._size
+
+    def is_empty(self) -> bool:
+        """判断队列是否为空"""
+        return self._size == 0
+
+    def push(self, num: int):
+        """入队"""
+        # 在尾节点后添加 num
+        node = ListNode(num)
+        # 如果队列为空，则令头、尾节点都指向该节点
+        if self._front is None:
+            self._front = node
+            self._rear = node
+        # 如果队列不为空，则将该节点添加到尾节点后
+        else:
+            self._rear.next = node
+            self._rear = node
+        self._size += 1
+
+    def pop(self) -> int:
+        """出队"""
+        num = self.peek()
+        # 删除头节点
+        self._front = self._front.next
+        self._size -= 1
+        return num
+
+    def peek(self) -> int:
+        """访问队首元素"""
+        if self.is_empty():
+            raise IndexError("队列为空")
+        return self._front.val
+
+    def to_list(self) -> list[int]:
+        """转化为列表用于打印"""
+        queue = []
+        temp = self._front
+        while temp:
+            queue.append(temp.val)
+            temp = temp.next
+        return queue
+
+class ArrayQueue:
+    """基于环形数组实现的队列"""
+
+    def __init__(self, size: int):
+        """构造方法"""
+        self._nums: list[int] = [0] * size  # 用于存储队列元素的数组
+        self._front: int = 0  # 队首指针，指向队首元素
+        self._size: int = 0  # 队列长度
+
+    def capacity(self) -> int:
+        """获取队列的容量"""
+        return len(self._nums)
+
+    def size(self) -> int:
+        """获取队列的长度"""
+        return self._size
+
+    def is_empty(self) -> bool:
+        """判断队列是否为空"""
+        return self._size == 0
+
+    def push(self, num: int):
+        """入队"""
+        if self._size == self.capacity():
+            raise IndexError("队列已满")
+        # 计算队尾指针，指向队尾索引 + 1
+        # 通过取余操作实现 rear 越过数组尾部后回到头部
+        rear: int = (self._front + self._size) % self.capacity()
+        # 将 num 添加至队尾
+        self._nums[rear] = num
+        self._size += 1
+
+    def pop(self) -> int:
+        """出队"""
+        num: int = self.peek()
+        # 队首指针向后移动一位，若越过尾部，则返回到数组头部
+        self._front = (self._front + 1) % self.capacity()
+        self._size -= 1
+        return num
+
+    def peek(self) -> int:
+        """访问队首元素"""
+        if self.is_empty():
+            raise IndexError("队列为空")
+        return self._nums[self._front]
+
+    def to_list(self) -> list[int]:
+        """返回列表用于打印"""
+        res = [0] * self.size()
+        j: int = self._front
+        for i in range(self.size()):
+            res[i] = self._nums[(j % self.capacity())]
+            j += 1
+        return res
+```
+
+| 实现方式       | 入队（push/append） | 出队（pop/popleft） | 访问队首（peek/front） | 时间复杂度 | 内存开销 | 优点 | 缺点 |
+|----------------|--------------------|---------------------|------------------------|------------|----------|------|------|
+| **链表实现**   | 在尾部插入，O(1)   | 删除头节点，O(1)    | 返回头节点，O(1)       | 稳定 O(1)  | 较高（额外指针） | 性能稳定；不需扩容；可动态增长 | 每个节点存储指针，额外占内存；实现复杂 |
+| **数组/Deque** | 尾部追加，O(1)     | 头部弹出，O(1)      | 访问下标 0，O(1)       | 稳定 O(1)  | 较低     | 语言内置支持，写法简洁；内存连续，缓存友好 | 如果用普通数组，`pop(0)` 是 O(n)；需要扩容（动态数组场景） |
+
+
+典型应用有
+
+- 淘宝订单
+- 各类待办事项需要先来后到，比如打印机，出餐
