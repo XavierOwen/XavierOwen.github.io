@@ -65,7 +65,7 @@ toc: true
 
 示例：\\(1+2+3+\cdots+n\\)，\\(\sum_{i=1}^n\sum_{j=1}^n f(i,j)\\)
 
-<details markdown="1">
+<details markdown="1" data-auto-footer>
 <summary>循环计算示例</summary>
 
 ```python
@@ -106,7 +106,7 @@ def nested_for_loop(n: int) -> str:
 
 普通递归示例：\\(1+2+3+\cdots+n\\)
 
-<details markdown="1">
+<details markdown="1" data-auto-footer>
 <summary>递归示例</summary>
 
 ```python
@@ -129,7 +129,7 @@ def recur(n: int) -> int:
 
 这段代码的存栈过程和空间释放过程可以用下面这段代码理解。
 
-<details markdown="1">
+<details markdown="1" data-auto-footer>
 <summary>数组模拟递归</summary>
 
 ```python
@@ -157,7 +157,7 @@ def for_loop_recur(n: int) -> int:
 
 定义**尾递归**：*如果函数在返回前的最后一步才进行递归调用*，则该函数可以被编译器或解释器优化，使其在空间效率上与迭代相当。通过示例分析一下
 
-<details markdown="1">
+<details markdown="1" data-auto-footer>
 <summary>尾递归示例</summary>
 
 ```python
@@ -175,7 +175,7 @@ def tail_recur(n, res=0):
 
 之前的代码的return可以简写为`return n+recur(n - 1)`，所以递归调用recur(n - 1)返回后，还要再做一次加法运算`+n`。尾递归的代码是先计算`+n`，再return。模拟如下
 
-<details markdown="1">
+<details markdown="1" data-auto-footer>
 <summary>显式栈模拟尾递归</summary>
 
 ```python
@@ -201,7 +201,7 @@ def tail_recur_stack(n: int) -> int:
 
 示例：求斐波那契数列\\(f(n) = f(n-1)+f(n-2),f(1)=0,f(2)=1\\)。这种的也可以尾递归优化。
 
-<details markdown="1">
+<details markdown="1" data-auto-footer>
 <summary>递归，尾递归求斐波那契数列</summary>
 
 ```python
@@ -258,7 +258,7 @@ graph LR
 
 ![time complexity common types]({{ site.baseurl }}/images/notes/time_complexity_common_types.png)
 
-<details markdown="1">
+<details markdown="1" data-auto-footer>
 <summary>示例代码</summary>
 
 ```python
@@ -375,7 +375,7 @@ def factorial_recur(n: int) -> int:
 - 输入数据情况最差，比如说真要是循环起来，一定要到最后一个元素
 - 以算法运行中的峰值内存为准
 
-<details markdown="1">
+<details markdown="1" data-auto-footer>
 <summary>示例代码</summary>
 
 ```python
@@ -409,7 +409,7 @@ def recur(n: int):
 4. 平方阶\\(O(n^2)\\)：常见于矩阵和图，元素数量与\\(n\\)成平方关系
 5. 指数阶\\(O(2^n)\\)：常见于常见于二叉树
 
-<details markdown="1">
+<details markdown="1" data-auto-footer>
 <summary>示例代码</summary>
 
 ```python
@@ -775,7 +775,7 @@ $$
 
 ![linkedlist common type]({{ site.baseurl }}/images/notes/linkedlist_common_types.png)
 
-<details markdown="1">
+<details markdown="1" data-auto-footer>
 <summary>链表类构造示例</summary>
 
 ```python
@@ -969,7 +969,7 @@ class ListNode2:
 |链表|入栈/出栈无需扩容，效率稳定，但每次入栈需新建节点并修改指针，速度相对较慢，除非作为节点对象入栈|节点需额外存储指针，单个元素占用空间较大|
 |数组|入栈/出栈在连续内存中完成，缓存友好，平均效率较高；但扩容时单次操作会\\(O(n)\\)|初始化及扩容可能分配多余空间，存在一定浪费|
 
-<details markdown="1">
+<details markdown="1" data-auto-footer>
 <summary>基于链表/数组实现栈的示例</summary>
 
 ```python
@@ -1090,7 +1090,7 @@ class ArrayStack:
 - 出队：只需将 `front` 增加 1 ，并将 `size` 减少 1 。
 - 注意到，`front` 和 `rear` 整体都在增加，最后会导致无法入队。所以 `front` 或 `rear` 在越过数组尾部时，直接回到数组头部继续遍历，需要加上取余操作。
 
-<details markdown="1">
+<details markdown="1" data-auto-footer>
 <summary>使用链表/数组实现队列的示例</summary>
 
 ```python
@@ -1207,10 +1207,264 @@ class ArrayQueue:
 
 | 实现方式       | 入队（push/append） | 出队（pop/popleft） | 访问队首（peek/front） | 时间复杂度 | 内存开销 | 优点 | 缺点 |
 |----------------|--------------------|---------------------|------------------------|------------|----------|------|------|
-| **链表实现**   | 在尾部插入，O(1)   | 删除头节点，O(1)    | 返回头节点，O(1)       | 稳定 O(1)  | 较高（额外指针） | 性能稳定；不需扩容；可动态增长 | 每个节点存储指针，额外占内存；实现复杂 |
-| **数组/Deque** | 尾部追加，O(1)     | 头部弹出，O(1)      | 访问下标 0，O(1)       | 稳定 O(1)  | 较低     | 语言内置支持，写法简洁；内存连续，缓存友好 | 如果用普通数组，`pop(0)` 是 O(n)；需要扩容（动态数组场景） |
+| **链表实现**   | 在尾部插入，\\(O(1)\\)   | 删除头节点，\\(O(1)\\)    | 返回头节点，\\(O(1)\\)       | 稳定 \\(O(1)\\)  | 较高（额外指针） | 性能稳定；不需扩容；可动态增长 | 每个节点存储指针，额外占内存；实现复杂 |
+| **数组/Deque** | 尾部追加，\\(O(1)\\)     | 头部弹出，\\(O(1)\\)      | 访问下标 0，\\(O(1)\\)       | 稳定 \\(O(1)\\)  | 较低     | 语言内置支持，写法简洁；内存连续，缓存友好 | 如果用普通数组，`pop(0)` 是 \\(O(n)\\)；需要扩容（动态数组场景） |
 
 典型应用有
 
 - 淘宝订单
 - 各类待办事项需要先来后到，比如打印机，出餐
+
+### 双向队列 Double-Ended Queue
+
+允许在头部和尾部执行元素的添加或删除操作。
+
+![deque operation]({{ site.baseurl }}/images/notes/deque_operations.png)
+
+双向队列常用操作包括添加元素到队首，队尾或，从队首队尾访问或删除元素，都是\\(O(1)\\)
+
+<details markdown="1" data-auto-footer>
+<summary>使用链表/数组实现队列的示例</summary>
+
+```python
+from collections import deque
+
+# 初始化双向队列
+deq: deque[int] = deque()
+
+# 元素入队
+deq.append(2)      # 添加至队尾
+deq.append(5)
+deq.append(4)
+deq.appendleft(3)  # 添加至队首
+deq.appendleft(1)
+
+# 访问元素
+front: int = deq[0]  # 队首元素
+rear: int = deq[-1]  # 队尾元素
+
+# 元素出队
+pop_front: int = deq.popleft()  # 队首元素出队
+pop_rear: int = deq.pop()       # 队尾元素出队
+
+# 获取双向队列的长度
+size: int = len(deq)
+
+# 判断双向队列是否为空
+is_empty: bool = len(deq) == 0
+```
+</details>
+
+#### 双向队列实现
+
+|操作|基于双向链表的|基于(环形)数组|
+|:-:|:-:|:-:|
+|`Deque`     |![linked deque]({{ site.baseurl }}/images/notes/linkedlist_deque_step1_edit.png)|![array deque]({{ site.baseurl }}/images/notes/array_deque_step1_edit.png)|
+|`push_last` |![linked deque push last]({{ site.baseurl }}/images/notes/linkedlist_deque_step2_push_last_edit.png)|![array deque push last]({{ site.baseurl }}/images/notes/array_deque_step2_push_last_edit.png)|
+|`push_first` |![linked deque push first]({{ site.baseurl }}/images/notes/linkedlist_deque_step3_push_first_edit.png)|![array deque push first]({{ site.baseurl }}/images/notes/array_deque_step3_push_first_edit.png)|
+|`pop_last` |![linked deque pop last]({{ site.baseurl }}/images/notes/linkedlist_deque_step4_pop_last_edit.png)|![array deque pop last]({{ site.baseurl }}/images/notes/array_deque_step4_pop_last_edit.png)|
+|`pop_first` |![linked deque pop first]({{ site.baseurl }}/images/notes/linkedlist_deque_step5_pop_first_edit.png)|![array deque pop first]({{ site.baseurl }}/images/notes/array_deque_step5_pop_first_edit.png)|
+
+
+<details markdown="1" data-auto-footer>
+<summary>使用双向链表/环形数组实现双向队列的示例</summary>
+
+```python
+class ListNode:
+    """双向链表节点"""
+
+    def __init__(self, val: int):
+        """构造方法"""
+        self.val: int = val
+        self.next: ListNode | None = None  # 后继节点引用
+        self.prev: ListNode | None = None  # 前驱节点引用
+
+class LinkedListDeque:
+    """基于双向链表实现的双向队列"""
+
+    def __init__(self):
+        """构造方法"""
+        self._front: ListNode | None = None  # 头节点 front
+        self._rear: ListNode | None = None  # 尾节点 rear
+        self._size: int = 0  # 双向队列的长度
+
+    def size(self) -> int:
+        """获取双向队列的长度"""
+        return self._size
+
+    def is_empty(self) -> bool:
+        """判断双向队列是否为空"""
+        return self._size == 0
+
+    def push(self, num: int, is_front: bool):
+        """入队操作"""
+        node = ListNode(num)
+        # 若链表为空，则令 front 和 rear 都指向 node
+        if self.is_empty():
+            self._front = self._rear = node
+        # 队首入队操作
+        elif is_front:
+            # 将 node 添加至链表头部
+            self._front.prev = node
+            node.next = self._front
+            self._front = node  # 更新头节点
+        # 队尾入队操作
+        else:
+            # 将 node 添加至链表尾部
+            self._rear.next = node
+            node.prev = self._rear
+            self._rear = node  # 更新尾节点
+        self._size += 1  # 更新队列长度
+
+    def push_first(self, num: int):
+        """队首入队"""
+        self.push(num, True)
+
+    def push_last(self, num: int):
+        """队尾入队"""
+        self.push(num, False)
+
+    def pop(self, is_front: bool) -> int:
+        """出队操作"""
+        if self.is_empty():
+            raise IndexError("双向队列为空")
+        # 队首出队操作
+        if is_front:
+            val: int = self._front.val  # 暂存头节点值
+            # 删除头节点
+            fnext: ListNode | None = self._front.next
+            if fnext is not None:
+                fnext.prev = None
+                self._front.next = None
+            self._front = fnext  # 更新头节点
+        # 队尾出队操作
+        else:
+            val: int = self._rear.val  # 暂存尾节点值
+            # 删除尾节点
+            rprev: ListNode | None = self._rear.prev
+            if rprev is not None:
+                rprev.next = None
+                self._rear.prev = None
+            self._rear = rprev  # 更新尾节点
+        self._size -= 1  # 更新队列长度
+        return val
+
+    def pop_first(self) -> int:
+        """队首出队"""
+        return self.pop(True)
+
+    def pop_last(self) -> int:
+        """队尾出队"""
+        return self.pop(False)
+
+    def peek_first(self) -> int:
+        """访问队首元素"""
+        if self.is_empty():
+            raise IndexError("双向队列为空")
+        return self._front.val
+
+    def peek_last(self) -> int:
+        """访问队尾元素"""
+        if self.is_empty():
+            raise IndexError("双向队列为空")
+        return self._rear.val
+
+    def to_array(self) -> list[int]:
+        """返回数组用于打印"""
+        node = self._front
+        res = [0] * self.size()
+        for i in range(self.size()):
+            res[i] = node.val
+            node = node.next
+        return res
+
+class ArrayDeque:
+    """基于环形数组实现的双向队列"""
+
+    def __init__(self, capacity: int):
+        """构造方法"""
+        self._nums: list[int] = [0] * capacity
+        self._front: int = 0
+        self._size: int = 0
+
+    def capacity(self) -> int:
+        """获取双向队列的容量"""
+        return len(self._nums)
+
+    def size(self) -> int:
+        """获取双向队列的长度"""
+        return self._size
+
+    def is_empty(self) -> bool:
+        """判断双向队列是否为空"""
+        return self._size == 0
+
+    def index(self, i: int) -> int:
+        """计算环形数组索引"""
+        # 通过取余操作实现数组首尾相连
+        # 当 i 越过数组尾部后，回到头部
+        # 当 i 越过数组头部后，回到尾部
+        return (i + self.capacity()) % self.capacity()
+
+    def push_first(self, num: int):
+        """队首入队"""
+        if self._size == self.capacity():
+            print("双向队列已满")
+            return
+        # 队首指针向左移动一位
+        # 通过取余操作实现 front 越过数组头部后回到尾部
+        self._front = self.index(self._front - 1)
+        # 将 num 添加至队首
+        self._nums[self._front] = num
+        self._size += 1
+
+    def push_last(self, num: int):
+        """队尾入队"""
+        if self._size == self.capacity():
+            print("双向队列已满")
+            return
+        # 计算队尾指针，指向队尾索引 + 1
+        rear = self.index(self._front + self._size)
+        # 将 num 添加至队尾
+        self._nums[rear] = num
+        self._size += 1
+
+    def pop_first(self) -> int:
+        """队首出队"""
+        num = self.peek_first()
+        # 队首指针向后移动一位
+        self._front = self.index(self._front + 1)
+        self._size -= 1
+        return num
+
+    def pop_last(self) -> int:
+        """队尾出队"""
+        num = self.peek_last()
+        self._size -= 1
+        return num
+
+    def peek_first(self) -> int:
+        """访问队首元素"""
+        if self.is_empty():
+            raise IndexError("双向队列为空")
+        return self._nums[self._front]
+
+    def peek_last(self) -> int:
+        """访问队尾元素"""
+        if self.is_empty():
+            raise IndexError("双向队列为空")
+        # 计算尾元素索引
+        last = self.index(self._front + self._size - 1)
+        return self._nums[last]
+
+    def to_array(self) -> list[int]:
+        """返回数组用于打印"""
+        # 仅转换有效长度范围内的列表元素
+        res = []
+        for i in range(self._size):
+            res.append(self._nums[self.index(self._front + i)])
+        return res
+```
+</details>
+
+双向队列兼具栈与队列的逻辑，因此它可以实现这两者的所有应用场景，同时提供更高的自由度。其典型应用有：软件的撤销功能，由于历史记录有限，一段时间后需要抹去起初的记录。栈无法实现，就用双向队列了。

@@ -30,7 +30,12 @@
     .page__meta,
     .page__share {
       @include full();
+    };
+
+    details {
+      margin-bottom: 1em;
     }
+
   }
 }
 

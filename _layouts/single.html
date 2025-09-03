@@ -108,3 +108,18 @@ layout: default
     </div>
   {% endif %}
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('details[data-auto-footer]').forEach(d => {
+    const footer = document.createElement('div');
+    footer.className = 'collapse-footer';
+    footer.innerHTML = '<button type="button" class="collapse-btn">▲ 收起</button>';
+    footer.querySelector('button').addEventListener('click', () => {
+      d.open = false;
+      d.querySelector('summary')?.focus();
+    });
+    d.appendChild(footer);
+  });
+});
+</script>

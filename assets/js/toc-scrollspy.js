@@ -61,14 +61,14 @@
             e.stopImmediatePropagation(); // Prevent any other click handlers from running.
 
             // Pause the scrollspy to avoid conflicts.
-            pauseSpy(200);
+            pauseSpy(100);
 
             // Calculate the scroll position, accounting for the masthead and an extra offset.
             const masthead = document.querySelector('.masthead');
             const mastheadHeight = masthead ? masthead.offsetHeight : 0;
             const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
             const extraOffset = 0.5 * fontSize; // 0.5em in pixels
-            const endY = target.getBoundingClientRect().top + window.scrollY - mastheadHeight + extraOffset;
+            const endY = target.getBoundingClientRect().top + window.scrollY - mastheadHeight - extraOffset;
 
             // Scroll to the target instantly.
             window.scrollTo(0, endY);
