@@ -555,7 +555,7 @@ graph LR
 - 整数类型 `byte`、`short`、`int`、`long`
 - 浮点数类型 `float`、`double` ，用于表示小数
 - 字符类型 `char` ，用于表示各种语言的字母、标点符号甚至表情符号等
-- 布尔类型 `bool` ，用于表示“是”与“否”判断
+- 布尔类型 `bool` ，用于表示"是"与"否"判断
 
 存储方式为二进制，一个二进制位占1比特。大多情况，1字节由8比特组成。在Java中
 
@@ -914,7 +914,7 @@ class ListNode2:
 | 操作/模式 (Operation/Pattern) | 碎片类型 (Fragment Type) | 机理摘要 (Mechanism) | 场景/示例 (Typical Scenario) |
 |-----------------|------------------|----------------------|--------------------|
 | 不同大小的分配与释放交错 (Interleaved alloc/free of different sizes) | 外部碎片 External | 空闲块大小不匹配，无法合并成大块 | 长期运行的服务，malloc/free 大小混杂 |
-| 长短寿命对象交错 (Mixed long-/short-lived objects) | 外部碎片 External | 长寿命对象像“钉子”阻止周围空闲合并 | 缓存对象夹在临时对象之间 |
+| 长短寿命对象交错 (Mixed long-/short-lived objects) | 外部碎片 External | 长寿命对象像"钉子"阻止周围空闲合并 | 缓存对象夹在临时对象之间 |
 | 动态数组频繁扩容 (Frequent dynamic array reallocation) | 外部碎片 External | 旧块释放留下洞，新块需大连续空间 | `std::vector`/`ArrayList` 没有 reserve 的情况 |
 | 节点式容器频繁插入/删除 (Frequent insert/delete in node-based containers) | 外部+内部 External+Internal | 每节点独立分配，地址分散+指针开销 | `std::list`, `std::map`, 树/图结构 |
 | 高对齐分配 (High-alignment allocation, e.g. aligned_alloc) | 外部+内部 External+Internal | 对齐造成两侧留空隙 | SIMD/NUMA/DMA 缓冲 |
@@ -959,10 +959,11 @@ class ListNode2:
 
 #### 栈的实现
 
-|数据结构|图示|`push()`|`pop()`|
-|:-:|:-:|:-:|:-:|
-|链表|![linkedlist stack step1]({{ site.baseurl }}/images/notes/linkedlist_stack_step1_edit.png)|![linkedlist stack step2 push]({{ site.baseurl }}/images/notes/linkedlist_stack_step2_push_edit.png)|![linkedlist stack step3 pop]({{ site.baseurl }}/images/notes/linkedlist_stack_step3_pop_edit.png)|
-|数组|![array stack step1]({{ site.baseurl }}/images/notes/array_stack_step1_edit.png)|![array stack step2 push]({{ site.baseurl }}/images/notes/array_stack_step2_push_edit.png)|![array stack step3 pop]({{ site.baseurl }}/images/notes/array_stack_step3_pop_edit.png)|
+|操作|链表|数组|
+|:-:|:-:|:-:|
+|初始|![linkedlist stack step1]({{ site.baseurl }}/images/notes/linkedlist_stack_step1_edit.png)|![array stack step1]({{ site.baseurl }}/images/notes/array_stack_step1_edit.png)|
+|`push()`|![linkedlist stack step2 push]({{ site.baseurl }}/images/notes/linkedlist_stack_step2_push_edit.png)|![array stack step2 push]({{ site.baseurl }}/images/notes/array_stack_step2_push_edit.png)|
+|`pop()`|![linkedlist stack step3 pop]({{ site.baseurl }}/images/notes/linkedlist_stack_step3_pop_edit.png)|![array stack step3 pop]({{ site.baseurl }}/images/notes/array_stack_step3_pop_edit.png)|
 
 |对比|时间效率|空间效率|
 |:-:|:-:|:-:|
@@ -1071,10 +1072,11 @@ class ArrayStack:
 
 #### 队列的实现
 
-|数据结构|图示|`push()`|`pop()`|
-|:-:|:-:|:-:|:-:|
-|链表|![linkedlist queue step1]({{ site.baseurl }}/images/notes/linkedlist_queue_step1_edit.png)|![linkedlist queue step2 push]({{ site.baseurl }}/images/notes/linkedlist_queue_step2_push_edit.png)|![linkedlist queue step3 pop]({{ site.baseurl }}/images/notes/linkedlist_queue_step3_pop_edit.png)|
-|数组|![array queue step1]({{ site.baseurl }}/images/notes/array_queue_step1_edit.png)|![array queue step2 push]({{ site.baseurl }}/images/notes/array_queue_step2_push_edit.png)|![array queue step3 pop]({{ site.baseurl }}/images/notes/array_queue_step3_pop_edit.png)|
+|操作|链表|数组|
+|:-:|:-:|:-:|
+|初始|![linkedlist queue step1]({{ site.baseurl }}/images/notes/linkedlist_queue_step1_edit.png)|![array queue step1]({{ site.baseurl }}/images/notes/array_queue_step1_edit.png)|
+|`push()`|![linkedlist queue step2 push]({{ site.baseurl }}/images/notes/linkedlist_queue_step2_push_edit.png)|![array queue step2 push]({{ site.baseurl }}/images/notes/array_queue_step2_push_edit.png)|
+|`pop()`|![linkedlist queue step3 pop]({{ site.baseurl }}/images/notes/linkedlist_queue_step3_pop_edit.png)|![array queue step3 pop]({{ site.baseurl }}/images/notes/array_queue_step3_pop_edit.png)|
 
 数组由于删除首元素的时间复杂度为\\(O(n)\\)，需要一些巧妙的方法。如何避免？一个简单的例子如下：
 
@@ -1468,3 +1470,432 @@ class ArrayDeque:
 </details>
 
 双向队列兼具栈与队列的逻辑，因此它可以实现这两者的所有应用场景，同时提供更高的自由度。其典型应用有：软件的撤销功能，由于历史记录有限，一段时间后需要抹去起初的记录。栈无法实现，就用双向队列了。
+
+## 哈希表 Hash Table
+
+### 哈希表 Hash Table
+
+又称散列表，它通过建立键 `key` 与值 `value` 之间的映射，实现\\(O(1)\\)复杂度的元素查询。
+
+|行动|数组|链表|哈希表|
+|查找|\\(O(n)\\)|\\(O(n)\\)|\\(O(1)\\)|
+|添加|\\(O(1)\\)|\\(O(1)\\)|\\(O(1)\\)|
+|删除|\\(O(n)\\)|\\(O(n)\\)|\\(O(1)\\)|
+
+#### 常用操作
+
+- 初始化
+- 查询操作
+- 添加键值对
+- 删除键值对
+- 遍历
+  - 遍历键值对
+  - 遍历键
+  - 遍历值
+
+#### 简单实现
+
+Python可以使用`dict`，最简单情况也可用一个数组实现哈希表。数组的空位称为桶 bucket。每个桶可以存一个键值对，查询时，用`key`，通过哈希函数 hash function找到对应的桶的索引，并获取其中的`value`。哈希函数的作用是将一个较大的输入空间映射到一个较小的输出空间。具体计算过程是：`index = hash(key) % capacity` 这儿`capacity`是数组长度。下图为一个简易示例
+
+![Hash Function]({{ site.baseurl }}/images/notes/hash_function.png)
+
+
+<details markdown="1" data-auto-footer>
+<summary>数组实现的哈希表</summary>
+
+```python
+class Pair:
+    """键值对"""
+
+    def __init__(self, key: int, val: str):
+        self.key = key
+        self.val = val
+
+class ArrayHashMap:
+    """基于数组实现的哈希表"""
+
+    def __init__(self):
+        """构造方法"""
+        # 初始化数组，包含 100 个桶
+        self.buckets: list[Pair | None] = [None] * 100
+
+    def hash_func(self, key: int) -> int:
+        """哈希函数"""
+        index = key % 100
+        return index
+
+    def get(self, key: int) -> str:
+        """查询操作"""
+        index: int = self.hash_func(key)
+        pair: Pair = self.buckets[index]
+        if pair is None:
+            return None
+        return pair.val
+
+    def put(self, key: int, val: str):
+        """添加操作"""
+        pair = Pair(key, val)
+        index: int = self.hash_func(key)
+        self.buckets[index] = pair
+
+    def remove(self, key: int):
+        """删除操作"""
+        index: int = self.hash_func(key)
+        # 置为 None ，代表删除
+        self.buckets[index] = None
+
+    def entry_set(self) -> list[Pair]:
+        """获取所有键值对"""
+        result: list[Pair] = []
+        for pair in self.buckets:
+            if pair is not None:
+                result.append(pair)
+        return result
+
+    def key_set(self) -> list[int]:
+        """获取所有键"""
+        result = []
+        for pair in self.buckets:
+            if pair is not None:
+                result.append(pair.key)
+        return result
+
+    def value_set(self) -> list[str]:
+        """获取所有值"""
+        result = []
+        for pair in self.buckets:
+            if pair is not None:
+                result.append(pair.val)
+        return result
+
+    def print(self):
+        """打印哈希表"""
+        for pair in self.buckets:
+            if pair is not None:
+                print(pair.key, "->", pair.val)
+```
+</details>
+
+#### 哈希冲突与扩容
+
+哈希函数的输入空间往往远大于输出空间，理论上一定存在"多个输入对应相同输出"的情况，为此定义**哈希冲突 (hash collision)**：多个输入对应同一输出的情况称为哈希冲突。为此**定义哈希表容量**：哈希表输出空间的集合。其越大，多个 `key` 被分配到同一个桶中的概率就越低，冲突就越少。因此，我们可以通过扩容哈希表来减少哈希冲突。
+
+类似数组扩容，也有迁移过程，所以编程语言通常会预留足够大的哈希表容量，防止频繁扩容。需要测量哈希冲突的严重程度，为此定义**负载因子(load factor)**：哈希表的元素数量除以桶数量。超过一定阈值，就会扩容。
+
+### 哈希冲突
+
+为了提升哈希表效率，除了通过负载决定是否扩容，还可以：改良哈希表数据结构，使得哈希表可以在出现哈希冲突时正常工作。
+
+- 链式地址
+- 开放寻址
+
+#### 链式地址 separate chaining
+
+在原始哈希表中，每个桶仅能存储一个键值对。链式地址将单个元素转换为链表，将键值对作为链表节点，将所有发生冲突的键值对都存储在同一链表中。
+
+![Hash table chaining]({{ site.baseurl }}/images/notes/hash_table_chaining.png)
+
+操作方式则变化如下
+
+- 查询元素：输入 `key` ，经过哈希函数得到桶索引，即可访问链表头节点，然后遍历链表并对比 `key` 以查找目标键值对。
+- 添加元素：首先通过哈希函数访问链表头节点，然后将节点（键值对）添加到链表中。
+- 删除元素：根据哈希函数的结果访问链表头部，接着遍历链表以查找目标节点并将其删除。
+
+缺点：
+
+- 占用空间增大：链表包含节点指针，它相比数组更加耗费内存空间。
+- 查询效率降低：因为需要线性遍历链表来查找对应元素。
+
+
+<details markdown="1" data-auto-footer>
+<summary>动态数组实现的链式哈希表</summary>
+
+```python
+class HashMapChaining:
+    """链式地址哈希表"""
+
+    def __init__(self):
+        """构造方法"""
+        self.size = 0  # 键值对数量
+        self.capacity = 4  # 哈希表容量
+        self.load_thres = 2.0 / 3.0  # 触发扩容的负载因子阈值
+        self.extend_ratio = 2  # 扩容倍数
+        self.buckets = [[] for _ in range(self.capacity)]  # 桶数组
+
+    def hash_func(self, key: int) -> int:
+        """哈希函数"""
+        return key % self.capacity
+
+    def load_factor(self) -> float:
+        """负载因子"""
+        return self.size / self.capacity
+
+    def get(self, key: int) -> str | None:
+        """查询操作"""
+        index = self.hash_func(key)
+        bucket = self.buckets[index]
+        # 遍历桶，若找到 key ，则返回对应 val
+        for pair in bucket:
+            if pair.key == key:
+                return pair.val
+        # 若未找到 key ，则返回 None
+        return None
+
+    def put(self, key: int, val: str):
+        """添加操作"""
+        # 当负载因子超过阈值时，执行扩容
+        if self.load_factor() > self.load_thres:
+            self.extend()
+        index = self.hash_func(key)
+        bucket = self.buckets[index]
+        # 遍历桶，若遇到指定 key ，则更新对应 val 并返回
+        for pair in bucket:
+            if pair.key == key:
+                pair.val = val
+                return
+        # 若无该 key ，则将键值对添加至尾部
+        pair = Pair(key, val)
+        bucket.append(pair)
+        self.size += 1
+
+    def remove(self, key: int):
+        """删除操作"""
+        index = self.hash_func(key)
+        bucket = self.buckets[index]
+        # 遍历桶，从中删除键值对
+        for pair in bucket:
+            if pair.key == key:
+                bucket.remove(pair)
+                self.size -= 1
+                break
+
+    def extend(self):
+        """扩容哈希表"""
+        # 暂存原哈希表
+        buckets = self.buckets
+        # 初始化扩容后的新哈希表
+        self.capacity *= self.extend_ratio
+        self.buckets = [[] for _ in range(self.capacity)]
+        self.size = 0
+        # 将键值对从原哈希表搬运至新哈希表
+        for bucket in buckets:
+            for pair in bucket:
+                self.put(pair.key, pair.val)
+
+    def print(self):
+        """打印哈希表"""
+        for bucket in self.buckets:
+            res = []
+            for pair in bucket:
+                res.append(str(pair.key) + " -> " + pair.val)
+            print(res)
+```
+</details>
+
+注意：当链表很长时，查询效率是\\(O(n)\\)，此时可以将链表转换为"AVL 树"或"红黑树"，见后文，此法可以将查询操作的时间复杂度优化至\\(O(\log n)\\)。
+
+#### 开放寻址 open addressing
+
+此法不引入额外的数据结构，而是通过“多次探测”来处理哈希冲突，探测方式主要包括线性探测、平方探测和多次哈希等。基础是线性探测
+
+- **插入元素**：通过哈希函数计算桶索引，若发现桶内已有元素，则从冲突位置向后线性遍历（步长通常为 1），直至找到空桶，将元素插入其中。
+- **查找元素**：若发现哈希冲突，则使用相同步长向后进行线性遍历，直到找到对应元素，返回 `value` 即可；如果遇到空桶，说明目标元素不在哈希表中，返回 `None` 。
+
+![Hash table linear probing]({{ site.baseurl }}/images/notes/hash_table_linear_probing.png)
+
+随之而来，
+
+- **聚集现象**：数组中连续被占用的位置越长，这些连续位置发生哈希冲突的可能性越大，从而进一步促使该位置的聚堆生长，形成恶性循环，最终导致增删查改操作效率劣化。
+- **不能直接删除元素**：产生一个空桶 `None` ，而当查询元素时，线性探测到该空桶就会返回，因此在该空桶之下的元素都无法再被访问到，程序可能误判这些元素不存在，
+
+![Hash table open addressing deletion]({{ site.baseurl }}/images/notes/hash_table_open_addressing_deletion.png)
+
+两个对应的解决办法，
+
+- **平方探测**：发生冲突时，与线性探测类似，平方探测不过是跳过“探测次数的平方”的步数。可以缓解聚集效应，有助于数据分布得更加均匀。但是由于步长增大，平方探测可能不会探测整个哈希表。
+- **懒删除 (lazy deletion)**：不直接从哈希表中移除元素，而是利用一个常量 `TOMBSTONE` 来标记这个桶。在该机制下，`None` 和 `TOMBSTONE` 都代表空桶，都可以放置键值对。但不同的是，线性探测到 `TOMBSTONE` 时继续遍历。只不过`TOMBSTONE`多了，搜索时间也会增加。所以优化如下：在线性探测中记录遇到的首个 `TOMBSTONE` 的索引，并将搜索到的目标元素与该 `TOMBSTONE` 交换位置，如此，元素会被移动至距离探测起始点更近的桶，从而优化查询效率。
+
+<details markdown="1" data-auto-footer>
+<summary>哈希表实现懒删除，线性探测</summary>
+
+```python
+class HashMapOpenAddressing:
+    """开放寻址哈希表"""
+
+    def __init__(self):
+        """构造方法"""
+        self.size = 0  # 键值对数量
+        self.capacity = 4  # 哈希表容量
+        self.load_thres = 2.0 / 3.0  # 触发扩容的负载因子阈值
+        self.extend_ratio = 2  # 扩容倍数
+        self.buckets: list[Pair | None] = [None] * self.capacity  # 桶数组
+        self.TOMBSTONE = Pair(-1, "-1")  # 删除标记
+
+    def hash_func(self, key: int) -> int:
+        """哈希函数"""
+        return key % self.capacity
+
+    def load_factor(self) -> float:
+        """负载因子"""
+        return self.size / self.capacity
+
+    def find_bucket(self, key: int) -> int:
+        """搜索 key 对应的桶索引"""
+        index = self.hash_func(key)
+        first_tombstone = -1
+        # 线性探测，当遇到空桶时跳出
+        while self.buckets[index] is not None:
+            # 若遇到 key ，返回对应的桶索引
+            if self.buckets[index].key == key:
+                # 若之前遇到了删除标记，则将键值对移动至该索引处
+                if first_tombstone != -1:
+                    self.buckets[first_tombstone] = self.buckets[index]
+                    self.buckets[index] = self.TOMBSTONE
+                    return first_tombstone  # 返回移动后的桶索引
+                return index  # 返回桶索引
+            # 记录遇到的首个删除标记
+            if first_tombstone == -1 and self.buckets[index] is self.TOMBSTONE:
+                first_tombstone = index
+            # 计算桶索引，越过尾部则返回头部
+            index = (index + 1) % self.capacity
+        # 若 key 不存在，则返回添加点的索引
+        return index if first_tombstone == -1 else first_tombstone
+
+    def get(self, key: int) -> str:
+        """查询操作"""
+        # 搜索 key 对应的桶索引
+        index = self.find_bucket(key)
+        # 若找到键值对，则返回对应 val
+        if self.buckets[index] not in [None, self.TOMBSTONE]:
+            return self.buckets[index].val
+        # 若键值对不存在，则返回 None
+        return None
+
+    def put(self, key: int, val: str):
+        """添加操作"""
+        # 当负载因子超过阈值时，执行扩容
+        if self.load_factor() > self.load_thres:
+            self.extend()
+        # 搜索 key 对应的桶索引
+        index = self.find_bucket(key)
+        # 若找到键值对，则覆盖 val 并返回
+        if self.buckets[index] not in [None, self.TOMBSTONE]:
+            self.buckets[index].val = val
+            return
+        # 若键值对不存在，则添加该键值对
+        self.buckets[index] = Pair(key, val)
+        self.size += 1
+
+    def remove(self, key: int):
+        """删除操作"""
+        # 搜索 key 对应的桶索引
+        index = self.find_bucket(key)
+        # 若找到键值对，则用删除标记覆盖它
+        if self.buckets[index] not in [None, self.TOMBSTONE]:
+            self.buckets[index] = self.TOMBSTONE
+            self.size -= 1
+
+    def extend(self):
+        """扩容哈希表"""
+        # 暂存原哈希表
+        buckets_tmp = self.buckets
+        # 初始化扩容后的新哈希表
+        self.capacity *= self.extend_ratio
+        self.buckets = [None] * self.capacity
+        self.size = 0
+        # 将键值对从原哈希表搬运至新哈希表
+        for pair in buckets_tmp:
+            if pair not in [None, self.TOMBSTONE]:
+                self.put(pair.key, pair.val)
+
+    def print(self):
+        """打印哈希表"""
+        for pair in self.buckets:
+            if pair is None:
+                print("None")
+            elif pair is self.TOMBSTONE:
+                print("TOMBSTONE")
+            else:
+                print(pair.key, "->", pair.val)
+```
+</details>
+
+另一个解决方案是多次哈希，即使用多个哈希函数\\(f_1(x),f_2(x),f_3(x),\dots\\)
+
+- **插入元素**：从\\(f_1(x)\\)开始，有冲突则使用\\(f_2(x)\\)，直到找到空位后插入元素
+- **查找元素**：在相同的哈希函数顺序下进行查找，直到找到目标元素时返回；若遇到空位或已尝试所有哈希函数，说明哈希表中不存在该元素，则返回 `None` 。
+
+#### 编程语言的选择
+
+- Python 采用开放寻址。字典 `dict` 使用伪随机数进行探测。
+- Java 采用链式地址。自 JDK 1.8 以来，当 `HashMap` 内数组长度达到 64 且链表长度达到 8 时，链表会转换为红黑树以提升查找性能。
+- Go 采用链式地址。Go 规定每个桶最多存储 8 个键值对，超出容量则连接一个溢出桶；当溢出桶过多时，会执行一次特殊的等量扩容操作，以确保性能。
+
+### 哈希算法
+
+前所述，可以保证哈希表在发生冲突时正常工作，而无法减少哈希冲突的发生。如果哈希冲突过于频繁，哈希表的性能则会急剧劣化。最差的时候所有键值对都存储到同一个桶中，时间复杂度从\\(O(1)\\)退化至\\(O(n)\\)。
+
+![Hash collision best worst condition]({{ site.baseurl }}/images/notes/hash_collision_best_worst_condition.png)
+
+为了降低哈希冲突的发生概率，下面研究`hash()`。
+
+#### 哈希算法的目标
+
+基本特性
+
+- 确定性：对于相同的输入，哈希算法应始终产生相同的输出
+- 效率高：计算哈希值的过程应该足够快
+- 均匀分布：哈希算法应使得键值对均匀分布在哈希表中。分布越均匀，哈希冲突的概率就越低
+
+应用
+
+- 密码存储：为了密码安全，系统通常不直接存储明文，而是其哈希值。系统会比较`hash(输入的密码)`和存储的哈希值。若匹配，则视为正确。
+- 数据完整性检查：数据发送方可以计算数据的哈希值并将其一同发送；接收方可以重新计算接收到的数据的哈希值，并与接收到的哈希值进行比较。如果两者匹配，那么数据就被视为完整。
+
+为此，需要以下特性
+
+- 单向性：无法通过哈希值反推出关于输入数据的任何信息。
+- 抗碰撞性：应当极难找到两个不同的输入，使得它们的哈希值相同。
+- 雪崩效应：输入的微小变化应当导致输出的显著且不可预测的变化。
+
+#### 哈希算法的设计
+
+一些简易的哈希算法
+
+- 加法哈希：对输入的每个字符的 `ASCII` 码进行相加，将得到的总和作为哈希值。
+- 乘法哈希：利用乘法的不相关性，每轮乘以一个常数，将各个字符的 `ASCII` 码累积到哈希值中。
+- 异或哈希：将输入数据的每个元素通过异或操作累积到一个哈希值中。
+- 旋转哈希：将每个字符的 `ASCII` 码累积到一个哈希值中，每次累积之前都会对哈希值进行旋转操作。
+
+并在最后一步对大质数取模以确保哈希值在合适的范围内。质数可以最大化地保证哈希值的均匀分布。质数的同余类环是有限域，合数的是个环，可能卡在子集，分布不均匀。示例：
+
+$$
+\begin{aligned}
+\text{modulus} &= 9 \\
+\text{key} &= \{0,3,6,9,12,15,18,21,24,27,30,33,\dots\} \\
+\text{hash} &= \{0,3,6,0,3,6,0,3,6,\dots\} \\
+\\
+\text{modulus} &= 13 \\
+\text{key} &= \{0,3,6,9,12,15,18,21,24,27,30,33,\dots\} \\
+\text{hash} &= \{0,3,6,9,12,2,5,8,11,1,4,7,\dots\}
+\end{aligned}
+$$
+
+#### 常见哈希算法
+
+有些标准哈希算法： MD5、SHA-1、SHA-2 和 SHA-3 等。它们可以将任意长度的输入数据映射到恒定长度的哈希值。现在哈希算法仍处在升级与优化的过程中，一部分人努力提升其性能，一部分人则寻找其安全性问题。
+
+- MD5 和 SHA-1 已多次被成功攻击，因此它们被各类安全应用弃用。
+- SHA-2 系列中的 SHA-256 是最安全的哈希算法之一，仍未出现成功的攻击案例，因此常用在各类安全应用与协议中。
+- SHA-3 相较 SHA-2 的实现开销更低、计算效率更高，但目前使用覆盖度不如 SHA-2 系列。
+
+#### 数据结构的哈希值
+
+哈希表的 `key` 可以是整数、小数或字符串等数据类型，编程语言通常会用内置的哈希算法计算哈希表中的桶索引。以 Python 为例
+
+- 整数和布尔量的哈希值就是其本身。
+- 浮点数和字符串的哈希值计算较为复杂，有兴趣的读者请自行学习。
+- 元组的哈希值是对其中每一个元素进行哈希，然后将这些哈希值组合起来，得到单一的哈希值。
+- 对象的哈希值基于其内存地址生成。通过重写对象的哈希方法，可实现基于内容生成哈希值。
+
+大多时候，只有不可变对象才可作为哈希表的 `key` ，大多数时候，数组，动态数组，链表都不可以。不可变对象的哈希值基于内容，所以内容不能改变；而自定义可变对象若未重写哈希方法，其哈希值通常基于内存地址，与内容无关，因此即使成员变量变了，哈希值也保持不变。
