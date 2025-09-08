@@ -734,7 +734,7 @@ $$
 - 长度不可变：数组在初始化后长度就固定了，扩容数组需要将所有数据复制到新数组，开销很大
 - 空间浪费：如果数组分配的大小超过实际所需，那么多余的空间就被浪费了
 
-基于此，设计如下应用（或者说，基于以下实际应用，数组这一数据结构存活）
+基于此，设计如下应用(或者说，基于以下实际应用，数组这一数据结构存活)
 
 - 随机访问：全数据存在数组中，并生成一个随机序列，根据索引实现随机抽样
 - 排序和搜索：数组是排序和搜索算法最常用的数据结构。快速排序、归并排序、二分查找等都主要在数组上进行
@@ -932,10 +932,10 @@ class ListNode2:
 
 #### 数据结构的缓存效率
 
-缓存的限制：空间更小，速度超快。有**缓存未命中(Cache miss)**现象，即*CPU尝试访问的数据不在缓存中*，不得不去内存中寻找。这个直接影响CPU效率，也就是程序性能，为此定义**缓存命中率（cache hit rate）**：*CPU从缓存中成功获取数据的比例*。通常提高命中率的策略有
+缓存的限制：空间更小，速度超快。有**缓存未命中(Cache miss)**现象，即*CPU尝试访问的数据不在缓存中*，不得不去内存中寻找。这个直接影响CPU效率，也就是程序性能，为此定义**缓存命中率(cache hit rate)**：*CPU从缓存中成功获取数据的比例*。通常提高命中率的策略有
 
 - 缓存行：缓存不是单个字节地存储与加载数据，而是以缓存行为单位。相比于单个字节的传输，缓存行的传输形式更加高效
-- 预取机制：处理器会尝试预测数据访问模式（例如顺序访问、固定步长跳跃访问等），并根据特定模式将数据加载至缓存之中
+- 预取机制：处理器会尝试预测数据访问模式(例如顺序访问、固定步长跳跃访问等)，并根据特定模式将数据加载至缓存之中
 - 空间局部性：如果一个数据被访问，那么它附近的数据可能近期也会被访问。所以缓存在加载某一数据时，也会加载其附近的数据
 - 时间局部性：如果一个数据被访问，那么它在不久的将来很可能再次被访问。所以缓存会保留最近访问过的数据
 
@@ -1207,10 +1207,10 @@ class ArrayQueue:
 ```
 </details>
 
-| 实现方式       | 入队（push/append） | 出队（pop/popleft） | 访问队首（peek/front） | 时间复杂度 | 内存开销 | 优点 | 缺点 |
+| 实现方式       | 入队(push/append) | 出队(pop/popleft) | 访问队首(peek/front) | 时间复杂度 | 内存开销 | 优点 | 缺点 |
 |----------------|--------------------|---------------------|------------------------|------------|----------|------|------|
-| **链表实现**   | 在尾部插入，\\(O(1)\\)   | 删除头节点，\\(O(1)\\)    | 返回头节点，\\(O(1)\\)       | 稳定 \\(O(1)\\)  | 较高（额外指针） | 性能稳定；不需扩容；可动态增长 | 每个节点存储指针，额外占内存；实现复杂 |
-| **数组/Deque** | 尾部追加，\\(O(1)\\)     | 头部弹出，\\(O(1)\\)      | 访问下标 0，\\(O(1)\\)       | 稳定 \\(O(1)\\)  | 较低     | 语言内置支持，写法简洁；内存连续，缓存友好 | 如果用普通数组，`pop(0)` 是 \\(O(n)\\)；需要扩容（动态数组场景） |
+| **链表实现**   | 在尾部插入，\\(O(1)\\)   | 删除头节点，\\(O(1)\\)    | 返回头节点，\\(O(1)\\)       | 稳定 \\(O(1)\\)  | 较高(额外指针) | 性能稳定；不需扩容；可动态增长 | 每个节点存储指针，额外占内存；实现复杂 |
+| **数组/Deque** | 尾部追加，\\(O(1)\\)     | 头部弹出，\\(O(1)\\)      | 访问下标 0，\\(O(1)\\)       | 稳定 \\(O(1)\\)  | 较低     | 语言内置支持，写法简洁；内存连续，缓存友好 | 如果用普通数组，`pop(0)` 是 \\(O(n)\\)；需要扩容(动态数组场景) |
 
 典型应用有
 
@@ -1589,7 +1589,7 @@ class ArrayHashMap:
 - 链式地址
 - 开放寻址
 
-#### 链式地址 separate chaining
+#### 链式地址 Separate Chaining
 
 在原始哈希表中，每个桶仅能存储一个键值对。链式地址将单个元素转换为链表，将键值对作为链表节点，将所有发生冲突的键值对都存储在同一链表中。
 
@@ -1598,7 +1598,7 @@ class ArrayHashMap:
 操作方式则变化如下
 
 - 查询元素：输入 `key` ，经过哈希函数得到桶索引，即可访问链表头节点，然后遍历链表并对比 `key` 以查找目标键值对。
-- 添加元素：首先通过哈希函数访问链表头节点，然后将节点（键值对）添加到链表中。
+- 添加元素：首先通过哈希函数访问链表头节点，然后将节点(键值对)添加到链表中。
 - 删除元素：根据哈希函数的结果访问链表头部，接着遍历链表以查找目标节点并将其删除。
 
 缺点：
@@ -1694,11 +1694,11 @@ class HashMapChaining:
 
 注意：当链表很长时，查询效率是\\(O(n)\\)，此时可以将链表转换为"AVL 树"或"红黑树"，见后文，此法可以将查询操作的时间复杂度优化至\\(O(\log n)\\)。
 
-#### 开放寻址 open addressing
+#### 开放寻址 Open Addressing
 
-此法不引入额外的数据结构，而是通过“多次探测”来处理哈希冲突，探测方式主要包括线性探测、平方探测和多次哈希等。基础是线性探测
+此法不引入额外的数据结构，而是通过"多次探测"来处理哈希冲突，探测方式主要包括线性探测、平方探测和多次哈希等。基础是线性探测
 
-- **插入元素**：通过哈希函数计算桶索引，若发现桶内已有元素，则从冲突位置向后线性遍历（步长通常为 1），直至找到空桶，将元素插入其中。
+- **插入元素**：通过哈希函数计算桶索引，若发现桶内已有元素，则从冲突位置向后线性遍历(步长通常为 1)，直至找到空桶，将元素插入其中。
 - **查找元素**：若发现哈希冲突，则使用相同步长向后进行线性遍历，直到找到对应元素，返回 `value` 即可；如果遇到空桶，说明目标元素不在哈希表中，返回 `None` 。
 
 ![Hash table linear probing]({{ site.baseurl }}/images/notes/hash_table_linear_probing.png)
@@ -1712,7 +1712,7 @@ class HashMapChaining:
 
 两个对应的解决办法，
 
-- **平方探测**：发生冲突时，与线性探测类似，平方探测不过是跳过“探测次数的平方”的步数。可以缓解聚集效应，有助于数据分布得更加均匀。但是由于步长增大，平方探测可能不会探测整个哈希表。
+- **平方探测**：发生冲突时，与线性探测类似，平方探测不过是跳过"探测次数的平方"的步数。可以缓解聚集效应，有助于数据分布得更加均匀。但是由于步长增大，平方探测可能不会探测整个哈希表。
 - **懒删除 (lazy deletion)**：不直接从哈希表中移除元素，而是利用一个常量 `TOMBSTONE` 来标记这个桶。在该机制下，`None` 和 `TOMBSTONE` 都代表空桶，都可以放置键值对。但不同的是，线性探测到 `TOMBSTONE` 时继续遍历。只不过`TOMBSTONE`多了，搜索时间也会增加。所以优化如下：在线性探测中记录遇到的首个 `TOMBSTONE` 的索引，并将搜索到的目标元素与该 `TOMBSTONE` 交换位置，如此，元素会被移动至距离探测起始点更近的桶，从而优化查询效率。
 
 <details markdown="1" data-auto-footer>
@@ -1899,3 +1899,486 @@ $$
 - 对象的哈希值基于其内存地址生成。通过重写对象的哈希方法，可实现基于内容生成哈希值。
 
 大多时候，只有不可变对象才可作为哈希表的 `key` ，大多数时候，数组，动态数组，链表都不可以。不可变对象的哈希值基于内容，所以内容不能改变；而自定义可变对象若未重写哈希方法，其哈希值通常基于内存地址，与内容无关，因此即使成员变量变了，哈希值也保持不变。
+
+## 树 Tree
+
+### 二叉树 Binary Tree
+
+一种非线性数据结构，基本单元是节点，每个节点包含值、左子节点 left-child node 引用和右子节点引用 right-child node，该节点被称为这两个子节点的父节点 parent node。左子节点及其以下节点形成的树称为该节点的左子树 left subtree。
+
+![Binary Tree Definition]({{ site.baseurl }}/images/notes/binary_tree_definition.png)
+
+<details markdown="1" data-auto-footer>
+<summary>二叉树实现</summary>
+
+```python
+class TreeNode:
+    """二叉树节点类"""
+    def __init__(self, val: int):
+        self.val: int = val                # 节点值
+        self.left: TreeNode | None = None  # 左子节点引用
+        self.right: TreeNode | None = None # 右子节点引用
+```
+</details>
+
+#### 常见术语
+
+- **根节点(root node)**：位于二叉树顶层的节点，没有父节点。
+- **叶节点(leaf node)**：没有子节点的节点，其两个指针均指向 None 。
+- **边(edge)**：连接两个节点的线段，即节点引用(指针)。
+- **节点所在的层(level)**：从顶至底递增，根节点所在层为 1 。
+- **节点的度(degree)**：节点的子节点的数量。在二叉树中，度的取值范围是 0、1、2 。
+- **二叉树的高度(height)**：从根节点到最远叶节点所经过的边的数量。
+- **节点的深度(depth)**：从根节点到该节点所经过的边的数量。
+- **节点的高度(height)**：从距离该节点最远的叶节点到该节点所经过的边的数量。
+
+![Binary Tree Terminology]({{ site.baseurl }}/images/notes/binary_tree_terminology.png)
+
+#### 基本操作
+
+- 初始化：首先初始化节点，然后构建引用（指针）
+- 插入与删除节点：与链表类似，在二叉树中插入与删除节点可以通过修改指针来实现。
+
+<details markdown="1" data-auto-footer>
+<summary>二叉树的初始化，插入与删除节点</summary>
+
+```python
+# 初始化二叉树
+# 初始化节点
+n1 = TreeNode(val=1)
+n2 = TreeNode(val=2)
+n3 = TreeNode(val=3)
+n4 = TreeNode(val=4)
+n5 = TreeNode(val=5)
+# 构建节点之间的引用（指针）
+n1.left = n2
+n1.right = n3
+n2.left = n4
+n2.right = n5
+# 插入与删除节点
+p = TreeNode(0)
+# 在 n1 -> n2 中间插入节点 P
+n1.left = p
+p.left = n2
+# 删除节点 P
+n1.left = n2
+```
+</details>
+
+![Binary Tree Add Remove]({{ site.baseurl }}/images/notes/binary_tree_add_remove.png)
+
+#### 常见类型
+
+- 完美二叉树(满二叉树) perfect binary tree：所有层的节点都被完全填满。叶节点的度为\\(0\\)，其余所有节点的度都为\\(2\\)；若树的高度为\\(h\\)，则节点总数为\\(2^{h+1}-1\\) ，呈现标准的指数级关系，类似自然界中常见的细胞分裂现象。
+- 完全二叉树 complete binary tree：仅允许最底层的节点不完全填满，且最底层的节点必须从左至右依次连续填充。
+- 完满二叉树 full binary tree：除了叶节点之外，其余所有节点都有两个子节点。凡有子节点的，必有两个。
+- 平衡二叉树 balanced binary tree：任意节点的左子树和右子树的高度之差的绝对值不超过\\(1\\)。
+
+#### 二叉树的退化
+
+满二叉树是理想情况，可以充分发挥二叉树“分治”的优势。当所有节点都偏向一侧时，二叉树退化为"链表"。满二叉树是完全二叉，完满二叉，平衡二叉三者的交集。
+
+### 二叉树遍历
+
+树是一种基于链表的数据结构，因此其遍历方式是通过指针逐个访问节点。
+
+#### 层序遍历 Level-Order Traversal
+
+广度优先遍历（breadth-first traversal），也称广度优先搜索（breadth-first search, BFS）。广度优先遍历通常借助“队列”来实现。队列遵循“先进先出”的规则，而广度优先遍历则遵循“逐层推进”的规则，两者背后的思想是一致的。示例代码如下：
+
+<details markdown="1" data-auto-footer>
+<summary>二叉树的层序遍历</summary>
+
+```python
+def level_order(root: TreeNode | None) -> list[int]:
+    """层序遍历"""
+    # 初始化队列，加入根节点
+    queue: deque[TreeNode] = deque()
+    queue.append(root)
+    # 初始化一个列表，用于保存遍历序列
+    res = []
+    while queue:
+        node: TreeNode = queue.popleft()  # 队列出队
+        res.append(node.val)  # 保存节点值
+        if node.left is not None:
+            queue.append(node.left)  # 左子节点入队
+        if node.right is not None:
+            queue.append(node.right)  # 右子节点入队
+    return res
+```
+</details>
+
+![Binary Tree BFS]({{ site.baseurl }}/images/notes/binary_tree_bfs.png)
+
+- 时间复杂度为 \\(O(n)\\)：所有节点被访问一次，使用 \\(O(n)\\) 时间，其中 \\(n\\) 为节点数量。
+- 空间复杂度为 \\(O(n)\\)：在最差情况下，即满二叉树时，遍历到最底层之前，队列中最多同时存在 \\((n+1)/2\\) 个节点，占用 \\(O(n)\\) 空间。
+
+#### 前序、中序、后序遍历
+
+深度优先遍历 depth-first traversal，也称深度优先搜索 depth-first search, DFS，是一种“先走到尽头，再回溯继续”的遍历方式。
+
+![Binary Tree DFS]({{ site.baseurl }}/images/notes/binary_tree_dfs.png)
+
+理解上，相当于在树的最外围走一圈，按照碰到某种颜色的顺序访问。
+
+<details markdown="1" data-auto-footer>
+<summary>二叉树的深度优先搜索实现</summary>
+
+```python
+def pre_order(root: TreeNode | None):
+    """前序遍历"""
+    if root is None:
+        return
+    # 访问优先级：根节点 -> 左子树 -> 右子树
+    res.append(root.val)
+    pre_order(root=root.left)
+    pre_order(root=root.right)
+
+def in_order(root: TreeNode | None):
+    """中序遍历"""
+    if root is None:
+        return
+    # 访问优先级：左子树 -> 根节点 -> 右子树
+    in_order(root=root.left)
+    res.append(root.val)
+    in_order(root=root.right)
+
+def post_order(root: TreeNode | None):
+    """后序遍历"""
+    if root is None:
+        return
+    # 访问优先级：左子树 -> 右子树 -> 根节点
+    post_order(root=root.left)
+    post_order(root=root.right)
+    res.append(root.val)
+
+def pre_order_loop(root: TreeNode | None):
+    """前序遍历(迭代)"""
+    if root is None:
+        return
+    stack = [root]
+    while stack:
+        node = stack.pop()
+        res.append(node.val)
+        if node.right:
+            stack.append(node.right)
+        if node.left:
+            stack.append(node.left)
+
+def in_order_loop(root: TreeNode | None):
+    """中序遍历(迭代)"""
+    stack = []
+    curr = root
+    while stack or curr:
+        # 不断往左子树走，并入栈
+        while curr:
+            stack.append(curr)
+            curr = curr.left
+        # 到达最左节点，开始回退并访问
+        curr = stack.pop()
+        res.append(curr.val)  # 访问节点
+        curr = curr.right         # 转向右子树
+
+def post_order_loop(root: TreeNode | None):
+    """后序遍历(迭代)"""
+    stack = [root]
+    result = []
+    while stack:
+        node = stack.pop()
+        result.append(node.val)  # 根先入结果
+
+        if node.left:
+            stack.append(node.left)
+        if node.right:
+            stack.append(node.right)
+
+    # 最后反转得到后序遍历
+    for val in reversed(result):
+        res.append(val)
+```
+</details>
+
+- 时间复杂度为 \\(O(n)\\)：所有节点被访问一次，使用 \\(O(n)\\) 时间
+- 空间复杂度为 \\(O(n)\\)：在最差情况下，即链表时，递归深度达到\\(n\\) ，占用 \\(O(n)\\) 栈帧空间。
+
+### 二叉树数组表示
+
+链表表示下，二叉树的存储单元为节点 `TreeNode` ，节点之间通过指针相连接，数组也可以用来表示二叉树。
+
+#### 表示完美二叉树
+
+将所有节点按照层序遍历的顺序存储在一个数组中，则每个节点都对应唯一的数组索引。
+
+![Array Representation Binary Tree]({{ site.baseurl }}/images/notes/array_representation_binary_tree.png)
+
+给定数组中的任意一个节点，我们都可以通过映射公式来访问它的左（右）子节点。
+
+#### 表示任意二叉树
+
+普通二叉树的中间层通常存在许多 `None`，可以考虑在层序遍历序列中显式地写出所有 `None`。
+
+![Array Representation with Empty]({{ site.baseurl }}/images/notes/array_representation_with_empty.png)
+
+完全二叉树的 `None` 一定出现在层序遍历序列的末尾，非常适合使用数组来表示。
+
+![Array Representation Complete Binary Tree]({{ site.baseurl }}/images/notes/array_representation_complete_binary_tree.png)
+
+<details markdown="1" data-auto-footer>
+<summary>二叉树的数组表示</summary>
+
+```python
+class ArrayBinaryTree:
+    """数组表示下的二叉树类"""
+
+    def __init__(self, arr: list[int | None]):
+        """构造方法"""
+        self._tree = list(arr)
+
+    def size(self):
+        """列表容量"""
+        return len(self._tree)
+
+    def val(self, i: int) -> int | None:
+        """获取索引为 i 节点的值"""
+        # 若索引越界，则返回 None ，代表空位
+        if i < 0 or i >= self.size():
+            return None
+        return self._tree[i]
+
+    def left(self, i: int) -> int | None:
+        """获取索引为 i 节点的左子节点的索引"""
+        return 2 * i + 1
+
+    def right(self, i: int) -> int | None:
+        """获取索引为 i 节点的右子节点的索引"""
+        return 2 * i + 2
+
+    def parent(self, i: int) -> int | None:
+        """获取索引为 i 节点的父节点的索引"""
+        return (i - 1) // 2
+
+    def level_order(self) -> list[int]:
+        """层序遍历"""
+        self.res = []
+        # 直接遍历数组
+        for i in range(self.size()):
+            if self.val(i) is not None:
+                self.res.append(self.val(i))
+        return self.res
+
+    def dfs(self, i: int, order: str):
+        """深度优先遍历"""
+        if self.val(i) is None:
+            return
+        # 前序遍历
+        if order == "pre":
+            self.res.append(self.val(i))
+        self.dfs(self.left(i), order)
+        # 中序遍历
+        if order == "in":
+            self.res.append(self.val(i))
+        self.dfs(self.right(i), order)
+        # 后序遍历
+        if order == "post":
+            self.res.append(self.val(i))
+
+    def pre_order(self) -> list[int]:
+        """前序遍历"""
+        self.res = []
+        self.dfs(0, order="pre")
+        return self.res
+
+    def in_order(self) -> list[int]:
+        """中序遍历"""
+        self.res = []
+        self.dfs(0, order="in")
+        return self.res
+
+    def post_order(self) -> list[int]:
+        """后序遍历"""
+        self.res = []
+        self.dfs(0, order="post")
+        return self.res
+```
+</details>
+
+优点
+
+- 数组存储在连续的内存空间中，缓存友好，访问与遍历快。
+- 不需要存储指针，节省空间。
+- 允许随机访问节点。
+
+局限性
+
+- 数组存储需要连续内存空间，因此不适合存储数据量过大的树。
+- 增删节点需要通过数组插入与删除操作实现，效率较低。
+- 当二叉树中存在大量 `None` 时，数组中包含的节点数据比重较低，空间利用率较低。
+
+### 二叉搜索树 Binary Search Tree
+
+- 对于根节点，左子树中所有节点的值 \\(<\\) 根节点的值 \\(<\\) 右子树中所有节点的值。
+- 任意节点的左、右子树也是二叉搜索树。
+
+![Binary Search Tree]({{ site.baseurl }}/images/notes/binary_search_tree.png)
+
+#### 查找节点
+
+目标节点值 `num`，可以根据二叉搜索树的性质来查找。我们声明一个节点 `cur` ，从二叉树的根节点 `root` 出发，循环比较节点值 `cur.val` 和 `num` 之间的大小关系。与二分查找算法的工作原理一致，循环次数最多为二叉树的高度，当二叉树平衡时，使用 \\(O(\log n)\\)  时间。
+
+- 若 `cur.val` < `num` ，说明目标节点在 `cur` 的右子树中，因此执行 `cur = cur.right`。
+- 若 `cur.val` > `num` ，说明目标节点在 `cur` 的左子树中，因此执行 `cur = cur.left`。
+- 若 `cur.val` = `num` ，说明找到目标节点，跳出循环并返回该节点。
+
+<details markdown="1" data-auto-footer>
+<summary>二叉搜索树的查找操作</summary>
+
+```python
+def search(self, num: int) -> TreeNode | None:
+    """查找节点"""
+    cur = self._root
+    # 循环查找，越过叶节点后跳出
+    while cur is not None:
+        # 目标节点在 cur 的右子树中
+        if cur.val < num:
+            cur = cur.right
+        # 目标节点在 cur 的左子树中
+        elif cur.val > num:
+            cur = cur.left
+        # 找到目标节点，跳出循环
+        else:
+            break
+    return cur
+```
+</details>
+
+#### 插入节点
+
+- 和查找类似，从根节点出发，根据当前节点值和 `num` 的大小关系循环向下搜索，直到越过叶节点（遍历至 `None` ）时跳出循环。初始化节点 `num` ，将该节点置于 `None` 的位置。
+- 二叉搜索树不允许存在重复节点。因此，若待插入节点在树中已存在，则不执行插入，直接返回。
+- 为了实现插入节点，我们需要借助节点 `pre` 保存上一轮循环的节点。这样在遍历至 `None` 时，我们可以获取到其父节点，从而完成节点插入操作。
+- 当二叉树平衡时，使用 \\(O(\log n)\\)  时间。
+
+![Binary Search Tree Insert]({{ site.baseurl }}/images/notes/binary_search_bst_inserttree.png)
+
+<details markdown="1" data-auto-footer>
+<summary>二叉搜索树的插入操作</summary>
+
+```python
+def insert(self, num: int):
+    """插入节点"""
+    # 若树为空，则初始化根节点
+    if self._root is None:
+        self._root = TreeNode(num)
+        return
+    # 循环查找，越过叶节点后跳出
+    cur, pre = self._root, None
+    while cur is not None:
+        # 找到重复节点，直接返回
+        if cur.val == num:
+            return
+        pre = cur
+        # 插入位置在 cur 的右子树中
+        if cur.val < num:
+            cur = cur.right
+        # 插入位置在 cur 的左子树中
+        else:
+            cur = cur.left
+    # 插入节点
+    node = TreeNode(num)
+    if pre.val < num:
+        pre.right = node
+    else:
+        pre.left = node
+```
+</details>
+
+#### 删除节点
+
+删除后仍要是二叉搜索树。对于叶节点，度为 \\(0\\)，直接删除。若要删除节点的度为 \\(1\\) 时，将待删除节点替换为其子节点即可。若度为 \\(2\\)，
+
+![Binary Search Tree remove step 2]({{ site.baseurl }}/images/notes/bst_remove_case3_step2.png)
+![Binary Search Tree remove step 4]({{ site.baseurl }}/images/notes/bst_remove_case3_step4.png)
+
+1. 定位要删除的节点 `cur`，使用 \\(O(\log n)\\) 时间
+2. 找到待删除节点在“中序遍历序列”中的下一个节点，记为 `nex`，使用 \\(O(\log n)\\) 时间。
+3. 用 `nex` 的值覆盖待删除节点的值，并在树中递归删除节点 `nex` 。
+
+<details markdown="1" data-auto-footer>
+<summary>二叉搜索树的删除操作</summary>
+
+```python
+def remove(self, num: int):
+    """删除节点"""
+    # 若树为空，直接提前返回
+    if self._root is None:
+        return
+    # 循环查找，越过叶节点后跳出
+    cur, pre = self._root, None
+    while cur is not None:
+        # 找到待删除节点，跳出循环
+        if cur.val == num:
+            break
+        pre = cur
+        # 待删除节点在 cur 的右子树中
+        if cur.val < num:
+            cur = cur.right
+        # 待删除节点在 cur 的左子树中
+        else:
+            cur = cur.left
+    # 若无待删除节点，则直接返回
+    if cur is None:
+        return
+
+    # 子节点数量 = 0 or 1
+    if cur.left is None or cur.right is None:
+        # 当子节点数量 = 0 / 1 时， child = null / 该子节点
+        child = cur.left or cur.right
+        # 删除节点 cur
+        if cur != self._root:
+            if pre.left == cur:
+                pre.left = child
+            else:
+                pre.right = child
+        else:
+            # 若删除节点为根节点，则重新指定根节点
+            self._root = child
+    # 子节点数量 = 2
+    else:
+        # 获取中序遍历中 cur 的下一个节点
+        tmp: TreeNode = cur.right
+        while tmp.left is not None:
+            tmp = tmp.left
+        # 递归删除节点 tmp
+        self.remove(tmp.val)
+        # 用 tmp 覆盖 cur
+        cur.val = tmp.val
+```
+</details>
+
+#### 中序遍历有序
+
+二叉搜索树中进行中序遍历时，总是会优先遍历下一个最小节点，从而：二叉搜索树的中序遍历序列是升序的。如此二叉搜索树中获取有序数据仅需 \\(O(n)\\) 时间，非常高效。
+
+![Binary Search Tree inorder Traversal]({{ site.baseurl }}/images/notes/bst_inorder_traversal.png)
+
+二叉搜索树的效率大多时候稳定且高效，只有在高频添加、低频查找删除数据的场景下，数组比二叉搜索树的效率更高。
+
+| 操作       | 无序数组  | 二叉搜索树  |
+|------------|--------------------------|---------------------|
+| 查找元素   | \\( O(n) \\)             | \\( O(\log n) \\)   |
+| 插入元素   | \\( O(1) \\)             | \\( O(\log n) \\)   |
+| 删除元素   | \\( O(n) \\)             | \\( O(\log n) \\)   |
+
+在理想情况下，二叉搜索树是“平衡”的，查找任意节点时间复杂度为 \\( O(\log n) \\)，但是经过长时间插入和删除，二叉树仍旧可能退化为链表，如此查找任意节点时间复杂度为 \\( O(n) \\)
+
+二叉搜索树常见应用
+
+- 用作系统中的多级索引，实现高效的查找、插入、删除操作。
+- 作为某些搜索算法的底层数据结构。
+- 用于存储数据流，以保持其有序状态。
+
+### AVL 树
+
+AVL 树是平衡二叉搜索树 balanced binary search tree，既是二叉搜索树，也是平衡二叉树。不会退化，在需要频繁进行增删查改操作的场景中很实用。
+
+#### 特殊术语
