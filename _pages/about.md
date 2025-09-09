@@ -11,24 +11,50 @@ redirect_from:
 
 Imagine, if the kingdom of God, the Communist society, the Pure Land, the ONE PIECE, refer to the same thing, how should humankind unite and cooperate? and be free from all others.
 
-当我们称呼我们是“我们”时，便是一了。最后附上《we are the world》的个人翻译。
+当我们称呼我们是“我们”时，便是一了。最后附上《we are the world》的个人翻译《一即一切》。
 
 There comes a time when we heed a certain call
+
 时候到了，心中有一声呼唤
+
 When the world must come together as one
+
 每个人，被迫，同心来合一
+
 There are people dying
-相与还北邙
+
+天近哭声远
+
 Oh, when it's time to lend a hand
+
 哦，爱人莫等闲
+
 to life, The greatest gift of all
+
 生命就是最好礼物
 
-We are the world
-一即一切
+---
+
+We can't go on, pretending day by day
+
+梦灯长明，却照不见世上人
+
+That someone, somewhere will soon make a change
+
+算了吧，圣人自会入地狱
+
+We're all a part of God's great big family
+
+我们不都，同属上帝的身体
+
+And the truth, you know
+这真理，你我都知
+
+Love is all we need
+爱是完全的维系
 
 We are the world, we are the children
-一即一切，我们是神的儿女
+一即一切，一切即一
 
 We are the ones who make a brighter day, so let’s start giving
 我们是创造美好明天的人，所以让我们开始付出

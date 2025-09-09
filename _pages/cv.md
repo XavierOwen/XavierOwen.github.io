@@ -33,7 +33,7 @@ Work experience
 
 * Mar 2018 - May 2019: Operation and Development Intern
   * Ricequant
-  * Duties included: write Trading Strategy with Python, heavily based on machine learning and data mining; managing BBS, develop MATLAB APIProfessor Hub
+  * Duties included: write Trading Strategy with Python, heavily based on machine learning and data mining; managing BBS, develop MATLAB API
 
 * Jun 2017 - Aug 2017: Volunteering Data Analyst
   * 深圳市绿源环保志愿者协会
