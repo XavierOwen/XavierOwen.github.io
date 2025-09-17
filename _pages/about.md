@@ -11,7 +11,11 @@ redirect_from:
 
 Imagine, if the kingdom of God, the Communist society, the Pure Land, the ONE PIECE, refer to the same thing, how should humankind unite and cooperate? and be free from all others.
 
-当我们称呼我们是“我们”时，便是一了。最后附上《we are the world》的个人翻译《一即一切》。
+当我们称呼我们是“我们”时，便是一了。
+
+We are the World
+
+一即一切
 
 There comes a time when we heed a certain call
 
@@ -45,9 +49,10 @@ That someone, somewhere will soon make a change
 
 We're all a part of God's great big family
 
-我们不都，同属上帝的身体
+四海皆兄弟，举目却无亲
 
 And the truth, you know
+
 这真理，你我都知
 
 Love is all we need

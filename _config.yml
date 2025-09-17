@@ -95,6 +95,8 @@ note_category:
     title: 'Math'
   personal:
     title: 'Personal'
+  spiritual:
+    title: 'Spiritual'
 
 project_category:
   game:
