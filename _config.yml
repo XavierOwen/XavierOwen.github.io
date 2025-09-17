@@ -396,3 +396,8 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+# Collections to include in category archive
+categorized_collections:
+  - notes
+  - projects

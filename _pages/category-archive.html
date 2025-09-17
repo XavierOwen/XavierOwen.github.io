@@ -6,7 +6,12 @@ author_profile: true
 ---
 
 {% include base_path %}
-{% include group-by-array collection=site.posts field="categories" %}
+{% assign all_docs = site.posts %}
+{% for collection_name in site.categorized_collections %}
+  {% assign collection = site[collection_name] %}
+  {% assign all_docs = all_docs | concat: collection %}
+{% endfor %}
+{% include group-by-array collection=all_docs field="categories" %}
 
 {% for category in group_names %}
   {% assign posts = group_items[forloop.index0] %}

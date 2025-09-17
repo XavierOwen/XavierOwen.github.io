@@ -11,64 +11,17 @@ redirect_from:
 
 Imagine, if the kingdom of God, the Communist society, the Pure Land, the ONE PIECE, refer to the same thing, how should humankind unite and cooperate? and be free from all others.
 
-当我们称呼我们是“我们”时，便是一了。
+当我们称呼我们是“我们”时，便是一了。[We are the World]({{ site.baseurl }}/note/We-are-the-World-另译)
 
-We are the World
+![We are the World score 1]({{ site.baseurl }}/images/notes/spiritual/score_0.svg)
 
-一即一切
+![We are the World score 2]({{ site.baseurl }}/images/notes/spiritual/score_1.svg)
 
-There comes a time when we heed a certain call
+![We are the World score 3]({{ site.baseurl }}/images/notes/spiritual/score_2.svg)
 
-时候到了，心中有一声呼唤
-
-When the world must come together as one
-
-每个人，被迫，同心来合一
-
-There are people dying
-
-天近哭声远
-
-Oh, when it's time to lend a hand
-
-哦，爱人莫等闲
-
-to life, The greatest gift of all
-
-生命就是最好礼物
+![We are the World score 4]({{ site.baseurl }}/images/notes/spiritual/score_3.svg)
 
 ---
-
-We can't go on, pretending day by day
-
-梦灯长明，却照不见世上人
-
-That someone, somewhere will soon make a change
-
-算了吧，圣人自会入地狱
-
-We're all a part of God's great big family
-
-四海皆兄弟，举目却无亲
-
-And the truth, you know
-
-这真理，你我都知
-
-Love is all we need
-爱是完全的维系
-
-We are the world, we are the children
-一即一切，一切即一
-
-We are the ones who make a brighter day, so let’s start giving
-我们是创造美好明天的人，所以让我们开始付出
-
-There’s a choice we’re making, we’re saving our own lives
-舍己而施恩，灵里得苏醒
-
-It’s true, we’ll make a better day, just you and me
-信我：明天因你我而光明
 
 Below are the original about.md
 

@@ -12,7 +12,7 @@ toc: true
 
 书本链接：[下载](https://github.com/krahets/hello-algo/releases/) \| [在线阅读](https://www.hello-algo.com/chapter_hello_algo/)
 
-![Hello Algorithm Mindmap]({{ site.baseurl }}/images/notes/hello_algo_mindmap.png)
+![Hello Algorithm Mindmap]({{ site.baseurl }}/images/notes/algorithms/hello_algo_mindmap.png)
 
 全书内容
 
@@ -32,7 +32,7 @@ toc: true
   - 数据表示简洁，逻辑信息简洁，好让算法高效
 - 注意数据结构与算法高度相关，比如采取图的结构和链表的结构，都可以从输入得到所需输出，但是算法设计就不同，且在访问速度和内存占用上有别
 
-![data structure and algo relation]({{ site.baseurl }}/images/notes/relationship_between_data_structure_and_algorithm.png)
+![data structure and algo relation]({{ site.baseurl }}/images/notes/algorithms/relationship_between_data_structure_and_algorithm.png)
 
 ## 复杂度分析 Complexiy Analysis
 
@@ -123,7 +123,7 @@ def recur(n: int) -> int:
 </details>
 
 
-![sum recursion]({{ site.baseurl }}/images/notes/recursion_sum.png)
+![sum recursion]({{ site.baseurl }}/images/notes/algorithms/recursion_sum.png)
 
 递归的特点就是每次调用自身，但是会在内存中记录当前的调用，称为"栈帧空间"。比如`recur(5)`就会凭空产生`recur(5)`，`recur(4)`，`recur(3)`，`recur(2)`，`recur(1)`，所以更耗费内存。且由于涉及函数调用，所以比循环更废时间。为此定义**递归深度**：*在触发终止条件前，同时存在的未返回的递归函数个数*。过深的递归可能导致栈溢出错误。
 
@@ -193,7 +193,7 @@ def tail_recur_stack(n: int) -> int:
 </details>
 
 
-![tail sum recursion]({{ site.baseurl }}/images/notes/tail_recursion_sum.png)
+![tail sum recursion]({{ site.baseurl }}/images/notes/algorithms/tail_recursion_sum.png)
 
 尾递归中，函数返回到上一层级后，无须继续执行其他操作，因此系统无须保存上一层函数的上下文。但是Python不支持。
 
@@ -230,7 +230,7 @@ def fib_tail(n: int, a: int = 0, b: int = 1) -> int:
 
 前者产生深度为n的递归树
 
-![fib recursion tree]({{ site.baseurl }}/images/notes/recursion_tree.png)
+![fib recursion tree]({{ site.baseurl }}/images/notes/algorithms/recursion_tree.png)
 
 后者的调用过程与普通尾递归类似，是一串
 
@@ -246,7 +246,7 @@ graph LR
 
 直接运行计算时间，如[前所述](#复杂度分析-实测)不现实。**时间复杂度**分析统计的不是算法运行时间，定义为：*算法运行时间随着数据量变大时的增长趋势*。定义**函数渐近上界**：*给定一个输入大小为\\(n\\)的函数，算法的操作数量是一个关于输入数据大小\\(n\\)的函数，记为\\(T(n)\\)。若存在正实数\\(c\\)和实数\\(n_0\\)，使得对于所有的\\(n > n_0\\)，均有\\(T(n) \leq c \cdot f(n)\\)，则可认为\\(f(n)\\)给出了\\(T(n)\\)的一个渐近上界，记为\\(T(n) = O(f(n))\\)。*
 
-![asymptotic upper bound]({{ site.baseurl }}/images/notes/asymptotic_upper_bound.png)
+![asymptotic upper bound]({{ site.baseurl }}/images/notes/algorithms/asymptotic_upper_bound.png)
 
 1. 常数阶\\(O(1)\\)：\\(T(n)=1,T(n)=100000\\)，循环次数，运算次数都和输入数据大小无关
 2. 对数阶\\(O(\log(n))\\)：\\(T(n)=\log_2(n)\\)，常见于运算次数在每个循环中减半的情况，比如一些递归函数
@@ -256,7 +256,7 @@ graph LR
 6. 指数阶\\(O(2^n)\\)：\\(T(n)=1,T(n)=100000\\)，常见于运算次数在每个循环加倍的情况，比如计算递归树
 7. 阶乘阶\\(O(n!)\\)：\\(T(n)=1,T(n)=100000\\)，常见于运算次数在每个循环翻倍，倍数为上一个循环的运算次数减去一个常数
 
-![time complexity common types]({{ site.baseurl }}/images/notes/time_complexity_common_types.png)
+![time complexity common types]({{ site.baseurl }}/images/notes/algorithms/time_complexity_common_types.png)
 
 <details markdown="1" data-auto-footer>
 <summary>示例代码</summary>
@@ -534,7 +534,7 @@ graph LR
   - 树形结构：树、堆、哈希表，元素之间是一对多的关系
   - 网状结构：图，元素之间是多对多的关系
 
-![classification logic structure]({{ site.baseurl }}/images/notes/classification_logic_structure.png)
+![classification logic structure]({{ site.baseurl }}/images/notes/algorithms/classification_logic_structure.png)
 
 依据物理结构分类
 
@@ -543,7 +543,7 @@ graph LR
 
 当算法程序运行时，正在处理的数据主要存储在内存中。系统通过内存地址来访问目标位置的数据。
 
-![classification phisical structure]({{ site.baseurl }}/images/notes/classification_phisical_structure.png)
+![classification phisical structure]({{ site.baseurl }}/images/notes/algorithms/classification_phisical_structure.png)
 
 某块内存若被程序一占用，通常无法被其他程序同时使用了。因此算法在涉及时要考虑内存资源
 
@@ -581,7 +581,7 @@ graph LR
 - **反码(1's complement)**：正数的反码与其原码相同，负数的反码是对其原码除符号位外的所有位取反
 - **补码(2's complement)**：正数的补码与其原码相同，负数的补码是在其反码的基础上加\\(1\\)
 
-![1s 2s complement]({{ site.baseurl }}/images/notes/1s_2s_complement.png)
+![1s 2s complement]({{ site.baseurl }}/images/notes/algorithms/1s_2s_complement.png)
 
 为什么不用原码？负数的原码不能直接用于运算。示例：计算\\(1+(-2)\\)。其中\\(\rightarrow\\)表示进制转换
 
@@ -653,7 +653,7 @@ $$
 
 示例
 
-![ieee 754 float]({{ site.baseurl }}/images/notes/ieee_754_float.png)
+![ieee 754 float]({{ site.baseurl }}/images/notes/algorithms/ieee_754_float.png)
 
 尽管浮点数 `float` 扩展了取值范围，但其副作用是牺牲了精度。整数类型 `int` 将全部 32 比特用于表示数字，数字是均匀分布的；而由于指数位的存在，浮点数 `float` 的数值越大，相邻两个数字之间的差值就会趋向越大。
 
@@ -671,7 +671,7 @@ $$
 
 最早的字符集，American Standard Code for Information Interchange。它使用7位二进制数(一个字节的低7位)表示一个字符，最多能够表示128个不同的字符。如下图所示，ASCII码包括英文字母的大小写、数字0~9、一些标点符号，以及一些控制字符(如换行符和制表符)。
 
-![ASCII table]({{ site.baseurl }}/images/notes/ascii_table.png)
+![ASCII table]({{ site.baseurl }}/images/notes/algorithms/ascii_table.png)
 
 之后为囊括五湖四海的字符，拓展为EASCII字符集，GB2312字符集，GBK字符集，Unicode字符集。
 
@@ -679,7 +679,7 @@ $$
 
 在Unicode 字符集中，常用的字符占用2字节，有些生僻的字符占用3字节甚至4字节。其本质，是给每个字符分配一个编号。但是当多种长度的Unicode码点同时出现在一个文本中时，系统如何解析字符？一种直接的解决方案是将所有字符存储为等长的编码，高位填充0，所有字符都编码为2字节。但是编码英文只需1字节，如ASCII码，非常浪费内存空间，不够高效。
 
-![unicode hello algo]({{ site.baseurl }}/images/notes/unicode_hello_algo.png)
+![unicode hello algo]({{ site.baseurl }}/images/notes/algorithms/unicode_hello_algo.png)
 
 #### UTF-8 编码
 
@@ -688,7 +688,7 @@ $$
 - 对于长度为1字节的字符，将最高位设置为0，其余7位设置为Unicode编号。ASCII字符在Unicode字符集中占据了前128个码点。也就是说，UTF-8编码可以向下兼容ASCII码
 - 对于长度为\\(n>1\\)字节的字符，将首个字节的高\\(n\\)位都设置为\\(1\\)，第\\(n+1\\)位设置为\\(0\\)；从第二个字节开始，将每个字节的高2位都设置为\\(10\\)；其余所有位用于填充字符的 Unicode码点。
 
-![utf8 hello algo]({{ site.baseurl }}/images/notes/utf-8_hello_algo.png)
+![utf8 hello algo]({{ site.baseurl }}/images/notes/algorithms/utf-8_hello_algo.png)
 
 此处\\(10\\)作为校验，不可能有字符的最高两位是\\(10\\)，否则说明该字符的长度为\\(1\\)，对应ASCII码，但是ASCII码的最高位是\\(0\\)。
 
@@ -710,14 +710,14 @@ $$
 
 **数组**，*一种线性数据结构，其将相同类型的元素存储在连续的内存空间中*，创建时要给定长度和元素类型。定义**元素索引(index)**，*元素在数组中的相对首位的增量*。
 
-![array definition]({{ site.baseurl }}/images/notes/array_definition.png)
+![array definition]({{ site.baseurl }}/images/notes/algorithms/array_definition.png)
 
 常见操作
 
 - 初始化：大多数编程语言会将数组元素初始化为\\(0\\)
-- 访问元素：索引是内存地址的偏移量，首个元素的地址偏移量是\\(0\\)，时间复杂度是\\(O(1)\\)![array memory location calculation]({{ site.baseurl }}/images/notes/array_memory_location_calculation.png)
-- 插入元素：将该索引之后的元素向后移动一位，之后再把元素赋值给该索引，时间复杂度是\\(O(n)\\)。为了避免末尾元素丢失，可以采用[链表](#链表)![array insert element]({{ site.baseurl }}/images/notes/array_insert_element.png)
-- 删除元素：将该索引之后的元素向前移动一位，原先末尾的元素不用管，时间复杂度是\\(O(n)\\)![array remove element]({{ site.baseurl }}/images/notes/array_remove_element.png)
+- 访问元素：索引是内存地址的偏移量，首个元素的地址偏移量是\\(0\\)，时间复杂度是\\(O(1)\\)![array memory location calculation]({{ site.baseurl }}/images/notes/algorithms/array_memory_location_calculation.png)
+- 插入元素：将该索引之后的元素向后移动一位，之后再把元素赋值给该索引，时间复杂度是\\(O(n)\\)。为了避免末尾元素丢失，可以采用[链表](#链表)![array insert element]({{ site.baseurl }}/images/notes/algorithms/array_insert_element.png)
+- 删除元素：将该索引之后的元素向前移动一位，原先末尾的元素不用管，时间复杂度是\\(O(n)\\)![array remove element]({{ site.baseurl }}/images/notes/algorithms/array_remove_element.png)
 - 遍历数组：可以通过索引遍历数组，也可以直接遍历获取数组中的每个元素
 - 查找元素：因为数组是线性数据，此处也称为线性查找。遍历数组，每轮判断匹配，若成功则输出索引
 - 扩容数组：大多数编程语言中，数组长度不可变。扩容需重建一个更大的数组，然后把原数组元素依次复制到新数组，时间复杂度是\\(O(n)\\)
@@ -746,7 +746,7 @@ $$
 
 **链表**是*一种线性数据结构，其中的每个元素都是一个节点(node)对象，各个节点通过"引用"相连接。引用记录了下一个节点的内存地址，通过它可以从当前节点访问到下一个节点。每个节点都包含两项数据：节点的"值"和指向下一节点的"引用"。*头节点通常当作链表的代称。
 
-![linkedlist definition]({{ site.baseurl }}/images/notes/linkedlist_definition.png)
+![linkedlist definition]({{ site.baseurl }}/images/notes/algorithms/linkedlist_definition.png)
 
 常见操作
 
@@ -773,7 +773,7 @@ $$
 - 环形链表：再令单向链表的尾节点指向头节点。在环形链表中，任意节点都可以视作头节点
 - 双向链表：记录了两个方向的引用。更灵活，也占用更多内存
 
-![linkedlist common type]({{ site.baseurl }}/images/notes/linkedlist_common_types.png)
+![linkedlist common type]({{ site.baseurl }}/images/notes/algorithms/linkedlist_common_types.png)
 
 <details markdown="1" data-auto-footer>
 <summary>链表类构造示例</summary>
@@ -893,7 +893,7 @@ class ListNode2:
 
 计算机的存储层次结构体现了速度、容量和成本三者之间的精妙平衡。实际上，这种权衡普遍存在于所有工业领域，它要求我们在不同的优势和限制之间找到最佳平衡点。
 
-![computer storage devices]({{ site.baseurl }}/images/notes/computer_storage_devices.png)
+![computer storage devices]({{ site.baseurl }}/images/notes/algorithms/computer_storage_devices.png)
 
 #### 数据结构的内存效率
 
@@ -953,7 +953,7 @@ class ListNode2:
 
 一种遵循先入后出逻辑的线性数据结构，first in last out FILO, or LIFO，类似于在桌面上摞盘子。如果想取出底部的盘子，则需要先将上面的盘子依次移走。
 
-![stack operation]({{ site.baseurl }}/images/notes/stack_operations.png)
+![stack operation]({{ site.baseurl }}/images/notes/algorithms/stack_operations.png)
 
 入栈，出栈，访问栈顶元素的时间复杂度都是\\(O(1)\\)。
 
@@ -961,9 +961,9 @@ class ListNode2:
 
 |操作|链表|数组|
 |:-:|:-:|:-:|
-|初始|![linkedlist stack step1]({{ site.baseurl }}/images/notes/linkedlist_stack_step1_edit.png)|![array stack step1]({{ site.baseurl }}/images/notes/array_stack_step1_edit.png)|
-|`push()`|![linkedlist stack step2 push]({{ site.baseurl }}/images/notes/linkedlist_stack_step2_push_edit.png)|![array stack step2 push]({{ site.baseurl }}/images/notes/array_stack_step2_push_edit.png)|
-|`pop()`|![linkedlist stack step3 pop]({{ site.baseurl }}/images/notes/linkedlist_stack_step3_pop_edit.png)|![array stack step3 pop]({{ site.baseurl }}/images/notes/array_stack_step3_pop_edit.png)|
+|初始|![linkedlist stack step1]({{ site.baseurl }}/images/notes/algorithms/linkedlist_stack_step1_edit.png)|![array stack step1]({{ site.baseurl }}/images/notes/algorithms/array_stack_step1_edit.png)|
+|`push()`|![linkedlist stack step2 push]({{ site.baseurl }}/images/notes/algorithms/linkedlist_stack_step2_push_edit.png)|![array stack step2 push]({{ site.baseurl }}/images/notes/algorithms/array_stack_step2_push_edit.png)|
+|`pop()`|![linkedlist stack step3 pop]({{ site.baseurl }}/images/notes/algorithms/linkedlist_stack_step3_pop_edit.png)|![array stack step3 pop]({{ site.baseurl }}/images/notes/algorithms/array_stack_step3_pop_edit.png)|
 
 |对比|时间效率|空间效率|
 |:-:|:-:|:-:|
@@ -1066,7 +1066,7 @@ class ArrayStack:
 
 一种遵循先入先出逻辑的线性数据结构，first in first out FIFO, or LILO，类似于排队打饭，先到先吃。
 
-![queue operation]({{ site.baseurl }}/images/notes/queue_operations.png)
+![queue operation]({{ site.baseurl }}/images/notes/algorithms/queue_operations.png)
 
 入队，出队，访问队首元素的时间复杂度都是\\(O(1)\\)。
 
@@ -1074,9 +1074,9 @@ class ArrayStack:
 
 |操作|链表|数组|
 |:-:|:-:|:-:|
-|初始|![linkedlist queue step1]({{ site.baseurl }}/images/notes/linkedlist_queue_step1_edit.png)|![array queue step1]({{ site.baseurl }}/images/notes/array_queue_step1_edit.png)|
-|`push()`|![linkedlist queue step2 push]({{ site.baseurl }}/images/notes/linkedlist_queue_step2_push_edit.png)|![array queue step2 push]({{ site.baseurl }}/images/notes/array_queue_step2_push_edit.png)|
-|`pop()`|![linkedlist queue step3 pop]({{ site.baseurl }}/images/notes/linkedlist_queue_step3_pop_edit.png)|![array queue step3 pop]({{ site.baseurl }}/images/notes/array_queue_step3_pop_edit.png)|
+|初始|![linkedlist queue step1]({{ site.baseurl }}/images/notes/algorithms/linkedlist_queue_step1_edit.png)|![array queue step1]({{ site.baseurl }}/images/notes/algorithms/array_queue_step1_edit.png)|
+|`push()`|![linkedlist queue step2 push]({{ site.baseurl }}/images/notes/algorithms/linkedlist_queue_step2_push_edit.png)|![array queue step2 push]({{ site.baseurl }}/images/notes/algorithms/array_queue_step2_push_edit.png)|
+|`pop()`|![linkedlist queue step3 pop]({{ site.baseurl }}/images/notes/algorithms/linkedlist_queue_step3_pop_edit.png)|![array queue step3 pop]({{ site.baseurl }}/images/notes/algorithms/array_queue_step3_pop_edit.png)|
 
 数组由于删除首元素的时间复杂度为\\(O(n)\\)，需要一些巧妙的方法。如何避免？一个简单的例子如下：
 
@@ -1221,7 +1221,7 @@ class ArrayQueue:
 
 允许在头部和尾部执行元素的添加或删除操作。
 
-![deque operation]({{ site.baseurl }}/images/notes/deque_operations.png)
+![deque operation]({{ site.baseurl }}/images/notes/algorithms/deque_operations.png)
 
 双向队列常用操作包括添加元素到队首，队尾或，从队首队尾访问或删除元素，都是\\(O(1)\\)
 
@@ -1261,11 +1261,11 @@ is_empty: bool = len(deq) == 0
 
 |操作|基于双向链表的|基于(环形)数组|
 |:-:|:-:|:-:|
-|`Deque`     |![linked deque]({{ site.baseurl }}/images/notes/linkedlist_deque_step1_edit.png)|![array deque]({{ site.baseurl }}/images/notes/array_deque_step1_edit.png)|
-|`push_last` |![linked deque push last]({{ site.baseurl }}/images/notes/linkedlist_deque_step2_push_last_edit.png)|![array deque push last]({{ site.baseurl }}/images/notes/array_deque_step2_push_last_edit.png)|
-|`push_first` |![linked deque push first]({{ site.baseurl }}/images/notes/linkedlist_deque_step3_push_first_edit.png)|![array deque push first]({{ site.baseurl }}/images/notes/array_deque_step3_push_first_edit.png)|
-|`pop_last` |![linked deque pop last]({{ site.baseurl }}/images/notes/linkedlist_deque_step4_pop_last_edit.png)|![array deque pop last]({{ site.baseurl }}/images/notes/array_deque_step4_pop_last_edit.png)|
-|`pop_first` |![linked deque pop first]({{ site.baseurl }}/images/notes/linkedlist_deque_step5_pop_first_edit.png)|![array deque pop first]({{ site.baseurl }}/images/notes/array_deque_step5_pop_first_edit.png)|
+|`Deque`     |![linked deque]({{ site.baseurl }}/images/notes/algorithms/linkedlist_deque_step1_edit.png)|![array deque]({{ site.baseurl }}/images/notes/algorithms/array_deque_step1_edit.png)|
+|`push_last` |![linked deque push last]({{ site.baseurl }}/images/notes/algorithms/linkedlist_deque_step2_push_last_edit.png)|![array deque push last]({{ site.baseurl }}/images/notes/algorithms/array_deque_step2_push_last_edit.png)|
+|`push_first` |![linked deque push first]({{ site.baseurl }}/images/notes/algorithms/linkedlist_deque_step3_push_first_edit.png)|![array deque push first]({{ site.baseurl }}/images/notes/algorithms/array_deque_step3_push_first_edit.png)|
+|`pop_last` |![linked deque pop last]({{ site.baseurl }}/images/notes/algorithms/linkedlist_deque_step4_pop_last_edit.png)|![array deque pop last]({{ site.baseurl }}/images/notes/algorithms/array_deque_step4_pop_last_edit.png)|
+|`pop_first` |![linked deque pop first]({{ site.baseurl }}/images/notes/algorithms/linkedlist_deque_step5_pop_first_edit.png)|![array deque pop first]({{ site.baseurl }}/images/notes/algorithms/array_deque_step5_pop_first_edit.png)|
 
 
 <details markdown="1" data-auto-footer>
@@ -1497,7 +1497,7 @@ class ArrayDeque:
 
 Python可以使用`dict`，最简单情况也可用一个数组实现哈希表。数组的空位称为桶 bucket。每个桶可以存一个键值对，查询时，用`key`，通过哈希函数 hash function找到对应的桶的索引，并获取其中的`value`。哈希函数的作用是将一个较大的输入空间映射到一个较小的输出空间。具体计算过程是：`index = hash(key) % capacity` 这儿`capacity`是数组长度。下图为一个简易示例
 
-![Hash Function]({{ site.baseurl }}/images/notes/hash_function.png)
+![Hash Function]({{ site.baseurl }}/images/notes/algorithms/hash_function.png)
 
 
 <details markdown="1" data-auto-footer>
@@ -1593,7 +1593,7 @@ class ArrayHashMap:
 
 在原始哈希表中，每个桶仅能存储一个键值对。链式地址将单个元素转换为链表，将键值对作为链表节点，将所有发生冲突的键值对都存储在同一链表中。
 
-![Hash table chaining]({{ site.baseurl }}/images/notes/hash_table_chaining.png)
+![Hash table chaining]({{ site.baseurl }}/images/notes/algorithms/hash_table_chaining.png)
 
 操作方式则变化如下
 
@@ -1701,14 +1701,14 @@ class HashMapChaining:
 - **插入元素**：通过哈希函数计算桶索引，若发现桶内已有元素，则从冲突位置向后线性遍历(步长通常为 1)，直至找到空桶，将元素插入其中。
 - **查找元素**：若发现哈希冲突，则使用相同步长向后进行线性遍历，直到找到对应元素，返回 `value` 即可；如果遇到空桶，说明目标元素不在哈希表中，返回 `None` 。
 
-![Hash table linear probing]({{ site.baseurl }}/images/notes/hash_table_linear_probing.png)
+![Hash table linear probing]({{ site.baseurl }}/images/notes/algorithms/hash_table_linear_probing.png)
 
 随之而来，
 
 - **聚集现象**：数组中连续被占用的位置越长，这些连续位置发生哈希冲突的可能性越大，从而进一步促使该位置的聚堆生长，形成恶性循环，最终导致增删查改操作效率劣化。
 - **不能直接删除元素**：产生一个空桶 `None` ，而当查询元素时，线性探测到该空桶就会返回，因此在该空桶之下的元素都无法再被访问到，程序可能误判这些元素不存在，
 
-![Hash table open addressing deletion]({{ site.baseurl }}/images/notes/hash_table_open_addressing_deletion.png)
+![Hash table open addressing deletion]({{ site.baseurl }}/images/notes/algorithms/hash_table_open_addressing_deletion.png)
 
 两个对应的解决办法，
 
@@ -1835,7 +1835,7 @@ class HashMapOpenAddressing:
 
 前所述，可以保证哈希表在发生冲突时正常工作，而无法减少哈希冲突的发生。如果哈希冲突过于频繁，哈希表的性能则会急剧劣化。最差的时候所有键值对都存储到同一个桶中，时间复杂度从\\(O(1)\\)退化至\\(O(n)\\)。
 
-![Hash collision best worst condition]({{ site.baseurl }}/images/notes/hash_collision_best_worst_condition.png)
+![Hash collision best worst condition]({{ site.baseurl }}/images/notes/algorithms/hash_collision_best_worst_condition.png)
 
 为了降低哈希冲突的发生概率，下面研究`hash()`。
 
@@ -1906,7 +1906,7 @@ $$
 
 一种非线性数据结构，基本单元是节点，每个节点包含值、左子节点 left-child node 引用和右子节点引用 right-child node，该节点被称为这两个子节点的父节点 parent node。左子节点及其以下节点形成的树称为该节点的左子树 left subtree。
 
-![Binary Tree Definition]({{ site.baseurl }}/images/notes/binary_tree_definition.png)
+![Binary Tree Definition]({{ site.baseurl }}/images/notes/algorithms/binary_tree_definition.png)
 
 <details markdown="1" data-auto-footer>
 <summary>二叉树实现</summary>
@@ -1932,7 +1932,7 @@ class TreeNode:
 - **节点的深度(depth)**：从根节点到该节点所经过的边的数量。
 - **节点的高度(height)**：从距离该节点最远的叶节点到该节点所经过的边的数量。
 
-![Binary Tree Terminology]({{ site.baseurl }}/images/notes/binary_tree_terminology.png)
+![Binary Tree Terminology]({{ site.baseurl }}/images/notes/algorithms/binary_tree_terminology.png)
 
 #### 基本操作
 
@@ -1965,7 +1965,7 @@ n1.left = n2
 ```
 </details>
 
-![Binary Tree Add Remove]({{ site.baseurl }}/images/notes/binary_tree_add_remove.png)
+![Binary Tree Add Remove]({{ site.baseurl }}/images/notes/algorithms/binary_tree_add_remove.png)
 
 #### 常见类型
 
@@ -2008,7 +2008,7 @@ def level_order(root: TreeNode | None) -> list[int]:
 ```
 </details>
 
-![Binary Tree BFS]({{ site.baseurl }}/images/notes/binary_tree_bfs.png)
+![Binary Tree BFS]({{ site.baseurl }}/images/notes/algorithms/binary_tree_bfs.png)
 
 - 时间复杂度为 \\(O(n)\\)：所有节点被访问一次，使用 \\(O(n)\\) 时间，其中 \\(n\\) 为节点数量。
 - 空间复杂度为 \\(O(n)\\)：在最差情况下，即满二叉树时，遍历到最底层之前，队列中最多同时存在 \\((n+1)/2\\) 个节点，占用 \\(O(n)\\) 空间。
@@ -2017,7 +2017,7 @@ def level_order(root: TreeNode | None) -> list[int]:
 
 深度优先遍历 depth-first traversal，也称深度优先搜索 depth-first search, DFS，是一种“先走到尽头，再回溯继续”的遍历方式。
 
-![Binary Tree DFS]({{ site.baseurl }}/images/notes/binary_tree_dfs.png)
+![Binary Tree DFS]({{ site.baseurl }}/images/notes/algorithms/binary_tree_dfs.png)
 
 理解上，相当于在树的最外围走一圈，按照碰到某种颜色的顺序访问。
 
@@ -2109,7 +2109,7 @@ def post_order_loop(root: TreeNode | None):
 
 将所有节点按照层序遍历的顺序存储在一个数组中，则每个节点都对应唯一的数组索引。
 
-![Array Representation Binary Tree]({{ site.baseurl }}/images/notes/array_representation_binary_tree.png)
+![Array Representation Binary Tree]({{ site.baseurl }}/images/notes/algorithms/array_representation_binary_tree.png)
 
 给定数组中的任意一个节点，我们都可以通过映射公式来访问它的左（右）子节点。
 
@@ -2117,11 +2117,11 @@ def post_order_loop(root: TreeNode | None):
 
 普通二叉树的中间层通常存在许多 `None`，可以考虑在层序遍历序列中显式地写出所有 `None`。
 
-![Array Representation with Empty]({{ site.baseurl }}/images/notes/array_representation_with_empty.png)
+![Array Representation with Empty]({{ site.baseurl }}/images/notes/algorithms/array_representation_with_empty.png)
 
 完全二叉树的 `None` 一定出现在层序遍历序列的末尾，非常适合使用数组来表示。
 
-![Array Representation Complete Binary Tree]({{ site.baseurl }}/images/notes/array_representation_complete_binary_tree.png)
+![Array Representation Complete Binary Tree]({{ site.baseurl }}/images/notes/algorithms/array_representation_complete_binary_tree.png)
 
 <details markdown="1" data-auto-footer>
 <summary>二叉树的数组表示</summary>
@@ -2219,7 +2219,7 @@ class ArrayBinaryTree:
 - 对于根节点，左子树中所有节点的值 \\(<\\) 根节点的值 \\(<\\) 右子树中所有节点的值。
 - 任意节点的左、右子树也是二叉搜索树。
 
-![Binary Search Tree]({{ site.baseurl }}/images/notes/binary_search_tree.png)
+![Binary Search Tree]({{ site.baseurl }}/images/notes/algorithms/binary_search_tree.png)
 
 #### 查找节点
 
@@ -2258,7 +2258,7 @@ def search(self, num: int) -> TreeNode | None:
 - 为了实现插入节点，我们需要借助节点 `pre` 保存上一轮循环的节点。这样在遍历至 `None` 时，我们可以获取到其父节点，从而完成节点插入操作。
 - 当二叉树平衡时，使用 \\(O(\log n)\\)  时间。
 
-![Binary Search Tree Insert]({{ site.baseurl }}/images/notes/binary_search_bst_inserttree.png)
+![Binary Search Tree Insert]({{ site.baseurl }}/images/notes/algorithms/binary_search_bst_inserttree.png)
 
 <details markdown="1" data-auto-footer>
 <summary>二叉搜索树的插入操作</summary>
@@ -2296,8 +2296,8 @@ def insert(self, num: int):
 
 删除后仍要是二叉搜索树。对于叶节点，度为 \\(0\\)，直接删除。若要删除节点的度为 \\(1\\) 时，将待删除节点替换为其子节点即可。若度为 \\(2\\)，
 
-![Binary Search Tree remove step 2]({{ site.baseurl }}/images/notes/bst_remove_case3_step2.png)
-![Binary Search Tree remove step 4]({{ site.baseurl }}/images/notes/bst_remove_case3_step4.png)
+![Binary Search Tree remove step 2]({{ site.baseurl }}/images/notes/algorithms/bst_remove_case3_step2.png)
+![Binary Search Tree remove step 4]({{ site.baseurl }}/images/notes/algorithms/bst_remove_case3_step4.png)
 
 1. 定位要删除的节点 `cur`，使用 \\(O(\log n)\\) 时间
 2. 找到待删除节点在“中序遍历序列”中的下一个节点，记为 `nex`，使用 \\(O(\log n)\\) 时间。
@@ -2359,7 +2359,7 @@ def remove(self, num: int):
 
 二叉搜索树中进行中序遍历时，总是会优先遍历下一个最小节点，从而：二叉搜索树的中序遍历序列是升序的。如此二叉搜索树中获取有序数据仅需 \\(O(n)\\) 时间，非常高效。
 
-![Binary Search Tree inorder Traversal]({{ site.baseurl }}/images/notes/bst_inorder_traversal.png)
+![Binary Search Tree inorder Traversal]({{ site.baseurl }}/images/notes/algorithms/bst_inorder_traversal.png)
 
 二叉搜索树的效率大多时候稳定且高效，只有在高频添加、低频查找删除数据的场景下，数组比二叉搜索树的效率更高。
 
