@@ -11,15 +11,15 @@ redirect_from:
 
 Imagine, if the kingdom of God, the Communist society, the Pure Land, the ONE PIECE, refer to the same thing, how should humankind unite and cooperate? and be free from all others.
 
-当我们称呼我们是“我们”时，便是一了。[We are the World]({{ site.baseurl }}/note/We-are-the-World-另译), sheet modified from [olcia6.6](https://musescore.com/user/27524974/scores/13465231), with [Inkscape](https://inkscape.en.softonic.com/)
+当我们称呼我们是“我们”时，便是一了。[We are the World]({{ site.baseurl }}/note/We-are-the-World-另译), and 神爱世人，God so loved the World，sheet modified from [olcia6.6](https://musescore.com/user/27524974/scores/13465231), with [Inkscape](https://inkscape.en.softonic.com/). [pdf version](http://XavierOwen.github.io/files/Score_We are the World.pdf).
 
-![We are the World score 1]({{ site.baseurl }}/images/notes/spiritual/score_0.svg)
+![We are the World score 1]({{ site.baseurl }}/images/notes/spiritual/Score_We are the World-1.png)
 
-![We are the World score 2]({{ site.baseurl }}/images/notes/spiritual/score_1.svg)
+![We are the World score 2]({{ site.baseurl }}/images/notes/spiritual/Score_We are the World-2.png)
 
-![We are the World score 3]({{ site.baseurl }}/images/notes/spiritual/score_2.svg)
+![We are the World score 3]({{ site.baseurl }}/images/notes/spiritual/Score_We are the World-3.png)
 
-![We are the World score 4]({{ site.baseurl }}/images/notes/spiritual/score_3.svg)
+![We are the World score 4]({{ site.baseurl }}/images/notes/spiritual/Score_We are the World-4.png)
 
 ---
 

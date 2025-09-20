@@ -12,13 +12,27 @@ toc: true
 
 ## Scores
 
-![We are the World score 1]({{ site.baseurl }}/images/notes/spiritual/score_0.svg)
+[pdf version](http://XavierOwen.github.io/files/Score_We are the World.pdf)
 
-![We are the World score 2]({{ site.baseurl }}/images/notes/spiritual/score_1.svg)
+PNG version
 
-![We are the World score 3]({{ site.baseurl }}/images/notes/spiritual/score_2.svg)
+![We are the World score 1]({{ site.baseurl }}/images/notes/spiritual/Score_We are the World-1.png)
 
-![We are the World score 4]({{ site.baseurl }}/images/notes/spiritual/score_3.svg)
+![We are the World score 2]({{ site.baseurl }}/images/notes/spiritual/Score_We are the World-2.png)
+
+![We are the World score 3]({{ site.baseurl }}/images/notes/spiritual/Score_We are the World-3.png)
+
+![We are the World score 4]({{ site.baseurl }}/images/notes/spiritual/Score_We are the World-4.png)
+
+SVG version
+
+![We are the World score 1]({{ site.baseurl }}/images/notes/spiritual/Score_We are the World-1.svg)
+
+![We are the World score 2]({{ site.baseurl }}/images/notes/spiritual/Score_We are the World-2.svg)
+
+![We are the World score 3]({{ site.baseurl }}/images/notes/spiritual/Score_We are the World-3.svg)
+
+![We are the World score 4]({{ site.baseurl }}/images/notes/spiritual/Score_We are the World-4.svg)
 
 ## Lyrics with new translation
 
