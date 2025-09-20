@@ -2379,6 +2379,8 @@ def remove(self, num: int):
 
 ### AVL 树
 
-AVL 树是平衡二叉搜索树 balanced binary search tree，既是二叉搜索树，也是平衡二叉树。不会退化，在需要频繁进行增删查改操作的场景中很实用。
+AVL 树是平衡二叉搜索树 balanced binary search tree，既是二叉搜索树，也是平衡二叉树。不会退化，在需要频繁进行增删查改操作的场景中很实用。举例
+
+![avltree degradation from removing node]({{ site.baseurl }}/images/notes/algorithms/avltree_degradation_from_removing_node.png)
 
 #### 特殊术语
