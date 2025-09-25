@@ -12,7 +12,14 @@ redirect_from:
 Education
 ======
 * Ph.D in Applied Mathematics, Illinois Institute of Technology, 2025
+  * Under supervision of Dr. Lulu Kang and Dr. Chun Liu
+  * GPA 3.84/4
 * B.S. in Financial Mathematics, SouthernSouthern University of Science and Technology (SUSTech), 2019
+  * Under supervision of Dr. Xuejun Jiang
+  * GPA 3.842/4
+* Visiting in Kent State University Kent, 2017
+  * Liberal Art and Science
+  * GPA 3.94/4, Dean's List
 
 Work experience
 ======

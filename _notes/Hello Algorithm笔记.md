@@ -2385,7 +2385,7 @@ AVL 树是平衡二叉搜索树 balanced binary search tree，既是二叉搜索
 
 #### 特殊术语
 
-- **节点高度**：从该节点到它的最远叶节点的距离，并定义：叶节点的高度为\(0\)，而空节点的高度为\(-1\)。
+- **节点高度**：从该节点到它的最远叶节点的距离，规定：叶节点的高度为\\(0\\)，而空节点的高度为\\(-1\\)。
 
 <details markdown="1" data-auto-footer>
 <summary>节点高度相关</summary>
@@ -2413,4 +2413,22 @@ class TreeNode:
 ```
 </details>
 
-- **节点平衡因子**：节点左子树的高度减去右子树的高度，同时规定空节点的平衡因子为\(0\)。
+- **节点平衡因子**：节点左子树的高度减去右子树的高度，规定：空节点的平衡因子为\\(0\\)。
+
+<details markdown="1" data-auto-footer>
+<summary>获取平衡因子</summary>
+
+```python
+def balance_factor(self, node: TreeNode | None) -> int:
+    """获取平衡因子"""
+    # 空节点平衡因子为 0
+    if node is None:
+        return 0
+    # 节点平衡因子 = 左子树高度 - 右子树高度
+    return self.height(node.left) - self.height(node.right)
+```
+</details>
+
+#### AVL 树旋转
+
+在不影响二叉树的中序遍历序列的前提下，使失衡节点重新恢复平衡。旋转操作既能保持"二叉搜索树"的性质，也能使树重新变为"平衡二叉树"。根据节点失衡情况的不同，旋转操作分为四种：右旋、左旋、先右旋后左旋、先左旋后右旋。平衡因子绝对值 \\(\geq1\\)的节点称为"失衡节点"。
