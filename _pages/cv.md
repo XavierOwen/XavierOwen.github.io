@@ -29,17 +29,17 @@ Work experience
   * Collaborator: Minghui Ma
 
 * May 2025 - Aug 2025: Teaching Assisstant on Coursera
-  * Illinois Institute of Technology
+  * Illinois Institute of Technology, Chicago, US
   * Duties includes: grading, managing course system, course assistant
   * Supervisor: Yuhan Ding
 
 * Aug 2019 - May 2025: Teaching Assisstant and Research Assistant
-  * Illinois Institute of Technology
+  * Illinois Institute of Technology, Chicago, US
   * Duties includes: Researching, grading, helping students with grad level math questions, holding recitations and labs, teaching Mathematica
   * Supervisor: Igor Cialenco, Chun Liu, Lulu Kang
 
 * Mar 2018 - May 2019: Operation and Development Intern
-  * Ricequant
+  * Ricequant, Shenzhen, China
   * Duties included: write Trading Strategy with Python, heavily based on machine learning and data mining; managing BBS, develop MATLAB API
 
 * Jun 2017 - Aug 2017: Volunteering Data Analyst
@@ -48,11 +48,12 @@ Work experience
 
 Skills
 ======
-* Skill MS Office set
-* Skill Python
-  * Sub-skill write neural network with pytorch
-  * Sub-skill plot nicely with matplotlib
-* Skill Godot
+* MS Office set
+* Python
+  * write neural network with pytorch
+  * plot nicely with matplotlib
+  * cloud computing with HTCondor
+* Game Devolop with Godot
 
 Publications
 ======
