@@ -108,7 +108,7 @@ And their lives, will be stronger and free
 
 As God has shown us by turning stone to bread
 
-石头成了饼，祂也柔软我心
+石头成了饼，祂也柔软我心（神能从石头中给亚伯拉罕兴起子孙来）
 
 And so we all must lend a helping hand
 
