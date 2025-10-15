@@ -97,6 +97,8 @@ note_category:
     title: 'Personal'
   spiritual:
     title: 'Spiritual'
+  songs:
+    title: 'Songs'
 
 project_category:
   game:

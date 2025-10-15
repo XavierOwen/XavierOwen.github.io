@@ -2223,7 +2223,7 @@ class ArrayBinaryTree:
 
 #### 查找节点
 
-目标节点值 `num`，可以根据二叉搜索树的性质来查找。我们声明一个节点 `cur` ，从二叉树的根节点 `root` 出发，循环比较节点值 `cur.val` 和 `num` 之间的大小关系。与二分查找算法的工作原理一致，循环次数最多为二叉树的高度，当二叉树平衡时，使用 \\(O(\log n)\\)  时间。
+目标节点值 `num`，可以根据*二叉搜索树*的性质来查找。我们声明一个节点 `cur` ，从二叉树的根节点 `root` 出发，循环比较节点值 `cur.val` 和 `num` 之间的大小关系。与二分查找算法的工作原理一致，循环次数最多为二叉树的高度，当二叉树平衡时，使用 \\(O(\log n)\\)  时间。
 
 - 若 `cur.val` < `num` ，说明目标节点在 `cur` 的右子树中，因此执行 `cur = cur.right`。
 - 若 `cur.val` > `num` ，说明目标节点在 `cur` 的左子树中，因此执行 `cur = cur.left`。
@@ -2258,7 +2258,7 @@ def search(self, num: int) -> TreeNode | None:
 - 为了实现插入节点，我们需要借助节点 `pre` 保存上一轮循环的节点。这样在遍历至 `None` 时，我们可以获取到其父节点，从而完成节点插入操作。
 - 当二叉树平衡时，使用 \\(O(\log n)\\)  时间。
 
-![Binary Search Tree Insert]({{ site.baseurl }}/images/notes/algorithms/binary_search_bst_inserttree.png)
+![BST Insert]({{ site.baseurl }}/images/notes/algorithms/bst_insert.png)
 
 <details markdown="1" data-auto-footer>
 <summary>二叉搜索树的插入操作</summary>
@@ -2786,13 +2786,21 @@ def sift_up(self, i: int):
 ```
 </details>
 
+|1, 3, 5, 7, 9|2, 4, 6, 8|
+|:-:|:-:|:-:|
+|![heap push step 1]({{ site.baseurl }}/images/notes/algorithms/heap_push_step1.png)|![heap push step 2]({{ site.baseurl }}/images/notes/algorithms/heap_push_step2.png)|
+|![heap push step 3]({{ site.baseurl }}/images/notes/algorithms/heap_push_step3.png)|![heap push step 4]({{ site.baseurl }}/images/notes/algorithms/heap_push_step4.png)|
+|![heap push step 5]({{ site.baseurl }}/images/notes/algorithms/heap_push_step5.png)|![heap push step 6]({{ site.baseurl }}/images/notes/algorithms/heap_push_step6.png)|
+|![heap push step 7]({{ site.baseurl }}/images/notes/algorithms/heap_push_step7.png)|![heap push step 8]({{ site.baseurl }}/images/notes/algorithms/heap_push_step8.png)|
+|![heap push step 9]({{ site.baseurl }}/images/notes/algorithms/heap_push_step9.png)||
+
 ##### 堆顶元素出堆
 
 为了尽量减少元素索引的变动，采用以下堆化操作。
 
 1. 交换堆顶元素与堆底元素（交换根节点与最右叶节点）。
 2. 交换完成后，将堆底从列表中删除（注意，由于已经交换，因此实际上删除的是原来的堆顶元素）。
-3. 从根节点开始，**从顶至底执行堆化**：将根节点的值与其两个子节点的值进行比较，将最大的子节点与根节点交换。
+3. 从根节点开始，**从顶至底执行*堆化***：将根节点的值与其两个子节点的值进行比较，将最大的子节点与*根节点*交换。
 
 <details markdown="1" data-auto-footer>
 <summary>数组表示堆堆索引公式</summary>
@@ -2831,12 +2839,38 @@ def sift_down(self, i: int):
 ```
 </details>
 
+|1, 3, 5, 7, 9|2, 4, 6, 8, 10|
+|:-:|:-:|:-:|
+|![heap pop step 1]({{ site.baseurl }}/images/notes/algorithms/heap_pop_step1.png)|![heap pop step 2]({{ site.baseurl }}/images/notes/algorithms/heap_pop_step2.png)|
+|![heap pop step 3]({{ site.baseurl }}/images/notes/algorithms/heap_pop_step3.png)|![heap pop step 4]({{ site.baseurl }}/images/notes/algorithms/heap_pop_step4.png)|
+|![heap pop step 5]({{ site.baseurl }}/images/notes/algorithms/heap_pop_step5.png)|![heap pop step 6]({{ site.baseurl }}/images/notes/algorithms/heap_pop_step6.png)|
+|![heap pop step 7]({{ site.baseurl }}/images/notes/algorithms/heap_pop_step7.png)|![heap pop step 8]({{ site.baseurl }}/images/notes/algorithms/heap_pop_step8.png)|
+|![heap pop step 9]({{ site.baseurl }}/images/notes/algorithms/heap_pop_step9.png)|![heap pop step 10]({{ site.baseurl }}/images/notes/algorithms/heap_pop_step10.png)|
+
 #### 堆的常见应用
 
 - **优先队列**：堆通常作为实现优先队列的首选数据结构，其入队和出队操作的时间复杂度均为 \\(O(\log n)\\) ，而建堆操作为 \\(O( n)\\)
 - **堆排序**：给定一组数据，我们可以用它们建立一个堆，然后不断地执行元素出堆操作，从而得到有序数据。然而，我们通常会使用一种更优雅的方式实现堆排序，详见“[堆排序](#堆排序)”章节，在11章。
-- **获取最大的 $k$ 个元素**：这是一个经典的算法问题，同时也是一种典型应用，例如选择热度前 10 的新闻作为微博热搜，选取销量前 10 的商品等
+- **获取最大的 \\(k\\) 个元素**：这是一个经典的算法问题，同时也是一种典型应用，例如选择热度前 10 的新闻作为微博热搜，选取销量前 10 的商品等
 
 ### 建堆操作
 
 用一个列表的所有元素来构建一个堆
+
+#### 借助入堆操作实现
+
+1. 空堆
+2. 遍历列表，依次入堆
+   1. 先将元素添加至堆的尾部，
+   2. 再对该元素执行“从底至顶”堆化
+
+自上而下构建，若有\\(n\\)元素，每个元素的入堆操作使用\\(O(\log n)\\)，总时间复杂度是\\(O(n\log n)\\)
+
+#### 通过遍历堆化实现
+
+1. 将列表所有元素原封不动地添加到堆中
+   - 只是普通二叉树
+   - 堆的性质尚未得到满足
+2. 倒序遍历堆（层序遍历的倒序），依次对每个非叶节点执行“从顶至底堆化”（见之前的[堆化操作](#堆顶元素出堆)）
+
+每当堆化一个节点后，以该节点为根节点的子树就形成一个合法的子堆。而由于是倒序遍历，因此堆是“自下而上”构建的。

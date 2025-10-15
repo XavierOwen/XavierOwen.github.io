@@ -1,7 +1,7 @@
 ---
 title: "We are the World 另译"
 collection: notes
-category: spiritual
+category: songs
 excerpt: "We are the World 另一中译"
 permalink: "/note/We-are-the-World-另译"
 date: 2025-09-17
