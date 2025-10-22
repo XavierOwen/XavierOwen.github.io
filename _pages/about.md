@@ -7,6 +7,15 @@ redirect_from:
   - /about.html
 ---
 
+- 六亿神州尽舜尧如何实现？
+- 何时人人都是神的儿女，起来侍奉神？
+- 一切人的自由发展如何实现？
+- 实现完美并无奖赏，追求完美却有终点。我们，可以完美么？
+  - 那些指引我们通向至善的因，同时也造就了我们最大的恶
+  - that which inspires our greatest good, is also the cause of our greatest evil
+  - 那些指引我们通向至恶的因，同时也造就了我们最大的善
+  - and that which inspires our greatest evil, is also the cause of our greatest good
+
 试想，如果神国，共产主义社会，净土，大秘宝是一样，那么人类应当如何团结合作？
 
 Imagine, if the kingdom of God, the Communist society, the Pure Land, the ONE PIECE, refer to the same thing, how should humankind unite and cooperate? and be free from all others.

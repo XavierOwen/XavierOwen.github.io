@@ -58,6 +58,10 @@
   h2 {
     padding-bottom: 0.5em;
     border-bottom: 1px solid var(--global-border-color);
+
+    &:first-of-type {
+      margin-top: 0;
+    }
   }
 
   p, li, dl {
@@ -103,6 +107,12 @@
 
   .small {
     font-size: $type-size-6;
+  }
+
+  blockquote {
+    &:first-of-type {
+      margin-top: 0.5em;
+    }
   }
 
   /* blockquote citations */
@@ -250,7 +260,6 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
-
 
 /*
    Page taxonomy
