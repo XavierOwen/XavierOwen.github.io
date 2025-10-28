@@ -106,6 +106,14 @@ project_category:
   scraper:
     title: 'Scraper'
 
+spirit_category:
+  translation:
+    title: 'Translation'
+  watchman:
+    title: 'Watchman'
+  history:
+    title: 'History'
+
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -255,6 +263,9 @@ collections:
   projects:
     output: true
     permalink: /:collection/:path/
+  spirits:
+    output: true
+    permalink: /:collection/:path/
 
 
 # These settings control how pages and collections are included in the site
@@ -329,6 +340,15 @@ defaults:
       layout: single
       author_profile: true
       share: true
+  # _spirits
+  - scope:
+      path: ""
+      type: spirits
+    values:
+      layout: single
+      author_profile: false
+      share: true
+      comments: true
 
 
 # Sass/SCSS
@@ -403,3 +423,4 @@ compress_html:
 categorized_collections:
   - notes
   - projects
+  - spirits
