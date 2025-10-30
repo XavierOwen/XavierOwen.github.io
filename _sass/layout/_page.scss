@@ -110,8 +110,8 @@
   }
 
   blockquote {
-    &:first-of-type {
-      margin-top: 0.5em;
+    &:first-of-type:not(h2 ~ blockquote) {
+      margin-top: 0;
     }
   }
 
