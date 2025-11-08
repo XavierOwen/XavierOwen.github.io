@@ -1,0 +1,302 @@
+/* Wiki Links Styling */
+
+// Wiki Link Variables
+$wiki-link-color: #0366d6;
+$wiki-link-bg: rgba(3, 102, 214, 0.05);
+$wiki-link-bg-hover: rgba(3, 102, 214, 0.1);
+
+$wiki-link-external-color: #586069;
+$wiki-link-external-bg: rgba(88, 96, 105, 0.05);
+$wiki-link-external-bg-hover: rgba(88, 96, 105, 0.1);
+
+$wiki-link-stale-color: #d73a49;
+$wiki-link-stale-bg: rgba(215, 58, 73, 0.05);
+$wiki-link-stale-bg-hover: rgba(215, 58, 73, 0.1);
+
+$preview-bg: #ffffff;
+$preview-border: #e1e4e8;
+$preview-shadow: rgba(149, 157, 165, 0.2);
+$preview-text: #24292e;
+$preview-text-muted: #586069;
+$preview-collection-bg: #f6f8fa;
+
+// Dark mode colors
+$preview-bg-dark: #1c2128;
+$preview-border-dark: #30363d;
+$preview-text-dark: #f0f6fc;
+$preview-text-muted-dark: #8b949e;
+$preview-collection-bg-dark: #21262d;
+
+$backlinks-bg: #f8f9fa;
+$backlinks-bg-dark: #21262d;
+$backlinks-border-color: #0366d6;
+$backlinks-border-color-dark: #58a6ff;
+
+// Wiki Link Styles
+.wiki-link {
+  color: $wiki-link-color;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  padding: 1px 2px;
+  background-color: $wiki-link-bg;
+  border-radius: 3px;
+
+  &:hover {
+    border-bottom-color: $wiki-link-color;
+    background-color: $wiki-link-bg-hover;
+    color: $wiki-link-color;
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: darken($wiki-link-color, 10%);
+  }
+}
+
+.wiki-link-external {
+  color: $wiki-link-external-color;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  padding: 1px 2px;
+  background-color: $wiki-link-external-bg;
+  border-radius: 3px;
+
+  &:hover {
+    border-bottom-color: $wiki-link-external-color;
+    background-color: $wiki-link-external-bg-hover;
+    color: $wiki-link-external-color;
+    text-decoration: none;
+  }
+
+  &::after {
+    content: " ↗";
+    font-size: 0.8em;
+    color: inherit;
+    opacity: 0.7;
+  }
+}
+
+.wiki-link-stale {
+  color: $wiki-link-stale-color !important;
+  text-decoration: none;
+  border-bottom: 1px dashed $wiki-link-stale-color;
+  opacity: 0.7;
+  cursor: not-allowed;
+  padding: 1px 2px;
+  background-color: $wiki-link-stale-bg;
+  border-radius: 3px;
+
+  &:hover {
+    opacity: 1;
+    background-color: $wiki-link-stale-bg-hover;
+    text-decoration: none;
+  }
+}
+
+// Preview Styles
+.wiki-link-preview {
+  background: $preview-bg;
+  border: 1px solid $preview-border;
+  border-radius: 6px;
+  padding: 12px;
+  max-width: 300px;
+  box-shadow: 0 8px 24px $preview-shadow;
+  font-size: 14px;
+  line-height: 1.4;
+  z-index: 1000;
+  pointer-events: none;
+  position: fixed;
+
+  .preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+
+    strong {
+      color: $preview-text;
+      font-weight: 600;
+    }
+  }
+
+  .preview-collection {
+    font-size: 12px;
+    color: $preview-text-muted;
+    background-color: $preview-collection-bg;
+    padding: 2px 6px;
+    border-radius: 12px;
+    text-transform: capitalize;
+  }
+
+  .preview-excerpt {
+    color: $preview-text-muted;
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+// Backlinks Styles
+.backlinks-section {
+  margin-top: 1rem;
+
+  .backlinks-grid {
+    display: grid;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+
+  .backlink-item {
+    padding: 0.75rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(149, 157, 165, 0.25);
+      border-color: $backlinks-border-color;
+      background-color: #2c3e50;
+    }
+  }
+
+  .backlink {
+    color: $wiki-link-color;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.25rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $wiki-link-color;
+      text-decoration: underline;
+    }
+  }
+
+  .backlink-collection {
+    font-size: 0.75em;
+    color: #6c757d;
+    background-color: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 12px;
+    text-transform: capitalize;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .backlink-excerpt {
+    color: #6c757d;
+    font-size: 0.85em;
+    line-height: 1.4;
+    margin: 0;
+    transition: color 0.2s ease;
+  }
+
+  .backlink-item:hover {
+    .backlink {
+      color: #ecf0f1;
+    }
+
+    .backlink-collection {
+      color: #ecf0f1;
+      background-color: #34495e;
+    }
+
+    .backlink-excerpt {
+      color: #bdc3c7;
+    }
+  }
+}
+
+// Dark theme support
+html[data-theme="dark"] {
+  .wiki-link-preview {
+    background: $preview-bg-dark;
+    border-color: $preview-border-dark;
+    color: $preview-text-dark;
+
+    .preview-header strong {
+      color: $preview-text-dark;
+    }
+
+    .preview-collection {
+      background-color: $preview-collection-bg-dark;
+      color: $preview-text-muted-dark;
+    }
+
+    .preview-excerpt {
+      color: $preview-text-muted-dark;
+    }
+  }
+
+  .backlinks-section {
+
+    .backlink-item {
+      background-color: #2c3e50;
+      border-color: #34495e;
+
+      &:hover {
+        border-color: $backlinks-border-color-dark;
+        background-color: #ecf0f1;
+      }
+    }
+
+    .backlink {
+      color: $backlinks-border-color-dark;
+    }
+
+    .backlink-collection {
+      background-color: #333333;
+      color: #cccccc;
+    }
+
+    .backlink-excerpt {
+      color: #cccccc;
+    }
+
+    .backlink-item:hover {
+      .backlink {
+        color: #2c3e50;
+      }
+
+      .backlink-collection {
+        color: #2c3e50;
+        background-color: #d5dbdb;
+      }
+
+      .backlink-excerpt {
+        color: #34495e;
+      }
+    }
+  }
+}
+
+// Integration with existing theme
+.page__content {
+  .wiki-link,
+  .wiki-link-external,
+  .wiki-link-stale {
+    // Ensure wiki links work well with existing content styles
+    display: inline;
+    word-break: break-word;
+  }
+}
+
+// Handle wiki links in different contexts
+.page__title .wiki-link,
+.archive__item-title .wiki-link {
+  // Adjust wiki link styling for headings
+  background-color: transparent;
+  padding: 0;
+
+  &:hover {
+    background-color: transparent;
+  }
+}

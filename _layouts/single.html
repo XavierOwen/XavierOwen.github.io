@@ -16,7 +16,49 @@ layout: default
 
 <div id="main" role="main">
   {% include sidebar.html %}
-  {% if page.toc %}{% include toc.html html=content sanitize=true class="toc__left" h_min=2 h_max=3 %}{% endif %}
+  {% if page.toc %}
+    {% capture original_toc %}{% include toc.html html=content sanitize=true class="toc__left" h_min=2 h_max=3 %}{% endcapture %}
+    {% assign wiki_collections = site.wiki_links.collections | default: 'notes,spirits,projects' %}
+    {% if site.wiki_links.enabled and site.wiki_links.show_backlinks and wiki_collections contains page.collection %}
+      {%- comment -%} Check if there are any backlinks to add the TOC entry {%- endcomment -%}
+      {% assign has_backlinks = false %}
+      {% assign wiki_link_title = '[[' | append: page.title | append: ']]' %}
+
+      {%- for note in site.notes -%}
+        {%- if note.url != page.url and note.content contains wiki_link_title -%}
+          {% assign has_backlinks = true %}
+          {% break %}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- unless has_backlinks -%}
+        {%- for spirit in site.spirits -%}
+          {%- if spirit.url != page.url and spirit.content contains wiki_link_title -%}
+            {% assign has_backlinks = true %}
+            {% break %}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endunless -%}
+
+      {%- unless has_backlinks -%}
+        {%- for project in site.projects -%}
+          {%- if project.url != page.url and project.content contains wiki_link_title -%}
+            {% assign has_backlinks = true %}
+            {% break %}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endunless -%}
+
+      {% if has_backlinks %}
+        {% assign modified_toc = original_toc | replace: '</ul>', '<li><a href="#backlinks">Links to this page</a></li></ul>' %}
+        {{ modified_toc }}
+      {% else %}
+        {{ original_toc }}
+      {% endif %}
+    {% else %}
+      {{ original_toc }}
+    {% endif %}
+  {% endif %}
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -47,6 +89,46 @@ layout: default
 
       <section class="page__content" itemprop="text">
         {{ content }}
+
+        {%- comment -%} Include backlinks for wiki-enabled collections {%- endcomment -%}
+        {% if site.wiki_links.enabled and site.wiki_links.show_backlinks %}
+          {% assign wiki_collections = site.wiki_links.collections | default: 'notes,spirits,projects' %}
+          {% if wiki_collections contains page.collection %}
+            {%- comment -%} Check if there are any backlinks before showing the heading {%- endcomment -%}
+            {% assign has_backlinks = false %}
+            {% assign wiki_link_title = '[[' | append: page.title | append: ']]' %}
+
+            {%- for note in site.notes -%}
+              {%- if note.url != page.url and note.content contains wiki_link_title -%}
+                {% assign has_backlinks = true %}
+                {% break %}
+              {%- endif -%}
+            {%- endfor -%}
+
+            {%- unless has_backlinks -%}
+              {%- for spirit in site.spirits -%}
+                {%- if spirit.url != page.url and spirit.content contains wiki_link_title -%}
+                  {% assign has_backlinks = true %}
+                  {% break %}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endunless -%}
+
+            {%- unless has_backlinks -%}
+              {%- for project in site.projects -%}
+                {%- if project.url != page.url and project.content contains wiki_link_title -%}
+                  {% assign has_backlinks = true %}
+                  {% break %}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endunless -%}
+
+            {% if has_backlinks %}
+            <h2 id="backlinks">Links to this page</h2>
+            {% include backlinks.html %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
 
         {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}
           <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
@@ -108,6 +190,11 @@ layout: default
     </div>
   {% endif %}
 </div>
+
+{%- comment -%} Include wiki-links processing if enabled {%- endcomment -%}
+{% if site.wiki_links.enabled %}
+{% include wiki-links.html %}
+{% endif %}
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {

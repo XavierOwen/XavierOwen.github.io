@@ -1,0 +1,140 @@
+{%- comment -%}
+Backlinks system - finds all pages that link to the current page using [[page title]] syntax
+{%- endcomment -%}
+
+<!-- DEBUG: Backlinks processing for page: {{ page.title }} -->
+<!-- DEBUG: Looking for wiki link: [[{{ page.title }}]] -->
+
+{%- assign link_count = 0 -%}
+{%- assign wiki_link_title = '[[' | append: page.title | append: ']]' -%}
+
+{%- comment -%} Count backlinks from all collections {%- endcomment -%}
+{%- for note in site.notes -%}
+    {%- if note.url != page.url -%}
+        {%- if note.content contains wiki_link_title -%}
+            {%- assign link_count = link_count | plus: 1 -%}
+        {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}
+
+{%- for spirit in site.spirits -%}
+    {%- if spirit.url != page.url -%}
+        {%- if spirit.content contains wiki_link_title -%}
+            {%- assign link_count = link_count | plus: 1 -%}
+        {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}
+
+{%- for project in site.projects -%}
+    {%- if project.url != page.url -%}
+        {%- if project.content contains wiki_link_title -%}
+            {%- assign link_count = link_count | plus: 1 -%}
+        {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}
+
+{%- for post in site.posts -%}
+    {%- if post.url != page.url -%}
+        {%- if post.content contains wiki_link_title -%}
+            {%- assign link_count = link_count | plus: 1 -%}
+        {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}
+
+{%- for page_item in site.pages -%}
+    {%- if page_item.url != page.url -%}
+        {%- if page_item.content contains wiki_link_title -%}
+            {%- assign link_count = link_count | plus: 1 -%}
+        {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}
+
+<!-- DEBUG: Found {{ link_count }} backlinks -->
+
+{%- if link_count > 0 -%}
+<div class="backlinks-section" id="backlinks">
+    <div class="backlinks-grid">
+        {%- for note in site.notes -%}
+            {%- if note.url != page.url -%}
+                {%- if note.content contains wiki_link_title -%}
+                <div class="backlink-item">
+                    <a href="{{ site.baseurl }}{{ note.url }}" class="backlink">
+                        {{ note.title }}
+                    </a>
+                    <span class="backlink-collection">notes</span>
+                    {%- if note.excerpt -%}
+                    <p class="backlink-excerpt">{{ note.excerpt | strip_html | truncatewords: 15 }}</p>
+                    {%- endif -%}
+                </div>
+                {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+
+        {%- for spirit in site.spirits -%}
+            {%- if spirit.url != page.url -%}
+                {%- if spirit.content contains wiki_link_title -%}
+                <div class="backlink-item">
+                    <a href="{{ site.baseurl }}{{ spirit.url }}" class="backlink">
+                        {{ spirit.title }}
+                    </a>
+                    <span class="backlink-collection">spirits</span>
+                    {%- if spirit.excerpt -%}
+                    <p class="backlink-excerpt">{{ spirit.excerpt | strip_html | truncatewords: 15 }}</p>
+                    {%- endif -%}
+                </div>
+                {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+
+        {%- for project in site.projects -%}
+            {%- if project.url != page.url -%}
+                {%- if project.content contains wiki_link_title -%}
+                <div class="backlink-item">
+                    <a href="{{ site.baseurl }}{{ project.url }}" class="backlink">
+                        {{ project.title }}
+                    </a>
+                    <span class="backlink-collection">projects</span>
+                    {%- if project.excerpt -%}
+                    <p class="backlink-excerpt">{{ project.excerpt | strip_html | truncatewords: 15 }}</p>
+                    {%- endif -%}
+                </div>
+                {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+
+        {%- for post in site.posts -%}
+            {%- if post.url != page.url -%}
+                {%- if post.content contains wiki_link_title -%}
+                <div class="backlink-item">
+                    <a href="{{ site.baseurl }}{{ post.url }}" class="backlink">
+                        {{ post.title }}
+                    </a>
+                    <span class="backlink-collection">posts</span>
+                    {%- if post.excerpt -%}
+                    <p class="backlink-excerpt">{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
+                    {%- endif -%}
+                </div>
+                {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+
+        {%- for page_item in site.pages -%}
+            {%- if page_item.url != page.url and page_item.title -%}
+                {%- if page_item.content contains wiki_link_title -%}
+                <div class="backlink-item">
+                    <a href="{{ site.baseurl }}{{ page_item.url }}" class="backlink">
+                        {{ page_item.title }}
+                    </a>
+                    <span class="backlink-collection">pages</span>
+                    {%- if page_item.excerpt -%}
+                    <p class="backlink-excerpt">{{ page_item.excerpt | strip_html | truncatewords: 15 }}</p>
+                    {%- endif -%}
+                </div>
+                {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+    </div>
+</div>
+{%- else -%}
+<!-- DEBUG: No backlinks found for this page -->
+{%- endif -%}

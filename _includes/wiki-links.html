@@ -1,0 +1,183 @@
+<script>
+// Wiki Links Processing - Process [[note title]] syntax after page load
+document.addEventListener('DOMContentLoaded', function() {
+    const contentDiv = document.querySelector('.page__content');
+    if (!contentDiv) return;
+
+    // Get all available notes and spirits for link resolution
+    const availableContent = [
+        {%- for note in site.notes -%}
+            {
+                title: "{{ note.title | escape }}",
+                url: "{{ site.baseurl }}{{ note.url }}",
+                excerpt: "{{ note.excerpt | default: note.content | strip_html | normalize_whitespace | truncatewords: 20 | escape }}",
+                collection: "notes"
+            }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+        {%- if site.notes.size > 0 and site.spirits.size > 0 -%},{%- endif -%}
+        {%- for spirit in site.spirits -%}
+            {
+                title: "{{ spirit.title | escape }}",
+                url: "{{ site.baseurl }}{{ spirit.url }}",
+                excerpt: "{{ spirit.excerpt | default: spirit.content | strip_html | normalize_whitespace | truncatewords: 20 | escape }}",
+                collection: "spirits"
+            }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+        {%- if (site.notes.size > 0 or site.spirits.size > 0) and site.projects.size > 0 -%},{%- endif -%}
+        {%- for project in site.projects -%}
+            {
+                title: "{{ project.title | escape }}",
+                url: "{{ site.baseurl }}{{ project.url }}",
+                excerpt: "{{ project.excerpt | default: project.content | strip_html | normalize_whitespace | truncatewords: 20 | escape }}",
+                collection: "projects"
+            }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+    ];
+
+    // Function to find content by title (case-insensitive)
+    function findContentByTitle(title) {
+        return availableContent.find(item =>
+            item.title.toLowerCase() === title.toLowerCase()
+        );
+    }
+
+    // Function to process wiki links in text nodes only
+    function processWikiLinks(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            // Only process text nodes that are not inside code elements
+            let parent = node.parentElement;
+            while (parent) {
+                if (parent.tagName === 'CODE' || parent.tagName === 'PRE' ||
+                    parent.classList.contains('highlighter-rouge') ||
+                    parent.classList.contains('highlight') ||
+                    parent.classList.contains('language-')) {
+                    return; // Skip if inside code
+                }
+                parent = parent.parentElement;
+            }
+
+            // Process wiki links in this text node
+            const text = node.textContent;
+            const wikiLinkRegex = /\[\[([^\]]+)\]\]/g;
+            let match;
+            let lastIndex = 0;
+            const fragments = [];
+
+            while ((match = wikiLinkRegex.exec(text)) !== null) {
+                // Add text before the match
+                if (match.index > lastIndex) {
+                    fragments.push(document.createTextNode(text.slice(lastIndex, match.index)));
+                }
+
+                const linkText = match[1];
+                const linkSpan = document.createElement('span');
+
+                // Check if it's an external link (contains ::)
+                if (linkText.includes('::')) {
+                    const [title, url] = linkText.split('::');
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.target = '_blank';
+                    link.rel = 'noopener';
+                    link.textContent = title;
+                    link.className = 'wiki-link-external';
+                    linkSpan.appendChild(link);
+                } else {
+                    // Internal link - try to find the content
+                    const foundContent = findContentByTitle(linkText);
+                    const link = document.createElement('a');
+
+                    if (foundContent) {
+                        link.href = foundContent.url;
+                        link.textContent = linkText;
+                        link.className = 'wiki-link';
+
+                        // Add hover preview functionality
+                        link.addEventListener('mouseenter', function() {
+                            showPreview(this, foundContent.title, foundContent.excerpt, foundContent.collection);
+                        });
+
+                        link.addEventListener('mouseleave', function() {
+                            hidePreview();
+                        });
+                    } else {
+                        // Content doesn't exist - create a placeholder
+                        link.href = 'javascript:void(0)';
+                        link.textContent = linkText;
+                        link.className = 'wiki-link-stale';
+                        link.title = 'Note not found: ' + linkText;
+                    }
+
+                    linkSpan.appendChild(link);
+                }
+
+                fragments.push(linkSpan);
+                lastIndex = match.index + match[0].length;
+            }
+
+            // Add remaining text
+            if (lastIndex < text.length) {
+                fragments.push(document.createTextNode(text.slice(lastIndex)));
+            }
+
+            // Replace the text node with fragments if we found wiki links
+            if (fragments.length > 0) {
+                const parent = node.parentNode;
+                fragments.forEach(fragment => parent.insertBefore(fragment, node));
+                parent.removeChild(node);
+            }
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+            // Recursively process child nodes
+            const children = Array.from(node.childNodes);
+            children.forEach(child => processWikiLinks(child));
+        }
+    }
+
+    // Function to show hover preview
+    function showPreview(link, title, excerpt, collection) {
+        // Remove any existing preview
+        hidePreview();
+
+        const preview = document.createElement('div');
+        preview.className = 'wiki-link-preview';
+        preview.innerHTML = `
+            <div class="preview-content">
+                <div class="preview-header">
+                    <strong>${title}</strong>
+                    <span class="preview-collection">${collection}</span>
+                </div>
+                <p class="preview-excerpt">${excerpt}</p>
+            </div>
+        `;
+
+        document.body.appendChild(preview);
+
+        // Position the preview near the link
+        const rect = link.getBoundingClientRect();
+        preview.style.position = 'fixed';
+        preview.style.left = rect.left + 'px';
+        preview.style.top = (rect.bottom + 5) + 'px';
+        preview.style.zIndex = '1000';
+
+        // Adjust position if preview goes off-screen
+        const previewRect = preview.getBoundingClientRect();
+        if (previewRect.right > window.innerWidth) {
+            preview.style.left = (window.innerWidth - previewRect.width - 10) + 'px';
+        }
+        if (previewRect.bottom > window.innerHeight) {
+            preview.style.top = (rect.top - previewRect.height - 5) + 'px';
+        }
+    }
+
+    // Function to hide hover preview
+    function hidePreview() {
+        const existingPreview = document.querySelector('.wiki-link-preview');
+        if (existingPreview) {
+            existingPreview.remove();
+        }
+    }
+
+    // Process all nodes in the content
+    processWikiLinks(contentDiv);
+});
+</script>
