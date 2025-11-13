@@ -6,7 +6,31 @@ author_profile: true
 ---
 
 {% include base_path %}
-{% include group-by-array collection=site.posts field="tags" %}
+
+{%- comment -%} Collect all documents with tags from all collections {%- endcomment -%}
+{% assign all_tagged_docs = "" | split: "" %}
+{% for post in site.posts %}
+  {% if post.tags %}
+    {% assign all_tagged_docs = all_tagged_docs | push: post %}
+  {% endif %}
+{% endfor %}
+{% for note in site.notes %}
+  {% if note.tags %}
+    {% assign all_tagged_docs = all_tagged_docs | push: note %}
+  {% endif %}
+{% endfor %}
+{% for spirit in site.spirits %}
+  {% if spirit.tags %}
+    {% assign all_tagged_docs = all_tagged_docs | push: spirit %}
+  {% endif %}
+{% endfor %}
+{% for project in site.projects %}
+  {% if project.tags %}
+    {% assign all_tagged_docs = all_tagged_docs | push: project %}
+  {% endif %}
+{% endfor %}
+
+{% include group-by-array collection=all_tagged_docs field="tags" %}
 
 {% for tag in group_names %}
   {% assign posts = group_items[forloop.index0] %}

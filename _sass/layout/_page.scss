@@ -30,12 +30,11 @@
     .page__meta,
     .page__share {
       @include full();
-    };
+    }
 
     details {
       margin-bottom: 1em;
     }
-
   }
 }
 
@@ -54,7 +53,6 @@
 }
 
 .page__content {
-
   h2 {
     padding-bottom: 0.5em;
     border-bottom: 1px solid var(--global-border-color);
@@ -64,7 +62,9 @@
     }
   }
 
-  p, li, dl {
+  p,
+  li,
+  dl {
     font-size: 1em;
   }
 
@@ -235,7 +235,6 @@
   text-transform: uppercase;
 }
 
-
 /*
    Page meta
    ========================================================================== */
@@ -275,21 +274,26 @@
   }
 }
 
-.page__taxonomy-item {
+// Tag styling for GitHub-like buttons
+head .page__taxonomy-item {
   display: inline-block;
-  margin-right: 5px;
-  margin-bottom: 8px;
-  padding: 5px 10px;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding: 0.2rem 0.4rem;
+  font-size: $type-size-7;
+  background-color: #f1f8ff;
+  border: 1px solid #c9e6ff;
+  border-radius: 6px;
+  color: #0969da;
   text-decoration: none;
-  border: 1px solid var(--global-border-color);
-  border-radius: $border-radius;
+  transition: all 0.2s ease;
 
   &:hover {
+    background-color: #dbeafe;
+    border-color: #1976d2;
     text-decoration: none;
-    color: var(--global-link-color-hover);
   }
 }
-
 
 /*
    Comments
@@ -385,7 +389,6 @@
     text-decoration: none;
   }
 }
-
 
 /*
    Related

@@ -1,0 +1,24 @@
+---
+layout: archive
+author_profile: true
+---
+
+<div class="archive__navigation">
+  <p><a href="/tags/" class="btn btn--primary btn--small">← View All Tags</a></p>
+</div>
+
+Content tagged with <strong>{{ page.tag }}</strong>. Here you'll find all entries with this tag listed below.
+
+{% include base_path %}
+
+{% assign tagged_posts = site.posts | where: "tags", page.tag %}
+{% assign tagged_notes = site.notes | where: "tags", page.tag %}
+{% assign tagged_spirits = site.spirits | where: "tags", page.tag %}
+{% assign tagged_projects = site.projects | where: "tags", page.tag %}
+
+{% assign all_tagged = tagged_posts | concat: tagged_notes | concat: tagged_spirits | concat: tagged_projects %}
+{% assign sorted_tagged = all_tagged | sort: 'date' | reverse %}
+
+{% for post in sorted_tagged %}
+  {% include archive-single.html %}
+{% endfor %}

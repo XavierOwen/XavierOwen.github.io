@@ -1,9 +1,6 @@
 {% include base_path %}
 
-{% if site.tag_archive.type and page.tags[0] %}
-  {% include tag-list.html %}
-{% endif %}
-
+{%- comment -%} Tags are now displayed in header, only show categories in footer {%- endcomment -%}
 {% if site.category_archive.type and page.categories[0] and page.collection != 'publications' %}
   {% include category-list.html %}
 {% endif %}
