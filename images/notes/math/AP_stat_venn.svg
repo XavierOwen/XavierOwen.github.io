@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="720" height="260" viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="720" height="260" fill="#ffffff" />
+
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold">
+    Among 100 students, 43 play soccer, 37 play tennis, 15 play both
+  </text>
+
+  <!-- Big rectangle hinting at the whole group (100 students) -->
+  <rect x="60" y="50" width="320" height="170" fill="#f9f9f9" stroke="#cccccc" />
+
+  <!-- Soccer circle -->
+  <circle cx="190" cy="135" r="70" fill="#66b3ff" fill-opacity="0.5" stroke="#336699" stroke-width="2" />
+  <!-- Tennis circle -->
+  <circle cx="250" cy="135" r="70" fill="#ffcc66" fill-opacity="0.5" stroke="#cc9933" stroke-width="2" />
+
+  <!-- Labels for sets -->
+  <text x="190" y="215" text-anchor="middle" font-family="sans-serif" font-size="13">Soccer</text>
+  <text x="250" y="215" text-anchor="middle" font-family="sans-serif" font-size="13">Tennis</text>
+
+  <!-- Region counts (made-up data, total = 100) -->
+  <!-- Soccer only: 28 -->
+  <text x="155" y="135" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold">
+    28
+  </text>
+
+  <!-- Both soccer and tennis: 15 -->
+  <text x="220" y="135" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold">
+    15
+  </text>
+
+  <!-- Tennis only: 22 -->
+  <text x="285" y="135" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold">
+    22
+  </text>
+
+  <!-- Neither: 35 (outside both circles but inside the rectangle) -->
+  <text x="90" y="80" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold">
+    35
+  </text>
+
+  <!-- Caption for the universal set -->
+  <text x="220" y="60" text-anchor="middle" font-family="sans-serif" font-size="11">
+    Total students = 100
+  </text>
+
+  <!-- Legend on the right -->
+  <g transform="translate(430,60)" font-family="sans-serif" font-size="13">
+
+    <!-- Soccer only -->
+    <rect x="0" y="15" width="14" height="14" fill="#66b3ff" fill-opacity="0.7" stroke="#336699" />
+    <text x="22" y="26">Soccer only: 28 students</text>
+
+    <!-- Tennis only -->
+    <rect x="0" y="40" width="14" height="14" fill="#ffcc66" fill-opacity="0.7" stroke="#cc9933" />
+    <text x="22" y="51">Tennis only: 22 students</text>
+
+    <!-- Both -->
+    <rect x="0" y="65" width="14" height="14" fill="#d7d1b1" fill-opacity="0.7" stroke="#6c6958"/>
+    <text x="22" y="76">Both soccer and tennis: 15 students</text>
+
+    <!-- Neither -->
+    <rect x="0" y="90" width="14" height="14" fill="#dddddd" stroke="#aaaaaa" />
+    <text x="22" y="101">Neither sport: 35 students</text>
+
+    <!-- Note line -->
+    <text x="0" y="130" font-size="11">
+      Colors correspond to regions in the Venn diagram.
+    </text>
+  </g>
+</svg>

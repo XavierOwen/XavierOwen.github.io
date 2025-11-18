@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="260" viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="260" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold">
+    Same data, different y-axis scales
+  </text>
+
+  <!-- Chart A: y-axis 0–100 -->
+  <g transform="translate(70,40)" font-family="sans-serif">
+    <!-- Chart label -->
+    <text x="130" y="10" text-anchor="middle" font-size="13" font-weight="bold">
+      Chart A: y-axis 0–100
+    </text>
+
+    <!-- Axes -->
+    <line x1="0" y1="200" x2="260" y2="200" stroke="#000" stroke-width="1"/>
+    <line x1="40" y1="40" x2="40" y2="200" stroke="#000" stroke-width="1"/>
+
+    <!-- Y-axis ticks & labels -->
+    <!-- 0 -->
+    <line x1="36" y1="200" x2="40" y2="200" stroke="#000" stroke-width="1"/>
+    <text x="30" y="204" text-anchor="end" font-size="11">0</text>
+    <!-- 50 -->
+    <line x1="36" y1="120" x2="40" y2="120" stroke="#000" stroke-width="1"/>
+    <text x="30" y="124" text-anchor="end" font-size="11">50</text>
+    <!-- 100 -->
+    <line x1="36" y1="40" x2="40" y2="40" stroke="#000" stroke-width="1"/>
+    <text x="30" y="44" text-anchor="end" font-size="11">100</text>
+
+    <!-- Bars (scale: 0–100 mapped to 160px) -->
+    <!-- value 20 -->
+    <rect x="70" y="168.0" width="50" height="32.0" fill="#66b3ff"/>
+    <!-- value 30 -->
+    <rect x="150" y="152.0" width="50" height="48.0" fill="#ff9999"/>
+
+    <!-- X-axis labels -->
+    <text x="95" y="216" text-anchor="middle" font-size="12">Bar 1 (20)</text>
+    <text x="175" y="216" text-anchor="middle" font-size="12">Bar 2 (30)</text>
+  </g>
+
+  <!-- Chart B: y-axis 15–31 -->
+  <g transform="translate(390,40)" font-family="sans-serif">
+    <!-- Chart label -->
+    <text x="130" y="10" text-anchor="middle" font-size="13" font-weight="bold">
+      Chart B: y-axis 15–31
+    </text>
+
+    <!-- Axes -->
+    <line x1="0" y1="200" x2="260" y2="200" stroke="#000" stroke-width="1"/>
+    <line x1="40" y1="40" x2="40" y2="200" stroke="#000" stroke-width="1"/>
+
+    <!-- Y-axis ticks & labels -->
+    <!-- 15 -->
+    <line x1="36" y1="200" x2="40" y2="200" stroke="#000" stroke-width="1"/>
+    <text x="30" y="204" text-anchor="end" font-size="11">15</text>
+    <!-- 23 (mid) -->
+    <line x1="36" y1="120" x2="40" y2="120" stroke="#000" stroke-width="1"/>
+    <text x="30" y="124" text-anchor="end" font-size="11">23</text>
+    <!-- 31 -->
+    <line x1="36" y1="40" x2="40" y2="40" stroke="#000" stroke-width="1"/>
+    <text x="30" y="44" text-anchor="end" font-size="11">31</text>
+
+    <!-- Bars (scale: 15–31 mapped to 160px) -->
+    <!-- value 20 -->
+    <rect x="70" y="150.0" width="50" height="50.0" fill="#66b3ff"/>
+    <!-- value 30 -->
+    <rect x="150" y="50.0" width="50" height="150.0" fill="#ff9999"/>
+
+    <!-- X-axis labels -->
+    <text x="95" y="216" text-anchor="middle" font-size="12">Bar 1 (20)</text>
+    <text x="175" y="216" text-anchor="middle" font-size="12">Bar 2 (30)</text>
+  </g>
+</svg>

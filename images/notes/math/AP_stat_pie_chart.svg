@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="700" height="400" viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-size="18" font-family="sans-serif">
+    Car Brands Registered in New York (Made up Data)
+  </text>
+
+  <!-- Pie chart group -->
+  <g transform="translate(0,20) scale(0.8)">
+    <!-- Background circle -->
+    <circle cx="200" cy="200" r="150" fill="#f7f7f7" />
+
+    <!-- Toyota: 30% -->
+    <path
+      d="M 200,200 L 350.000,200.000 A 150,150 0 0,1 153.647,342.658 Z"
+      fill="#ff9999"
+      stroke="#ffffff"
+      stroke-width="2"
+    />
+
+    <!-- Honda: 25% -->
+    <path
+      d="M 200,200 L 153.647,342.658 A 150,150 0 0,1 57.342,153.647 Z"
+      fill="#99ccff"
+      stroke="#ffffff"
+      stroke-width="2"
+    />
+
+    <!-- Tesla: 15% -->
+    <path
+      d="M 200,200 L 57.342,153.647 A 150,150 0 0,1 153.647,57.342 Z"
+      fill="#99ff99"
+      stroke="#ffffff"
+      stroke-width="2"
+    />
+
+    <!-- Ford: 20% -->
+    <path
+      d="M 200,200 L 153.647,57.342 A 150,150 0 0,1 321.353,111.832 Z"
+      fill="#ffcc99"
+      stroke="#ffffff"
+      stroke-width="2"
+    />
+
+    <!-- Other: 10% -->
+    <path
+      d="M 200,200 L 321.353,111.832 A 150,150 0 0,1 350.000,200.000 Z"
+      fill="#ccccff"
+      stroke="#ffffff"
+      stroke-width="2"
+    />
+  </g>
+
+  <!-- Legend group on the right -->
+  <g transform="translate(430,90)" font-family="sans-serif" font-size="14">
+    <text x="0" y="-10" font-weight="bold">Legend (Sample Percentages)</text>
+
+    <!-- Toyota -->
+    <rect x="0" y="10" width="14" height="14" fill="#ff9999" />
+    <text x="22" y="22">Toyota – 30%</text>
+
+    <!-- Honda -->
+    <rect x="0" y="40" width="14" height="14" fill="#99ccff" />
+    <text x="22" y="52">Honda – 25%</text>
+
+    <!-- Tesla -->
+    <rect x="0" y="70" width="14" height="14" fill="#99ff99" />
+    <text x="22" y="82">Tesla – 15%</text>
+
+    <!-- Ford -->
+    <rect x="0" y="100" width="14" height="14" fill="#ffcc99" />
+    <text x="22" y="112">Ford – 20%</text>
+
+    <!-- Other -->
+    <rect x="0" y="130" width="14" height="14" fill="#ccccff" />
+    <text x="22" y="142">Other – 10%</text>
+  </g>
+</svg>
