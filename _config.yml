@@ -105,6 +105,8 @@ project_category:
     title: 'Game'
   scraper:
     title: 'Scraper'
+  art:
+    title: 'Art'
 
 spirit_category:
   translation:
