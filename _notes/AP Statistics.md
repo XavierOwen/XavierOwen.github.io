@@ -48,10 +48,16 @@ Categorical data are also simple, starting with some kind of category, like
 
 This gives a direct view of the data distribution, proportion, and can be visualized using pie chart, colored dot plot.
 
+<details markdown="1" data-auto-footer>
+<summary>Two example charts</summary>
+
 <p style="text-align:center;">
-  <img src="{{ site.baseurl }}/images/notes/math/AP_stat_pie_chart.svg">
-  <img src="{{ site.baseurl }}/images/notes/math/AP_stat_cluster_scatter.svg">
+    <img src="{{ site.baseurl }}/images/notes/math/AP_stat_pie_chart.svg">
 </p>
+<p style="text-align:center;">
+    <img src="{{ site.baseurl }}/images/notes/math/AP_stat_cluster_scatter.svg">
+</p>
+</details>
 
 ### Types of Data & Study Design
 
@@ -342,7 +348,7 @@ _Any examples?_ A teacher could create a histogram of the scores from a recent e
 _Real scenario to analyze_: You are given the following data representing the commute times (in minutes) for 20 employees: 15, 22, 8, 45, 31, 25, 18, 12, 60, 28, 35, 20, 10, 55, 29, 33, 19, 24, 40, 21. Create a histogram to display this data. Describe the shape of the distribution and identify any potential outliers. What does this tell you about the typical commute for these employees?
 
 <details markdown="1" data-auto-footer>
-<summary>AP styled Answer</summary>
+<summary>Answer</summary>
 
 <p style="text-align:center;">
     <img src="{{ site.baseurl }}/images/notes/math/AP_stat_hist_comm.svg">
@@ -387,20 +393,88 @@ _Why we have this section_: Looking at a graph gives us a general idea of the da
 
 - **Range**: Maximum value - Minimum value. (Very sensitive to outliers).
 - **Interquartile Range (IQR)**: Q3 - Q1. The range of the middle 50% of the data. (Resistant to outliers).
-- **Standard Deviation**: The typical distance of the values in a distribution from the mean. (Sensitive to outliers).
-- **Variance**: The standard deviation squared.
+- **Standard Deviation (\\(s_x\\))**: The typical distance of the values in a distribution from the mean. (Sensitive to outliers)
+  - **Formula**: \\(s_x = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}}\\).
+  - **Visual**: Imagine the mean as the center. The standard deviation is the average "step size" you'd need to take to get from the mean to a random data point.
+- **Variance (\\(s_x^2\\))**: The standard deviation squared. (More sensitive to outliers)
 - _Question_: If two datasets have the same mean, does that mean they must have the same standard deviation? Why or why not?
 - _Answer_: No. They could have very different spreads. For example, {10, 20, 30} and {19, 20, 21} both have a mean of 20, but the first set is much more spread out and has a larger standard deviation.
 
+<details markdown="1" data-auto-footer>
+<summary>Calculation Example</summary>
+
+**Dataset**: `2, 4, 6, 8, 10` (\\(n=5\\))
+
+1.  **Range**: \\(Max - Min = 10 - 2 = 8\\).
+2.  **IQR**:
+    - Median is 6.
+    - Lower half: `2, 4`. \\(Q1 = \frac{2+4}{2} = 3\\).
+    - Upper half: `8, 10`. \\(Q3 = \frac{8+10}{2} = 9\\).
+    - \\(IQR = Q3 - Q1 = 9 - 3 = 6\\).
+3.  **Standard Deviation (\\(s_x\\))**:
+    - Mean: \\(\bar{x} = \frac{2+4+6+8+10}{5} = 6\\).
+    - Deviations:
+      - \\((2-6)^2 = 16\\)
+      - \\((4-6)^2 = 4\\)
+      - \\((6-6)^2 = 0\\)
+      - \\((8-6)^2 = 4\\)
+      - \\((10-6)^2 = 16\\)
+    - Sum of squared deviations: \\(16+4+0+4+16 = 40\\).
+    - Variance: \\(s_x^2 = \frac{40}{5-1} = 10\\).
+    - Standard Deviation: \\(s_x = \sqrt{10} \approx 3.16\\).
+
+</details>
+
 #### Visually assessing standard deviation
 
-- Look at a histogram. A taller, narrower distribution has a smaller standard deviation. A shorter, wider distribution has a larger standard deviation.
+- Look at a histogram. A taller, narrower distribution has a smaller standard deviation. A shorter, wider distribution has a larger standard deviation, given that the x axis spread are the same.
 - _Question_: Imagine two histograms of test scores for two different classes. Class A's scores are all clustered between 75 and 85. Class B's scores are spread out from 50 to 100. Which class has a larger standard deviation?
 - _Answer_: Class B has a larger standard deviation because its scores are more spread out from the mean.
 
-_Any examples?_ A real estate agent might calculate the median and IQR of house prices to give clients a sense of the market. A teacher might calculate the mean and standard deviation of test scores to understand class performance and consistency.
+_Any examples?_: A real estate agent might calculate the median and IQR of house prices to give clients a sense of the market. A teacher might calculate the mean and standard deviation of test scores to understand class performance and consistency.
 
-_Real scenario to analyze_: Consider the commute time data from the previous section: 15, 22, 8, 45, 31, 25, 18, 12, 60, 28, 35, 20, 10, 55, 29, 33, 19, 24, 40, 21. Calculate the mean and the median. Based on your histogram and these values, which is the better measure of center for this data? Now calculate the standard deviation and the IQR. What do these measures of spread tell you about the consistency of commute times?
+_Real scenario to analyze_: Now Consider the commute time data from the [previous section](#clusters-gaps-peaks-and-outliers): 15, 22, 8, 45, 31, 25, 18, 12, 60, 28, 35, 20, 10, 55, 29, 33, 19, 24, 40, 21. Calculate the mean and the median. Based on your histogram and these values, which is the better measure of center for this data? Now calculate the standard deviation and the IQR. What do these measures of spread tell you about the consistency of commute times?
+
+<details markdown="1" data-auto-footer>
+<summary>Answer</summary>
+
+<p style="text-align:center;">
+    <img src="{{ site.baseurl }}/images/notes/math/AP_stat_hist_comm.svg">
+</p>
+
+**Data**: 15, 22, 8, 45, 31, 25, 18, 12, 60, 28, 35, 20, 10, 55, 29, 33, 19, 24, 40, 21 (\\(n = 20\\))
+
+**Ordered Data**: 8, 10, 12, 15, 18, 19, 20, 21, 22, 24, 25, 28, 29, 31, 33, 35, 40, 45, 55, 60
+
+**Calculations:**
+
+1. **Mean**: \\(\bar{x} = \frac{8+10+12+15+18+19+20+21+22+24+25+28+29+31+33+35+40+45+55+60}{20} = \frac{550}{20} = 27.5\\) minutes
+
+2. **Median**: The middle value between the 10th and 11th values: \\(\frac{24 + 25}{2} = 24.5\\) minutes
+
+3. **Standard Deviation**:
+   - Using the formula \\(s_x = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}}\\)
+   - \\(s_x \approx 14.08\\) minutes
+
+4. **IQR**:
+   - Lower half (first 10 values): 8, 10, 12, 15, 18, 19, 20, 21, 22, 24
+   - \\(Q1 = \frac{18 + 19}{2} = 18.5\\) minutes
+   - Upper half (last 10 values): 25, 28, 29, 31, 33, 35, 40, 45, 55, 60
+   - \\(Q3 = \frac{33 + 35}{2} = 34\\) minutes
+   - \\(IQR = Q3 - Q1 = 34 - 18.5 = 15.5\\) minutes
+
+**Analysis:**
+
+- **Center**: The mean (27.5) is higher than the median (24.5). This confirms the right skew we saw in the histogram (the tail of high commute times pulls the mean up). Because of the skew and potential outliers (55, 60), the **median** is the better measure of center as it represents the "typical" commute more accurately.
+- **Spread**: The standard deviation (14.08) is quite large relative to the center, indicating significant variability in commute times. The IQR (15.5) tells us that the middle 50% of employees have commute times within a 15.5-minute range of each other. The large spread suggests that commute times are not very consistent; some employees live close, while others have very long drives.
+
+Below is the commute time in a smaller standard devaition parallel universe
+
+<p style="text-align:center;">
+    <img src="{{ site.baseurl }}/images/notes/math/AP_stat_hist_comm_narrow.svg">
+</p>
+
+</details>
 
 ### Transformations and Summary Plots
 
@@ -408,22 +482,49 @@ _Why we have this section_: We've learned to describe a single distribution. Now
 
 #### Effects of linear transformations (shift & scale) on center and spread
 
-- **Adding/Subtracting a constant (a)**: Adds/subtracts 'a' to measures of center (mean, median). Does NOT change measures of spread (range, IQR, std dev).
-- **Multiplying/Dividing by a constant (b)**: Multiplies/divides measures of center AND spread by 'b'.
-- _Question_: If you convert a set of temperatures from Celsius to Fahrenheit using F = 1.8C + 32, how will the mean and standard deviation of the temperatures change?
-- _Answer_: The mean will be transformed the same way: new*mean = 1.8 * old*mean + 32. The standard deviation is only affected by multiplication, not addition: new_sd = 1.8 * old_sd.
+- **Adding/Subtracting a constant (\\(a\\))**: Adds/subtracts \\(a\\) to measures of center (mean, median). Does NOT change measures of spread (range, IQR, std dev).
+- **Multiplying/Dividing by a constant (\\(b\\))**: Multiplies/divides measures of center AND spread by \\(b\\).
+- _Question_: If you convert a set of temperatures from Celsius to Fahrenheit using \\(F = 1.8C + 32\\), how will the mean and standard deviation of the temperatures change?
+- _Answer_: The mean will be transformed the same way: \\(\text{new mean} = 1.8 \times \text{old mean} + 32\\). The standard deviation is only affected by multiplication, not addition: \\(\text{new SD} = 1.8 \times \text{old SD}\\).
+- _Challenge Question_: If the variance of the original Celsius temperatures is \\(\sigma^2 = 25\\), what will be the variance of the Fahrenheit temperatures?
+- _Answer_: The variance is the square of the standard deviation, so it transforms differently. When we multiply by a constant \\(b\\), the variance is multiplied by \\(b^2\\). Adding a constant does not change the variance. Therefore: \\(\text{new variance} = (1.8)^2 \times 25 = 3.24 \times 25 = 81\\).
 
-#### Bias of sample variance; why we divide by (n − 1) (conceptual)
+#### Bias of sample variance; why we divide by (\\(n-1\\)) (conceptual)
 
-- The sample variance (s²) is an "unbiased estimator" of the population variance (σ²) when we divide by n-1.
-- Dividing by 'n' would, on average, underestimate the true population variance.
+- The sample variance (\\(s^2\\)) is an "unbiased estimator" of the population variance (\\(\sigma^2\\)) when we divide by \\(n-1\\).
+- Dividing by '\\(n\\)' would, on average, underestimate the true population variance.
 - _Question_: Why might a sample tend to have less variability than the population it came from? (Hint: think about extreme values).
-- _Answer_: A random sample is less likely to capture the most extreme values (the highest and lowest) of a population, so its overall spread tends to be slightly smaller. Dividing by n-1 compensates for this.
+- _Answer_: A random sample is less likely to capture the most extreme values (the highest and lowest) of a population, so its overall spread tends to be slightly smaller. Dividing by \\(n-1\\) compensates for this. Below is a preview.
+
+<details markdown="1" data-auto-footer>
+<summary>Mathematical Proof</summary>
+
+First we define an **unbiased estimator**, which is one whose expectation is the true expectation. The sample mean is an unbiased estimator:
+
+\\[E[\bar{X}] = \frac{1}{n} \sum_{i=1}^{n} E[X_i] = \frac{n}{n}\mu = \mu\\]
+
+Then we compute the expectation of the sample variance,
+
+\\[S^2 = \frac{1}{n-1} \sum_{i=1}^{n} (X_i^2) - n\bar{X}^2\\]
+
+\\[E[S^2] = \frac{1}{n-1} \left( nE[(X_i^2)] - nE[\bar{X}^2] \right).\\]
+
+Notice that \\(\bar{X}\\) is a random variable and not a constant, so the expectation \\(E[\bar{X}^2]\\) plays a role. **This is the reason behind the \\(n-1\\).**
+
+\\[E[S^2] = \frac{1}{n-1} \left( n(\mu^2 + \sigma^2) - n(\mu^2 + Var(X)) \right).\\]
+
+\\[Var(X) = Var\left(\frac{1}{n} \sum_{i=1}^{n} X_i\right) = \sum_{i=1}^{n} \frac{1}{n^2} Var(X_i) = \frac{\sigma^2}{n}\\]
+
+\\[E[S^2] = \frac{1}{n-1} \left( n(\mu^2 + \sigma^2) - n(\mu^2 + \sigma^2/n) \right) = \frac{(n-1)\sigma^2}{n-1} = \sigma^2\\]
+
+As you can see, if we had the denominator as \\(n\\) instead of \\(n-1\\), we would get a biased estimate for the variance! But with \\(n-1\\) the estimator \\(S^2\\) is an unbiased estimator.
+
+</details>
 
 #### Boxplots and 5-number summary
 
 - **5-Number Summary**: Minimum, Q1 (25th percentile), Median (50th percentile), Q3 (75th percentile), Maximum.
-- **Boxplot**: A graphical display of the 5-number summary. The box represents the IQR, a line inside marks the median, and "whiskers" extend to the min/max (or to the last non-outlier).
+- **Boxplot**: A graphical display of the 5-number summary. The box represents the **IQR**, a line inside marks the median, and "whiskers" extend to the min/max (or to the last non-outlier).
 - _Question_: What features of a distribution can you see in a boxplot? What features can you _not_ see?
 - _Answer_: You can see the 5-number summary (min, Q1, median, Q3, max), spread (IQR, range), and skewness. You cannot see gaps, clusters, or peaks (modality).
 
@@ -435,10 +536,51 @@ _Why we have this section_: We've learned to describe a single distribution. Now
 - _Question_: If a dataset has Q1=20 and Q3=50, what is the range of values that would not be considered outliers?
 - _Answer_: IQR = 50 - 20 = 30. Lower Fence = 20 - 1.5(30) = -25. Upper Fence = 50 + 1.5(30) = 95. The range is [-25, 95].
 
+<details markdown="1" data-auto-footer>
+<summary>Commute time example</summary>
+
+Using the commute time data from earlier: 15, 22, 8, 45, 31, 25, 18, 12, 60, 28, 35, 20, 10, 55, 29, 33, 19, 24, 40, 21
+
+**Step 1: Order the data**
+8, 10, 12, 15, 18, 19, 20, 21, 22, 24, 25, 28, 29, 31, 33, 35, 40, 45, 55, 60
+
+**Step 2: Find the 5-number summary**
+- **Minimum**: 8
+- **Q1**: Median of lower half (first 10 values) = \\(\frac{18 + 19}{2} = 18.5\\)
+- **Median**: \\(\frac{24 + 25}{2} = 24.5\\)
+- **Q3**: Median of upper half (last 10 values) = \\(\frac{33 + 35}{2} = 34\\)
+- **Maximum**: 60
+
+**Step 3: Calculate IQR and check for outliers**
+- \\(IQR = 34 - 18.5 = 15.5\\)
+- Lower fence: \\(18.5 - 1.5(15.5) = 18.5 - 23.25 = -4.75\\)
+- Upper fence: \\(34 + 1.5(15.5) = 34 + 23.25 = 57.25\\)
+- **Outliers**: 60 (exceeds upper fence)
+
+**Step 4: Draw the boxplot**
+- Draw a number line spanning from slightly below the minimum to slightly above the maximum
+- Draw a box from Q1 (18.5) to Q3 (34)
+- Draw a vertical line inside the box at the median (24.5)
+- Draw a whisker from Q1 to the minimum (8)
+- Draw a whisker from Q3 to the last value within the upper fence (55)
+- Mark the outlier (60) with a special symbol (dot or asterisk)
+
+<p style="text-align:center;">
+    <img src="{{ site.baseurl }}/images/notes/math/AP_stat_boxPlot_comm.svg">
+</p>
+
+The boxplot clearly shows the right skew (the right whisker is longer, and there's an outlier on the right), confirming our earlier analysis of the distribution.
+
+</details>
+
 #### Comparing distributions with graphs and statistics
 
 - Use side-by-side boxplots or back-to-back stemplots to compare two or more distributions.
 - Always compare using the SOCS framework. Use specific numerical values for center and spread.
+  - **S**hape
+  - **O**utliers
+  - **C**enter
+  - **S**pread
 - _Question_: When comparing two boxplots, how can you tell which distribution has a larger spread?
 - _Answer_: You can compare the overall range (distance from the tip of one whisker to the other) or, more reliably, compare the Interquartile Range (the length of the box).
 
@@ -454,9 +596,61 @@ _Any examples?_ A scientist comparing the effectiveness of two different fertili
 
 _Real scenario to analyze_: A school is comparing the SAT scores of students who took a prep course with those who did not.
 
-- **Prep Course Scores**: 1100, 1250, 1300, 1320, 1350, 1400, 1410, 1480, 1550
-- **No Prep Course Scores**: 950, 1010, 1080, 1150, 1200, 1220, 1280, 1310, 1450
-  Create side-by-side boxplots for these two datasets. Calculate the 5-number summary for each group. Write a few sentences comparing the two distributions using SOCS. Is there evidence that the prep course is associated with higher scores?
+- **Prep Course Scores**: \\(1100, 1250, 1300, 1320, 1350, 1400, 1410, 1480, 1550\\)
+- **No Prep Course Scores**: \\(950, 1010, 1080, 1150, 1200, 1220, 1280, 1310, 1450\\)
+
+Create side-by-side boxplots for these two datasets. Calculate the 5-number summary for each group. Write a few sentences comparing the two distributions using SOCS. Is there evidence that the prep course is associated with higher scores?
+
+<details markdown="1" data-auto-footer>
+<summary>Answer</summary>
+
+**5-Number Summaries:**
+
+**Prep Course** (\\(n = 9\\)):
+- Ordered data: \\(1100, 1250, 1300, 1320, 1350, 1400, 1410, 1480, 1550\\)
+- Minimum: \\(1100\\)
+- Q1: \\(\frac{1250 + 1300}{2} = 1275\\)
+- Median: \\(1350\\)
+- Q3: \\(\frac{1410 + 1480}{2} = 1445\\)
+- Maximum: \\(1550\\)
+- IQR: \\(1445 - 1275 = 170\\)
+- LF: \\(Q_1 - 1.5 \times IQR = 1275 - 1.5(170) = 1020\\), no outlier
+- UF: \\(Q_3 + 1.5 \times IQR = 1445 + 1.5(170) = 1700\\), no outlier
+- Mean: \\(\bar{x} = 1351.11\\)
+
+**No Prep Course** (\\(n = 9\\)):
+- Ordered data: \\(950, 1010, 1080, 1150, 1200, 1220, 1280, 1310, 1450\\)
+- Minimum: \\(950\\)
+- Q1: \\(\frac{1010 + 1080}{2} = 1045\\)
+- Median: \\(1200\\)
+- Q3: \\(\frac{1280 + 1310}{2} = 1295\\)
+- Maximum: \\(1450\\)
+- IQR: \\(1295 - 1045 = 250\\)
+- LF: \\(Q_1 - 1.5 \times IQR = 1045 - 1.5(250) = 670\\), no outlier
+- UF: \\(Q_3 + 1.5 \times IQR = 1295 + 1.5(250) = 1670\\), no outlier
+- Mean: \\(\bar{x} = 1183.33\\)
+
+**Side-by-Side Boxplots:**
+
+<p style="text-align:center;">
+    <img src="{{ site.baseurl }}/images/notes/math/AP_stat_boxPlot_compare_SAT.svg">
+</p>
+
+**SOCS Comparison:**
+
+- **Shape**: Both distributions appear roughly symmetric based on the boxplots. The prep course distribution shows the median close to the center of the box, while the no-prep distribution also appears fairly symmetric.
+
+- **Outliers**: Neither distribution has outliers based on the 1.5×IQR rule. For the prep course: Upper fence = 1445 + 1.5(170) = 1700, so 1550 is not an outlier. For no-prep: Upper fence = 1295 + 1.5(250) = 1670, so 1450 is not an outlier.
+
+- **Center**: The prep course group has a substantially higher center. The median score for prep students (1350) is 150 points higher than for non-prep students (1200). The means tell a similar story: 1351 vs. 1183, a difference of about 168 points.
+
+- **Spread**: The no-prep course distribution has greater variability. The IQR for no-prep (250) is larger than for prep (170), suggesting more inconsistency in performance among students who didn't take the prep course. The range is also slightly larger for no-prep (500 vs. 450).
+
+**Conclusion:**
+
+Yes, there is strong evidence that the prep course is associated with higher SAT scores. Students who took the prep course scored consistently higher (median of 1350 vs. 1200) and showed less variability in their scores (smaller IQR). Every quartile of the prep course distribution is higher than the corresponding quartile of the no-prep distribution, indicating that prep students outperformed non-prep students across the board.
+
+</details>
 
 ### Summary
 
@@ -471,18 +665,21 @@ _Real scenario to analyze_: A school is comparing the SAT scores of students who
 
 ### Practice
 
-#### Questions
+#### Section 1.1: Types of Data & Study Design
 
-**Section 1.1: Types of Data & Study Design**
+**1.1** A wildlife biologist captures, tags, and releases 50 deer in a forest. She records their weight, gender, and the location in the forest where they were caught.
+   - a. What are the individuals in this study?
+   - b. Identify each variable as categorical or quantitative.
+   - c. If the biologist wants to estimate the average weight of _all_ deer in this forest, is this average a parameter or a statistic?
 
-1.  A wildlife biologist captures, tags, and releases 50 deer in a forest. She records their weight, gender, and the location in the forest where they were caught.
-    - a. What are the individuals in this study?
-    - b. Identify each variable as categorical or quantitative.
-    - c. If the biologist wants to estimate the average weight of _all_ deer in this forest, is this average a parameter or a statistic?
+**C1.1** (Challenge): A medical researcher is studying the effect of a new drug on blood pressure. She collects data from 100 patients. The variables recorded are: Patient ID (e.g., 1001, 1002), Dosage (0mg, 50mg, 100mg), Blood Pressure Reduction (mmHg), and Side Effects Severity (None, Mild, Severe).
+- a. Identify the individuals.
+- b. Classify "Patient ID", "Dosage", and "Side Effects Severity" as categorical or quantitative. Explain your reasoning for "Dosage".
+- c. If the researcher calculates the average blood pressure reduction for these 100 patients to be 12 mmHg, is this a parameter or a statistic?
 
-**Section 1.2: Categorical Data**
+#### Section 1.2: Categorical Data
 
-2.  A survey asked 200 high school students whether they preferred playing sports or watching sports. The results are in the table below.
+**1.2** A survey asked 200 high school students whether they preferred playing sports or watching sports. The results are in the table below.
 
 |                   | Play Sports | Watch Sports | Total |
 | :---------------- | :---------- | :----------- | :---- |
@@ -490,58 +687,111 @@ _Real scenario to analyze_: A school is comparing the SAT scores of students who
 | **Upperclassmen** | 30          | 70           | 100   |
 | **Total**         | 90          | 110          | 200   |
 
-    *   a. What proportion of students surveyed prefer to watch sports?
-    *   b. What is the conditional relative frequency of preferring to watch sports, given a student is an upperclassman?
-    *   c. Is there an association between grade level and sports preference? Justify your answer by comparing conditional distributions.
+- a. What proportion of students surveyed prefer to watch sports?
+- b. What is the conditional relative frequency of preferring to watch sports, given a student is an upperclassman?
+- c. Is there an association between grade level and sports preference? Justify your answer by comparing conditional distributions.
 
-**Section 1.3 & 1.4: Quantitative Data & Summary Statistics**
+**C1.2** (Challenge): A university is analyzing admission data for two departments, Engineering and Arts.
+- Engineering: 800 male applicants (600 admitted), 200 female applicants (180 admitted).
+- Arts: 400 male applicants (100 admitted), 600 female applicants (200 admitted).
+- a. Construct a two-way table for the overall admission data (combining both departments) by Gender and Admission Status.
+- b. Calculate the overall admission rate for males and females. Who appears to be favored?
+- c. Calculate the admission rate for males and females *within* each department. Who appears to be favored in each department?
+- d. Explain the apparent contradiction (Simpson's Paradox).
 
-3.  Consider the following dataset representing the number of hours 10 students spent studying for an exam: `4, 7, 2, 8, 5, 15, 6, 5, 7, 9`.
-    - a. Calculate the mean and the median study time.
-    - b. The value `15` seems high. Which measure of center is more resistant to this potential outlier?
-    - c. The standard deviation is approximately \\(3.5\\) hours. Interpret this value.
+#### Section 1.3 & 1.4: Quantitative Data & Summary Statistics
 
-**Section 1.5: Transformations and Summary Plots**
+**1.3** Consider the following dataset representing the number of hours 10 students spent studying for an exam: `4, 7, 2, 8, 5, 15, 6, 5, 7, 9`.
+   - a. Calculate the mean and the median study time.
+   - b. The value `15` seems high. Which measure of center is more resistant to this potential outlier?
+   - c. The standard deviation is approximately \\(3.5\\) hours. Interpret this value.
 
-4.  For the study time data in question 3:
+**C1.3** (Challenge): A class of 20 students has a mean test score of 80. A second class of 30 students has a mean test score of 70.
+- a. What is the mean score of all 50 students combined?
+- b. If the standard deviation of the first class is 5 and the second class is 10, can you calculate the standard deviation of the combined group just from this information? Why or why not?
+- c. Can you determine the exact median of the combined group? Why or why not?
 
-    - a. Find the five-number summary.
-    - b. Calculate the Interquartile Range (IQR).
-    - c. Use the \\(1.5 \times IQR\\) rule to determine if the value `15` is an outlier.
+#### Section 1.5: Transformations and Summary Plots
 
-5.  The instructor decides to give every student a bonus, adding 1 hour to their recorded study time.
-    - a. What will be the new mean study time?
-    - b. What will be the new standard deviation?
+**1.4** For the study time data in question 1.3:
+   - a. Find the five-number summary.
+   - b. Calculate the Interquartile Range (IQR).
+   - c. Use the \\(1.5 \times IQR\\) rule to determine if the value `15` is an outlier.
+
+**1.5** The instructor decides to give every student a bonus, adding 1 hour to their recorded study time.
+   - a. What will be the new mean study time?
+   - b. What will be the new standard deviation?
+
+**C1.4** (Challenge): A teacher scales the test scores of a class using the formula \\(Y = 2X + 10\\), where \\(X\\) is the original score. The original scores had a mean of 35 and a standard deviation of 5. The original distribution was strongly skewed to the right.
+   - a. Find the mean and standard deviation of the scaled scores.
+   - b. Describe the shape of the new distribution.
+   - c. One student's original score was an outlier. Will it remain an outlier after the transformation? Prove it using the IQR rule (assume original \\(Q1=30, Q3=40\\)).
 
 ---
 
 #### Answers
 
-1.  **a.** The individuals are the 50 deer that were captured.
-    **b.** Weight is quantitative. Gender is categorical. Location is categorical.
-    **c.** A parameter, because it describes the entire population (all deer in the forest). The average weight of the 50 captured deer would be a statistic.
+**1.1**
+- **a.** The individuals are the 50 deer that were captured.
+- **b.** Weight is quantitative. Gender is categorical. Location is categorical.
+- **c.** A parameter, because it describes the entire population (all deer in the forest). The average weight of the 50 captured deer would be a statistic.
 
-2.  **a.** \\( \frac{110}{200} = 0.55 \\) or 55% of students prefer to watch sports.
-    **b.** \\( \frac{70}{100} = 0.70 \\) or 70% of upperclassmen prefer to watch sports.
-    **c.** Yes, there is an association. The proportion of upperclassmen who prefer watching sports (70%) is much higher than the proportion of underclassmen who prefer watching sports (\\( \frac{40}{100} = 40\% \\)). Because these conditional distributions are different, the variables are associated.
+**C1.1**
+- **a.** The 100 patients.
+- **b.** Patient ID: Categorical (identifier). Dosage: Could be Quantitative (amount of drug) or Categorical (treatment group levels). Side Effects: Categorical (ordinal).
+- **c.** Statistic (describes the sample of 100).
 
-3.  **a.** Mean: \\( \frac{4+7+2+8+5+15+6+5+7+9}{10} = \frac{68}{10} = 6.8 \\) hours.
-    Median: First, order the data: `2, 4, 5, 5, 6, 7, 7, 8, 9, 15`. The median is the average of the 5th and 6th values: \\( \frac{6+7}{2} = 6.5 \\) hours.
-    **b.** The median is more resistant. The mean (6.8) is pulled higher by the outlier (15), while the median (6.5) is less affected.
-    **c.** A standard deviation of 3.5 hours means that the typical distance of an individual student's study time from the mean study time of 6.8 hours is about 3.5 hours.
+**1.2**
+- **a.** \\( \frac{110}{200} = 0.55 \\) or 55% of students prefer to watch sports.
+- **b.** \\( \frac{70}{100} = 0.70 \\) or 70% of upperclassmen prefer to watch sports.
+- **c.** Yes, there is an association. The proportion of upperclassmen who prefer watching sports (70%) is much higher than the proportion of underclassmen who prefer watching sports (\\( \frac{40}{100} = 40\% \\)). Because these conditional distributions are different, the variables are associated.
 
-4.  **a.** Ordered data: `2, 4, 5, 5, 6, 7, 7, 8, 9, 15`.
-    Minimum = 2.
-    Q1 (median of lower half `2, 4, 5, 5, 6`) = 5.
-    Median = 6.5.
-    Q3 (median of upper half `7, 7, 8, 9, 15`) = 8.
-    Maximum = 15.
-    Five-number summary is **{2, 5, 6.5, 8, 15}**.
-    **b.** IQR = Q3 - Q1 = \\(8 - 5 = 3\\).
-    **c.** Upper Fence = Q3 + \\(1.5 \times IQR\\) = \\(8 + 1.5 \times 3 = 8 + 4.5 = 12.5\\). Since 15 is greater than 12.5, it is considered an outlier.
+**C1.2**
+- **a.**
 
-5.  **a.** The new mean will be the old mean + 1: \\(6.8 + 1 = 7.8\\) hours. Adding a constant affects measures of center.
-    **b.** The new standard deviation will be the same as the old one: \\(3.5\\) hours. Adding a constant does not affect measures of spread.
+| | Admitted | Not Admitted | Total |
+|---|---|---|---|
+| Male | 600+100=700 | 200+300=500 | 1200 |
+| Female | 180+200=380 | 20+400=420 | 800 |
+
+- **b.** Male Rate: 700/1200 = 58.3%. Female Rate: 380/800 = 47.5%. Males appear favored.
+- **c.** Engineering: Male 600/800=75%, Female 180/200=90%. (Females favored). Arts: Male 100/400=25%, Female 200/600=33.3%. (Females favored).
+- **d.** Simpson's Paradox. Females are favored in both departments, but because more females applied to the harder-to-get-into department (Arts) and more males applied to the easier department (Engineering), the overall average makes it look like males are favored.
+
+**1.3**
+- **a.** Mean: \\( \frac{4+7+2+8+5+15+6+5+7+9}{10} = \frac{68}{10} = 6.8 \\) hours.
+Median: First, order the data: `2, 4, 5, 5, 6, 7, 7, 8, 9, 15`. The median is the average of the 5th and 6th values: \\( \frac{6+7}{2} = 6.5 \\) hours.
+- **b.** The median is more resistant. The mean (6.8) is pulled higher by the outlier (15), while the median (6.5) is less affected.
+- **c.** A standard deviation of 3.5 hours means that the typical distance of an individual student's study time from the mean study time of 6.8 hours is about 3.5 hours.
+
+**C1.3**
+- **a.** Weighted Mean = (20*80 + 30*70) / 50 = (1600 + 2100) / 50 = 3700 / 50 = 74.
+- **b.** Yes, but it requires a complex formula involving the variances and the difference in means. It is NOT the average of the standard deviations.
+- **c.** No. Without the individual data points, we cannot determine the exact median, only that it lies somewhere between the two class medians (or potentially outside if distributions are extreme, but typically between).
+
+**1.4**
+- **a.** Ordered data: `2, 4, 5, 5, 6, 7, 7, 8, 9, 15`.
+Minimum = 2.
+Q1 (median of lower half `2, 4, 5, 5, 6`) = 5.
+Median = 6.5.
+Q3 (median of upper half `7, 7, 8, 9, 15`) = 8.
+Maximum = 15.
+Five-number summary is **{2, 5, 6.5, 8, 15}**.
+- **b.** IQR = Q3 - Q1 = \\(8 - 5 = 3\\).
+- **c.** Upper Fence = Q3 + \\(1.5 \times IQR\\) = \\(8 + 1.5 \times 3 = 8 + 4.5 = 12.5\\). Since 15 is greater than 12.5, it is considered an outlier.
+
+**1.5**
+- **a.** The new mean will be the old mean + 1: \\(6.8 + 1 = 7.8\\) hours. Adding a constant affects measures of center.
+- **b.** The new standard deviation will be the same as the old one: \\(3.5\\) hours. Adding a constant does not affect measures of spread.
+
+**C1.4**
+- **a.** New Mean = \\(2(35) + 10 = 80\\). New SD = \\(|2|(5) = 10\\).
+- **b.** The shape will remain strongly skewed to the right. Linear transformations (\\(Y = aX + b\\)) do not change the shape of the distribution.
+- **c.** Yes, it will remain an outlier.
+Original IQR = \\(40 - 30 = 10\\). Upper Fence = \\(40 + 1.5(10) = 55\\). An outlier is any \\(X > 55\\).
+New Q1 = \\(2(30) + 10 = 70\\). New Q3 = \\(2(40) + 10 = 90\\). New IQR = \\(90 - 70 = 20\\).
+New Upper Fence = \\(90 + 1.5(20) = 120\\).
+If \\(X > 55\\), then \\(2X > 110\\), and \\(2X + 10 > 120\\). So the transformed score will be greater than the new upper fence.
 
 ---
 
