@@ -5,7 +5,7 @@ category: art
 excerpt: "a collection of my Poitrait"
 date: 2019-08-25
 toc: true
-tags: [Art, Painting]
+tags: [Art, Painting, Self]
 ---
 
 ## from 20170624

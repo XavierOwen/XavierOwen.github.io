@@ -107,6 +107,8 @@ project_category:
     title: 'Scraper'
   art:
     title: 'Art'
+  märchen:
+    title: 'Märchen'
 
 spirit_category:
   translation:

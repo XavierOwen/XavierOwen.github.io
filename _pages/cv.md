@@ -23,6 +23,12 @@ Education
 
 Work experience
 ======
+* Aug 2025 - Current: Independent Math Tutor
+  * Varsity Tutoring
+  * Courses I’ve taught: College Statistics, College Algebra, AP statistics, Business Statistics
+  * Help students with their math understanding, through encouraging, building faith, customized tutorial, and human‑checked AI‑made math
+problem sets
+
 * Aug 2025 - Current: Game developer and Writer
   * The Church of Chicagoans
   * Products: meeting place virtual touring game, "when a tree start to talk"
