@@ -1,0 +1,124 @@
+<svg width="700" height="350" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+    Coffee Spending Transformation Comparison
+  </text>
+
+  <!-- Original Boxplot -->
+  <text x="400" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1565c0">
+    Original Data (dollars/week)
+  </text>
+
+  <!-- Axis for original -->
+  <line x1="50" y1="130" x2="650" y2="130" stroke="black" stroke-width="1"/>
+
+  <!-- Tick marks and labels for original (0 to 50) -->
+  <line x1="50" y1="125" x2="50" y2="135" stroke="black" stroke-width="1"/>
+  <text x="50" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">0</text>
+
+  <line x1="170" y1="125" x2="170" y2="135" stroke="black" stroke-width="1"/>
+  <text x="170" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">10</text>
+
+  <line x1="290" y1="125" x2="290" y2="135" stroke="black" stroke-width="1"/>
+  <text x="290" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">20</text>
+
+  <line x1="410" y1="125" x2="410" y2="135" stroke="black" stroke-width="1"/>
+  <text x="410" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">30</text>
+
+  <line x1="530" y1="125" x2="530" y2="135" stroke="black" stroke-width="1"/>
+  <text x="530" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">40</text>
+
+  <line x1="650" y1="125" x2="650" y2="135" stroke="black" stroke-width="1"/>
+  <text x="650" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">50</text>
+
+  <!-- Original Boxplot (Min=8, Q1=14, Med=18, Q3=22, Max=30, Outlier=45) -->
+  <!-- Scale: 1 dollar = 12 pixels, start at x=50 -->
+
+  <!-- Left whisker: from min (8) to Q1 (14) -->
+  <line x1="146" y1="100" x2="218" y2="100" stroke="#1565c0" stroke-width="2"/>
+  <line x1="146" y1="85" x2="146" y2="115" stroke="#1565c0" stroke-width="2"/>
+
+  <!-- Box: from Q1 (14) to Q3 (22) -->
+  <rect x="218" y="70" width="96" height="60" fill="#90caf9" stroke="#1565c0" stroke-width="2"/>
+
+  <!-- Median line at 18 -->
+  <line x1="266" y1="70" x2="266" y2="130" stroke="#1565c0" stroke-width="3"/>
+
+  <!-- Right whisker: from Q3 (22) to last non-outlier (30) -->
+  <line x1="314" y1="100" x2="410" y2="100" stroke="#1565c0" stroke-width="2"/>
+  <line x1="410" y1="85" x2="410" y2="115" stroke="#1565c0" stroke-width="2"/>
+
+  <!-- Outlier at 45 -->
+  <circle cx="590" cy="100" r="4" fill="#c62828"/>
+
+  <!-- Labels for original -->
+  <text x="146" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1565c0">8</text>
+  <text x="218" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1565c0">14</text>
+  <text x="266" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1565c0">18</text>
+  <text x="314" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1565c0">22</text>
+  <text x="410" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1565c0">30</text>
+  <text x="590" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#c62828">45*</text>
+
+  <!-- Transformed Boxplot -->
+  <text x="400" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2e7d32">
+    After Cutting in Half (dollars/week)
+  </text>
+
+  <!-- Axis for transformed -->
+  <line x1="50" y1="275" x2="650" y2="275" stroke="black" stroke-width="1"/>
+
+  <!-- Tick marks and labels for transformed (0 to 25) -->
+  <line x1="50" y1="270" x2="50" y2="280" stroke="black" stroke-width="1"/>
+  <text x="50" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">0</text>
+
+  <line x1="170" y1="270" x2="170" y2="280" stroke="black" stroke-width="1"/>
+  <text x="170" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">5</text>
+
+  <line x1="290" y1="270" x2="290" y2="280" stroke="black" stroke-width="1"/>
+  <text x="290" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">10</text>
+
+  <line x1="410" y1="270" x2="410" y2="280" stroke="black" stroke-width="1"/>
+  <text x="410" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">15</text>
+
+  <line x1="530" y1="270" x2="530" y2="280" stroke="black" stroke-width="1"/>
+  <text x="530" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">20</text>
+
+  <line x1="650" y1="270" x2="650" y2="280" stroke="black" stroke-width="1"/>
+  <text x="650" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">25</text>
+
+  <!-- Transformed Boxplot (Min=4, Q1=7, Med=9, Q3=11, Max=15, Outlier=22.5) -->
+  <!-- Scale: 1 dollar = 24 pixels, start at x=50 -->
+
+  <!-- Left whisker: from min (4) to Q1 (7) -->
+  <line x1="146" y1="245" x2="218" y2="245" stroke="#2e7d32" stroke-width="2"/>
+  <line x1="146" y1="230" x2="146" y2="260" stroke="#2e7d32" stroke-width="2"/>
+
+  <!-- Box: from Q1 (7) to Q3 (11) -->
+  <rect x="218" y="215" width="96" height="60" fill="#a5d6a7" stroke="#2e7d32" stroke-width="2"/>
+
+  <!-- Median line at 9 -->
+  <line x1="266" y1="215" x2="266" y2="275" stroke="#2e7d32" stroke-width="3"/>
+
+  <!-- Right whisker: from Q3 (11) to last non-outlier (15) -->
+  <line x1="314" y1="245" x2="410" y2="245" stroke="#2e7d32" stroke-width="2"/>
+  <line x1="410" y1="230" x2="410" y2="260" stroke="#2e7d32" stroke-width="2"/>
+
+  <!-- Outlier at 22.5 -->
+  <circle cx="590" cy="245" r="4" fill="#c62828"/>
+
+  <!-- Labels for transformed -->
+  <text x="146" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32">4</text>
+  <text x="218" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32">7</text>
+  <text x="266" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32">9</text>
+  <text x="314" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32">11</text>
+  <text x="410" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32">15</text>
+  <text x="590" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#c62828">22.5*</text>
+
+  <!-- Legend/Notes -->
+  <text x="50" y="325" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    * = Outlier (beyond 1.5×IQR fence)
+  </text>
+  <text x="50" y="340" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Note: Both distributions maintain right-skewed shape with outliers
+  </text>
+</svg>

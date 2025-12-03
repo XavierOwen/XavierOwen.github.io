@@ -1,0 +1,74 @@
+<svg width="600" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="300" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    Weekly Coffee Spending ($)
+  </text>
+
+  <!-- Axis -->
+  <line x1="50" y1="150" x2="550" y2="150" stroke="black" stroke-width="1"/>
+
+  <!-- Tick marks and labels -->
+  <line x1="50" y1="145" x2="50" y2="155" stroke="black" stroke-width="1"/>
+  <text x="50" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">0</text>
+
+  <line x1="100" y1="145" x2="100" y2="155" stroke="black" stroke-width="1"/>
+  <text x="100" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">5</text>
+
+  <line x1="150" y1="145" x2="150" y2="155" stroke="black" stroke-width="1"/>
+  <text x="150" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">10</text>
+
+  <line x1="200" y1="145" x2="200" y2="155" stroke="black" stroke-width="1"/>
+  <text x="200" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">15</text>
+
+  <line x1="250" y1="145" x2="250" y2="155" stroke="black" stroke-width="1"/>
+  <text x="250" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">20</text>
+
+  <line x1="300" y1="145" x2="300" y2="155" stroke="black" stroke-width="1"/>
+  <text x="300" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">25</text>
+
+  <line x1="350" y1="145" x2="350" y2="155" stroke="black" stroke-width="1"/>
+  <text x="350" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">30</text>
+
+  <line x1="400" y1="145" x2="400" y2="155" stroke="black" stroke-width="1"/>
+  <text x="400" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">35</text>
+
+  <line x1="450" y1="145" x2="450" y2="155" stroke="black" stroke-width="1"/>
+  <text x="450" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">40</text>
+
+  <line x1="500" y1="145" x2="500" y2="155" stroke="black" stroke-width="1"/>
+  <text x="500" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">45</text>
+
+  <!-- Boxplot -->
+  <!-- Min = 8, Q1 = 14, Median = 18, Q3 = 22, Max outlier at 45, last non-outlier = 30 -->
+  <!-- Scale: 10 dollars = 50 pixels -->
+
+  <!-- Left whisker: from min (8) to Q1 (14) -->
+  <line x1="130" y1="100" x2="190" y2="100" stroke="#1565c0" stroke-width="2"/>
+  <line x1="130" y1="85" x2="130" y2="115" stroke="#1565c0" stroke-width="2"/>
+
+  <!-- Box: from Q1 (14) to Q3 (22) -->
+  <rect x="190" y="70" width="60" height="60" fill="#90caf9" stroke="#1565c0" stroke-width="2"/>
+
+  <!-- Median line at 18 -->
+  <line x1="210" y1="70" x2="210" y2="130" stroke="#1565c0" stroke-width="3"/>
+
+  <!-- Right whisker: from Q3 (22) to last non-outlier (30) -->
+  <line x1="250" y1="100" x2="330" y2="100" stroke="#1565c0" stroke-width="2"/>
+  <line x1="330" y1="85" x2="330" y2="115" stroke="#1565c0" stroke-width="2"/>
+
+  <!-- Outlier at 45 -->
+  <circle cx="500" cy="100" r="4" fill="#c62828"/>
+
+  <!-- Labels -->
+  <text x="130" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1565c0">Min: 8</text>
+  <text x="190" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1565c0">Q1: 14</text>
+  <text x="210" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1565c0">Med: 18</text>
+  <text x="250" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1565c0">Q3: 22</text>
+  <text x="330" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1565c0">Max: 30</text>
+  <text x="500" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c62828">Outlier: 45</text>
+
+  <!-- Legend -->
+  <text x="50" y="190" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    IQR = 8, Upper Fence = 34
+  </text>
+</svg>

@@ -668,14 +668,14 @@ Yes, there is strong evidence that the prep course is associated with higher SAT
 #### Section 1.1: Types of Data & Study Design
 
 **1.1** A wildlife biologist captures, tags, and releases 50 deer in a forest. She records their weight, gender, and the location in the forest where they were caught.
-   - a. What are the individuals in this study?
-   - b. Identify each variable as categorical or quantitative.
-   - c. If the biologist wants to estimate the average weight of _all_ deer in this forest, is this average a parameter or a statistic?
+   1. What are the individuals in this study?
+   2. Identify each variable as categorical or quantitative.
+   3. If the biologist wants to estimate the average weight of _all_ deer in this forest, is this average a parameter or a statistic?
 
 **C1.1** (Challenge): A medical researcher is studying the effect of a new drug on blood pressure. She collects data from 100 patients. The variables recorded are: Patient ID (e.g., 1001, 1002), Dosage (0mg, 50mg, 100mg), Blood Pressure Reduction (mmHg), and Side Effects Severity (None, Mild, Severe).
-- a. Identify the individuals.
-- b. Classify "Patient ID", "Dosage", and "Side Effects Severity" as categorical or quantitative. Explain your reasoning for "Dosage".
-- c. If the researcher calculates the average blood pressure reduction for these 100 patients to be 12 mmHg, is this a parameter or a statistic?
+1. Identify the individuals.
+2. Classify "Patient ID", "Dosage", and "Side Effects Severity" as categorical or quantitative. Explain your reasoning for "Dosage".
+3. If the researcher calculates the average blood pressure reduction for these 100 patients to be 12 mmHg, is this a parameter or a statistic?
 
 #### Section 1.2: Categorical Data
 
@@ -687,111 +687,159 @@ Yes, there is strong evidence that the prep course is associated with higher SAT
 | **Upperclassmen** | 30          | 70           | 100   |
 | **Total**         | 90          | 110          | 200   |
 
-- a. What proportion of students surveyed prefer to watch sports?
-- b. What is the conditional relative frequency of preferring to watch sports, given a student is an upperclassman?
-- c. Is there an association between grade level and sports preference? Justify your answer by comparing conditional distributions.
+1. What proportion of students surveyed prefer to watch sports?
+2. What is the conditional relative frequency of preferring to watch sports, given a student is an upperclassman?
+3. Is there an association between grade level and sports preference? Justify your answer by comparing conditional distributions.
 
-**C1.2** (Challenge): A university is analyzing admission data for two departments, Engineering and Arts.
+**C1.2** (Challenge): A university is analyzing admission data for two departments, Engineering and Arts. The data is given below:
+
 - Engineering: 800 male applicants (600 admitted), 200 female applicants (180 admitted).
 - Arts: 400 male applicants (100 admitted), 600 female applicants (200 admitted).
-- a. Construct a two-way table for the overall admission data (combining both departments) by Gender and Admission Status.
-- b. Calculate the overall admission rate for males and females. Who appears to be favored?
-- c. Calculate the admission rate for males and females *within* each department. Who appears to be favored in each department?
-- d. Explain the apparent contradiction (Simpson's Paradox).
+
+1. Construct a two-way table for the overall admission data (combining both departments) by Gender and Admission Status.
+2. Calculate the overall admission rate for males and females. Who appears to be favored?
+3. Calculate the admission rate for males and females *within* each department. Who appears to be favored in each department?
+4. Explain the apparent contradiction (Simpson's Paradox).
 
 #### Section 1.3 & 1.4: Quantitative Data & Summary Statistics
 
 **1.3** Consider the following dataset representing the number of hours 10 students spent studying for an exam: `4, 7, 2, 8, 5, 15, 6, 5, 7, 9`.
-   - a. Calculate the mean and the median study time.
-   - b. The value `15` seems high. Which measure of center is more resistant to this potential outlier?
-   - c. The standard deviation is approximately \\(3.5\\) hours. Interpret this value.
+1. Calculate the mean and the median study time.
+2. The value `15` seems high. Which measure of center is more resistant to this potential outlier?
+3. The standard deviation is approximately \\(3.5\\) hours. Interpret this value.
 
 **C1.3** (Challenge): A class of 20 students has a mean test score of 80. A second class of 30 students has a mean test score of 70.
-- a. What is the mean score of all 50 students combined?
-- b. If the standard deviation of the first class is 5 and the second class is 10, can you calculate the standard deviation of the combined group just from this information? Why or why not?
-- c. Can you determine the exact median of the combined group? Why or why not?
+1. What is the mean score of all 50 students combined?
+2. If the standard deviation of the first class is 5 and the second class is 10, can you calculate the standard deviation of the combined group just from this information? Why or why not?
+3. Can you determine the exact median of the combined group? Why or why not?
 
 #### Section 1.5: Transformations and Summary Plots
 
 **1.4** For the study time data in question 1.3:
-   - a. Find the five-number summary.
-   - b. Calculate the Interquartile Range (IQR).
-   - c. Use the \\(1.5 \times IQR\\) rule to determine if the value `15` is an outlier.
+1. Find the five-number summary.
+2. Calculate the Interquartile Range (IQR).
+3. Use the \\(1.5 \times IQR\\) rule to determine if the value `15` is an outlier.
 
 **1.5** The instructor decides to give every student a bonus, adding 1 hour to their recorded study time.
-   - a. What will be the new mean study time?
-   - b. What will be the new standard deviation?
+1. What will be the new mean study time?
+2. What will be the new standard deviation?
 
 **C1.4** (Challenge): A teacher scales the test scores of a class using the formula \\(Y = 2X + 10\\), where \\(X\\) is the original score. The original scores had a mean of 35 and a standard deviation of 5. The original distribution was strongly skewed to the right.
-   - a. Find the mean and standard deviation of the scaled scores.
-   - b. Describe the shape of the new distribution.
-   - c. One student's original score was an outlier. Will it remain an outlier after the transformation? Prove it using the IQR rule (assume original \\(Q1=30, Q3=40\\)).
+1. Find the mean and standard deviation of the scaled scores.
+2. Describe the shape of the new distribution.
+3. One student's original score was an outlier. Will it remain an outlier after the transformation? Prove it using the IQR rule (assume original \\(Q1=30, Q3=40\\)).
+
+**C1.5** (Challenge): A college student tracked the amount of money (in dollars) they spent on coffee each week for 15 weeks: `12, 18, 15, 22, 8, 25, 20, 14, 30, 16, 19, 45, 17, 21, 13`.
+1. Create a boxplot for this data. Show all work including the five-number summary and checking for outliers.
+2. Based on your boxplot, describe the shape of the distribution.
+3. The student decides to cut their coffee spending in half for the rest of the semester. How would the boxplot change? Specifically, what would happen to the median, IQR, and any outliers?
 
 ---
 
-#### Answers
+### Answers
 
 **1.1**
-- **a.** The individuals are the 50 deer that were captured.
-- **b.** Weight is quantitative. Gender is categorical. Location is categorical.
-- **c.** A parameter, because it describes the entire population (all deer in the forest). The average weight of the 50 captured deer would be a statistic.
+1. The individuals are the 50 deer that were captured.
+2. Weight is quantitative. Gender is categorical. Location is categorical.
+3. A parameter, because it describes the entire population (all deer in the forest). The average weight of the 50 captured deer would be a statistic.
 
 **C1.1**
-- **a.** The 100 patients.
-- **b.** Patient ID: Categorical (identifier). Dosage: Could be Quantitative (amount of drug) or Categorical (treatment group levels). Side Effects: Categorical (ordinal).
-- **c.** Statistic (describes the sample of 100).
+1. The 100 patients.
+2. Patient ID: Categorical (identifier). Dosage: Could be Quantitative (amount of drug) or Categorical (treatment group levels). Side Effects: Categorical (ordinal).
+3. Statistic (describes the sample of 100).
 
 **1.2**
-- **a.** \\( \frac{110}{200} = 0.55 \\) or 55% of students prefer to watch sports.
-- **b.** \\( \frac{70}{100} = 0.70 \\) or 70% of upperclassmen prefer to watch sports.
-- **c.** Yes, there is an association. The proportion of upperclassmen who prefer watching sports (70%) is much higher than the proportion of underclassmen who prefer watching sports (\\( \frac{40}{100} = 40\% \\)). Because these conditional distributions are different, the variables are associated.
+1. \\( \frac{110}{200} = 0.55 \\) or 55% of students prefer to watch sports.
+2. \\( \frac{70}{100} = 0.70 \\) or 70% of upperclassmen prefer to watch sports.
+3. Yes, there is an association. The proportion of upperclassmen who prefer watching sports (70%) is much higher than the proportion of underclassmen who prefer watching sports (\\( \frac{40}{100} = 40\% \\)). Because these conditional distributions are different, the variables are associated.
 
 **C1.2**
-- **a.**
+1. Two-way table for overall admission data:
 
-| | Admitted | Not Admitted | Total |
-|---|---|---|---|
-| Male | 600+100=700 | 200+300=500 | 1200 |
-| Female | 180+200=380 | 20+400=420 | 800 |
+   | | Admitted | Not Admitted | Total |
+   |---|---|---|---|
+   | Male | 600+100=700 | 200+300=500 | 1200 |
+   | Female | 180+200=380 | 20+400=420 | 800 |
 
-- **b.** Male Rate: 700/1200 = 58.3%. Female Rate: 380/800 = 47.5%. Males appear favored.
-- **c.** Engineering: Male 600/800=75%, Female 180/200=90%. (Females favored). Arts: Male 100/400=25%, Female 200/600=33.3%. (Females favored).
-- **d.** Simpson's Paradox. Females are favored in both departments, but because more females applied to the harder-to-get-into department (Arts) and more males applied to the easier department (Engineering), the overall average makes it look like males are favored.
+2. Male Rate: 700/1200 = 58.3%. Female Rate: 380/800 = 47.5%. Males appear favored overall.
+3. Engineering: Male 600/800=75%, Female 180/200=90%. (Females favored). Arts: Male 100/400=25%, Female 200/600=33.3%. (Females favored).
+4. Simpson's Paradox. Females are favored in both departments, but because more females applied to the harder-to-get-into department (Arts) and more males applied to the easier department (Engineering), the overall average makes it look like males are favored.
 
 **1.3**
-- **a.** Mean: \\( \frac{4+7+2+8+5+15+6+5+7+9}{10} = \frac{68}{10} = 6.8 \\) hours.
+1. Mean: \\( \frac{4+7+2+8+5+15+6+5+7+9}{10} = \frac{68}{10} = 6.8 \\) hours.
 Median: First, order the data: `2, 4, 5, 5, 6, 7, 7, 8, 9, 15`. The median is the average of the 5th and 6th values: \\( \frac{6+7}{2} = 6.5 \\) hours.
-- **b.** The median is more resistant. The mean (6.8) is pulled higher by the outlier (15), while the median (6.5) is less affected.
-- **c.** A standard deviation of 3.5 hours means that the typical distance of an individual student's study time from the mean study time of 6.8 hours is about 3.5 hours.
+2. The median is more resistant. The mean (6.8) is pulled higher by the outlier (15), while the median (6.5) is less affected.
+3. A standard deviation of 3.5 hours means that the typical distance of an individual student's study time from the mean study time of 6.8 hours is about 3.5 hours.
 
 **C1.3**
-- **a.** Weighted Mean = (20*80 + 30*70) / 50 = (1600 + 2100) / 50 = 3700 / 50 = 74.
-- **b.** Yes, but it requires a complex formula involving the variances and the difference in means. It is NOT the average of the standard deviations.
-- **c.** No. Without the individual data points, we cannot determine the exact median, only that it lies somewhere between the two class medians (or potentially outside if distributions are extreme, but typically between).
+1. Weighted Mean = (20*80 + 30*70) / 50 = (1600 + 2100) / 50 = 3700 / 50 = 74.
+2. Yes, but it requires a complex formula involving the variances and the difference in means. It is NOT the average of the standard deviations.
+3. No. Without the individual data points, we cannot determine the exact median, only that it lies somewhere between the two class medians (or potentially outside if distributions are extreme, but typically between).
 
 **1.4**
-- **a.** Ordered data: `2, 4, 5, 5, 6, 7, 7, 8, 9, 15`.
-Minimum = 2.
-Q1 (median of lower half `2, 4, 5, 5, 6`) = 5.
-Median = 6.5.
-Q3 (median of upper half `7, 7, 8, 9, 15`) = 8.
-Maximum = 15.
-Five-number summary is **{2, 5, 6.5, 8, 15}**.
-- **b.** IQR = Q3 - Q1 = \\(8 - 5 = 3\\).
-- **c.** Upper Fence = Q3 + \\(1.5 \times IQR\\) = \\(8 + 1.5 \times 3 = 8 + 4.5 = 12.5\\). Since 15 is greater than 12.5, it is considered an outlier.
+1. Statistics
+   - Ordered data: `2, 4, 5, 5, 6, 7, 7, 8, 9, 15`.
+   - Minimum = 2.
+   - Q1 (median of lower half `2, 4, 5, 5, 6`) = 5.
+   - Median = 6.5.
+   - Q3 (median of upper half `7, 7, 8, 9, 15`) = 8.
+   - Maximum = 15.
+   - Five-number summary is **{2, 5, 6.5, 8, 15}**.
+2. IQR = Q3 - Q1 = \\(8 - 5 = 3\\).
+3. Upper Fence = Q3 + \\(1.5 \times IQR\\) = \\(8 + 1.5 \times 3 = 8 + 4.5 = 12.5\\). Since 15 is greater than 12.5, it is considered an outlier.
 
 **1.5**
-- **a.** The new mean will be the old mean + 1: \\(6.8 + 1 = 7.8\\) hours. Adding a constant affects measures of center.
-- **b.** The new standard deviation will be the same as the old one: \\(3.5\\) hours. Adding a constant does not affect measures of spread.
+1. The new mean will be the old mean + 1: \\(6.8 + 1 = 7.8\\) hours. Adding a constant affects measures of center.
+2. The new standard deviation will be the same as the old one: \\(3.5\\) hours. Adding a constant does not affect measures of spread.
 
 **C1.4**
-- **a.** New Mean = \\(2(35) + 10 = 80\\). New SD = \\(|2|(5) = 10\\).
-- **b.** The shape will remain strongly skewed to the right. Linear transformations (\\(Y = aX + b\\)) do not change the shape of the distribution.
-- **c.** Yes, it will remain an outlier.
+
+1. New Mean = \\(2(35) + 10 = 80\\). New SD = \\(\|2\|(5) = 10\\).
+2. The shape will remain strongly skewed to the right. Linear transformations (\\(Y = aX + b\\)) do not change the shape of the distribution.
+3. Yes, it will remain an outlier.
 Original IQR = \\(40 - 30 = 10\\). Upper Fence = \\(40 + 1.5(10) = 55\\). An outlier is any \\(X > 55\\).
 New Q1 = \\(2(30) + 10 = 70\\). New Q3 = \\(2(40) + 10 = 90\\). New IQR = \\(90 - 70 = 20\\).
 New Upper Fence = \\(90 + 1.5(20) = 120\\).
 If \\(X > 55\\), then \\(2X > 110\\), and \\(2X + 10 > 120\\). So the transformed score will be greater than the new upper fence.
+
+**C1.5**
+1. **Step 1: Order the data**
+
+   \\(8, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 25, 30, 45\\)
+
+   **Step 2: Find the five-number summary**
+   - Minimum: \\(8\\)
+   - Q1: Median of lower 7 values \\((8, 12, 13, 14, 15, 16, 17)\\) = \\(14\\)
+   - Median: 8th value = \\(18\\)
+   - Q3: Median of upper 7 values \\((19, 20, 21, 22, 25, 30, 45)\\) = \\(22\\)
+   - Maximum: \\(45\\)
+
+   **Step 3: Check for outliers**
+   - IQR = \\(22 - 14 = 8\\)
+   - Lower Fence: \\(14 - 1.5(8) = 14 - 12 = 2\\)
+   - Upper Fence: \\(22 + 1.5(8) = 22 + 12 = 34\\)
+   - \\(45 > 34\\), so **45 is an outlier**
+
+   **Step 4: Draw the boxplot**
+
+   <p style="text-align:center;">
+       <img src="{{ site.baseurl }}/images/notes/math/AP_stat_boxPlot_coffee.svg">
+   </p>
+
+2. The distribution is right-skewed, as evidenced by the longer right whisker and the outlier on the high end. The median is closer to Q1 than to Q3, which also indicates right skewness.
+
+3. **Effect of cutting spending in half (dividing by 2)**:
+   - New Median: \\(18 \div 2 = 9\\) dollars
+   - New IQR: \\(8 \div 2 = 4\\) dollars (since both Q1 and Q3 are divided by 2)
+   - New Q1: \\(14 \div 2 = 7\\) dollars, New Q3: \\(22 \div 2 = 11\\) dollars
+   - The outlier (45) becomes \\(45 \div 2 = 22.5\\)
+   - New Upper Fence: \\(11 + 1.5(4) = 11 + 6 = 17\\)
+   - Since \\(22.5 > 17\\), the value remains an outlier
+   - The boxplot would be compressed horizontally (all values halved), but the shape (right-skewed with an outlier) would remain the same
+
+   <p style="text-align:center;">
+       <img src="{{ site.baseurl }}/images/notes/math/AP_stat_boxPlot_coffee_comparison.svg">
+   </p>
 
 ---
 
