@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="Logarithmic relationship: ad spend vs. sales">
+  <defs>
+    <style>
+      .axis { stroke: #333; stroke-width: 2; }
+      .grid { stroke: #eee; stroke-width: 1; }
+      .tick { stroke: #333; stroke-width: 1; }
+      .label { fill: #333; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size: 12px; }
+      .title { fill: #111; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size: 16px; font-weight: 600; }
+      .point { fill: #43a047; opacity: 0.9; }
+      .curve { stroke: #d14; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+  <rect x="60" y="30" width="550" height="280" fill="#fff" stroke="#ddd" />
+  <!-- axes -->
+  <line class="axis" x1="60" y1="310" x2="610" y2="310" />
+  <line class="axis" x1="60" y1="310" x2="60" y2="30" />
+  <text class="label" x="335" y="340" text-anchor="middle">Ad spend ($)</text>
+  <text class="label" x="20" y="170" transform="rotate(-90 20 170)" text-anchor="middle">Sales</text>
+  <!-- points: fast rise then flatten -->
+  <g>
+    <circle class="point" cx="90" cy="300" r="4" />
+    <circle class="point" cx="130" cy="260" r="4" />
+    <circle class="point" cx="170" cy="230" r="4" />
+    <circle class="point" cx="210" cy="210" r="4" />
+    <circle class="point" cx="250" cy="195" r="4" />
+    <circle class="point" cx="290" cy="185" r="4" />
+    <circle class="point" cx="330" cy="178" r="4" />
+    <circle class="point" cx="370" cy="172" r="4" />
+    <circle class="point" cx="410" cy="168" r="4" />
+    <circle class="point" cx="450" cy="165" r="4" />
+  </g>
+  <!-- logarithmic curve guide -->
+  <path class="curve" d="M80,310 C160,240 240,200 320,180 C400,170 480,165 560,162" />
+  <text class="title" x="320" y="20" text-anchor="middle">Logarithmic (Diminishing Returns)</text>
+</svg>

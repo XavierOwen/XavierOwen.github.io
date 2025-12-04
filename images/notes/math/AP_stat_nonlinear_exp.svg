@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="Exponential growth scatter: time vs. bacteria count">
+  <defs>
+    <style>
+      .axis { stroke: #333; stroke-width: 2; }
+      .grid { stroke: #eee; stroke-width: 1; }
+      .tick { stroke: #333; stroke-width: 1; }
+      .label { fill: #333; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size: 12px; }
+      .title { fill: #111; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size: 16px; font-weight: 600; }
+      .point { fill: #1e88e5; opacity: 0.9; }
+      .curve { stroke: #d14; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+  <rect x="60" y="30" width="550" height="280" fill="#fff" stroke="#ddd" />
+  <!-- axes -->
+  <line class="axis" x1="60" y1="310" x2="610" y2="310" />
+  <line class="axis" x1="60" y1="310" x2="60" y2="30" />
+  <text class="label" x="335" y="340" text-anchor="middle">Time (hours)</text>
+  <text class="label" x="20" y="170" transform="rotate(-90 20 170)" text-anchor="middle">Bacteria count</text>
+  <!-- points: curving upward -->
+  <g>
+    <!-- points follow an exponential-like curve: very flat early, then rapid rise -->
+    <circle class="point" cx="85"  cy="304" r="4" />
+    <circle class="point" cx="120" cy="303" r="4" />
+    <circle class="point" cx="155" cy="301" r="4" />
+    <circle class="point" cx="190" cy="298" r="4" />
+    <circle class="point" cx="225" cy="292" r="4" />
+    <circle class="point" cx="260" cy="280" r="4" />
+    <circle class="point" cx="300" cy="255" r="4" />
+    <circle class="point" cx="345" cy="215" r="4" />
+    <circle class="point" cx="395" cy="160" r="4" />
+    <circle class="point" cx="455" cy="90"  r="4" />
+  </g>
+  <!-- exponential curve guide -->
+  <!-- Exponential-like guide: piecewise cubic that stays near baseline then rockets up -->
+  <path class="curve"
+      d="
+      M85,304
+      L120,303
+      L155,301
+      L190,298
+      L225,292
+      L260,280
+      L300,255
+      L345,215
+      L395,160
+      L455,90
+      "
+/>
+  <text class="title" x="320" y="20" text-anchor="middle">Exponential Growth</text>
+</svg>
