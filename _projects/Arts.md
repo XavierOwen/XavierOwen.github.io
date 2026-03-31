@@ -281,9 +281,9 @@ Created by Powerpoints 100%
 
 ![Little house in the sand area]({{ site.baseurl }}/images/arts/draw/201705100147_Little house in the sand area.png)
 
-### Behind the Mast (Main)
+### Behind the Mask (Main)
 
-![Behind the Mast (Main)]({{ site.baseurl }}/images/arts/draw/201705031053_Behind the mask_main.png)
+![Behind the Mask (Main)]({{ site.baseurl }}/images/arts/draw/201705031053_Behind the mask_main.png)
 
 ### You are my Life
 
