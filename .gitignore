@@ -19,3 +19,8 @@ package-lock.json
 # Ignore folders related to IDEs
 .vscode/
 .DS_Store
+
+# Ignore local secrets
+.env
+.env.*
+!.env.example

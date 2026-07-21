@@ -1,9 +1,8 @@
 {%- comment -%}
-Backlinks system - finds all pages that link to the current page using [[page title]] syntax
+  Backlinks module: find content that references this page with [[page title]].
+  The layout captures this include once, then reuses the result for both the
+  page body and its generated table of contents.
 {%- endcomment -%}
-
-<!-- DEBUG: Backlinks processing for page: {{ page.title }} -->
-<!-- DEBUG: Looking for wiki link: [[{{ page.title }}]] -->
 
 {%- assign link_count = 0 -%}
 {%- assign wiki_link_title = '[[' | append: page.title | append: ']]' -%}
@@ -49,10 +48,9 @@ Backlinks system - finds all pages that link to the current page using [[page ti
     {%- endif -%}
 {%- endfor -%}
 
-<!-- DEBUG: Found {{ link_count }} backlinks -->
-
 {%- if link_count > 0 -%}
-<div class="backlinks-section" id="backlinks">
+<h2 id="backlinks">Links to this page</h2>
+<div class="backlinks-section">
     <div class="backlinks-grid">
         {%- for note in site.notes -%}
             {%- if note.url != page.url -%}
@@ -135,6 +133,4 @@ Backlinks system - finds all pages that link to the current page using [[page ti
         {%- endfor -%}
     </div>
 </div>
-{%- else -%}
-<!-- DEBUG: No backlinks found for this page -->
 {%- endif -%}

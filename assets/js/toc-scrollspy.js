@@ -23,63 +23,35 @@
         map.set(id, a);
     });
 
-    // 2) 平滑滚动（点击 TOC 时） - "Bait and Switch" to prevent jQuery error
-    links.forEach(a => {
-        // On mousedown, before the click is processed by other scripts,
-        // store the real href and replace it with something harmless.
-        a.addEventListener('mousedown', e => {
-            const href = a.getAttribute('href');
-            if (href && href.startsWith('#')) {
-                a.setAttribute('data-original-href', href);
-                a.setAttribute('href', 'javascript:void(0)');
-            }
-        });
+    // 2) Intercept TOC navigation in the capture phase. This keeps semantic
+    // anchor hrefs intact for keyboards, copying, and no-JavaScript fallback,
+    // while preventing the bundled jQuery handler from fighting this offset.
+    document.addEventListener('click', event => {
+        const link = event.target.closest?.('a[href^="#"]');
+        if (!link || !links.includes(link)) return;
 
-        // On click, do our custom scrolling.
-        a.addEventListener('click', e => {
-            // Restore the original href from the data attribute.
-            const href = a.getAttribute('data-original-href');
+        const href = link.getAttribute('href');
+        const id = decodeURIComponent(href.slice(1));
+        const target = document.getElementById(id);
+        if (!target) return;
 
-            // It's good practice to restore the href attribute immediately.
-            if (href) {
-                a.setAttribute('href', href);
-                a.removeAttribute('data-original-href');
-            }
+        event.preventDefault();
+        event.stopImmediatePropagation();
 
-            if (!href || !href.startsWith('#')) {
-                return; // Not a TOC link we should handle.
-            }
+        // Pause the scrollspy to avoid conflicts.
+        pauseSpy(100);
 
-            const id = decodeURIComponent(href.slice(1));
-            const target = document.getElementById(id);
+        // Calculate the scroll position, accounting for the masthead and an extra offset.
+        const masthead = document.querySelector('.masthead');
+        const mastheadHeight = masthead ? masthead.offsetHeight : 0;
+        const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const extraOffset = 0.5 * fontSize; // 0.5em in pixels
+        const endY = target.getBoundingClientRect().top + window.scrollY - mastheadHeight - extraOffset;
 
-            if (!target) {
-                return;
-            }
-
-            e.preventDefault();
-            e.stopImmediatePropagation(); // Prevent any other click handlers from running.
-
-            // Pause the scrollspy to avoid conflicts.
-            pauseSpy(100);
-
-            // Calculate the scroll position, accounting for the masthead and an extra offset.
-            const masthead = document.querySelector('.masthead');
-            const mastheadHeight = masthead ? masthead.offsetHeight : 0;
-            const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-            const extraOffset = 0.5 * fontSize; // 0.5em in pixels
-            const endY = target.getBoundingClientRect().top + window.scrollY - mastheadHeight - extraOffset;
-
-            // Scroll to the target instantly.
-            window.scrollTo(0, endY);
-
-            // Update the URL hash.
-            history.replaceState(null, '', href);
-
-            // Set the active link in the TOC.
-            setActive(a);
-        });
-    });
+        window.scrollTo(0, endY);
+        history.replaceState(null, '', href);
+        setActive(link);
+    }, true);
 
     // 3) 观察正文标题进入视口
     let spyPausedUntil = 0;

@@ -1,7 +1,7 @@
 ---
 title: "Test Wiki Links"
 collection: notes
-category: spiritual
+category: personal
 excerpt: "测试wiki链接功能"
 date: 2025-11-08
 ---

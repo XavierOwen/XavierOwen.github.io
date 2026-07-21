@@ -1,0 +1,159 @@
+---
+layout: null
+permalink: /prototype/bilingual-home/
+title: "PROTOTYPE — Bilingual home"
+sitemap: false
+---
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>PROTOTYPE — Bilingual home</title>
+  <style>
+    :root { --ink: #1b1d20; --paper: #f5f0e7; --rule: #c8beb0; --signal: #b44c2d; --mist: #dce4dd; --night: #27354a; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: Georgia, "Noto Serif SC", serif; }
+    button { font: inherit; cursor: pointer; }
+    .prototype-variant { display: none; min-height: 100vh; }
+    .prototype-variant[data-active="true"] { display: block; }
+    .eyebrow, .route-label, .language-note, .identity, .prototype-state { font-family: ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+    .eyebrow { font-size: .72rem; }
+    .route-label { font-size: .7rem; }
+    .language-note { font-size: .7rem; opacity: .72; }
+    .manifesto { padding: 1.5rem clamp(1.25rem, 6vw, 6rem) 7rem; background: linear-gradient(130deg, #f5f0e7 60%, #e2e9e1 60%); }
+    .manifesto__nav { display: flex; justify-content: space-between; border-bottom: 1px solid var(--ink); padding-bottom: .8rem; }
+    .manifesto__hero { max-width: 62rem; padding: clamp(5rem, 13vh, 10rem) 0 4rem; }
+    .manifesto h1 { max-width: 16ch; font-size: clamp(3.2rem, 8vw, 7.5rem); line-height: .94; font-weight: 400; letter-spacing: -.055em; margin: .5rem 0 1.5rem; }
+    .manifesto__hero p { max-width: 46rem; font-size: clamp(1.05rem, 2vw, 1.4rem); line-height: 1.65; }
+    .manifesto__routes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+    .manifesto__route { min-height: 15rem; padding: 1.1rem; border-right: 1px solid var(--ink); color: inherit; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; transition: background .18s; }
+    .manifesto__route:last-child { border-right: 0; }
+    .manifesto__route:hover { background: var(--ink); color: var(--paper); }
+    .manifesto__route strong { font-size: 1.35rem; font-weight: 400; }
+    .manifesto__identity { padding-top: 2rem; font-size: .9rem; }
+    .field-notes { background: #e8edf0; padding-bottom: 8rem; }
+    .field-notes__top { padding: 1rem clamp(1.25rem, 5vw, 5rem); display: flex; justify-content: space-between; background: var(--night); color: #f7f7f4; }
+    .field-notes__intro { padding: clamp(4rem, 12vw, 10rem) clamp(1.25rem, 12vw, 12rem) 2.5rem; max-width: 78rem; }
+    .field-notes h1 { margin: 0; max-width: 18ch; font: 400 clamp(2.9rem, 7vw, 6rem)/1.03 ui-sans-serif, system-ui, sans-serif; letter-spacing: -.065em; }
+    .field-notes__intro p { max-width: 38rem; line-height: 1.7; font-size: 1.08rem; }
+    .field-notes__river { position: relative; max-width: 76rem; margin: 1rem auto; padding: 1rem clamp(1.25rem, 5vw, 4rem); }
+    .field-notes__river::before { content: ""; position: absolute; top: 2rem; bottom: 2rem; left: 50%; width: 1px; background: var(--night); }
+    .field-notes__stop { position: relative; width: calc(50% - 2rem); padding: 1.3rem; margin: 1.8rem 0; background: #fdfcf8; border: 1px solid var(--night); }
+    .field-notes__stop:nth-child(even) { margin-left: auto; }
+    .field-notes__stop::after { content: ""; position: absolute; top: 2rem; width: 4rem; height: 1px; background: var(--night); }
+    .field-notes__stop:nth-child(odd)::after { left: 100%; }
+    .field-notes__stop:nth-child(even)::after { right: 100%; }
+    .field-notes__stop h2 { margin: .4rem 0; font: 500 1.35rem/1.15 ui-sans-serif, system-ui, sans-serif; }
+    .field-notes__footer { max-width: 76rem; margin: 3rem auto 0; padding: 0 clamp(1.25rem, 5vw, 4rem); display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .fallback { padding: 1.2rem; border-left: .35rem solid var(--signal); background: #fffaf4; }
+    .index { display: grid; grid-template-columns: minmax(16rem, .72fr) 2fr; min-height: 100vh; padding-bottom: 7rem; background: #f9f8f3; }
+    .index__side { padding: 2rem; border-right: 1px solid var(--rule); background: #183445; color: #f9f8f3; display: flex; flex-direction: column; justify-content: space-between; }
+    .index__side h1 { font-size: clamp(2rem, 4vw, 3.6rem); line-height: .95; font-weight: 400; margin: 1rem 0; }
+    .index__nav { list-style: none; padding: 0; margin: 2rem 0; border-top: 1px solid #a8c3c7; }
+    .index__nav li { padding: .7rem 0; border-bottom: 1px solid #a8c3c7; font-family: ui-sans-serif, system-ui, sans-serif; }
+    .index__main { padding: clamp(2rem, 5vw, 5rem); }
+    .index__question { max-width: 42rem; border-bottom: 1px solid var(--rule); padding-bottom: 2.5rem; }
+    .index__question h2 { font-size: clamp(2.2rem, 5vw, 4.8rem); line-height: .98; letter-spacing: -.04em; font-weight: 400; margin: .6rem 0; }
+    .index__ledger { margin-top: 3.5rem; display: grid; grid-template-columns: 7rem 1fr 1.6fr; border-top: 1px solid var(--ink); }
+    .index__entry { display: contents; }
+    .index__entry > * { margin: 0; padding: 1.2rem .6rem; border-bottom: 1px solid var(--ink); }
+    .index__entry h3 { font-size: 1.2rem; font-weight: 400; }
+    .index__entry p { line-height: 1.55; }
+    .index__identity { margin-top: 3rem; border: 1px solid var(--ink); padding: 1.25rem; max-width: 38rem; }
+    .prototype-switcher { position: fixed; z-index: 20; bottom: 1rem; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: .5rem; padding: .45rem; border: 1px solid #fff; border-radius: 999px; color: #fff; background: #17191d; box-shadow: 0 12px 35px rgba(0,0,0,.25); font-family: ui-sans-serif, system-ui, sans-serif; }
+    .prototype-switcher button { flex: 0 0 2.65rem; width: 2.65rem; height: 2.65rem; border: 0; border-radius: 50%; padding: 0; color: inherit; background: transparent; display: inline-grid; place-items: center; line-height: 1; }
+    .prototype-switcher .language-choice { font-size: .95rem; font-weight: 700; }
+    .prototype-switcher button:hover, .prototype-switcher button[aria-pressed="true"] { background: #48586b; }
+    .prototype-state { min-width: 12rem; padding: 0 .5rem; font-size: .65rem; line-height: 1.35; }
+    @media (max-width: 720px) { .manifesto__routes { grid-template-columns: 1fr 1fr; } .manifesto__route:nth-child(2) { border-right: 0; } .manifesto__route { min-height: 10rem; border-bottom: 1px solid var(--ink); } .field-notes__river::before, .field-notes__stop::after { display: none; } .field-notes__stop, .field-notes__stop:nth-child(even) { width: 100%; margin: 1rem 0; } .field-notes__footer, .index { grid-template-columns: 1fr; } .index__side { border-right: 0; } .index__ledger { grid-template-columns: 4.8rem 1fr; } .index__entry p { grid-column: 2; padding-top: 0; } }
+  </style>
+</head>
+<body>
+  <!-- THROWAWAY UI PROTOTYPE: three bilingual-home variants, switchable with ?variant=. Run: bundle exec jekyll serve --livereload -->
+  <main>
+    <section class="prototype-variant manifesto" data-variant="manifesto">
+      <nav class="manifesto__nav"><span class="eyebrow i18n" data-zh="一个人的网站" data-en="A personal site">一个人的网站</span><span class="eyebrow">01 / Manifesto</span></nav>
+      <div class="manifesto__hero"><span class="eyebrow i18n" data-zh="从一个问题开始" data-en="Begin with one question">从一个问题开始</span><h1 class="i18n" data-zh="世界如何成为一个“我们”？" data-en="How might the world become a ‘we’?">世界如何成为一个“我们”？</h1><p class="i18n" data-zh="研究、教学、写作、信仰与创作并不彼此取消；它们是同一问题的不同河道。" data-en="Research, teaching, writing, faith, and creation do not cancel each other out. They are different rivers from one question.">研究、教学、写作、信仰与创作并不彼此取消；它们是同一问题的不同河道。</p></div>
+      <div class="manifesto__routes route-list"></div>
+      <p class="manifesto__identity i18n" data-zh="Yuanxing Cheng · 应用数学博士 · 教育者与写作者" data-en="Yuanxing Cheng · Applied Mathematics Ph.D. · educator and writer">Yuanxing Cheng · 应用数学博士 · 教育者与写作者</p>
+    </section>
+
+    <section class="prototype-variant field-notes" data-variant="river">
+      <div class="field-notes__top"><span class="eyebrow i18n" data-zh="一张思想地图" data-en="A map of inquiry">一张思想地图</span><span class="eyebrow">02 / River</span></div>
+      <div class="field-notes__intro"><h1 class="i18n" data-zh="从同一问题，走入四种实践。" data-en="One question, four practices.">从同一问题，走入四种实践。</h1><p class="i18n" data-zh="这不是四个分离的网站，而是一条不断分流、又彼此照见的河。" data-en="This is not four separate websites, but a river that branches and reflects itself.">这不是四个分离的网站，而是一条不断分流、又彼此照见的河。</p></div>
+      <div class="field-notes__river route-list"></div>
+      <div class="field-notes__footer"><div><span class="eyebrow i18n" data-zh="提出问题的人" data-en="The person asking">提出问题的人</span><p class="i18n" data-zh="Yuanxing Cheng 是研究者、教育者与持续写作的人。" data-en="Yuanxing Cheng is a researcher, educator, and continuing writer.">Yuanxing Cheng 是研究者、教育者与持续写作的人。</p></div><div class="fallback content-fallback"></div></div>
+    </section>
+
+    <section class="prototype-variant index" data-variant="index">
+      <aside class="index__side"><div><span class="eyebrow">03 / Index</span><h1 class="i18n" data-zh="世界人民大团结" data-en="The unity of the world's people">世界人民大团结</h1><p class="i18n" data-zh="一个按读者意图而非文件夹组织的索引。" data-en="An index organized by reader intent, not folders.">一个按读者意图而非文件夹组织的索引。</p></div><ol class="index__nav route-list"></ol></aside>
+      <div class="index__main"><div class="index__question"><span class="eyebrow i18n" data-zh="问题" data-en="Question">问题</span><h2 class="i18n" data-zh="什么能使不同的人真正成为“我们”？" data-en="What might let different people genuinely become a ‘we’?">什么能使不同的人真正成为“我们”？</h2></div><div class="index__ledger route-list"></div><div class="index__identity"><span class="eyebrow i18n" data-zh="关于作者" data-en="About the author">关于作者</span><p class="i18n" data-zh="应用数学博士；研究、教学与个人写作的交汇处。" data-en="Applied Mathematics Ph.D.; at the meeting point of research, teaching, and personal writing.">应用数学博士；研究、教学与个人写作的交汇处。</p><div class="fallback content-fallback"></div></div></div>
+    </section>
+  </main>
+
+  {% if jekyll.environment == "development" %}
+  <nav class="prototype-switcher" aria-label="Prototype controls">
+    <button type="button" id="previous" aria-label="Previous variant">←</button>
+    <button type="button" class="language-choice" data-language="zh" aria-label="切换至中文">中</button>
+    <button type="button" class="language-choice" data-language="en" aria-label="Switch to English">EN</button>
+    <output class="prototype-state" id="prototype-state"></output>
+    <button type="button" id="next" aria-label="Next variant">→</button>
+  </nav>
+  {% endif %}
+
+  <script>
+    (() => {
+      const variants = ["manifesto", "river", "index"];
+      const labels = { manifesto: "Manifesto", river: "River map", index: "Editorial index" };
+      const routes = [
+        { key: "research-teaching", zh: "研究与教学", en: "Research & Teaching", zhText: "论文、课堂与数学笔记。", enText: "Papers, classrooms, and mathematical notes." },
+        { key: "notes-writing", zh: "笔记与写作", en: "Notes & Writing", zhText: "思考、诗歌、翻译与未竟的问题。", enText: "Essays, poems, translations, and unfinished questions." },
+        { key: "faith-spirituality", zh: "信仰与灵性", en: "Faith & Spirituality", zhText: "读经、教会生活与灵性学习。", enText: "Scripture, church life, and spiritual study." },
+        { key: "projects-creation", zh: "项目与创作", en: "Projects & Creation", zhText: "软件、游戏、图像与手作。", enText: "Software, games, images, and making." }
+      ];
+      const params = new URLSearchParams(window.location.search);
+      let variant = variants.includes(params.get("variant")) ? params.get("variant") : "manifesto";
+      let language = params.get("lang") === "en" ? "en" : "zh";
+      const updateUrl = () => { const next = new URL(window.location); next.searchParams.set("variant", variant); next.searchParams.set("lang", language); history.replaceState({}, "", next); };
+      const renderRoutes = () => {
+        document.querySelectorAll(".route-list").forEach(container => {
+          const kind = container.closest(".manifesto") ? "manifesto" : container.closest(".field-notes") ? "river" : "index";
+          container.innerHTML = routes.map((route, index) => {
+            const title = language === "en" ? route.en : route.zh;
+            const copy = language === "en" ? route.enText : route.zhText;
+            if (kind === "manifesto") return `<a class="manifesto__route" href="#${route.key}"><span class="route-label">0${index + 1}</span><strong>${title}</strong><span>${copy}</span></a>`;
+            if (kind === "river") return `<article class="field-notes__stop"><span class="route-label">0${index + 1} / ${route.key}</span><h2>${title}</h2><p>${copy}</p></article>`;
+            if (container.classList.contains("index__nav")) return `<li>${String(index + 1).padStart(2, "0")} · ${title}</li>`;
+            return `<article class="index__entry"><span class="route-label">0${index + 1}</span><h3>${title}</h3><p>${copy}</p></article>`;
+          }).join("");
+        });
+      };
+      const renderFallback = () => {
+        const fallback = language === "en";
+        document.querySelectorAll(".content-fallback").forEach(node => {
+          node.innerHTML = fallback
+            ? `<span class="language-note">Chinese original · no English translation</span><p><strong>终必叫我得救</strong><br>English discovery metadata is available; selecting the article opens its Chinese original.</p>`
+            : `<span class="language-note">中文原文 · 暂无英文译文</span><p><strong>终必叫我得救</strong><br>切换英文界面时，文章仍展示中文原文，并清楚标示语言。</p>`;
+        });
+      };
+      const render = () => {
+        document.documentElement.lang = language === "en" ? "en" : "zh-Hans";
+        document.querySelectorAll(".i18n").forEach(node => { node.textContent = node.dataset[language]; });
+        document.querySelectorAll(".prototype-variant").forEach(node => { node.dataset.active = node.dataset.variant === variant; });
+        document.querySelectorAll(".language-choice").forEach(button => { button.setAttribute("aria-pressed", String(button.dataset.language === language)); });
+        renderRoutes(); renderFallback(); updateUrl();
+        const state = document.getElementById("prototype-state");
+        if (state) state.textContent = `${labels[variant]} · UI ${language.toUpperCase()}\narticle: ZH original · fallback ${language === "en" ? "on" : "ready"}`;
+      };
+      const cycle = direction => { variant = variants[(variants.indexOf(variant) + direction + variants.length) % variants.length]; render(); };
+      document.getElementById("previous")?.addEventListener("click", () => cycle(-1));
+      document.getElementById("next")?.addEventListener("click", () => cycle(1));
+      document.querySelectorAll(".language-choice").forEach(button => button.addEventListener("click", () => { language = button.dataset.language; render(); }));
+      window.addEventListener("keydown", event => { if (["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName) || document.activeElement?.isContentEditable) return; if (event.key === "ArrowLeft") cycle(-1); if (event.key === "ArrowRight") cycle(1); });
+      render();
+    })();
+  </script>
+</body>
+</html>

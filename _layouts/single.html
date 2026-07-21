@@ -16,47 +16,22 @@ layout: default
 
 <div id="main" role="main">
   {% include sidebar.html %}
-  {% if page.toc %}
-    {% comment %} Generate TOC from complete content including potential backlinks {% endcomment %}
-    {% capture complete_content %}{{ content }}
-      {% comment %} Add backlinks heading to content for TOC generation {% endcomment %}
-      {% if site.wiki_links.enabled and site.wiki_links.show_backlinks %}
-        {% assign wiki_collections = site.wiki_links.collections | default: 'notes,spirits,projects' %}
-        {% if wiki_collections contains page.collection %}
-          {% assign has_backlinks_for_toc = false %}
-          {% assign wiki_link_title = '[[' | append: page.title | append: ']]' %}
-
-          {%- for note in site.notes -%}
-            {%- if note.url != page.url and note.content contains wiki_link_title -%}
-              {% assign has_backlinks_for_toc = true %}
-              {% break %}
-            {%- endif -%}
-          {%- endfor -%}
-
-          {%- unless has_backlinks_for_toc -%}
-            {%- for spirit in site.spirits -%}
-              {%- if spirit.url != page.url and spirit.content contains wiki_link_title -%}
-                {% assign has_backlinks_for_toc = true %}
-                {% break %}
-              {%- endif -%}
-            {%- endfor -%}
-          {%- endunless -%}
-
-          {%- unless has_backlinks_for_toc -%}
-            {%- for project in site.projects -%}
-              {%- if project.url != page.url and project.content contains wiki_link_title -%}
-                {% assign has_backlinks_for_toc = true %}
-                {% break %}
-              {%- endif -%}
-            {%- endfor -%}
-          {%- endunless -%}
-
-          {% if has_backlinks_for_toc %}
-            <h2 id="backlinks">Links to this page</h2>
-          {% endif %}
-        {% endif %}
+  {%- comment -%}
+    Wiki backlinks are computed once and reused by the page and its table of
+    contents. Keeping this at the layout seam prevents the two render paths
+    from drifting apart.
+  {%- endcomment -%}
+  {% capture wiki_backlinks %}
+    {% if site.wiki_links.enabled and site.wiki_links.show_backlinks %}
+      {% assign wiki_collections = site.wiki_links.collections | default: 'notes,spirits,projects' %}
+      {% if wiki_collections contains page.collection %}
+        {% include backlinks.html %}
       {% endif %}
-    {% endcapture %}
+    {% endif %}
+  {% endcapture %}
+
+  {% if page.toc %}
+    {% capture complete_content %}{{ content }}{{ wiki_backlinks }}{% endcapture %}
     {% include toc.html html=complete_content sanitize=true class="toc__left" h_min=2 h_max=3 %}
   {% endif %}
 
@@ -94,46 +69,7 @@ layout: default
 
       <section class="page__content" itemprop="text">
         {{ content }}
-
-        {%- comment -%} Include backlinks for wiki-enabled collections {%- endcomment -%}
-        {% if site.wiki_links.enabled and site.wiki_links.show_backlinks %}
-          {% assign wiki_collections = site.wiki_links.collections | default: 'notes,spirits,projects' %}
-          {% if wiki_collections contains page.collection %}
-            {%- comment -%} Check if there are any backlinks before showing the heading {%- endcomment -%}
-            {% assign has_backlinks = false %}
-            {% assign wiki_link_title = '[[' | append: page.title | append: ']]' %}
-
-            {%- for note in site.notes -%}
-              {%- if note.url != page.url and note.content contains wiki_link_title -%}
-                {% assign has_backlinks = true %}
-                {% break %}
-              {%- endif -%}
-            {%- endfor -%}
-
-            {%- unless has_backlinks -%}
-              {%- for spirit in site.spirits -%}
-                {%- if spirit.url != page.url and spirit.content contains wiki_link_title -%}
-                  {% assign has_backlinks = true %}
-                  {% break %}
-                {%- endif -%}
-              {%- endfor -%}
-            {%- endunless -%}
-
-            {%- unless has_backlinks -%}
-              {%- for project in site.projects -%}
-                {%- if project.url != page.url and project.content contains wiki_link_title -%}
-                  {% assign has_backlinks = true %}
-                  {% break %}
-                {%- endif -%}
-              {%- endfor -%}
-            {%- endunless -%}
-
-            {% if has_backlinks %}
-            <h2 id="backlinks">Links to this page</h2>
-            {% include backlinks.html %}
-            {% endif %}
-          {% endif %}
-        {% endif %}
+        {{ wiki_backlinks }}
 
         {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}
           <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
