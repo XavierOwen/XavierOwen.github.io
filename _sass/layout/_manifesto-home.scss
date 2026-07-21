@@ -1,0 +1,312 @@
+.manifesto-home {
+  --manifesto-ink: #1b1d20;
+  --manifesto-paper: #f5f0e7;
+  --manifesto-mist: #dfe7df;
+  --manifesto-rule: rgba(27, 29, 32, 0.65);
+  width: 100%;
+  color: var(--manifesto-ink);
+  background: linear-gradient(132deg, var(--manifesto-paper) 61%, var(--manifesto-mist) 61%);
+
+  a {
+    color: inherit;
+  }
+}
+
+.manifesto-home__frame {
+  width: min(100%, 90rem);
+  margin: 0 auto;
+  padding: 1.5rem clamp(1.25rem, 6vw, 6rem) 7rem;
+}
+
+.manifesto-home__topbar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--manifesto-ink);
+}
+
+.manifesto-home__eyebrow,
+.manifesto-home__section-label,
+.manifesto-home__path-number,
+.manifesto-home__path-enter {
+  font-family: $sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.manifesto-home__hero {
+  max-width: 64rem;
+  padding: clamp(5rem, 13vh, 10rem) 0 clamp(4rem, 9vw, 7rem);
+
+  h1 {
+    max-width: 16ch;
+    margin: 0.35em 0 0.25em;
+    font-family: $serif;
+    font-size: clamp(3.2rem, 8vw, 7.6rem);
+    font-weight: 400;
+    letter-spacing: -0.055em;
+    line-height: 0.94;
+  }
+
+  > p:last-child {
+    max-width: 48rem;
+    margin: 0;
+    font-family: $serif;
+    font-size: clamp(1.08rem, 2vw, 1.45rem);
+    line-height: 1.65;
+  }
+}
+
+.manifesto-home__section-label {
+  margin: 0 0 1rem;
+}
+
+.manifesto-home__path-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--manifesto-rule);
+  border-left: 1px solid var(--manifesto-rule);
+}
+
+.manifesto-home__path {
+  display: flex;
+  min-height: 18rem;
+  padding: 1.15rem;
+  flex-direction: column;
+  border-right: 1px solid var(--manifesto-rule);
+  border-bottom: 1px solid var(--manifesto-rule);
+  text-decoration: none;
+  transition: color 160ms ease, background 160ms ease;
+
+  strong {
+    margin: auto 0 1rem;
+    font-family: $serif;
+    font-size: clamp(1.3rem, 2vw, 1.75rem);
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--manifesto-paper);
+    background: var(--manifesto-ink);
+  }
+}
+
+.manifesto-home__path-copy {
+  min-height: 7.2em;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.manifesto-home__path-enter {
+  margin-top: 1.25rem;
+}
+
+.manifesto-home__identity,
+.manifesto-home__questions {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.65fr) minmax(0, 2fr);
+  gap: clamp(2rem, 8vw, 8rem);
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  border-bottom: 1px solid var(--manifesto-rule);
+
+  h2 {
+    max-width: 22ch;
+    margin: 0 0 1rem;
+    font-family: $serif;
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+  }
+
+  p {
+    max-width: 48rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}
+
+.manifesto-home__links,
+.manifesto-home__feature {
+  font-family: $sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.manifesto-home__links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.manifesto-home__questions {
+  border-bottom: 0;
+
+  ol {
+    margin: 2rem 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: manifesto-question;
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--manifesto-rule);
+    counter-increment: manifesto-question;
+    font-family: $serif;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+
+    &::before {
+      content: "0" counter(manifesto-question);
+      font-family: $sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+    }
+  }
+}
+
+.manifesto-home__closing {
+  font-family: $serif;
+  font-size: clamp(1.2rem, 2.4vw, 1.65rem) !important;
+}
+
+html[data-theme="dark"] .manifesto-home {
+  --manifesto-ink: #f2eee4;
+  --manifesto-paper: #181b1f;
+  --manifesto-mist: #253029;
+  --manifesto-rule: rgba(242, 238, 228, 0.5);
+}
+
+.profile-page {
+  width: min(68rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 6rem;
+}
+
+.profile-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+.profile-page__back,
+.profile-page__links,
+.profile-page__eyebrow {
+  font-family: $sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-page__body {
+  max-width: 54rem;
+  padding-top: clamp(4rem, 10vw, 8rem);
+
+  h1 {
+    max-width: 18ch;
+    margin: 0.3em 0;
+    font-family: $serif;
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    line-height: 0.98;
+  }
+
+  dl {
+    margin: 3rem 0;
+    border-top: 1px solid var(--global-border-color);
+  }
+
+  dl > div {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 1.5rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  dt {
+    font-family: $sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
+.profile-page__introduction {
+  max-width: 46rem;
+  font-family: $serif;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.7;
+}
+
+.profile-page__links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 64rem) {
+  .manifesto-home__path-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 42rem) {
+  .manifesto-home__frame {
+    padding: 1rem 1rem 4rem;
+  }
+
+  .manifesto-home__topbar {
+    grid-template-columns: 1fr auto;
+  }
+
+  .manifesto-home__topbar > :nth-child(2) {
+    display: none;
+  }
+
+  .manifesto-home__hero {
+    padding-top: 4.5rem;
+  }
+
+  .manifesto-home__path-grid,
+  .manifesto-home__identity,
+  .manifesto-home__questions {
+    grid-template-columns: 1fr;
+  }
+
+  .manifesto-home__path {
+    min-height: 14rem;
+  }
+
+  .manifesto-home__path-copy {
+    min-height: 0;
+  }
+
+  .manifesto-home__identity,
+  .manifesto-home__questions {
+    gap: 1rem;
+  }
+
+  .profile-page__body dl > div {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}

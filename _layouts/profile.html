@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{% assign copy = site.data.profile[page.ui_language] %}
+{% if page.ui_language == "zh" %}
+  {% assign profile_zh_url = page.url %}
+  {% assign profile_en_url = page.alternate_url %}
+{% else %}
+  {% assign profile_zh_url = page.alternate_url %}
+  {% assign profile_en_url = page.url %}
+{% endif %}
+
+<main class="profile-page"
+      data-language-context="route"
+      data-language-current="{{ page.ui_language }}"
+      data-zh-url="{{ profile_zh_url | relative_url }}"
+      data-en-url="{{ profile_en_url | relative_url }}"
+      data-zh-available="true"
+      data-en-available="true">
+  <header class="profile-page__header">
+    <a class="profile-page__back" href="{% if page.ui_language == 'zh' %}{{ '/' | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}">← {{ copy.home_label }}</a>
+    <nav class="language-choices" aria-label="{% if page.ui_language == 'zh' %}选择界面语言{% else %}Choose interface language{% endif %}">
+      <a class="language-choice" href="{{ profile_zh_url | relative_url }}" data-language-choice="zh" hreflang="zh" aria-label="选择中文界面"{% if page.ui_language == 'zh' %} aria-current="true"{% endif %}>中</a>
+      <a class="language-choice" href="{{ profile_en_url | relative_url }}" data-language-choice="en" hreflang="en" aria-label="Choose English interface"{% if page.ui_language == 'en' %} aria-current="true"{% endif %}>EN</a>
+    </nav>
+  </header>
+  <article class="profile-page__body">
+    <p class="profile-page__eyebrow">{{ copy.eyebrow }}</p>
+    <h1>{{ copy.title }}</h1>
+    <p class="profile-page__introduction">{{ copy.introduction }}</p>
+    <dl>
+      {% for fact in copy.facts %}
+        <div><dt>{{ fact.label }}</dt><dd>{{ fact.value }}</dd></div>
+      {% endfor %}
+    </dl>
+    <nav class="profile-page__links" aria-label="{% if page.ui_language == 'zh' %}继续阅读{% else %}Continue reading{% endif %}">
+      <a href="{% if page.ui_language == 'zh' %}{{ '/paths/research-teaching/' | relative_url }}{% else %}{{ '/en/paths/research-teaching/' | relative_url }}{% endif %}">{{ copy.research_label }} →</a>
+      <a href="{{ '/cv/' | relative_url }}">{{ copy.cv_label }} →</a>
+    </nav>
+  </article>
+</main>

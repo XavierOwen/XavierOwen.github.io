@@ -2,6 +2,7 @@
 
 <meta charset="utf-8">
 
+{% include language-bootstrap.html %}
 {% include seo.html %}
 
 <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">

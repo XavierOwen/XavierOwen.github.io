@@ -1,37 +1,31 @@
-# The following is the order of the links in the header of the website.
-#
-# Changing the order here will adjust the order and you can also add additional
-# links. Removing a link prevents it from showing in the header, but does not prevent it from being included in the site.
-#
-# NOTE that only one of the CV options should be selected, the first is for the Markdown formatted page while the second is generated using JSON.
-
 main:
-  - title: "Publications"
-    url: /publications/
-
-#  - title: "Talks"
-#    url: /talks/
-  - title: "Notes"
-    url: /notes/
-  - title: "Spirits"
-    url: /spirits/
-  - title: "Projects"
-    url: /projects/
-
-#  - title: "Portfolio"
-#    url: /portfolio/
-
-#  - title: "Blogs"
-#    url: /year-archive/
-
-  - title: "CV"
-    url: /cv/
-
-  # - title: "CV"
-  #   url: /cv-json/
-
-  - title: "Guide"
-    url: /markdown/
-
-  - title: "Tags"
-    url: /tags/
+  - key: research-teaching
+    title_zh: "研究与教学"
+    title_en: "Research & Teaching"
+    url_zh: /paths/research-teaching/
+    url_en: /en/paths/research-teaching/
+  - key: notes-writing
+    title_zh: "笔记与写作"
+    title_en: "Notes & Writing"
+    url_zh: /paths/notes-writing/
+    url_en: /en/paths/notes-writing/
+  - key: faith-spirituality
+    title_zh: "信仰与灵修"
+    title_en: "Faith & Spirituality"
+    url_zh: /paths/faith-spirituality/
+    url_en: /en/paths/faith-spirituality/
+  - key: projects-creation
+    title_zh: "项目与创作"
+    title_en: "Projects & Creation"
+    url_zh: /paths/projects-creation/
+    url_en: /en/paths/projects-creation/
+  - key: about
+    title_zh: "关于"
+    title_en: "About"
+    url_zh: /about/
+    url_en: /en/about/
+  - key: cv
+    title_zh: "履历"
+    title_en: "CV"
+    url_zh: /cv/
+    url_en: /cv/

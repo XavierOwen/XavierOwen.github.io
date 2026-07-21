@@ -1,4 +1,16 @@
 ---
+content_id: scraper-high-wenli-bible
+language: zh
+original_language: zh
+reader_paths:
+- projects-creation
+- faith-spirituality
+representative_paths:
+- projects-creation
+title_zh: 深文理和合本圣经抓取器
+title_en: Scraper for the High Wenli Union Bible
+summary_zh: 从维基文库抓取深文理和合本圣经文本的爬虫项目。
+summary_en: A scraper for collecting the High Wenli Union Bible text from Wikisource.
 title: "Simple scraper for High wenli union Bible 深文理和合本圣经"
 collection: projects
 category: scraper

@@ -1,0 +1,20 @@
+{% assign item = include.item %}
+{% assign language = include.ui_language %}
+{% assign version = item.versions[language] %}
+{% assign is_fallback = false %}
+{% unless version %}
+  {% assign version = item.versions[item.original_language] %}
+  {% assign is_fallback = true %}
+{% endunless %}
+<article class="reader-path__item" data-content-id="{{ item.content_id }}" data-date="{{ item.date }}">
+  <div class="reader-path__item-meta">
+    <time datetime="{{ item.date }}">{{ item.date }}</time>
+    {% if is_fallback %}
+      <span class="reader-path__fallback">
+        {% if language == "zh" %}{{ include.ui.original_zh }}：{{ include.ui.language_names[version.language].zh }}{% else %}{{ include.ui.original_en }}: {{ include.ui.language_names[version.language].en }}{% endif %}
+      </span>
+    {% endif %}
+  </div>
+  <h3><a href="{{ version.url | relative_url }}">{{ item.titles[language] }}</a></h3>
+  <p>{{ item.summaries[language] }}</p>
+</article>

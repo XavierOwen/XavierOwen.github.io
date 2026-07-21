@@ -1,136 +1,45 @@
 {%- comment -%}
-  Backlinks module: find content that references this page with [[page title]].
-  The layout captures this include once, then reuses the result for both the
-  page body and its generated table of contents.
+  Backlinks are generated in content-index.json from raw [[Title]] references.
+  Source translation pairs are already deduplicated by Content ID; this include
+  only selects the best rendered version for the current article language.
 {%- endcomment -%}
-
-{%- assign link_count = 0 -%}
-{%- assign wiki_link_title = '[[' | append: page.title | append: ']]' -%}
-
-{%- comment -%} Count backlinks from all collections {%- endcomment -%}
-{%- for note in site.notes -%}
-    {%- if note.url != page.url -%}
-        {%- if note.content contains wiki_link_title -%}
-            {%- assign link_count = link_count | plus: 1 -%}
-        {%- endif -%}
-    {%- endif -%}
+{%- assign backlink_target = nil -%}
+{%- for indexed_item in site.data["content-index"].items -%}
+  {%- if indexed_item.content_id == page.content_id -%}
+    {%- assign backlink_target = indexed_item -%}
+    {%- break -%}
+  {%- endif -%}
 {%- endfor -%}
 
-{%- for spirit in site.spirits -%}
-    {%- if spirit.url != page.url -%}
-        {%- if spirit.content contains wiki_link_title -%}
-            {%- assign link_count = link_count | plus: 1 -%}
-        {%- endif -%}
-    {%- endif -%}
-{%- endfor -%}
-
-{%- for project in site.projects -%}
-    {%- if project.url != page.url -%}
-        {%- if project.content contains wiki_link_title -%}
-            {%- assign link_count = link_count | plus: 1 -%}
-        {%- endif -%}
-    {%- endif -%}
-{%- endfor -%}
-
-{%- for post in site.posts -%}
-    {%- if post.url != page.url -%}
-        {%- if post.content contains wiki_link_title -%}
-            {%- assign link_count = link_count | plus: 1 -%}
-        {%- endif -%}
-    {%- endif -%}
-{%- endfor -%}
-
-{%- for page_item in site.pages -%}
-    {%- if page_item.url != page.url -%}
-        {%- if page_item.content contains wiki_link_title -%}
-            {%- assign link_count = link_count | plus: 1 -%}
-        {%- endif -%}
-    {%- endif -%}
-{%- endfor -%}
-
-{%- if link_count > 0 -%}
-<h2 id="backlinks">Links to this page</h2>
+{%- if backlink_target and backlink_target.backlinks.size > 0 -%}
+<h2 id="backlinks">{% if page.language == "zh" %}引用此文{% else %}Links to this page{% endif %}</h2>
 <div class="backlinks-section">
-    <div class="backlinks-grid">
-        {%- for note in site.notes -%}
-            {%- if note.url != page.url -%}
-                {%- if note.content contains wiki_link_title -%}
-                <div class="backlink-item">
-                    <a href="{{ site.baseurl }}{{ note.url }}" class="backlink">
-                        {{ note.title }}
-                    </a>
-                    <span class="backlink-collection">notes</span>
-                    {%- if note.excerpt -%}
-                    <p class="backlink-excerpt">{{ note.excerpt | strip_html | truncatewords: 15 }}</p>
-                    {%- endif -%}
-                </div>
-                {%- endif -%}
-            {%- endif -%}
-        {%- endfor -%}
-
-        {%- for spirit in site.spirits -%}
-            {%- if spirit.url != page.url -%}
-                {%- if spirit.content contains wiki_link_title -%}
-                <div class="backlink-item">
-                    <a href="{{ site.baseurl }}{{ spirit.url }}" class="backlink">
-                        {{ spirit.title }}
-                    </a>
-                    <span class="backlink-collection">spirits</span>
-                    {%- if spirit.excerpt -%}
-                    <p class="backlink-excerpt">{{ spirit.excerpt | strip_html | truncatewords: 15 }}</p>
-                    {%- endif -%}
-                </div>
-                {%- endif -%}
-            {%- endif -%}
-        {%- endfor -%}
-
-        {%- for project in site.projects -%}
-            {%- if project.url != page.url -%}
-                {%- if project.content contains wiki_link_title -%}
-                <div class="backlink-item">
-                    <a href="{{ site.baseurl }}{{ project.url }}" class="backlink">
-                        {{ project.title }}
-                    </a>
-                    <span class="backlink-collection">projects</span>
-                    {%- if project.excerpt -%}
-                    <p class="backlink-excerpt">{{ project.excerpt | strip_html | truncatewords: 15 }}</p>
-                    {%- endif -%}
-                </div>
-                {%- endif -%}
-            {%- endif -%}
-        {%- endfor -%}
-
-        {%- for post in site.posts -%}
-            {%- if post.url != page.url -%}
-                {%- if post.content contains wiki_link_title -%}
-                <div class="backlink-item">
-                    <a href="{{ site.baseurl }}{{ post.url }}" class="backlink">
-                        {{ post.title }}
-                    </a>
-                    <span class="backlink-collection">posts</span>
-                    {%- if post.excerpt -%}
-                    <p class="backlink-excerpt">{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
-                    {%- endif -%}
-                </div>
-                {%- endif -%}
-            {%- endif -%}
-        {%- endfor -%}
-
-        {%- for page_item in site.pages -%}
-            {%- if page_item.url != page.url and page_item.title -%}
-                {%- if page_item.content contains wiki_link_title -%}
-                <div class="backlink-item">
-                    <a href="{{ site.baseurl }}{{ page_item.url }}" class="backlink">
-                        {{ page_item.title }}
-                    </a>
-                    <span class="backlink-collection">pages</span>
-                    {%- if page_item.excerpt -%}
-                    <p class="backlink-excerpt">{{ page_item.excerpt | strip_html | truncatewords: 15 }}</p>
-                    {%- endif -%}
-                </div>
-                {%- endif -%}
-            {%- endif -%}
-        {%- endfor -%}
-    </div>
+  <div class="backlinks-grid">
+    {%- for backlink_content_id in backlink_target.backlinks -%}
+      {%- assign source_item = nil -%}
+      {%- for indexed_item in site.data["content-index"].items -%}
+        {%- if indexed_item.content_id == backlink_content_id -%}
+          {%- assign source_item = indexed_item -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if source_item -%}
+        {%- assign source_version = source_item.versions[page.language] -%}
+        {%- assign source_fallback = false -%}
+        {%- unless source_version -%}
+          {%- assign source_version = source_item.versions[source_item.original_language] -%}
+          {%- assign source_fallback = true -%}
+        {%- endunless -%}
+        <article class="backlink-item" data-language-aware-link data-content-id="{{ source_item.content_id }}">
+          <a href="{{ source_version.url | relative_url }}" class="backlink" data-language-aware-anchor lang="{{ source_version.language }}">{{ source_version.title }}</a>
+          <span class="backlink-collection">{{ source_version.collection }}</span>
+          <span class="backlink-fallback" data-language-aware-fallback{% unless source_fallback %} hidden{% endunless %}>
+            {% if page.language == "zh" %}原文：{% if source_item.original_language == "zh" %}中文{% else %}英文{% endif %}{% else %}Original: {% if source_item.original_language == "zh" %}Chinese{% else %}English{% endif %}{% endif %}
+          </span>
+          <p class="backlink-excerpt" data-language-aware-summary>{{ source_version.summary }}</p>
+        </article>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
 </div>
 {%- endif -%}

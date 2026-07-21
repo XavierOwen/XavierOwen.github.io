@@ -1,25 +1,22 @@
 {
-  "name": "academic-pages",
-  "version": "0.8.1.1",
-  "description": "Academic Pages Mistakes Jekyll theme npm build scripts",
+  "name": "xavierowen-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build and content-audit scripts for Yuanxing Cheng's personal Jekyll site",
   "repository": {
     "type": "git",
-    "url": "https://github.com/academicpages/academicpages.github.io"
+    "url": "https://github.com/XavierOwen/XavierOwen.github.io"
   },
   "keywords": [
     "jekyll",
-    "theme",
-    "minimal"
-  ],
-  "contributors": [
-    "Michael Rose",
-    "Robert Zupko"
+    "personal-site",
+    "content-first"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/academicpages/academicpages.github.io/issues"
+    "url": "https://github.com/XavierOwen/XavierOwen.github.io/issues"
   },
-  "homepage": "https://github.com/academicpages/academicpages.github.io",
+  "homepage": "https://xavierowen.github.io",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -36,6 +33,12 @@
     "uglify": "uglifyjs node_modules/jquery/dist/jquery.min.js node_modules/fitvids/dist/fitvids.min.js node_modules/jquery-smooth-scroll/jquery.smooth-scroll.min.js assets/js/plugins/jquery.greedy-navigation.js assets/js/_main.js -c -m -o assets/js/main.min.js",
     "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
     "build:js": "npm run uglify",
-    "tavily:search": "node scripts/tavily-search.mjs"
+    "tavily:search": "node scripts/tavily-search.mjs",
+    "audit:content": "ruby scripts/audit_published_content.rb",
+    "audit:content:report": "ruby scripts/audit_published_content.rb --report",
+    "test:content-contract": "ruby scripts/audit_published_content.rb --self-test",
+    "generate:content-index": "ruby scripts/build_content_index.rb",
+    "test:content-index": "ruby scripts/build_content_index.rb --self-test",
+    "verify:site": "ruby scripts/verify_site.rb"
   }
 }

@@ -1,0 +1,28 @@
+zh:
+  eyebrow: "关于"
+  title: "在数学、教育与写作的交界处"
+  introduction: "我是 Yuanxing Cheng，应用数学博士，现从事独立教学。研究训练使我重视证据与结构，教学使我不断追问知识如何被共同理解；写作、信仰与创作则把这个问题带回日常生活。"
+  facts:
+    - label: "研究"
+      value: "高斯过程、变分推断、流形学习与主动学习。"
+    - label: "教学"
+      value: "统计学、代数与数学学习；强调苏格拉底式提问、概念理解与信心建立。"
+    - label: "写作"
+      value: "在学习笔记、思想随笔、翻译与属灵阅读之间持续记录。"
+  home_label: "返回首页"
+  research_label: "浏览研究与教学"
+  cv_label: "完整履历"
+en:
+  eyebrow: "About"
+  title: "At the meeting point of mathematics, education, and writing"
+  introduction: "I am Yuanxing Cheng, an applied mathematics Ph.D. and independent tutor. Research trained me to care about evidence and structure; teaching keeps me asking how knowledge can become shared understanding. Writing, faith, and making carry that question back into ordinary life."
+  facts:
+    - label: "Research"
+      value: "Gaussian processes, variational inference, manifold learning, and active learning."
+    - label: "Teaching"
+      value: "Statistics, algebra, and mathematical learning through Socratic questions, conceptual understanding, and confidence building."
+    - label: "Writing"
+      value: "An ongoing record across study notes, essays, translation, and spiritual reading."
+  home_label: "Back home"
+  research_label: "Explore research and teaching"
+  cv_label: "Full CV"

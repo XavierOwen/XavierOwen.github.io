@@ -1,4 +1,15 @@
 ---
+content_id: hello-algorithm-notes
+language: zh
+original_language: zh
+reader_paths:
+- research-teaching
+- notes-writing
+title_zh: "《Hello 算法》笔记"
+title_en: Notes on Hello Algorithm
+summary_zh: 围绕复杂度、数据结构与常用算法整理的《Hello 算法》学习笔记。
+summary_en: Study notes on Hello Algorithm covering complexity, data structures, and
+  common algorithms.
 title: "Hello Algorithm Notes"
 collection: notes
 category: algorithms

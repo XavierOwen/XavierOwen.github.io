@@ -1,0 +1,51 @@
+route_order:
+  - research-teaching
+  - notes-writing
+  - faith-spirituality
+  - projects-creation
+
+zh:
+  site_label: "一个人的网站"
+  edition: "01 / Manifesto"
+  eyebrow: "从一个问题开始"
+  title: "世界如何成为一个“我们”？"
+  introduction: "研究、教学、写作、信仰与创作并不彼此取消；它们是同一问题的不同河道。"
+  paths_label: "四条阅读路径"
+  enter_path: "进入"
+  identity_eyebrow: "提出问题的人"
+  identity_title: "Yuanxing Cheng"
+  identity_copy: "应用数学博士、独立导师，也是持续研究、写作与创造的人。这里不是几份身份的陈列，而是它们彼此追问、彼此照明的现场。"
+  about_label: "关于我"
+  cv_label: "查看履历"
+  questions_eyebrow: "问题之源"
+  questions_title: "“我们”不是答案，而是一种仍在进行的实践。"
+  questions:
+    - "“六亿神州尽舜尧”如何不只停留在诗句里？"
+    - "何时人人都能作为神的儿女，起来服事？"
+    - "每个人的自由发展，如何成为一切人的自由发展的条件？"
+    - "若完美没有奖赏，而追求完美有终点，我们还能怎样共同前行？"
+  closing: "假如神国、共产主义社会、净土与大秘宝指向同一个地平线，人类应当如何团结、合作，又彼此释放？"
+  feature_label: "沿着这个问题，读《We Are the World》另译"
+
+en:
+  site_label: "A personal site"
+  edition: "01 / Manifesto"
+  eyebrow: "Begin with one question"
+  title: "How might the world become a “we”?"
+  introduction: "Research, teaching, writing, faith, and creation do not cancel one another out. They are different rivers flowing from one question."
+  paths_label: "Four reader paths"
+  enter_path: "Enter"
+  identity_eyebrow: "The person asking"
+  identity_title: "Yuanxing Cheng"
+  identity_copy: "An applied mathematics Ph.D. and independent tutor who continues to research, write, and make. This is not a display of separate identities, but a place where they question and illuminate one another."
+  about_label: "About me"
+  cv_label: "View CV"
+  questions_eyebrow: "Sources of the question"
+  questions_title: "“We” is not an answer, but a practice still unfolding."
+  questions:
+    - "How might ‘all the people become Yao and Shun’ cease to be only a line of verse?"
+    - "When might every person live as a child of God and rise to serve?"
+    - "How might the free development of each become the condition for the free development of all?"
+    - "If perfection offers no reward, yet its pursuit has an end, how might we continue together?"
+  closing: "If the kingdom of God, communist society, the Pure Land, and the great treasure point toward one horizon, how should humankind unite, cooperate, and set one another free?"
+  feature_label: "Follow the question into A New Chinese Translation of We Are the World"

@@ -1,0 +1,1553 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "content_id": "active-learning-manifold-gp-regression",
+      "date": "2025-06-26",
+      "original_language": "en",
+      "reader_paths": [
+        "research-teaching"
+      ],
+      "representative_paths": [
+        "research-teaching"
+      ],
+      "aliases": [
+        "Active Learning for Manifold Gaussian Process Regression",
+        "流形高斯过程回归的主动学习"
+      ],
+      "titles": {
+        "zh": "流形高斯过程回归的主动学习",
+        "en": "Active Learning for Manifold Gaussian Process Regression"
+      },
+      "summaries": {
+        "zh": "结合流形学习与主动采样，在高维空间中提高高斯过程回归的预测精度与样本效率。",
+        "en": "A framework combining manifold learning and active sampling to improve Gaussian process regression accuracy and sample efficiency in high-dimensional spaces."
+      },
+      "versions": {
+        "en": {
+          "language": "en",
+          "title": "Active Learning for Manifold Gaussian Process Regression",
+          "summary": "A framework combining manifold learning and active sampling to improve Gaussian process regression accuracy and sample efficiency in high-dimensional spaces.",
+          "url": "/publication/2025-06-26-ALMGP",
+          "date": "2025-06-26",
+          "collection": "publications",
+          "source_path": "_publications/2025-06-26-ALMGP.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "adversity-and-ease-in-the-bible",
+      "date": "2025-07-08",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "notes-writing"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Adversity and Ease in the Bible",
+        "圣经中的生于忧患死于安乐"
+      ],
+      "titles": {
+        "zh": "圣经中的生于忧患死于安乐",
+        "en": "Adversity and Ease in the Bible"
+      },
+      "summaries": {
+        "zh": "从《孟子》的“生于忧患，死于安乐”出发，对照圣经人物在困苦、塑造与使命中的经历。",
+        "en": "A comparison between Mencius on adversity and biblical lives shaped through hardship, calling, and mission."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "圣经中的生于忧患死于安乐",
+          "summary": "从《孟子》的“生于忧患，死于安乐”出发，对照圣经人物在困苦、塑造与使命中的经历。",
+          "url": "/note/生于忧患死于安乐",
+          "date": "2025-07-08",
+          "collection": "notes",
+          "source_path": "_notes/圣经里的生于忧患死于安乐.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "ap-statistics-tutorial",
+      "date": "2025-11-17",
+      "original_language": "en",
+      "reader_paths": [
+        "notes-writing",
+        "research-teaching"
+      ],
+      "representative_paths": [
+        "notes-writing",
+        "research-teaching"
+      ],
+      "aliases": [
+        "AP Statistics",
+        "AP 统计学",
+        "AP®︎ Statistics"
+      ],
+      "titles": {
+        "zh": "AP 统计学",
+        "en": "AP Statistics"
+      },
+      "summaries": {
+        "zh": "面向学生、以问题引导的 AP 统计学概念速查、讲解与练习材料。",
+        "en": "A question-led AP Statistics tutorial and practice resource designed for fast conceptual review with students."
+      },
+      "versions": {
+        "en": {
+          "language": "en",
+          "title": "AP®︎ Statistics",
+          "summary": "A question-led AP Statistics tutorial and practice resource designed for fast conceptual review with students.",
+          "url": "/note/AP-Statistics",
+          "date": "2025-11-17",
+          "collection": "notes",
+          "source_path": "_notes/AP Statistics.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "church-affairs-notes",
+      "date": "2026-01-19",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [
+        "faith-spirituality"
+      ],
+      "aliases": [
+        "Notes on Church Affairs",
+        "笔记：教会的事务"
+      ],
+      "titles": {
+        "zh": "笔记：教会的事务",
+        "en": "Notes on Church Affairs"
+      },
+      "summaries": {
+        "zh": "围绕执事、长老、监督与地方教会治理整理《教会的事务》读书笔记。",
+        "en": "Reading notes on deacons, elders, overseers, and the practical ordering of the local church."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "笔记：教会的事务",
+          "summary": "围绕执事、长老、监督与地方教会治理整理《教会的事务》读书笔记。",
+          "url": "/spirits/教会的事务/",
+          "date": "2026-01-19",
+          "collection": "spirits",
+          "source_path": "_spirits/教会的事务.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "elegy-for-a-hamster",
+      "date": "2025-10-28",
+      "original_language": "zh",
+      "reader_paths": [
+        "notes-writing"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Elegy for a Hamster",
+        "祭仓鼠"
+      ],
+      "titles": {
+        "zh": "祭仓鼠",
+        "en": "Elegy for a Hamster"
+      },
+      "summaries": {
+        "zh": "为一只离世的小仓鼠所写的赋体悼文，追忆其短暂生命与陪伴。",
+        "en": "A fu-style elegy remembering the brief life and companionship of a departed hamster."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "祭仓鼠",
+          "summary": "为一只离世的小仓鼠所写的赋体悼文，追忆其短暂生命与陪伴。",
+          "url": "/note/小仓鼠",
+          "date": "2025-10-28",
+          "collection": "notes",
+          "source_path": "_notes/小仓鼠赋.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "energetic-variational-gp-regression",
+      "date": "2024-04-01",
+      "original_language": "en",
+      "reader_paths": [
+        "research-teaching"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Energetic Variational Gaussian Process Regression for Computer Experiments",
+        "用于计算机试验的能量变分高斯过程回归"
+      ],
+      "titles": {
+        "zh": "用于计算机试验的能量变分高斯过程回归",
+        "en": "Energetic Variational Gaussian Process Regression for Computer Experiments"
+      },
+      "summaries": {
+        "zh": "以能量变分推断建立计算机试验的高斯过程回归，并结合收缩估计与变量选择进行预测和统计推断。",
+        "en": "An energetic variational approach to Gaussian process regression for computer experiments, with shrinkage estimation, variable selection, prediction, and inference."
+      },
+      "versions": {
+        "en": {
+          "language": "en",
+          "title": "Energetic Variational Gaussian Process Regression for Computer Experiments",
+          "summary": "An energetic variational approach to Gaussian process regression for computer experiments, with shrinkage estimation, variable selection, prediction, and inference.",
+          "url": "/publication/2024-04-01-EVIGP",
+          "date": "2024-04-01",
+          "collection": "publications",
+          "source_path": "_publications/2024-04-01-EVIGP.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "ephesians-4-preparation",
+      "date": "2025-10-07",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Preparing Ephesians 4",
+        "预备——以弗所书四"
+      ],
+      "titles": {
+        "zh": "预备——以弗所书四",
+        "en": "Preparing Ephesians 4"
+      },
+      "summaries": {
+        "zh": "从蒙召、七个一与恩赐成全等主题预备以弗所书四章，并思考教会的建造。",
+        "en": "Preparation for Ephesians 4 through calling, the seven ones, gifted perfecting, and the building of the church."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "预备——以弗所书四",
+          "summary": "从蒙召、七个一与恩赐成全等主题预备以弗所书四章，并思考教会的建造。",
+          "url": "/spirits/以弗所书四-预备/",
+          "date": "2025-10-07",
+          "collection": "spirits",
+          "source_path": "_spirits/以弗所书四-预备.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "ephesians-5-preparation",
+      "date": "2025-10-08",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Preparing Ephesians 5",
+        "预备——以弗所书五"
+      ],
+      "titles": {
+        "zh": "预备——以弗所书五",
+        "en": "Preparing Ephesians 5"
+      },
+      "summaries": {
+        "zh": "围绕以弗所书五章整理在爱、光和智慧中行走的读经预备。",
+        "en": "Reading preparation for Ephesians 5 centered on walking in love, light, and wisdom."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "预备——以弗所书五",
+          "summary": "围绕以弗所书五章整理在爱、光和智慧中行走的读经预备。",
+          "url": "/spirits/以弗所书五-预备/",
+          "date": "2025-10-08",
+          "collection": "spirits",
+          "source_path": "_spirits/以弗所书五-预备.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "finishing-the-course-in-full",
+      "date": "2025-09-25",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "notes-writing"
+      ],
+      "representative_paths": [
+        "faith-spirituality"
+      ],
+      "aliases": [
+        "Finishing the Course in Full",
+        "尽行圆满"
+      ],
+      "titles": {
+        "zh": "尽行圆满",
+        "en": "Finishing the Course in Full"
+      },
+      "summaries": {
+        "zh": "并置耶稣、保罗、佛经与革命文学，思考人在生命终点如何说“所作已作”。",
+        "en": "A comparative reflection on Jesus, Paul, Buddhist texts, and revolutionary literature asking what it means to finish one's life-work."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "尽行圆满",
+          "summary": "并置耶稣、保罗、佛经与革命文学，思考人在生命终点如何说“所作已作”。",
+          "url": "/note/尽行圆满",
+          "date": "2025-09-25",
+          "collection": "notes",
+          "source_path": "_notes/尽行圆满.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "first-reading-gospels",
+      "date": "2025-09-19",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "A First Reading of the Gospels",
+        "初读福音书"
+      ],
+      "titles": {
+        "zh": "初读福音书",
+        "en": "A First Reading of the Gospels"
+      },
+      "summaries": {
+        "zh": "从成书背景、主耶稣的降生与传福音方式出发，建立福音书的初步阅读线索。",
+        "en": "An introductory path into the Gospels through their background, Jesus' incarnation, and his way of proclaiming the gospel."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "初读福音书",
+          "summary": "从成书背景、主耶稣的降生与传福音方式出发，建立福音书的初步阅读线索。",
+          "url": "/spirits/福音书/",
+          "date": "2025-09-19",
+          "collection": "spirits",
+          "source_path": "_spirits/福音书.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "fitness-notes",
+      "date": "2026-05-14",
+      "original_language": "zh",
+      "reader_paths": [
+        "notes-writing"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Fitness Notes",
+        "Notes on fitness",
+        "健身笔记"
+      ],
+      "titles": {
+        "zh": "健身笔记",
+        "en": "Fitness Notes"
+      },
+      "summaries": {
+        "zh": "关于减脂、饮食、训练和恢复的个人实践笔记。",
+        "en": "Personal working notes on fat loss, nutrition, training, and recovery."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "Notes on fitness",
+          "summary": "关于减脂、饮食、训练和恢复的个人实践笔记。",
+          "url": "/notes/健身笔记/",
+          "date": "2026-05-14",
+          "collection": "notes",
+          "source_path": "_notes/健身笔记.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "five-elements-church-communal-life",
+      "date": "2025-09-10",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "notes-writing"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Five Elements, the Church, and Communal Life",
+        "五行，教会和党群生活"
+      ],
+      "titles": {
+        "zh": "五行，教会和党群生活",
+        "en": "Five Elements, the Church, and Communal Life"
+      },
+      "summaries": {
+        "zh": "以五行为比较框架，思考教会的属灵要素与党群共同生活之间的对应和差异。",
+        "en": "A comparative reflection using the five elements to consider correspondences and differences between church life and communal political life."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "五行，教会和党群生活",
+          "summary": "以五行为比较框架，思考教会的属灵要素与党群共同生活之间的对应和差异。",
+          "url": "/note/五行，教会，党群",
+          "date": "2025-09-10",
+          "collection": "notes",
+          "source_path": "_notes/五行，教会和党群生活.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "gaussian-process-regression-thesis",
+      "date": "2025-08-01",
+      "original_language": "en",
+      "reader_paths": [
+        "research-teaching"
+      ],
+      "representative_paths": [
+        "research-teaching"
+      ],
+      "aliases": [
+        "Gaussian Process Regression in High-Dimensional and Structured Domains: Variational Inference and Active Learning on Manifolds",
+        "高维与结构化域中的高斯过程回归：变分推断与流形主动学习"
+      ],
+      "titles": {
+        "zh": "高维与结构化域中的高斯过程回归：变分推断与流形主动学习",
+        "en": "Gaussian Process Regression in High-Dimensional and Structured Domains: Variational Inference and Active Learning on Manifolds"
+      },
+      "summaries": {
+        "zh": "博士论文以能量变分推断和流形主动学习回应高维、结构化域中有限数据下的可靠推断与高效选样问题。",
+        "en": "A dissertation addressing reliable inference and efficient sample selection in high-dimensional structured domains through energetic variational inference and manifold active learning."
+      },
+      "versions": {
+        "en": {
+          "language": "en",
+          "title": "Gaussian Process Regression in High-Dimensional and Structured Domains: Variational Inference and Active Learning on Manifolds",
+          "summary": "A dissertation addressing reliable inference and efficient sample selection in high-dimensional structured domains through energetic variational inference and manifold active learning.",
+          "url": "/publication/2025-08-01-Thesis",
+          "date": "2025-08-01",
+          "collection": "publications",
+          "source_path": "_publications/2025-08-01-Thesis.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "hello-algorithm-notes",
+      "date": "2025-08-23",
+      "original_language": "zh",
+      "reader_paths": [
+        "notes-writing",
+        "research-teaching"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Hello Algorithm Notes",
+        "Notes on Hello Algorithm",
+        "《Hello 算法》笔记"
+      ],
+      "titles": {
+        "zh": "《Hello 算法》笔记",
+        "en": "Notes on Hello Algorithm"
+      },
+      "summaries": {
+        "zh": "围绕复杂度、数据结构与常用算法整理的《Hello 算法》学习笔记。",
+        "en": "Study notes on Hello Algorithm covering complexity, data structures, and common algorithms."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "Hello Algorithm Notes",
+          "summary": "围绕复杂度、数据结构与常用算法整理的《Hello 算法》学习笔记。",
+          "url": "/note/Hello Algorithm 笔记",
+          "date": "2025-08-23",
+          "collection": "notes",
+          "source_path": "_notes/Hello Algorithm笔记.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "journey-through-the-wilderness",
+      "date": "2025-09-16",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "notes-writing"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Journey through the Wilderness",
+        "旷野行"
+      ],
+      "titles": {
+        "zh": "旷野行",
+        "en": "Journey through the Wilderness"
+      },
+      "summaries": {
+        "zh": "改编自倪柝声《让我爱》的诗歌，书写荒凉、十架道路与重建中的忠信。",
+        "en": "A poetic adaptation inspired by Watchman Nee's Let Me Love, portraying desolation, the way of the cross, and faithfulness in rebuilding."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "旷野行",
+          "summary": "改编自倪柝声《让我爱》的诗歌，书写荒凉、十架道路与重建中的忠信。",
+          "url": "/note/旷野行",
+          "date": "2025-09-16",
+          "collection": "notes",
+          "source_path": "_notes/旷野行.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "linjiangxian-1",
+      "date": "2025-11-21",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "notes-writing"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Linjiangxian I",
+        "临江仙（一）"
+      ],
+      "titles": {
+        "zh": "临江仙（一）",
+        "en": "Linjiangxian I"
+      },
+      "summaries": {
+        "zh": "受彼得前书一章启发，以中英双语词作默想草木荣枯与永存之道。",
+        "en": "A bilingual lyric inspired by 1 Peter 1, meditating on fading human glory and the enduring Word."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "临江仙（一）",
+          "summary": "受彼得前书一章启发，以中英双语词作默想草木荣枯与永存之道。",
+          "url": "/notes/临江仙（一）/",
+          "date": "2025-11-21",
+          "collection": "notes",
+          "source_path": "_notes/临江仙（一）.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "ms-paint-art",
+      "date": "2019-08-25",
+      "original_language": "en",
+      "reader_paths": [
+        "projects-creation"
+      ],
+      "representative_paths": [
+        "projects-creation"
+      ],
+      "aliases": [
+        "Art work with MS Paint",
+        "Artwork Made with Microsoft Paint",
+        "Microsoft Paint 绘画作品"
+      ],
+      "titles": {
+        "zh": "Microsoft Paint 绘画作品",
+        "en": "Artwork Made with Microsoft Paint"
+      },
+      "summaries": {
+        "zh": "大学以来使用 Microsoft Paint 创作的绘画作品集。",
+        "en": "A collection of digital artwork made with Microsoft Paint since college."
+      },
+      "versions": {
+        "en": {
+          "language": "en",
+          "title": "Art work with MS Paint",
+          "summary": "A collection of digital artwork made with Microsoft Paint since college.",
+          "url": "/projects/Arts/",
+          "date": "2019-08-25",
+          "collection": "projects",
+          "source_path": "_projects/Arts.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "new-believer-baptism",
+      "date": "2025-09-29",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "New Believer Lessons 01: Baptism",
+        "初信造就笔记第零一：受浸"
+      ],
+      "titles": {
+        "zh": "初信造就笔记第零一：受浸",
+        "en": "New Believer Lessons 01: Baptism"
+      },
+      "summaries": {
+        "zh": "从圣经与初信造就材料梳理受浸的意义、见证与实际。",
+        "en": "A biblical study of the meaning, testimony, and practice of baptism for new believers."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "初信造就笔记第零一：受浸",
+          "summary": "从圣经与初信造就材料梳理受浸的意义、见证与实际。",
+          "url": "/note/初信造就01受浸",
+          "date": "2025-09-29",
+          "collection": "spirits",
+          "source_path": "_spirits/初信造就笔记_01_受浸.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "new-believer-financial-stewardship",
+      "date": "2025-11-05",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "New Believer Lessons 28: Financial Stewardship",
+        "初信造就笔记第廿八：理财之法"
+      ],
+      "titles": {
+        "zh": "初信造就笔记第廿八：理财之法",
+        "en": "New Believer Lessons 28: Financial Stewardship"
+      },
+      "summaries": {
+        "zh": "结合腓立比书与初信造就材料，思考神国子民的金钱、供给与管家职分。",
+        "en": "A study of money, giving, provision, and stewardship in God's kingdom through Philippians and new-believer teaching."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "初信造就笔记第廿八：理财之法",
+          "summary": "结合腓立比书与初信造就材料，思考神国子民的金钱、供给与管家职分。",
+          "url": "/note/初信造就28理财之法",
+          "date": "2025-11-05",
+          "collection": "spirits",
+          "source_path": "_spirits/初信造就笔记_28_理财之法.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "perfecting-the-saints",
+      "date": "2025-11-19",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [
+        "faith-spirituality"
+      ],
+      "aliases": [
+        "Perfecting the Saints",
+        "成全圣徒"
+      ],
+      "titles": {
+        "zh": "成全圣徒",
+        "en": "Perfecting the Saints"
+      },
+      "summaries": {
+        "zh": "从圣经词义与教会生活思考圣徒如何被成全、尽功用并建造基督的身体。",
+        "en": "A study of how the saints are perfected to function and build up the Body of Christ."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "成全圣徒",
+          "summary": "从圣经词义与教会生活思考圣徒如何被成全、尽功用并建造基督的身体。",
+          "url": "/spirits/成全圣徒/",
+          "date": "2025-11-19",
+          "collection": "spirits",
+          "source_path": "_spirits/成全圣徒.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "perhaps-hope-and-mercy",
+      "date": "2025-12-12",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [
+        "faith-spirituality"
+      ],
+      "aliases": [
+        "Perhaps: Hope Resting in Mercy",
+        "庶几"
+      ],
+      "titles": {
+        "zh": "庶几",
+        "en": "Perhaps: Hope Resting in Mercy"
+      },
+      "summaries": {
+        "zh": "从提摩太后书的“或者”思考温柔劝戒、悔改与把盼望安放在神怜悯中的态度。",
+        "en": "A meditation on gentle correction, repentance, and hope resting in God's mercy through 2 Timothy."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "庶几",
+          "summary": "从提摩太后书的“或者”思考温柔劝戒、悔改与把盼望安放在神怜悯中的态度。",
+          "url": "/spirits/庶几/",
+          "date": "2025-12-12",
+          "collection": "spirits",
+          "source_path": "_spirits/庶几.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "philippians-preparation",
+      "date": "2025-10-20",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Preparing Philippians",
+        "预备——腓立比书"
+      ],
+      "titles": {
+        "zh": "预备——腓立比书",
+        "en": "Preparing Philippians"
+      },
+      "summaries": {
+        "zh": "从使徒行传与腓立比教会的建立入手，整理腓立比书的历史背景和阅读问题。",
+        "en": "Historical preparation for Philippians beginning with Acts and the founding of the church in Philippi."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "预备——腓立比书",
+          "summary": "从使徒行传与腓立比教会的建立入手，整理腓立比书的历史背景和阅读问题。",
+          "url": "/spirits/腓立比书-预备/",
+          "date": "2025-10-20",
+          "collection": "spirits",
+          "source_path": "_spirits/腓立比书-预备.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "philippians-study-notes",
+      "date": "2025-10-29",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Study Notes on Philippians",
+        "腓立比书研读笔记"
+      ],
+      "titles": {
+        "zh": "腓立比书研读笔记",
+        "en": "Study Notes on Philippians"
+      },
+      "summaries": {
+        "zh": "沿着基督徒生命成长与教会生活的线索，研读腓立比书的经历和启示。",
+        "en": "Study notes on Philippians tracing Christian growth, experience of Christ, and church life."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "腓立比书研读笔记",
+          "summary": "沿着基督徒生命成长与教会生活的线索，研读腓立比书的经历和启示。",
+          "url": "/spirits/腓立比书研读笔记/",
+          "date": "2025-10-29",
+          "collection": "spirits",
+          "source_path": "_spirits/腓立比书研读笔记.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "prompt-collection",
+      "date": "2026-05-01",
+      "original_language": "zh",
+      "reader_paths": [
+        "notes-writing"
+      ],
+      "representative_paths": [
+        "notes-writing"
+      ],
+      "aliases": [
+        "Prompt Collection",
+        "提示词收集"
+      ],
+      "titles": {
+        "zh": "提示词收集",
+        "en": "Prompt Collection"
+      },
+      "summaries": {
+        "zh": "收集并注明来源的 AI 提示词，用于横纵分析、寓言解释和其他思考任务。",
+        "en": "A sourced collection of AI prompts for comparative analysis, allegorical explanation, and other reasoning tasks."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "Prompt Collection",
+          "summary": "收集并注明来源的 AI 提示词，用于横纵分析、寓言解释和其他思考任务。",
+          "url": "/notes/提示词收集/",
+          "date": "2026-05-01",
+          "collection": "notes",
+          "source_path": "_notes/提示词收集.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "red-star-over-china-notes",
+      "date": "2025-03-25",
+      "original_language": "zh",
+      "reader_paths": [
+        "notes-writing"
+      ],
+      "representative_paths": [
+        "notes-writing"
+      ],
+      "aliases": [
+        "Notes on Red Star Over China",
+        "《西行漫记》摘录",
+        "西行漫记摘录"
+      ],
+      "titles": {
+        "zh": "《西行漫记》摘录",
+        "en": "Notes on Red Star Over China"
+      },
+      "summaries": {
+        "zh": "阅读《西行漫记》（《红星照耀中国》）时摘录的问题、人物观察与历史材料。",
+        "en": "Questions, character observations, and historical excerpts gathered while reading Red Star Over China."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "西行漫记摘录",
+          "summary": "阅读《西行漫记》（《红星照耀中国》）时摘录的问题、人物观察与历史材料。",
+          "url": "/note/红星照耀中国",
+          "date": "2025-03-25",
+          "collection": "notes",
+          "source_path": "_notes/西行漫记-笔记.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "republic-of-love",
+      "date": "2025-10-18",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "notes-writing"
+      ],
+      "representative_paths": [
+        "notes-writing"
+      ],
+      "aliases": [
+        "Marriage: A Deep Social and Spiritual Practice",
+        "婚姻：人类最深的一种社会与属灵实践"
+      ],
+      "titles": {
+        "zh": "婚姻：人类最深的一种社会与属灵实践",
+        "en": "Marriage: A Deep Social and Spiritual Practice"
+      },
+      "summaries": {
+        "zh": "从爱情、婚姻、家庭与社会的张力出发，思考共同生活如何成为属灵与政治实践。",
+        "en": "A reflection on love, marriage, family, and society as a shared spiritual and political practice."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "婚姻：人类最深的一种社会与属灵实践",
+          "summary": "从爱情、婚姻、家庭与社会的张力出发，思考共同生活如何成为属灵与政治实践。",
+          "url": "/note/婚姻",
+          "date": "2025-10-18",
+          "collection": "notes",
+          "source_path": "_notes/爱的共和国.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "rethinking-christian-work",
+      "date": "2025-11-13",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Rethinking Christian Work",
+        "工作的狂想"
+      ],
+      "titles": {
+        "zh": "工作的狂想",
+        "en": "Rethinking Christian Work"
+      },
+      "summaries": {
+        "zh": "以圣经与倪柝声《工作的再思》为线索，反省基督徒工作、差遣与属灵事奉的方法。",
+        "en": "Reflections on Christian work, mission, and spiritual service in conversation with Scripture and Watchman Nee."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "工作的狂想",
+          "summary": "以圣经与倪柝声《工作的再思》为线索，反省基督徒工作、差遣与属灵事奉的方法。",
+          "url": "/spirits/工作的再思狂想录/",
+          "date": "2025-11-13",
+          "collection": "spirits",
+          "source_path": "_spirits/工作的再思狂想录.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "scraper-church-affairs",
+      "date": "2025-08-25",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "projects-creation"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Scraper for Church Affairs",
+        "Scraper for 教会的事务 (Church Affairs)",
+        "《教会的事务》抓取器"
+      ],
+      "titles": {
+        "zh": "《教会的事务》抓取器",
+        "en": "Scraper for Church Affairs"
+      },
+      "summaries": {
+        "zh": "抓取并整理《教会的事务》在线内容的爬虫项目。",
+        "en": "A scraper for collecting and organizing the online text of Church Affairs."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "Scraper for 教会的事务 (Church Affairs)",
+          "summary": "抓取并整理《教会的事务》在线内容的爬虫项目。",
+          "url": "/games/scraper-church-affairs",
+          "date": "2025-08-25",
+          "collection": "projects",
+          "source_path": "_projects/scraper-church-affairs.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "scraper-high-wenli-bible",
+      "date": "2025-08-25",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "projects-creation"
+      ],
+      "representative_paths": [
+        "projects-creation"
+      ],
+      "aliases": [
+        "Scraper for the High Wenli Union Bible",
+        "Simple scraper for High wenli union Bible 深文理和合本圣经",
+        "深文理和合本圣经抓取器"
+      ],
+      "titles": {
+        "zh": "深文理和合本圣经抓取器",
+        "en": "Scraper for the High Wenli Union Bible"
+      },
+      "summaries": {
+        "zh": "从维基文库抓取深文理和合本圣经文本的爬虫项目。",
+        "en": "A scraper for collecting the High Wenli Union Bible text from Wikisource."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "Simple scraper for High wenli union Bible 深文理和合本圣经",
+          "summary": "从维基文库抓取深文理和合本圣经文本的爬虫项目。",
+          "url": "/games/scrapy-high-wenli-union-Bible",
+          "date": "2025-08-25",
+          "collection": "projects",
+          "source_path": "_projects/scraper-high-wenli-union-Bible.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "scraper-john-chrysostom-homilies",
+      "date": "2025-08-25",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "projects-creation"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Scraper for Homilies on the Gospel of John",
+        "Simple scraper for 约翰福音讲道录",
+        "《约翰福音讲道录》抓取器"
+      ],
+      "titles": {
+        "zh": "《约翰福音讲道录》抓取器",
+        "en": "Scraper for Homilies on the Gospel of John"
+      },
+      "summaries": {
+        "zh": "抓取金口约翰《约翰福音讲道录》在线文本的爬虫项目。",
+        "en": "A scraper for collecting John Chrysostom's Homilies on the Gospel of John from an online archive."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "Simple scraper for 约翰福音讲道录",
+          "summary": "抓取金口约翰《约翰福音讲道录》在线文本的爬虫项目。",
+          "url": "/games/scraper-lectures-on-the-Gospel-of-John",
+          "date": "2025-08-25",
+          "collection": "projects",
+          "source_path": "_projects/scraper-lectures-on-the-Gospel-of-John.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "scraper-matthew-study-notes",
+      "date": "2025-08-25",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "projects-creation"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Scraper for Matthew Study Notes",
+        "Scraper for 马太福音查经记录 (Matthew Study Notes)",
+        "《马太福音查经记录》抓取器"
+      ],
+      "titles": {
+        "zh": "《马太福音查经记录》抓取器",
+        "en": "Scraper for Matthew Study Notes"
+      },
+      "summaries": {
+        "zh": "从倪柝声文集网站抓取《马太福音查经记录》的爬虫项目。",
+        "en": "A scraper that collects Watchman Nee's Matthew study notes from an online archive."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "Scraper for 马太福音查经记录 (Matthew Study Notes)",
+          "summary": "从倪柝声文集网站抓取《马太福音查经记录》的爬虫项目。",
+          "url": "/games/scraper-mattew-study-nee",
+          "date": "2025-08-25",
+          "collection": "projects",
+          "source_path": "_projects/scraper-Mattew-Study-Nee.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "scraper-song-of-songs",
+      "date": "2025-08-25",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "projects-creation"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Scraper for The Song of Songs",
+        "Scraper for 歌中之歌 (Song in the Song)",
+        "《歌中之歌》抓取器"
+      ],
+      "titles": {
+        "zh": "《歌中之歌》抓取器",
+        "en": "Scraper for The Song of Songs"
+      },
+      "summaries": {
+        "zh": "从倪柝声文集网站抓取《歌中之歌》内容的爬虫项目。",
+        "en": "A scraper that collects Watchman Nee's The Song of Songs from an online archive."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "Scraper for 歌中之歌 (Song in the Song)",
+          "summary": "从倪柝声文集网站抓取《歌中之歌》内容的爬虫项目。",
+          "url": "/games/scraper-light-in-nj-song",
+          "date": "2025-08-25",
+          "collection": "projects",
+          "source_path": "_projects/scraper-light-in-nj-song.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "scraper-twelve-baskets",
+      "date": "2025-08-25",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "projects-creation"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Scraper for Twelve Baskets",
+        "Simple scraper for 十二篮",
+        "《十二篮》内容抓取器"
+      ],
+      "titles": {
+        "zh": "《十二篮》内容抓取器",
+        "en": "Scraper for Twelve Baskets"
+      },
+      "summaries": {
+        "zh": "抓取并整理《十二篮》在线属灵文集内容的简单爬虫项目。",
+        "en": "A simple scraper for collecting and organizing the online spiritual writings in Twelve Baskets."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "Simple scraper for 十二篮",
+          "summary": "抓取并整理《十二篮》在线属灵文集内容的简单爬虫项目。",
+          "url": "/games/scraper-12-brackets",
+          "date": "2025-08-25",
+          "collection": "projects",
+          "source_path": "_projects/scraper-12-brackets.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "self-portrait-art",
+      "date": "2019-08-25",
+      "original_language": "en",
+      "reader_paths": [
+        "projects-creation"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Art work about mySelf",
+        "Artwork About Myself",
+        "关于自己的艺术作品"
+      ],
+      "titles": {
+        "zh": "关于自己的艺术作品",
+        "en": "Artwork About Myself"
+      },
+      "summaries": {
+        "zh": "使用 Microsoft PowerPoint 等工具创作的自画像与自我表达作品集。",
+        "en": "A collection of self-portraits and visual self-reflections created with tools including Microsoft PowerPoint."
+      },
+      "versions": {
+        "en": {
+          "language": "en",
+          "title": "Art work about mySelf",
+          "summary": "A collection of self-portraits and visual self-reflections created with tools including Microsoft PowerPoint.",
+          "url": "/projects/my Me/",
+          "date": "2019-08-25",
+          "collection": "projects",
+          "source_path": "_projects/my Me.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "seven-times-soul-adaptation",
+      "date": "2025-09-21",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "notes-writing"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "An Adaptation of Seven Times Have I Despised My Soul",
+        "《我曾七次鄙视自己的灵魂》改写",
+        "我曾七次鄙视自己的灵魂 改编"
+      ],
+      "titles": {
+        "zh": "《我曾七次鄙视自己的灵魂》改写",
+        "en": "An Adaptation of Seven Times Have I Despised My Soul"
+      },
+      "summaries": {
+        "zh": "在纪伯伦原诗及译文基础上，对灵魂、自欺与舍己主题所作的诗性改写。",
+        "en": "A poetic adaptation of Kahlil Gibran's work reflecting on the soul, self-deception, and self-denial."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "我曾七次鄙视自己的灵魂 改编",
+          "summary": "在纪伯伦原诗及译文基础上，对灵魂、自欺与舍己主题所作的诗性改写。",
+          "url": "/note/我曾七次鄙视自己的灵魂",
+          "date": "2025-09-21",
+          "collection": "notes",
+          "source_path": "_notes/我曾七次鄙视自己的灵魂改写.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "shame-beginning-of-righteousness",
+      "date": "2025-09-12",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "notes-writing"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "The Sense of Shame Is the Beginning of Righteousness",
+        "羞耻之心，义之端也"
+      ],
+      "titles": {
+        "zh": "羞耻之心，义之端也",
+        "en": "The Sense of Shame Is the Beginning of Righteousness"
+      },
+      "summaries": {
+        "zh": "从酒精脸红的生理机制延伸到亚当夏娃，思考身体警告、羞耻与义的开端。",
+        "en": "A reflection moving from alcohol flushing and bodily warning to Adam and Eve, shame, and the beginning of righteousness."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "羞耻之心，义之端也",
+          "summary": "从酒精脸红的生理机制延伸到亚当夏娃，思考身体警告、羞耻与义的开端。",
+          "url": "/note/从喝酒上脸到亚当夏娃",
+          "date": "2025-09-12",
+          "collection": "notes",
+          "source_path": "_notes/羞耻之心，义之端也.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "simple-room-tour-game",
+      "date": "2025-08-25",
+      "original_language": "en",
+      "reader_paths": [
+        "projects-creation"
+      ],
+      "representative_paths": [
+        "projects-creation"
+      ],
+      "aliases": [
+        "Simple Room Tour Game",
+        "简单房间漫游游戏"
+      ],
+      "titles": {
+        "zh": "简单房间漫游游戏",
+        "en": "Simple Room Tour Game"
+      },
+      "summaries": {
+        "zh": "使用 Godot 制作的可交互房间漫游游戏，重现芝加哥的一处居住空间。",
+        "en": "An interactive Godot room-tour game recreating a living space in Chicago."
+      },
+      "versions": {
+        "en": {
+          "language": "en",
+          "title": "Simple Room Tour Game",
+          "summary": "An interactive Godot room-tour game recreating a living space in Chicago.",
+          "url": "/games/simple-room-tour-game",
+          "date": "2025-08-25",
+          "collection": "projects",
+          "source_path": "_projects/Simple Room Tour Game.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "song-of-self-denial-1",
+      "date": "2025-11-21",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "notes-writing"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Song of Self-Denial I",
+        "舍己歌（一）"
+      ],
+      "titles": {
+        "zh": "舍己歌（一）",
+        "en": "Song of Self-Denial I"
+      },
+      "summaries": {
+        "zh": "以中英双语诗歌默想幻象、真理与舍己之路。",
+        "en": "A bilingual poem meditating on illusion, truth, and the way of self-denial."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "舍己歌（一）",
+          "summary": "以中英双语诗歌默想幻象、真理与舍己之路。",
+          "url": "/notes/舍己歌（一）/",
+          "date": "2025-11-21",
+          "collection": "notes",
+          "source_path": "_notes/舍己歌（一）.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "surely-turn-out-for-salvation",
+      "date": "2025-11-19",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "This Will Surely Turn Out for My Salvation",
+        "终必叫我得救"
+      ],
+      "titles": {
+        "zh": "终必叫我得救",
+        "en": "This Will Surely Turn Out for My Salvation"
+      },
+      "summaries": {
+        "zh": "从腓立比书一章的希腊文与互文，思考保罗“终必叫我得救”的确信及其信心来源。",
+        "en": "A lexical and intertextual study of Paul's confidence that this will turn out for his salvation in Philippians 1."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "终必叫我得救",
+          "summary": "从腓立比书一章的希腊文与互文，思考保罗“终必叫我得救”的确信及其信心来源。",
+          "url": "/spirits/终必叫我得救/",
+          "date": "2025-11-19",
+          "collection": "spirits",
+          "source_path": "_spirits/终必叫我得救.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "talking-little-tree",
+      "date": "2025-12-01",
+      "original_language": "zh",
+      "reader_paths": [
+        "notes-writing",
+        "projects-creation"
+      ],
+      "representative_paths": [
+        "projects-creation"
+      ],
+      "aliases": [
+        "The Talking Little Tree",
+        "会说话的小树"
+      ],
+      "titles": {
+        "zh": "会说话的小树",
+        "en": "The Talking Little Tree"
+      },
+      "summaries": {
+        "zh": "一篇中英双语冬日童话：得到说话祝福的小树，学习把祝福分享给别人。",
+        "en": "A bilingual winter tale about a little tree blessed with speech who learns that blessings grow when shared."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "The Talking Little Tree",
+          "summary": "一篇中英双语冬日童话：得到说话祝福的小树，学习把祝福分享给别人。",
+          "url": "/projects/A talking Tree/",
+          "date": "2025-12-01",
+          "collection": "projects",
+          "source_path": "_projects/A talking Tree.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "things-of-jesus-christ",
+      "date": "2025-11-19",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "The Things of Jesus Christ",
+        "耶稣基督的事"
+      ],
+      "titles": {
+        "zh": "耶稣基督的事",
+        "en": "The Things of Jesus Christ"
+      },
+      "summaries": {
+        "zh": "借着保罗、提摩太与舍己的线索，默想寻求耶稣基督之事与寻求自己之事的张力。",
+        "en": "A meditation on the tension between seeking the things of Jesus Christ and seeking one's own interests through Paul and Timothy."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "耶稣基督的事",
+          "summary": "借着保罗、提摩太与舍己的线索，默想寻求耶稣基督之事与寻求自己之事的张力。",
+          "url": "/spirits/耶稣基督的事/",
+          "date": "2025-11-19",
+          "collection": "spirits",
+          "source_path": "_spirits/耶稣基督的事.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "timothy-epistles-preparation",
+      "date": "2025-11-24",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "Preparing First and Second Timothy",
+        "预备——提摩太前后书"
+      ],
+      "titles": {
+        "zh": "预备——提摩太前后书",
+        "en": "Preparing First and Second Timothy"
+      },
+      "summaries": {
+        "zh": "结合历史背景与书信结构，整理提摩太前后书的读经纲要和预备问题。",
+        "en": "Historical and structural preparation for reading First and Second Timothy."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "预备——提摩太前后书",
+          "summary": "结合历史背景与书信结构，整理提摩太前后书的读经纲要和预备问题。",
+          "url": "/spirits/提摩太前后书预备/",
+          "date": "2025-11-24",
+          "collection": "spirits",
+          "source_path": "_spirits/提摩太前后书预备.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "way-to-read-scripture",
+      "date": "2025-10-19",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "The Way to Read Scripture",
+        "读书之路"
+      ],
+      "titles": {
+        "zh": "读书之路",
+        "en": "The Way to Read Scripture"
+      },
+      "summaries": {
+        "zh": "根据倪柝声《读经之路》，思考读经者的为人、方法与在神面前受教的态度。",
+        "en": "Notes from Watchman Nee's The Way to Read the Bible on the reader's character, method, and teachability before God."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "读书之路",
+          "summary": "根据倪柝声《读经之路》，思考读经者的为人、方法与在神面前受教的态度。",
+          "url": "/spirits/读书之路/",
+          "date": "2025-10-19",
+          "collection": "spirits",
+          "source_path": "_spirits/读书之路.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "we-are-the-world-translation",
+      "date": "2025-09-17",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "notes-writing"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "A New Chinese Translation of We Are the World",
+        "We are the World 另译",
+        "《We Are the World》另译"
+      ],
+      "titles": {
+        "zh": "《We Are the World》另译",
+        "en": "A New Chinese Translation of We Are the World"
+      },
+      "summaries": {
+        "zh": "围绕“一即一切”的主题，对《We Are the World》所作的中文译词与乐谱整理。",
+        "en": "A Chinese lyrical translation and score presentation of We Are the World centered on unity and the many becoming one."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "We are the World 另译",
+          "summary": "围绕“一即一切”的主题，对《We Are the World》所作的中文译词与乐谱整理。",
+          "url": "/note/We-are-the-World-另译",
+          "date": "2025-09-17",
+          "collection": "notes",
+          "source_path": "_notes/We are the World.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
+      "content_id": "wolven-storm-translation",
+      "date": "2025-10-14",
+      "original_language": "zh",
+      "reader_paths": [
+        "notes-writing"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "A Chinese Translation of Wolven Storm",
+        "Wolven Storm 风暴狼吟",
+        "《风暴狼吟》中文译词"
+      ],
+      "titles": {
+        "zh": "《风暴狼吟》中文译词",
+        "en": "A Chinese Translation of Wolven Storm"
+      },
+      "summaries": {
+        "zh": "参考古典汉语与既有译本，对《巫师 3》中《风暴狼吟》所作的中文歌词翻译。",
+        "en": "A Chinese lyrical translation of Wolven Storm from The Witcher 3, informed by classical Chinese prose and existing translations."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "Wolven Storm 风暴狼吟",
+          "summary": "参考古典汉语与既有译本，对《巫师 3》中《风暴狼吟》所作的中文歌词翻译。",
+          "url": "/note/风暴狼吟",
+          "date": "2025-10-14",
+          "collection": "notes",
+          "source_path": "_notes/风暴狼吟.md"
+        }
+      },
+      "backlinks": []
+    }
+  ]
+}

@@ -1,4 +1,15 @@
 ---
+content_id: scraper-matthew-study-notes
+language: zh
+original_language: zh
+reader_paths:
+- projects-creation
+- faith-spirituality
+title_zh: "《马太福音查经记录》抓取器"
+title_en: Scraper for Matthew Study Notes
+summary_zh: 从倪柝声文集网站抓取《马太福音查经记录》的爬虫项目。
+summary_en: A scraper that collects Watchman Nee's Matthew study notes from an online
+  archive.
 title: "Scraper for 马太福音查经记录 (Matthew Study Notes)"
 collection: projects
 category: scraper

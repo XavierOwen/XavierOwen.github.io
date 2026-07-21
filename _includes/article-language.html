@@ -1,0 +1,33 @@
+{% assign language_index = site.data["content-index"] %}
+{% assign language_item = nil %}
+{% for indexed_item in language_index.items %}
+  {% if indexed_item.content_id == page.content_id %}
+    {% assign language_item = indexed_item %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% if language_item %}
+  {% assign zh_version = language_item.versions.zh %}
+  {% assign en_version = language_item.versions.en %}
+  {% assign original_version = language_item.versions[language_item.original_language] %}
+  {% assign zh_url = zh_version.url | default: original_version.url %}
+  {% assign en_url = en_version.url | default: original_version.url %}
+  <aside class="article-language"
+         aria-label="Article language"
+         data-language-context="article"
+         data-language-current="{{ page.language }}"
+         data-original-language="{{ language_item.original_language }}"
+         data-zh-url="{{ zh_url | relative_url }}"
+         data-en-url="{{ en_url | relative_url }}"
+         data-zh-available="{% if zh_version %}true{% else %}false{% endif %}"
+         data-en-available="{% if en_version %}true{% else %}false{% endif %}">
+    <nav class="language-choices" aria-label="{% if page.language == 'zh' %}选择界面语言{% else %}Choose interface language{% endif %}">
+      <a class="language-choice" href="{{ zh_url | relative_url }}" data-language-choice="zh" hreflang="zh" aria-label="选择中文界面">中</a>
+      <a class="language-choice" href="{{ en_url | relative_url }}" data-language-choice="en" hreflang="en" aria-label="Choose English interface">EN</a>
+    </nav>
+    <p class="article-language__fallback" data-language-fallback role="status" aria-live="polite" hidden>
+      <span data-language-copy="zh">本文尚无经作者审核的中文版本，现显示英文原文。</span>
+      <span data-language-copy="en">This work does not yet have an author-reviewed English version. The Chinese original is shown.</span>
+    </p>
+  </aside>
+{% endif %}
