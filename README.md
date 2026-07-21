@@ -28,12 +28,15 @@ bundle exec jekyll serve --livereload
 
 ## 验证
 
-在提交任何布局、Liquid、Sass、配置或 JavaScript 变更前运行：
+在提交内容、布局、Liquid、Sass、配置或 JavaScript 变更前运行完整验证：
 
 ```sh
-bundle exec jekyll build
-node --check assets/js/toc-scrollspy.js
+npm run verify:site
 ```
+
+它会依次检查发布工作流、内容契约、生成内容索引、构建 Jekyll，并验证双语
+读者路径、Manifesto 首页、文章回退与 SEO、wiki 链接和反链。任一步骤失败都会
+返回非零状态。
 
 如果修改了 `assets/js/_main.js` 或 `assets/js/plugins/`，还要重新生成已提交的
 浏览器 bundle：
@@ -41,6 +44,11 @@ node --check assets/js/toc-scrollspy.js
 ```sh
 npm run build:js
 ```
+
+`.github/workflows/pages.yml` 在 pull request 中运行同一套验证，但不会发布；只有
+`master` 上验证成功的提交才会上传 `_site` 并部署到 GitHub Pages。仓库首次启用
+这套流程时，需要在 **Settings → Pages → Build and deployment → Source** 中选择
+**GitHub Actions**。
 
 ## 写内容
 

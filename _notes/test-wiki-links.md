@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Test Wiki Links"
 collection: notes
 category: personal

@@ -1,4 +1,15 @@
 ---
+content_id: scraper-john-chrysostom-homilies
+language: zh
+original_language: zh
+reader_paths:
+- projects-creation
+- faith-spirituality
+title_zh: "《约翰福音讲道录》抓取器"
+title_en: Scraper for Homilies on the Gospel of John
+summary_zh: 抓取金口约翰《约翰福音讲道录》在线文本的爬虫项目。
+summary_en: A scraper for collecting John Chrysostom's Homilies on the Gospel of John
+  from an online archive.
 title: "Simple scraper for 约翰福音讲道录"
 collection: projects
 category: scraper

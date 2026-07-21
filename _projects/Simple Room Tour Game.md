@@ -1,4 +1,15 @@
 ---
+content_id: simple-room-tour-game
+language: en
+original_language: en
+reader_paths:
+- projects-creation
+representative_paths:
+- projects-creation
+title_zh: 简单房间漫游游戏
+title_en: Simple Room Tour Game
+summary_zh: 使用 Godot 制作的可交互房间漫游游戏，重现芝加哥的一处居住空间。
+summary_en: An interactive Godot room-tour game recreating a living space in Chicago.
 title: "Simple Room Tour Game"
 collection: projects
 category: game

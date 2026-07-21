@@ -1,4 +1,15 @@
 ---
+content_id: we-are-the-world-translation
+language: zh
+original_language: zh
+reader_paths:
+- notes-writing
+- faith-spirituality
+title_zh: "《We Are the World》另译"
+title_en: A New Chinese Translation of We Are the World
+summary_zh: 围绕“一即一切”的主题，对《We Are the World》所作的中文译词与乐谱整理。
+summary_en: A Chinese lyrical translation and score presentation of We Are the World
+  centered on unity and the many becoming one.
 title: "We are the World 另译"
 collection: notes
 category: songs

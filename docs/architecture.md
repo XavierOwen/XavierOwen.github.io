@@ -4,11 +4,16 @@
 
 ```text
 Authored Markdown + front matter
-  ├── _notes / _spirits / _projects ──> collection index pages
-  ├── _publications / _teaching / _posts ──> template-provided indexes
-  └── _pages ──> standalone pages and navigation
-                    │
-                    ▼
+  ├── _notes / _spirits / _projects
+  ├── _publications / _teaching / _posts
+  └── _pages
+          │
+          ├──> published-content audit
+          ├──> generated content-index.json
+          │       ├── reader paths
+          │       ├── language versions
+          │       └── wiki aliases + backlink graph
+          ▼
               Jekyll build (GitHub Pages)
                     │
                     ▼
@@ -27,10 +32,17 @@ Authored Markdown + front matter
 | --- | --- | --- | --- |
 | Content collections | Markdown plus front matter | Jekyll collections in `_config.yml` | collection directories |
 | Collection indexes | configured category + authored entries | `_pages/notes.html`, `spirits.html`, `projects.html` | index page templates |
+| Content contract | stable Content ID, bilingual discovery metadata, reader paths | `scripts/audit_published_content.rb` | Markdown front matter |
+| Generated content graph | conceptual items, versions, aliases, backlinks | `scripts/build_content_index.rb` | `_data/content-index.json` |
+| Reader paths | path key plus UI language | `_layouts/reader-path.html` | four bilingual route pairs |
+| Manifesto home | bilingual thematic copy plus ordered reader paths | `_layouts/manifesto-home.html` and `_data/home.yml` | `/` and `/en/` |
+| Primary navigation | reader paths, About, CV, and language controls | `_includes/masthead.html` and `_data/navigation.yml` | shared masthead |
+| Language preference | explicit stored choice, then browser language | `assets/js/language-preference.js` | `data-language-context` |
 | Article layout | page front matter and rendered Markdown | `_layouts/single.html` | article-page rendering |
-| Backlinks | `[[Title]]` in source content | `_includes/backlinks.html` scans eligible site documents | captured output in `single.html` |
-| Wiki links | `[[Title]]` / `[[Label::URL]]` in rendered content | `_includes/wiki-links.html` | browser enhancement after render |
+| Backlinks | generated Content ID references | `_includes/backlinks.html` reads the content graph | captured output in `single.html` |
+| Wiki links | `[[Title]]` / `[[Label::URL]]` in rendered content | `assets/js/wiki-links.js` resolves the generated alias index | browser enhancement after render |
 | Article navigation | headings plus `toc: true` | Jekyll TOC include and `toc-scrollspy.js` | generated `.toc__left` links |
+| Publication gate | `npm run verify:site` | `.github/workflows/pages.yml` | verified `_site` artifact before Pages deployment |
 
 The desired direction is **depth**: callers should add content through a
 small, stable interface (Markdown and front matter), while display complexity
@@ -45,19 +57,14 @@ single backlink module rather than each reimplementing detection logic.
    interface; `single.html` only composes it.
 3. Keep published Markdown syntax backward compatible. Migrate source text
    explicitly if a syntax must change.
-4. Avoid expanding the client-side content index without measuring payload and
-   page behavior. Search is a separate design decision.
-5. Verify Jekyll output after changing Liquid, Sass, layouts, or collection
-   configuration.
+4. Keep `_data/content-index.json` deterministic and metadata-only. Avoid adding
+   article bodies; search is a separate design decision with its own payload
+   budget.
+5. Run `npm run verify:site` after changing content metadata, Liquid, Sass,
+   layouts, JavaScript, collection configuration, or deployment behavior.
 
 ## Known debt, deliberately not changed in this pass
 
-- Some template sample content still remains in the site tree. Remove or
-  replace it only as part of a deliberate editorial pass, so existing URLs do
-  not disappear by accident.
-- The client-side wiki-link index serializes excerpts from every custom
-  collection on each relevant article page. It is fine for the current corpus,
-  but should become a generated data asset if the corpus grows substantially.
 - Some custom style rules and the Academic Pages theme are interleaved. A
   visual redesign should first extract an explicit site design layer rather
   than continue patching theme files.

@@ -1,4 +1,15 @@
 ---
+content_id: scraper-song-of-songs
+language: zh
+original_language: zh
+reader_paths:
+- projects-creation
+- faith-spirituality
+title_zh: "《歌中之歌》抓取器"
+title_en: Scraper for The Song of Songs
+summary_zh: 从倪柝声文集网站抓取《歌中之歌》内容的爬虫项目。
+summary_en: A scraper that collects Watchman Nee's The Song of Songs from an online
+  archive.
 title: "Scraper for 歌中之歌 (Song in the Song)"
 collection: projects
 category: scraper

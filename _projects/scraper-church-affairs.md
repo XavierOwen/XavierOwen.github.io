@@ -1,4 +1,14 @@
 ---
+content_id: scraper-church-affairs
+language: zh
+original_language: zh
+reader_paths:
+- projects-creation
+- faith-spirituality
+title_zh: "《教会的事务》抓取器"
+title_en: Scraper for Church Affairs
+summary_zh: 抓取并整理《教会的事务》在线内容的爬虫项目。
+summary_en: A scraper for collecting and organizing the online text of Church Affairs.
 title: "Scraper for 教会的事务 (Church Affairs)"
 collection: projects
 category: scraper

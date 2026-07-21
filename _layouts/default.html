@@ -5,7 +5,8 @@ layout: compress
 {% include base_path %}
 
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
+{% assign document_language = page.ui_language | default: page.language | default: site.locale | slice: 0,2 %}
+<html lang="{{ document_language }}" class="no-js"{% if page.ui_language %} data-rendered-ui-language="{{ page.ui_language }}"{% endif %}{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
   <head>
     {% include head.html %}
     {% include head/custom.html %}

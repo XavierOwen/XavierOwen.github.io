@@ -1,4 +1,15 @@
 ---
+content_id: scraper-twelve-baskets
+language: zh
+original_language: zh
+reader_paths:
+- projects-creation
+- faith-spirituality
+title_zh: "《十二篮》内容抓取器"
+title_en: Scraper for Twelve Baskets
+summary_zh: 抓取并整理《十二篮》在线属灵文集内容的简单爬虫项目。
+summary_en: A simple scraper for collecting and organizing the online spiritual writings
+  in Twelve Baskets.
 title: "Simple scraper for 十二篮"
 collection: projects
 category: scraper

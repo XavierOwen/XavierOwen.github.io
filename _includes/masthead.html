@@ -1,22 +1,36 @@
 {% include base_path %}
+{% assign navigation_language = page.ui_language | default: page.language | default: site.locale | slice: 0,2 %}
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        <button aria-label="More navigation"><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/">{{ site.title }}</a></li>
+          <li class="masthead__menu-item masthead__menu-item--lg persist">
+            <a href="{% if navigation_language == 'zh' %}{{ '/' | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}"
+               data-ui-language-link data-zh-url="{{ '/' | relative_url }}" data-en-url="{{ '/en/' | relative_url }}"><span class="masthead__site-title-full">Yuanxing Cheng</span><span class="masthead__site-title-short">YC</span></a>
+          </li>
           {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-            {% else %}
-              {% assign domain = base_path %}
-            {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            {% if navigation_language == "zh" %}{% assign navigation_url = link.url_zh %}{% else %}{% assign navigation_url = link.url_en %}{% endif %}
+            <li class="masthead__menu-item">
+              <a href="{{ navigation_url | relative_url }}"
+                 data-ui-language-link
+                 data-zh-url="{{ link.url_zh | relative_url }}"
+                 data-en-url="{{ link.url_en | relative_url }}">
+                <span data-language-copy="zh">{{ link.title_zh }}</span>
+                <span data-language-copy="en">{{ link.title_en }}</span>
+              </a>
+            </li>
           {% endfor %}
+          <li class="masthead__menu-item masthead__language persist tail">
+            <a class="masthead__language-choice" href="{{ page.url | relative_url }}" data-language-choice="zh" aria-label="选择中文界面">中</a>
+          </li>
+          <li class="masthead__menu-item masthead__language persist tail">
+            <a class="masthead__language-choice" href="{{ page.url | relative_url }}" data-language-choice="en" aria-label="Choose English interface">EN</a>
+          </li>
           <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
+            <a role="button" aria-label="Toggle color theme"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
           </li>
         </ul>
         <ul class="hidden-links hidden"></ul>

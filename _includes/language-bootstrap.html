@@ -1,0 +1,22 @@
+<script>
+  (function () {
+    var storageKey = "xavier-site-language";
+    var storedLanguage = null;
+
+    try {
+      storedLanguage = window.localStorage.getItem(storageKey);
+    } catch (error) {
+      storedLanguage = null;
+    }
+
+    if (storedLanguage !== "zh" && storedLanguage !== "en") {
+      var browserLanguage = (window.navigator.languages && window.navigator.languages[0]) || window.navigator.language || "en";
+      storedLanguage = String(browserLanguage).toLowerCase().indexOf("zh") === 0 ? "zh" : "en";
+      document.documentElement.dataset.languagePreferenceSource = "browser";
+    } else {
+      document.documentElement.dataset.languagePreferenceSource = "stored";
+    }
+
+    document.documentElement.dataset.uiLanguage = storedLanguage;
+  }());
+</script>

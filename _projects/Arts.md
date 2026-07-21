@@ -1,4 +1,15 @@
 ---
+content_id: ms-paint-art
+language: en
+original_language: en
+reader_paths:
+- projects-creation
+representative_paths:
+- projects-creation
+title_zh: Microsoft Paint 绘画作品
+title_en: Artwork Made with Microsoft Paint
+summary_zh: 大学以来使用 Microsoft Paint 创作的绘画作品集。
+summary_en: A collection of digital artwork made with Microsoft Paint since college.
 title: "Art work with MS Paint"
 collection: projects
 category: art

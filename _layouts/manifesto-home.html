@@ -1,0 +1,76 @@
+---
+layout: default
+---
+{% assign home = site.data.home %}
+{% assign copy = home[page.ui_language] %}
+{% if page.ui_language == "zh" %}
+  {% assign home_zh_url = page.url %}
+  {% assign home_en_url = page.alternate_url %}
+{% else %}
+  {% assign home_zh_url = page.alternate_url %}
+  {% assign home_en_url = page.url %}
+{% endif %}
+
+<main class="manifesto-home"
+      data-language-context="route"
+      data-language-current="{{ page.ui_language }}"
+      data-zh-url="{{ home_zh_url | relative_url }}"
+      data-en-url="{{ home_en_url | relative_url }}"
+      data-zh-available="true"
+      data-en-available="true">
+  <div class="manifesto-home__frame">
+    <header class="manifesto-home__topbar">
+      <span class="manifesto-home__eyebrow">{{ copy.site_label }}</span>
+      <span class="manifesto-home__eyebrow">{{ copy.edition }}</span>
+      <nav class="language-choices" aria-label="{% if page.ui_language == 'zh' %}选择界面语言{% else %}Choose interface language{% endif %}">
+        <a class="language-choice" href="{{ home_zh_url | relative_url }}" data-language-choice="zh" hreflang="zh" aria-label="选择中文界面"{% if page.ui_language == 'zh' %} aria-current="true"{% endif %}>中</a>
+        <a class="language-choice" href="{{ home_en_url | relative_url }}" data-language-choice="en" hreflang="en" aria-label="Choose English interface"{% if page.ui_language == 'en' %} aria-current="true"{% endif %}>EN</a>
+      </nav>
+    </header>
+
+    <section class="manifesto-home__hero" aria-labelledby="manifesto-title">
+      <p class="manifesto-home__eyebrow">{{ copy.eyebrow }}</p>
+      <h1 id="manifesto-title">{{ copy.title }}</h1>
+      <p>{{ copy.introduction }}</p>
+    </section>
+
+    <section class="manifesto-home__paths" id="reader-paths" aria-labelledby="reader-paths-title">
+      <h2 class="manifesto-home__section-label" id="reader-paths-title">{{ copy.paths_label }}</h2>
+      <div class="manifesto-home__path-grid">
+        {% for path_key in home.route_order %}
+          {% assign reader_path = site.data.reader_paths.paths[path_key] %}
+          <a class="manifesto-home__path" href="{% if page.ui_language == 'zh' %}{{ '/paths/' | append: path_key | append: '/' | relative_url }}{% else %}{{ '/en/paths/' | append: path_key | append: '/' | relative_url }}{% endif %}">
+            <span class="manifesto-home__path-number">0{{ forloop.index }}</span>
+            <strong>{% if page.ui_language == "zh" %}{{ reader_path.label_zh }}{% else %}{{ reader_path.label_en }}{% endif %}</strong>
+            <span class="manifesto-home__path-copy">{% if page.ui_language == "zh" %}{{ reader_path.description_zh }}{% else %}{{ reader_path.description_en }}{% endif %}</span>
+            <span class="manifesto-home__path-enter">{{ copy.enter_path }} →</span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="manifesto-home__identity" aria-labelledby="identity-title">
+      <p class="manifesto-home__eyebrow">{{ copy.identity_eyebrow }}</p>
+      <div>
+        <h2 id="identity-title">{{ copy.identity_title }}</h2>
+        <p>{{ copy.identity_copy }}</p>
+        <div class="manifesto-home__links">
+          <a href="{% if page.ui_language == 'zh' %}{{ '/about/' | relative_url }}{% else %}{{ '/en/about/' | relative_url }}{% endif %}">{{ copy.about_label }} →</a>
+          <a href="{{ '/cv/' | relative_url }}">{{ copy.cv_label }} →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto-home__questions" aria-labelledby="questions-title">
+      <p class="manifesto-home__eyebrow">{{ copy.questions_eyebrow }}</p>
+      <div>
+        <h2 id="questions-title">{{ copy.questions_title }}</h2>
+        <ol>
+          {% for question in copy.questions %}<li>{{ question }}</li>{% endfor %}
+        </ol>
+        <p class="manifesto-home__closing">{{ copy.closing }}</p>
+        <a class="manifesto-home__feature" href="{{ '/note/We-are-the-World-另译' | relative_url }}">{{ copy.feature_label }} →</a>
+      </div>
+    </section>
+  </div>
+</main>

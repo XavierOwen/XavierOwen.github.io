@@ -1,0 +1,48 @@
+ui:
+  representative_zh: "代表内容"
+  representative_en: "Representative work"
+  archive_zh: "完整档案"
+  archive_en: "Complete archive"
+  browse_archive_zh: "浏览完整档案"
+  browse_archive_en: "Browse the complete archive"
+  back_to_path_zh: "返回路径介绍"
+  back_to_path_en: "Back to the path introduction"
+  original_zh: "原文"
+  original_en: "Original"
+  language_names:
+    zh:
+      zh: "中文"
+      en: "Chinese"
+    en:
+      zh: "英文"
+      en: "English"
+
+paths:
+  research-teaching:
+    label_zh: "研究与教学"
+    label_en: "Research & Teaching"
+    eyebrow_zh: "求知，也使知识可以传递"
+    eyebrow_en: "To inquire, and to make knowledge teachable"
+    description_zh: "从高斯过程、主动学习到统计教学：研究不只生产结论，也寻找可以共同理解问题的方法。"
+    description_en: "From Gaussian processes and active learning to statistics education: research produces results while seeking ways to understand problems together."
+  notes-writing:
+    label_zh: "笔记与写作"
+    label_en: "Notes & Writing"
+    eyebrow_zh: "在记录中辨认思想的形状"
+    eyebrow_en: "Giving thought a shape through writing"
+    description_zh: "学习笔记、读书摘录、诗歌与译写在这里相遇；它们保存思想生成时的纹理。"
+    description_en: "Study notes, reading excerpts, poems, and translations meet here, preserving the texture of thought as it forms."
+  faith-spirituality:
+    label_zh: "信仰与灵修"
+    label_en: "Faith & Spirituality"
+    eyebrow_zh: "让所读的道成为所行的路"
+    eyebrow_en: "Letting the Word read become the way lived"
+    description_zh: "圣经研读、教会生活与属灵阅读彼此照明，追问信仰如何成为日常生命。"
+    description_en: "Biblical study, church life, and spiritual reading illuminate one another, asking how faith becomes daily life."
+  projects-creation:
+    label_zh: "项目与创作"
+    label_en: "Projects & Creation"
+    eyebrow_zh: "把想法做成可以进入的世界"
+    eyebrow_en: "Making ideas into worlds others can enter"
+    description_zh: "软件、抓取工具、游戏、绘画与童话都是思想的实体化，也是学习如何创造的记录。"
+    description_en: "Software, scrapers, games, paintings, and tales give ideas a body and record the practice of making."

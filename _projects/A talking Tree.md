@@ -1,4 +1,17 @@
 ---
+content_id: talking-little-tree
+language: zh
+original_language: zh
+reader_paths:
+- projects-creation
+- notes-writing
+representative_paths:
+- projects-creation
+title_zh: 会说话的小树
+title_en: The Talking Little Tree
+summary_zh: 一篇中英双语冬日童话：得到说话祝福的小树，学习把祝福分享给别人。
+summary_en: A bilingual winter tale about a little tree blessed with speech who learns
+  that blessings grow when shared.
 title: "The Talking Little Tree"
 collection: projects
 category: märchen

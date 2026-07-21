@@ -95,6 +95,11 @@ is historical residue, not the site's current product definition.
 - **Language-aware backlink**: backlinks are deduplicated by content ID and
   present the version matching the reader's language preference when available,
   otherwise the original-language version.
+- **Generated content graph**: `_data/content-index.json` is the deterministic,
+  metadata-only projection of the published corpus. It groups translation
+  versions, drives reader paths, preserves authored-title aliases for wiki
+  links, and stores backlinks as Content ID relationships; article bodies do
+  not enter this client-facing index.
 - **Published-content contract**: every published item must provide its content
   ID, reader-path metadata, and bilingual discovery metadata. Build-time
   validation reports and rejects any published item that violates this

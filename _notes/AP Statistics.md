@@ -1,4 +1,18 @@
 ---
+content_id: ap-statistics-tutorial
+language: en
+original_language: en
+reader_paths:
+- research-teaching
+- notes-writing
+representative_paths:
+- research-teaching
+- notes-writing
+title_zh: AP 统计学
+title_en: AP Statistics
+summary_zh: 面向学生、以问题引导的 AP 统计学概念速查、讲解与练习材料。
+summary_en: A question-led AP Statistics tutorial and practice resource designed for
+  fast conceptual review with students.
 title: "AP®︎ Statistics"
 collection: notes
 category: math

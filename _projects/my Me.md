@@ -1,4 +1,14 @@
 ---
+content_id: self-portrait-art
+language: en
+original_language: en
+reader_paths:
+- projects-creation
+title_zh: 关于自己的艺术作品
+title_en: Artwork About Myself
+summary_zh: 使用 Microsoft PowerPoint 等工具创作的自画像与自我表达作品集。
+summary_en: A collection of self-portraits and visual self-reflections created with
+  tools including Microsoft PowerPoint.
 title: "Art work about mySelf"
 collection: projects
 category: art

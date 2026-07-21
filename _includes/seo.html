@@ -5,6 +5,20 @@
   {% assign seo_url = site.url | append: site.baseurl %}
 {% endif %}
 {% assign seo_url = seo_url | default: site.github.url %}
+{% assign seo_language = page.language | default: page.ui_language | default: site.locale | slice: 0,2 %}
+{% assign seo_content_item = nil %}
+{% if page.content_id and site.data["content-index"] %}
+  {% for indexed_item in site.data["content-index"].items %}
+    {% if indexed_item.content_id == page.content_id %}
+      {% assign seo_content_item = indexed_item %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% if seo_content_item %}
+  {% assign seo_zh_version = seo_content_item.versions.zh %}
+  {% assign seo_en_version = seo_content_item.versions.en %}
+{% endif %}
 
 {% if page.title %}
   {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
@@ -45,6 +59,20 @@
 
 {% if seo_url %}
   <link rel="canonical" href="{{ page.url | prepend: seo_url | replace: "/index.html", "/" }}">
+{% endif %}
+{% if seo_url and seo_zh_version and seo_en_version %}
+  <link rel="alternate" hreflang="zh" href="{{ seo_zh_version.url | prepend: seo_url }}">
+  <link rel="alternate" hreflang="en" href="{{ seo_en_version.url | prepend: seo_url }}">
+{% elsif seo_url and page.ui_language and page.alternate_url %}
+  {% if page.ui_language == "zh" %}
+    {% assign seo_zh_route = page.url %}
+    {% assign seo_en_route = page.alternate_url %}
+  {% else %}
+    {% assign seo_zh_route = page.alternate_url %}
+    {% assign seo_en_route = page.url %}
+  {% endif %}
+  <link rel="alternate" hreflang="zh" href="{{ seo_zh_route | prepend: seo_url }}">
+  <link rel="alternate" hreflang="en" href="{{ seo_en_route | prepend: seo_url }}">
 {% endif %}
 
 {% if site.twitter.username %}
@@ -112,7 +140,10 @@
 <!-- end SEO -->
 
 <!-- Open Graph protocol data (https://ogp.me/), used by social media -->
-<meta property="og:locale" content="{{ site.locale | default: "en" }}">
+<meta property="og:locale" content="{% if seo_language == 'zh' %}zh_CN{% else %}en_US{% endif %}">
+{% if seo_zh_version and seo_en_version %}
+  <meta property="og:locale:alternate" content="{% if seo_language == 'zh' %}en_US{% else %}zh_CN{% endif %}">
+{% endif %}
 <meta property="og:site_name" content="{{ site.title }}"> 
 <meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
 {% if page.date %}

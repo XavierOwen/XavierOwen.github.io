@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+{% assign path = site.data.reader_paths.paths[page.reader_path] %}
+{% assign ui = site.data.reader_paths.ui %}
+{% assign index = site.data["content-index"] %}
+{% assign path_items = "" | split: "" %}
+{% for item in index.items %}
+  {% if item.reader_paths contains page.reader_path %}
+    {% assign path_items = path_items | push: item %}
+  {% endif %}
+{% endfor %}
+{% assign path_items = path_items | sort: "date" | reverse %}
+{% if page.ui_language == "zh" %}
+  {% assign language_zh_url = page.url %}
+  {% assign language_en_url = page.alternate_url %}
+{% else %}
+  {% assign language_zh_url = page.alternate_url %}
+  {% assign language_en_url = page.url %}
+{% endif %}
+
+<main class="reader-path"
+      data-reader-path="{{ page.reader_path }}"
+      data-ui-language="{{ page.ui_language }}"
+      data-language-context="route"
+      data-language-current="{{ page.ui_language }}"
+      data-zh-url="{{ language_zh_url | relative_url }}"
+      data-en-url="{{ language_en_url | relative_url }}"
+      data-zh-available="true"
+      data-en-available="true">
+  <header class="reader-path__header">
+    <div class="reader-path__tools">
+      <a class="reader-path__back" href="{{ '/' | relative_url }}" aria-label="{% if page.ui_language == 'zh' %}返回首页{% else %}Back to home{% endif %}">←</a>
+      <a class="reader-path__language" href="{{ page.alternate_url | relative_url }}" hreflang="{% if page.ui_language == 'zh' %}en{% else %}zh{% endif %}" data-language-choice="{% if page.ui_language == 'zh' %}en{% else %}zh{% endif %}">{% if page.ui_language == 'zh' %}EN{% else %}中{% endif %}</a>
+    </div>
+    <p class="reader-path__eyebrow">{% if page.ui_language == "zh" %}{{ path.eyebrow_zh }}{% else %}{{ path.eyebrow_en }}{% endif %}</p>
+    <h1>{% if page.ui_language == "zh" %}{{ path.label_zh }}{% else %}{{ path.label_en }}{% endif %}</h1>
+    <p class="reader-path__description">{% if page.ui_language == "zh" %}{{ path.description_zh }}{% else %}{{ path.description_en }}{% endif %}</p>
+  </header>
+
+  {% if page.archive %}
+    <section class="reader-path__section" aria-labelledby="archive-title">
+      <div class="reader-path__section-heading">
+        <h2 id="archive-title">{% if page.ui_language == "zh" %}{{ ui.archive_zh }}{% else %}{{ ui.archive_en }}{% endif %}</h2>
+        <a href="{{ page.landing_url | relative_url }}">{% if page.ui_language == "zh" %}{{ ui.back_to_path_zh }}{% else %}{{ ui.back_to_path_en }}{% endif %}</a>
+      </div>
+      <div class="reader-path__ledger">
+        {% for item in path_items %}{% include reader-path-item.html item=item ui_language=page.ui_language ui=ui %}{% endfor %}
+      </div>
+    </section>
+  {% else %}
+    <section class="reader-path__section" aria-labelledby="representative-title">
+      <div class="reader-path__section-heading">
+        <h2 id="representative-title">{% if page.ui_language == "zh" %}{{ ui.representative_zh }}{% else %}{{ ui.representative_en }}{% endif %}</h2>
+        <a href="{{ page.archive_url | relative_url }}">{% if page.ui_language == "zh" %}{{ ui.browse_archive_zh }}{% else %}{{ ui.browse_archive_en }}{% endif %} →</a>
+      </div>
+      <div class="reader-path__ledger">
+        {% for item in path_items %}
+          {% if item.representative_paths contains page.reader_path %}{% include reader-path-item.html item=item ui_language=page.ui_language ui=ui %}{% endif %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+</main>
