@@ -23,7 +23,8 @@ require_text(failures, workflow, "push:\n    branches:\n      - master", "Pages 
 require_text(failures, workflow, "pull_request:\n    branches:\n      - master", "Pages workflow must verify pull requests targeting master.")
 require_text(failures, workflow, "run: npm run verify:site", "Pages workflow must run the complete site verification.")
 require_text(failures, workflow, "JEKYLL_ENV: production", "Pages verification must use the production Jekyll environment.")
-require_text(failures, workflow, "uses: actions/upload-pages-artifact@v4", "Pages workflow must upload the verified _site artifact.")
+require_text(failures, workflow, "uses: actions/configure-pages@v6", "Pages workflow must configure Pages with the Node.js 24 action.")
+require_text(failures, workflow, "uses: actions/upload-pages-artifact@v5", "Pages workflow must upload the verified _site artifact with the Node.js 24 action.")
 require_text(failures, workflow, "path: _site", "Pages artifact must be built from _site.")
 require_text(failures, workflow, "uses: actions/deploy-pages@v5", "Pages workflow must deploy through the Pages deployment action.")
 require_text(failures, workflow, "needs: build", "Deployment must depend on the verification/build job.")
@@ -32,7 +33,7 @@ require_text(failures, workflow, "id-token: write", "Deployment needs an OIDC id
 require_text(failures, workflow, "name: github-pages", "Deployment must use the protected github-pages environment.")
 
 verify_position = workflow.index("run: npm run verify:site")
-upload_position = workflow.index("uses: actions/upload-pages-artifact@v4")
+upload_position = workflow.index("uses: actions/upload-pages-artifact@v5")
 deploy_position = workflow.index("uses: actions/deploy-pages@v5")
 
 if verify_position && upload_position && verify_position > upload_position
@@ -44,6 +45,7 @@ if upload_position && deploy_position && upload_position > deploy_position
 end
 
 required_static_checks = %w[
+  scripts/check_static_assets.rb
   scripts/check_reader_paths.rb
   scripts/check_bilingual_articles.rb
   scripts/check_wiki_index.rb

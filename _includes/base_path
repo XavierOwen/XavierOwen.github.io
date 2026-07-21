@@ -3,3 +3,8 @@
 {% else %}
   {% assign base_path = site.github.url %}
 {% endif %}
+
+{% assign asset_version = site.github.build_revision %}
+{% unless asset_version %}
+  {% assign asset_version = site.time | date: "%Y%m%d%H%M%S" %}
+{% endunless %}
