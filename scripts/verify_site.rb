@@ -9,6 +9,7 @@ COMMANDS = [
   ["ruby", "scripts/audit_published_content.rb"],
   ["ruby", "scripts/build_content_index.rb"],
   ["bundle", "exec", "jekyll", "build"],
+  ["ruby", "scripts/check_static_assets.rb"],
   ["ruby", "scripts/check_reader_paths.rb"],
   ["ruby", "scripts/check_bilingual_articles.rb"],
   ["ruby", "scripts/check_wiki_index.rb"],

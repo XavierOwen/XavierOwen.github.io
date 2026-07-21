@@ -34,9 +34,9 @@ bundle exec jekyll serve --livereload
 npm run verify:site
 ```
 
-它会依次检查发布工作流、内容契约、生成内容索引、构建 Jekyll，并验证双语
-读者路径、Manifesto 首页、文章回退与 SEO、wiki 链接和反链。任一步骤失败都会
-返回非零状态。
+它会依次检查发布工作流、内容契约、生成内容索引、构建 Jekyll，并验证静态资源
+版本、双语读者路径、Manifesto 首页、文章回退与 SEO、wiki 链接和反链。任一
+步骤失败都会返回非零状态。
 
 如果修改了 `assets/js/_main.js` 或 `assets/js/plugins/`，还要重新生成已提交的
 浏览器 bundle：
