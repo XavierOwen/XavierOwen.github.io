@@ -23,11 +23,11 @@ Education
 
 Work Experience
 ======
-* Aug. 2025 - Current: Independent Tutor
-  * Varsity Tutoring, Chicago, US
-  * Deliver personalized one-on-one tutoring in College Statistics, College Algebra, AP Statistics, and Business Statistics, tailoring each session to the student's learning style and confidence level
-  * Build student confidence through encouragement and Socratic questioning, pairing human insight with AI-generated problem sets reviewed and refined for mathematical accuracy
-  * Develop customized session plans and practice materials that systematically address conceptual gaps and build toward exam readiness
+* Jul. 2026 - Current: Maintenance Specialist
+  * GOFO INC.
+  * Wrote and maintained SQL queries to integrate sorter logs, throughput, downtime, and staffing records, building daily diagnostic views for Narrow Belt and Cross Belt operations
+  * Applied statistical analysis to locate root causes of efficiency loss and recurring failures, then translated findings into actionable maintenance and staffing recommendations
+  * Optimized worker allocation by shift and equipment condition, improving machine labor productivity ratio by 10% while maintaining stable parcel flow and repair responsiveness
 
 * May 2025 - Aug. 2025: Teaching Assistant
   * Coursera, Illinois Institute of Technology, Chicago, US
@@ -69,6 +69,7 @@ Applied Math Ph.D. with deep expertise in statistical modeling, machine learning
 
 * Programming: Python (NumPy, scikit-learn, PyTorch, Pandas, matplotlib), MATLAB, R (ggplot2, Shiny), SQL, Java, Godot, Power BI
 * Statistics & ML: Gaussian Process Regression, Bayesian Inference, Dimension Reduction, Manifold Learning, Active Learning, Stochastic PDEs, Linear/Nonlinear Regression
+* Industrial Maintenance & Operations: Narrow Belt Sorters, Cross Belt Sorters, equipment inspection and troubleshooting, operational-data-informed staffing and repair prioritization
 * Tools: Git, LaTeX, Microsoft Office Suite, Jupyter, Salesforce
 * Languages: English (fluent), Mandarin Chinese (native)
 
