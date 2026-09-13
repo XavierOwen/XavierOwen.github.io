@@ -19,7 +19,11 @@ toc: true
 tags: [Art, Painting]
 ---
 
-## The Her I Love
+## The Her My Love
+
+### The wedding photo
+
+![The wedding photo]({{ site.baseurl }}/images/arts/draw/202609030057_halfHalf.png)
 
 ### The Her (BW)
 

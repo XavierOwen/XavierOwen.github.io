@@ -29,7 +29,10 @@ implementation detail and the content collections as the durable asset.
 
 ## Verification
 
-Run both checks after a site or JavaScript change:
+After site content, layout, style, or behavior changes, run the Jekyll build.
+Check JavaScript syntax when changing that script (the command below covers
+`toc-scrollspy.js`; use the affected script for other changes). Guidance-only
+edits need content and link checks, not a site rebuild:
 
 ```sh
 bundle exec jekyll build
@@ -39,19 +42,11 @@ node --check assets/js/toc-scrollspy.js
 Use `npm run build:js` only after Node dependencies are installed; it rewrites
 the generated `assets/js/main.min.js` bundle.
 
-## Agent skills
+## Task-specific guides
 
-### Issue tracker
+- GitHub Issues and PRDs: `docs/agents/issue-tracker.md`.
+- Five canonical triage labels: `docs/agents/triage-labels.md`.
+- Domain vocabulary and ADRs: `docs/agents/domain.md`.
 
-Issues and PRDs are tracked in this repository's GitHub Issues. See
-`docs/agents/issue-tracker.md`.
-
-### Triage labels
-
-Use the repository's five canonical GitHub label mappings. See
-`docs/agents/triage-labels.md`.
-
-### Domain docs
-
-This is a single-context repository: read the root `CONTEXT.md` and relevant
-`docs/adr/` records. See `docs/agents/domain.md`.
+Read the guide relevant to the task. Tracker instructions describe how to perform
+authorized actions; a skill's publication step does not itself authorize posting.
