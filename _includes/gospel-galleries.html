@@ -1,0 +1,38 @@
+{% include base_path %}
+{% for gallery in page.galleries %}
+<section class="gospel-gallery gospel-gallery--{{ gallery.id }}" data-gospel-gallery>
+  <h2>{{ gallery.title }}</h2>
+  <div class="gospel-gallery__items gospel-gallery__items--{{ gallery.layout }}">
+    {% for file in gallery.images %}
+      {% assign pair = forloop.index0 | divided_by: 2 | plus: 1 %}
+      {% assign side = forloop.index0 | modulo: 2 %}
+      {% if gallery.id == 'saic' %}
+        {% assign label = gallery.title | append: ' · ' | append: gallery.labels[forloop.index0] %}
+      {% elsif side == 0 %}
+        {% assign label = gallery.title | append: ' · 第 ' | append: pair | append: ' 款正面' %}
+      {% else %}
+        {% assign label = gallery.title | append: ' · 第 ' | append: pair | append: ' 款背面，个人信息已遮盖' %}
+      {% endif %}
+      <a class="gospel-gallery__item" href="{{ site.baseurl }}/images/projects/gospel-designs/{{ file }}" data-gallery-image style="--position: {{ forloop.index0 }}" aria-label="放大查看{{ label }}">
+        <img src="{{ site.baseurl }}/images/projects/gospel-designs/{{ file }}" alt="{{ label }}" {% if gallery.id == 'iit' %}width="1200" height="1800"{% elsif gallery.id == 'union' %}width="2485" height="737"{% else %}width="2000" height="2000"{% endif %} loading="lazy" decoding="async">
+      </a>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
+
+<div class="gospel-lightbox" role="dialog" aria-modal="true" aria-label="作品图片浏览器" hidden>
+  <div class="gospel-lightbox__inner">
+    <button class="gospel-lightbox__close" type="button" aria-label="关闭图片浏览器">×</button>
+    <div class="gospel-lightbox__stage">
+      <button class="gospel-lightbox__arrow" type="button" data-gallery-prev aria-label="上一张图片">‹</button>
+      <figure>
+        <img src="{{ site.baseurl }}/images/projects/gospel-designs/iit-01.webp" alt="IIT 福音聚会单张 · 第 1 款正面">
+        <figcaption aria-live="polite"></figcaption>
+      </figure>
+      <button class="gospel-lightbox__arrow" type="button" data-gallery-next aria-label="下一张图片">›</button>
+    </div>
+    <div class="gospel-lightbox__thumbs" aria-label="本系列缩略图"></div>
+  </div>
+</div>
+<script src="{{ site.baseurl }}/assets/js/gospel-gallery.js?v={{ asset_version }}" defer></script>

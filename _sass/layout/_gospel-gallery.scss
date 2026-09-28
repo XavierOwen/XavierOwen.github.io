@@ -1,0 +1,155 @@
+.gospel-gallery {
+  margin: 3rem 0;
+
+  h2 { margin-bottom: 1rem; }
+}
+
+.gospel-gallery__items--grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.gospel-gallery--saic .gospel-gallery__items--grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+
+.gospel-gallery__items--stack {
+  position: relative;
+  height: max(28rem, min(80vw, 42rem));
+}
+
+.gospel-gallery__item {
+  display: block;
+  position: relative;
+  line-height: 0;
+  outline-offset: 4px;
+  transition: transform 180ms ease-out, box-shadow 180ms ease-out;
+
+  img { display: block; width: 100%; height: auto; margin: 0; }
+
+  &:hover,
+  &:focus-visible {
+    z-index: 30;
+    transform: translateY(-0.5rem) scale(1.035);
+    box-shadow: 0 0 0 3px #e8d692, 0 0 20px 6px rgba(232, 214, 146, 0.4);
+  }
+}
+
+.gospel-gallery__items--stack .gospel-gallery__item {
+  position: absolute;
+  width: 31%;
+  z-index: calc(var(--position) + 1);
+
+  &:nth-child(1) { top: 4%; left: 4%; transform: rotate(-8deg); }
+  &:nth-child(2) { top: 0; left: 33%; transform: rotate(3deg); }
+  &:nth-child(3) { top: 7%; left: 63%; transform: rotate(9deg); }
+  &:nth-child(4) { top: 33%; left: 7%; transform: rotate(-5deg); }
+  &:nth-child(5) { top: 31%; left: 36%; transform: rotate(2deg); }
+  &:nth-child(6) { top: 36%; left: 65%; transform: rotate(7deg); }
+  &:hover,
+  &:focus-visible { transform: translateY(-0.5rem) rotate(0) scale(1.025); }
+}
+
+@media (max-width: 40rem) {
+  .gospel-gallery__items--stack .gospel-gallery__item { width: 42%; }
+  .gospel-gallery__items--stack .gospel-gallery__item:nth-child(1) { left: 1%; }
+  .gospel-gallery__items--stack .gospel-gallery__item:nth-child(2) { left: 29%; }
+  .gospel-gallery__items--stack .gospel-gallery__item:nth-child(3) { left: 57%; }
+  .gospel-gallery__items--stack .gospel-gallery__item:nth-child(4) { left: 2%; }
+  .gospel-gallery__items--stack .gospel-gallery__item:nth-child(5) { left: 30%; }
+  .gospel-gallery__items--stack .gospel-gallery__item:nth-child(6) { left: 58%; }
+}
+
+.gospel-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100dvh;
+  padding: 0;
+  border: 0;
+  color: #fff;
+  background: #111;
+
+  button {
+    min-width: 44px;
+    min-height: 44px;
+    border: 0;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+
+    &:focus-visible { outline: 3px solid #e8d692; outline-offset: 2px; }
+  }
+}
+
+.gospel-lightbox__inner {
+  display: flex;
+  flex-direction: column;
+  max-width: 90rem;
+  height: 100dvh;
+  margin: auto;
+  padding: 0.5rem;
+}
+
+body.gospel-lightbox-open { overflow: hidden; }
+
+.gospel-lightbox__close {
+  align-self: flex-end;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.gospel-lightbox__stage {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: center;
+  flex: 1;
+  min-height: 0;
+
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    height: 100%;
+    margin: 0;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100% - 2rem);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  figcaption { margin-top: 0.5rem; text-align: center; }
+}
+
+.gospel-lightbox__arrow { font-size: 2.5rem; }
+
+.gospel-lightbox__thumbs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem;
+
+  button {
+    flex: 0 0 72px;
+    padding: 0;
+    opacity: 0.6;
+
+    &[aria-current="true"] { opacity: 1; box-shadow: 0 0 0 2px #e8d692; }
+  }
+
+  img { display: block; width: 72px; height: 56px; object-fit: contain; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gospel-gallery__item { transition: none; }
+}

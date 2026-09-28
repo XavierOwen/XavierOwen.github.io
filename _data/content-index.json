@@ -448,6 +448,42 @@
       "backlinks": []
     },
     {
+      "content_id": "gospel-tract-design",
+      "date": "2026-09-28",
+      "original_language": "zh",
+      "reader_paths": [
+        "faith-spirituality",
+        "projects-creation"
+      ],
+      "representative_paths": [
+        "projects-creation"
+      ],
+      "aliases": [
+        "Gospel Tract and Bookmark Designs",
+        "福音单张与书签设计"
+      ],
+      "titles": {
+        "zh": "福音单张与书签设计",
+        "en": "Gospel Tract and Bookmark Designs"
+      },
+      "summaries": {
+        "zh": "使用 PowerPoint 制作的福音聚会单张、经文书签与方形图案。",
+        "en": "Gospel tracts, scripture bookmarks, and square designs made in Microsoft PowerPoint."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "福音单张与书签设计",
+          "summary": "使用 PowerPoint 制作的福音聚会单张、经文书签与方形图案。",
+          "url": "/projects/gospel-tract-design/",
+          "date": "2026-09-28",
+          "collection": "projects",
+          "source_path": "_projects/gospel-tract-design.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
       "content_id": "hello-algorithm-notes",
       "date": "2025-08-23",
       "original_language": "zh",
