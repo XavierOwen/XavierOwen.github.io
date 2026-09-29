@@ -8,6 +8,8 @@
       {% assign side = forloop.index0 | modulo: 2 %}
       {% if gallery.id == 'saic' %}
         {% assign label = gallery.title | append: ' · ' | append: gallery.labels[forloop.index0] %}
+      {% elsif gallery.id == 'saic-badges' %}
+        {% assign label = gallery.title | append: ' · 第 ' | append: forloop.index | append: ' 款' %}
       {% elsif side == 0 %}
         {% assign label = gallery.title | append: ' · 第 ' | append: pair | append: ' 款正面' %}
       {% else %}

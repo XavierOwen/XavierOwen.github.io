@@ -459,22 +459,22 @@
         "projects-creation"
       ],
       "aliases": [
-        "Gospel Tract and Bookmark Designs",
-        "福音单张与书签设计"
+        "Gospel Tract, Bookmark, and Badge Designs",
+        "福音单张、书签与徽章设计"
       ],
       "titles": {
-        "zh": "福音单张与书签设计",
-        "en": "Gospel Tract and Bookmark Designs"
+        "zh": "福音单张、书签与徽章设计",
+        "en": "Gospel Tract, Bookmark, and Badge Designs"
       },
       "summaries": {
-        "zh": "使用 PowerPoint 制作的福音聚会单张、经文书签与方形图案。",
-        "en": "Gospel tracts, scripture bookmarks, and square designs made in Microsoft PowerPoint."
+        "zh": "使用 PowerPoint 制作的福音聚会单张、经文书签、方形图案与唱片造型徽章。",
+        "en": "Gospel tracts, scripture bookmarks, square designs, and record-style badges made in Microsoft PowerPoint."
       },
       "versions": {
         "zh": {
           "language": "zh",
-          "title": "福音单张与书签设计",
-          "summary": "使用 PowerPoint 制作的福音聚会单张、经文书签与方形图案。",
+          "title": "福音单张、书签与徽章设计",
+          "summary": "使用 PowerPoint 制作的福音聚会单张、经文书签、方形图案与唱片造型徽章。",
           "url": "/projects/gospel-tract-design/",
           "date": "2026-09-28",
           "collection": "projects",

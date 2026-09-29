@@ -10,7 +10,8 @@
   gap: 1rem;
 }
 
-.gospel-gallery--saic .gospel-gallery__items--grid {
+.gospel-gallery--saic .gospel-gallery__items--grid,
+.gospel-gallery--saic-badges .gospel-gallery__items--grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
 }
