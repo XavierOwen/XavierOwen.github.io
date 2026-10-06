@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+		<title>灰烬应许 · 免费试玩</title>
+		<style>
+:root {
+	--game-surface: #172b21;
+	--game-edge: #7d8775;
+	--game-accent: #b7dca1;
+	--game-text: #e5e7d9;
+	--game-paper: #e5dfca;
+	--game-ink: #293b2e;
+}
+
+html, body, #canvas {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	color: var(--game-text);
+	background-color: var(--game-surface);
+	font-family: system-ui, sans-serif;
+	overflow: hidden;
+	touch-action: none;
+}
+
+::selection {
+	background: var(--game-accent);
+	color: var(--game-ink);
+}
+
+#canvas {
+	display: block;
+}
+
+#canvas:focus {
+	outline: none;
+}
+
+#status, #status-splash {
+	position: absolute;
+	inset: 0;
+}
+
+#status {
+	box-sizing: border-box;
+	background-color: var(--game-surface, #242424);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1.5rem;
+	overflow: auto;
+	touch-action: pan-y;
+	visibility: hidden;
+}
+
+#status-splash {
+	max-height: 100%;
+	max-width: 100%;
+	margin: auto;
+}
+
+#status-splash.show-image--false {
+	display: none;
+}
+
+#status-splash.fullsize--true {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}
+
+#status-splash.use-filter--false {
+	image-rendering: pixelated;
+}
+
+#status-progress, #status-notice {
+	display: none;
+}
+
+#status-title, #status-detail {
+	position: relative;
+	z-index: 1;
+	margin: 0.4rem 0;
+	padding: 0.4rem 0.75rem;
+	background: var(--game-surface);
+	text-align: center;
+}
+
+#status-title {
+	font-size: clamp(1.2rem, 3vw, 1.8rem);
+	font-weight: 600;
+	color: var(--game-paper);
+	line-height: 1.3;
+}
+
+#status-detail {
+	max-width: 36rem;
+	line-height: 1.6;
+}
+
+#status-notice {
+	box-sizing: border-box;
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	max-width: 36rem;
+	max-height: 30vh;
+	margin: 0.75rem 0 0;
+	padding: 1rem;
+	border: 2px solid var(--game-edge);
+	border-radius: 3px;
+	background: var(--game-paper);
+	color: var(--game-ink);
+	line-height: 1.5;
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+	overflow: auto;
+	scrollbar-color: var(--game-edge) var(--game-paper);
+}
+
+#status-progress {
+	position: relative;
+	z-index: 1;
+	width: min(26rem, 100%);
+	height: 0.7rem;
+	margin: 0.9rem 0;
+	accent-color: var(--game-accent);
+}
+
+#status-progress::-webkit-progress-bar {
+	border-radius: 3px;
+	background: var(--game-ink);
+}
+
+#status-progress::-webkit-progress-value {
+	border-radius: 3px;
+	background: var(--game-accent);
+}
+
+#status-progress::-moz-progress-bar {
+	border-radius: 3px;
+	background: var(--game-accent);
+}
+
+#status-retry {
+	position: relative;
+	z-index: 1;
+	min-height: 44px;
+	margin: 1rem 0 0;
+	padding: 0.6rem 1.1rem;
+	border: 2px solid var(--game-accent);
+	border-radius: 3px;
+	background: var(--game-accent);
+	color: var(--game-ink);
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 140ms ease-out;
+}
+
+#status-retry:hover {
+	background: #eee8d2;
+}
+
+#status-retry:active {
+	background: #aec49b;
+}
+
+#status-retry:focus-visible {
+	outline: 3px solid var(--game-accent);
+	outline-offset: 3px;
+}
+
+@media (max-height: 450px) {
+	#status {
+		justify-content: flex-start;
+		padding: 1rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#status-retry {
+		transition: none;
+	}
+}
+        </style>
+		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
+<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
+
+	</head>
+	<body>
+		<canvas id="canvas">
+			浏览器不支持游戏画布，请换用支持 WebGL 2 的浏览器。
+		</canvas>
+
+		<noscript>
+			请在浏览器中启用 JavaScript，然后重新加载试玩。
+		</noscript>
+
+		<div id="status">
+			<img id="status-splash" class="show-image--true fullsize--true use-filter--true" src="index.png" alt="">
+			<p id="status-title">灰烬应许 · 正在准备试玩</p>
+			<p id="status-detail" role="status" aria-live="polite">正在连接游戏资源……</p>
+			<progress id="status-progress" aria-label="游戏资源下载进度"></progress>
+			<div id="status-notice" role="alert"></div>
+			<button id="status-retry" type="button" hidden>重新加载</button>
+		</div>
+
+		<script src="index.js"></script>
+		<script>
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":54453424,"index.wasm":39513091},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_THREADS_ENABLED = false;
+
+(function () {
+    const pageTitle = document.title;
+    const statusOverlay = document.getElementById('status');
+    const statusProgress = document.getElementById('status-progress');
+    const statusNotice = document.getElementById('status-notice');
+    const statusDetail = document.getElementById('status-detail');
+    const statusTitle = document.getElementById('status-title');
+    const statusRetry = document.getElementById('status-retry');
+    const resourceBytes = Object.values(GODOT_CONFIG.fileSizes || {}).reduce((sum, size) => sum + size, 0);
+    const megabytes = (bytes) => (bytes / 1000000).toFixed(1);
+    statusOverlay.style.visibility = 'visible';
+    statusDetail.textContent = `首次加载约 ${megabytes(resourceBytes)} MB 游戏资源。请保持页面打开；再次进入时可复用浏览器缓存。`;
+    statusRetry.addEventListener('click', () => window.location.reload());
+
+    function displayFailureNotice(err) {
+        console.error(err);
+        statusTitle.textContent = '试玩暂时未能启动';
+        statusDetail.textContent = '请检查网络连接后重新加载。若仍不能启动，请换用支持 WebAssembly 和 WebGL 2 的浏览器，并保留下面的错误详情。';
+        statusNotice.textContent = err instanceof Error ? err.message : (typeof err === 'string' ? err : '未提供错误详情。');
+        statusNotice.style.display = 'block';
+        statusProgress.style.display = 'none';
+        statusRetry.hidden = false;
+        window.parent.postMessage({ type: 'ash-promise-error' }, window.location.origin);
+    }
+
+    if (typeof Engine === 'undefined') {
+        displayFailureNotice('游戏引擎脚本未能下载，请重新加载。');
+        return;
+    }
+    const missing = Engine.getMissingFeatures({ threads: GODOT_THREADS_ENABLED });
+    if (missing.length !== 0) {
+        displayFailureNotice('浏览器缺少运行试玩需要的功能：\n' + missing.join('\n'));
+        return;
+    }
+    statusProgress.style.display = 'block';
+    const engine = new Engine(GODOT_CONFIG);
+    engine.startGame({
+        onProgress: function (current, total) {
+            const expected = total > 0 ? total : resourceBytes;
+            if (current > 0 && expected > 0) {
+                const percent = Math.min(100, Math.floor(current * 100 / expected));
+                statusProgress.value = current;
+                statusProgress.max = expected;
+                statusDetail.textContent = percent < 100
+                    ? `正在下载：${percent}% · ${megabytes(current)} / ${megabytes(expected)} MB。首次加载资源较多，请保持页面打开。`
+                    : '资源下载完成。正在初始化游戏与中文字体，首次启动可能还需要片刻……';
+            } else {
+                statusProgress.removeAttribute('value');
+                statusProgress.removeAttribute('max');
+            }
+        },
+    }).then(() => {
+        // Keep the project name stable for existing user:// saves.
+        document.title = pageTitle;
+        statusOverlay.remove();
+        window.parent.postMessage({ type: 'ash-promise-ready' }, window.location.origin);
+    }, displayFailureNotice);
+}());
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+{% include base_path %}
+<link rel="stylesheet" href="{{ '/assets/css/game-embed.css' | relative_url }}?v={{ asset_version }}">
+<section class="game-embed" data-game-embed aria-label="灰烬应许试玩播放器">
+  <div class="game-embed__stage" data-game-stage>
+    <iframe
+      class="game-embed__frame"
+      data-game-frame
+      data-src="{{ '/projects/ash-promise-demo/index.html' | relative_url }}"
+      title="灰烬应许试玩版"
+      allow="autoplay; fullscreen"
+      allowfullscreen
+      tabindex="0"></iframe>
+    <div class="game-embed__welcome" data-game-welcome>
+      <p class="game-embed__title">灰烬应许</p>
+      <p>从石桥镇出发，前往灯塔港。</p>
+      <button class="game-embed__button game-embed__button--primary" type="button" data-game-start>进入试玩</button>
+    </div>
+  </div>
+  <div class="game-embed__toolbar" aria-label="游戏选项">
+    <button class="game-embed__button game-embed__button--primary" type="button" data-game-start>载入试玩</button>
+    <button class="game-embed__button" type="button" data-game-fullscreen aria-pressed="false" disabled>全屏游玩</button>
+    <a class="game-embed__button game-embed__button--link" href="{{ '/projects/ash-promise-demo/index.html' | relative_url }}" target="_blank" rel="noopener">在独立窗口打开</a>
+  </div>
+  <p class="game-embed__status" data-game-status role="status" aria-live="polite">游戏文件约 100 MB，点击后才会载入。</p>
+</section>
+<script src="{{ '/assets/js/game-embed.js' | relative_url }}?v={{ asset_version }}" defer></script>
