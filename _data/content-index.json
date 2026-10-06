@@ -109,6 +109,41 @@
       "backlinks": []
     },
     {
+      "content_id": "ash-promise-demo",
+      "date": "2026-10-05",
+      "original_language": "zh",
+      "reader_paths": [
+        "projects-creation"
+      ],
+      "representative_paths": [
+        "projects-creation"
+      ],
+      "aliases": [
+        "Ash Promise: Demo",
+        "灰烬应许：试玩版"
+      ],
+      "titles": {
+        "zh": "灰烬应许：试玩版",
+        "en": "Ash Promise: Demo"
+      },
+      "summaries": {
+        "zh": "一段免费的中文 RPG 试玩，从石桥镇启程，前往灯塔港。",
+        "en": "A free Chinese-language RPG demo journeying from Stonebridge to Lighthouse Harbor."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "灰烬应许：试玩版",
+          "summary": "一段免费的中文 RPG 试玩，从石桥镇启程，前往灯塔港。",
+          "url": "/games/ash-promise-demo",
+          "date": "2026-10-05",
+          "collection": "projects",
+          "source_path": "_projects/ash-promise-demo.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
       "content_id": "church-affairs-notes",
       "date": "2026-01-19",
       "original_language": "zh",
