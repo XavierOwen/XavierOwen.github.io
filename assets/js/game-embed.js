@@ -51,6 +51,7 @@ document.querySelectorAll('[data-game-embed]').forEach((embed) => {
     const isFullscreen = document.fullscreenElement === embed;
     fullscreen.textContent = isFullscreen ? '退出全屏' : '全屏游玩';
     fullscreen.setAttribute('aria-pressed', String(isFullscreen));
+    if (gameResult === 'ready') status.textContent = isFullscreen ? '已进入全屏。退出后可继续当前游戏。' : '游戏已准备就绪。点击游戏画面开始操作；全屏游玩时文字更清楚。';
     if (started) frame.focus();
   });
 });
