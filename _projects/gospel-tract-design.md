@@ -25,6 +25,11 @@ galleries:
   title: Union 经文书签
   layout: grid
   images: [union-01.webp, union-02.webp, union-03.webp, union-04.webp, union-05.webp, union-06.webp, union-07.webp, union-08.webp, union-09.webp, union-10.webp]
+- id: saic-tract
+  title: SAIC 福音单张
+  layout: grid
+  images: [saic-tract-01.webp, saic-tract-02.webp]
+  labels: [正面, 背面]
 - id: saic
   title: SAIC 方形图案
   layout: grid
@@ -36,6 +41,6 @@ galleries:
   images: [saic-badge-01.webp, saic-badge-02.webp, saic-badge-03.webp, saic-badge-04.webp, saic-badge-05.webp, saic-badge-06.webp, saic-badge-07.webp, saic-badge-08.webp, saic-badge-09.webp]
 ---
 
-这组作品使用 PowerPoint 制作，包括福音聚会单张、经文书签、方形图案和唱片造型徽章。图片中的个人联系信息、地址、二维码及聚会详情已用黑色遮盖。
+这组作品使用 PowerPoint 制作，包括 IIT 与 SAIC 福音单张、经文书签、方形图案和唱片造型徽章。图片中的个人联系信息、地址、二维码及聚会详情已用黑色遮盖。
 
 {% include gospel-galleries.html %}

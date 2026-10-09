@@ -6,7 +6,7 @@
     {% for file in gallery.images %}
       {% assign pair = forloop.index0 | divided_by: 2 | plus: 1 %}
       {% assign side = forloop.index0 | modulo: 2 %}
-      {% if gallery.id == 'saic' %}
+      {% if gallery.labels %}
         {% assign label = gallery.title | append: ' · ' | append: gallery.labels[forloop.index0] %}
       {% elsif gallery.id == 'saic-badges' %}
         {% assign label = gallery.title | append: ' · 第 ' | append: forloop.index | append: ' 款' %}
@@ -16,7 +16,7 @@
         {% assign label = gallery.title | append: ' · 第 ' | append: pair | append: ' 款背面，个人信息已遮盖' %}
       {% endif %}
       <a class="gospel-gallery__item" href="{{ site.baseurl }}/images/projects/gospel-designs/{{ file }}" data-gallery-image style="--position: {{ forloop.index0 }}" aria-label="放大查看{{ label }}">
-        <img src="{{ site.baseurl }}/images/projects/gospel-designs/{{ file }}" alt="{{ label }}" {% if gallery.id == 'iit' %}width="1200" height="1800"{% elsif gallery.id == 'union' %}width="2485" height="737"{% else %}width="2000" height="2000"{% endif %} loading="lazy" decoding="async">
+        <img src="{{ site.baseurl }}/images/projects/gospel-designs/{{ file }}" alt="{{ label }}" {% if gallery.id == 'iit' %}width="1200" height="1800"{% elsif gallery.id == 'union' %}width="2485" height="737"{% elsif gallery.id == 'saic-tract' %}width="2000" height="1466"{% else %}width="2000" height="2000"{% endif %} loading="lazy" decoding="async">
       </a>
     {% endfor %}
   </div>
