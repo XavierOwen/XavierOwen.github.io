@@ -16,7 +16,7 @@ category: game
 excerpt: 免费体验《灰烬应许》前三个地区，从石桥镇一路前往灯塔港。
 permalink: /games/ash-promise-demo
 date: 2026-10-05
-last_modified_at: 2026-10-13
+last_modified_at: 2026-10-14
 ---
 
 {% include game-embed.html %}
