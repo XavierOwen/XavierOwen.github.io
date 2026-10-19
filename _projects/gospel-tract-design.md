@@ -9,8 +9,8 @@ representative_paths:
 - projects-creation
 title_zh: 福音单张、书签与徽章设计
 title_en: Gospel Tract, Bookmark, and Badge Designs
-summary_zh: 使用 PowerPoint 制作的福音聚会单张、经文书签、方形图案与唱片造型徽章。
-summary_en: Gospel tracts, scripture bookmarks, square designs, and record-style badges made in Microsoft PowerPoint.
+summary_zh: 使用 PowerPoint 制作的福音单张、经文书签、方形图案、猫咪图案与唱片造型徽章。
+summary_en: Gospel tracts, scripture bookmarks, square designs, cat designs, and record-style badges made in Microsoft PowerPoint.
 title: 福音单张、书签与徽章设计
 collection: projects
 category: art
@@ -39,8 +39,13 @@ galleries:
   title: SAIC 唱片徽章设计
   layout: grid
   images: [saic-badge-01.webp, saic-badge-02.webp, saic-badge-03.webp, saic-badge-04.webp, saic-badge-05.webp, saic-badge-06.webp, saic-badge-07.webp, saic-badge-08.webp, saic-badge-09.webp]
+- id: saic-cats
+  title: SAIC 猫猫九宫格
+  layout: grid
+  images: [saic-cat-01.webp, saic-cat-02.webp, saic-cat-03.webp, saic-cat-04.webp, saic-cat-05.webp, saic-cat-06.webp, saic-cat-07.webp, saic-cat-08.webp, saic-cat-09.webp]
+  labels: [银虎斑猫, 暹罗猫, 黑白猫, 蓝灰猫, 黑猫, 三花猫, 橘猫, 白猫, 灰虎斑猫]
 ---
 
-这组作品使用 PowerPoint 制作，包括 IIT 与 SAIC 福音单张、经文书签、方形图案和唱片造型徽章。图片中的个人联系信息、地址、二维码及聚会详情已用黑色遮盖。
+这组作品使用 PowerPoint 制作，包括 IIT 与 SAIC 福音单张、经文书签、方形图案、猫咪图案和唱片造型徽章。图片中的个人联系信息、地址、二维码及聚会详情已用黑色遮盖。
 
 {% include gospel-galleries.html %}
