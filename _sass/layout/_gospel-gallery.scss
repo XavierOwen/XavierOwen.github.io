@@ -19,7 +19,7 @@
 
 .gospel-gallery__items--stack {
   position: relative;
-  height: max(28rem, min(80vw, 42rem));
+  height: max(32rem, min(90vw, 46rem));
 }
 
 .gospel-gallery__item {
@@ -42,26 +42,26 @@
 .gospel-gallery__items--stack .gospel-gallery__item {
   position: absolute;
   width: 31%;
-  z-index: calc(var(--position) + 1);
+  z-index: 1;
 
-  &:nth-child(1) { top: 4%; left: 4%; transform: rotate(-8deg); }
-  &:nth-child(2) { top: 0; left: 33%; transform: rotate(3deg); }
-  &:nth-child(3) { top: 7%; left: 63%; transform: rotate(9deg); }
-  &:nth-child(4) { top: 33%; left: 7%; transform: rotate(-5deg); }
-  &:nth-child(5) { top: 31%; left: 36%; transform: rotate(2deg); }
-  &:nth-child(6) { top: 36%; left: 65%; transform: rotate(7deg); }
+  // All fronts cover the backs; within each row, left covers middle and right.
+  &:nth-child(1) { top: 23%; left: 4%; z-index: 6; transform: rotate(-5deg); }
+  &:nth-child(2) { top: 0; left: 2%; z-index: 3; transform: rotate(-8deg); }
+  &:nth-child(3) { top: 29%; left: 34%; z-index: 5; transform: rotate(1deg); }
+  &:nth-child(4) { top: 6%; left: 33%; z-index: 2; transform: rotate(2deg); }
+  &:nth-child(5) { top: 35%; left: 64%; z-index: 4; transform: rotate(6deg); }
+  &:nth-child(6) { top: 12%; left: 63%; transform: rotate(8deg); }
   &:hover,
-  &:focus-visible { transform: translateY(-0.5rem) rotate(0) scale(1.025); }
+  &:focus-visible { z-index: 30; transform: translateY(-0.5rem) rotate(0) scale(1.025); }
 }
 
 @media (max-width: 40rem) {
-  .gospel-gallery__items--stack .gospel-gallery__item { width: 42%; }
-  .gospel-gallery__items--stack .gospel-gallery__item:nth-child(1) { left: 1%; }
-  .gospel-gallery__items--stack .gospel-gallery__item:nth-child(2) { left: 29%; }
-  .gospel-gallery__items--stack .gospel-gallery__item:nth-child(3) { left: 57%; }
-  .gospel-gallery__items--stack .gospel-gallery__item:nth-child(4) { left: 2%; }
-  .gospel-gallery__items--stack .gospel-gallery__item:nth-child(5) { left: 30%; }
-  .gospel-gallery__items--stack .gospel-gallery__item:nth-child(6) { left: 58%; }
+  .gospel-gallery__items--stack .gospel-gallery__item {
+    width: 42%;
+    &:nth-child(1), &:nth-child(2) { left: 1%; }
+    &:nth-child(3), &:nth-child(4) { left: 29%; }
+    &:nth-child(5), &:nth-child(6) { left: 57%; }
+  }
 }
 
 .gospel-lightbox {

@@ -16,11 +16,13 @@ Dir.glob(SITE.join("**/*.html")).sort.each do |path|
   html = File.read(path)
   relative_path = Pathname.new(path).relative_path_from(SITE)
 
-  html.scan(/<(?:link|script)\b[^>]*>/i).each do |tag|
+  html.scan(/<(?:link|script|a|img)\b[^>]*>/i).each do |tag|
     next if tag.start_with?("<link") && !tag.match?(/\brel="stylesheet"/i)
 
     asset_url = tag[/\b(?:href|src)="([^"]+)"/, 1]
-    next unless asset_url&.match?(%r{/assets/(?:css|js)/})
+    static_asset = tag.match?(/\A<(?:link|script)\b/i) && asset_url&.match?(%r{/assets/(?:css|js)/})
+    gallery_image = asset_url&.include?("/images/projects/gospel-designs/")
+    next unless static_asset || gallery_image
 
     asset_references += 1
     version = asset_url[/[?&]v=([A-Za-z0-9._-]+)/, 1]
@@ -33,7 +35,7 @@ Dir.glob(SITE.join("**/*.html")).sort.each do |path|
   end
 end
 
-failures << "No CSS or JavaScript asset references were found in _site HTML." if asset_references.zero?
+failures << "No static asset references were found in _site HTML." if asset_references.zero?
 failures << "Static assets use more than one build version: #{asset_versions.to_a.sort.join(', ')}" if asset_versions.length > 1
 
 unless MAIN_CSS.file?
