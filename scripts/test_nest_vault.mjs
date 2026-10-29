@@ -4,6 +4,11 @@ import { createVault, openVault, sealVault, newState, validateState, parseEnvelo
 const assertRejects = async (run, pattern) => assert.rejects(run, pattern);
 const passphrase = "family vault phrase";
 const state = newState();
+assert.equal(state.profile.stage, "preconception");
+assert.equal(state.profile.anchorDate, "");
+assert.equal(state.profile.birthDate, "");
+assert.equal(pregnancyStart(state.profile), "");
+assert.deepEqual(stageStatus(state.profile), { label: "备孕阶段", pregnancyDay: null, babyDay: null });
 state.profile = { stage: "pregnancy", dateType: "due", anchorDate: "2027-03-01", birthDate: "" };
 state.tasks["first-visit"] = { done: true, progress: 100, note: "call clinic" };
 state.logs.push({ id: "2026-10-29", date: "2026-10-29", weight: "", bpSys: "118", bpDia: "76", temp: "", feeds: "", wet: "", note: "example private note" });

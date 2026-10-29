@@ -5,7 +5,7 @@ const encoder = new TextEncoder();
 const decoder = new TextDecoder();
 
 export function newState() {
-  return { version: 1, profile: { stage: "pregnancy", dateType: "due", anchorDate: "", birthDate: "" }, tasks: {}, logs: [] };
+  return { version: 1, profile: { stage: "preconception", dateType: "due", anchorDate: "", birthDate: "" }, tasks: {}, logs: [] };
 }
 
 function isRecord(value) {

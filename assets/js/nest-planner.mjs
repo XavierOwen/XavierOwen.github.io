@@ -1,4 +1,4 @@
-import { newState, validateState, createVault, openVault, sealVault, parseEnvelope, todayChicago, addDays, daysBetween, pregnancyStart, rsvSeasonWindow, stageStatus } from "./nest-vault.mjs";
+const { newState, validateState, createVault, openVault, sealVault, parseEnvelope, todayChicago, addDays, daysBetween, pregnancyStart, rsvSeasonWindow, stageStatus } = await import(`./nest-vault.mjs${new URL(import.meta.url).search}`);
 
 const STORAGE_KEY = "marchen-nest-v1";
 const plan = JSON.parse(document.querySelector("#nest-plan-data").textContent);
@@ -16,7 +16,7 @@ function clearPrivateDom() {
   byId("nest-tasks").replaceChildren();
   byId("nest-log-list").replaceChildren();
   for (const id of ["nest-anchor-date", "nest-birth-date", "log-date", "log-weight", "log-sys", "log-dia", "log-temp", "log-feeds", "log-wet", "log-note"]) byId(id).value = "";
-  byId("nest-stage").value = "pregnancy";
+  byId("nest-stage").value = newState().profile.stage;
   document.querySelectorAll('input[name="nest-date-type"]').forEach(input => { input.checked = input.value === "due"; });
   for (const id of ["nest-stage-status", "nest-current-hint", "nest-save-status", "nest-log-status"]) byId(id).textContent = "";
   byId("nest-password").value = "";
@@ -137,7 +137,7 @@ function renderProfile() {
   document.querySelector(".nest__date-type").hidden = !pregnant;
   byId("nest-anchor-wrap").firstChild.textContent = state.profile.dateType === "lmp" ? "末次月经第一天" : "预产期";
   const today = todayChicago();
-  const phaseName = { preconception: "备孕", pregnancy: "孕期", newborn: "新生儿/产后" }[state.profile.stage];
+  const phaseName = { preconception: "从零准备／备孕", pregnancy: "孕期", newborn: "新生儿/产后" }[state.profile.stage];
   byId("nest-stage-status").textContent = `当前阶段：${phaseName} · ${stageStatus(state.profile, today).label} · 芝加哥日期 ${today}`;
   renderTasks();
 }
