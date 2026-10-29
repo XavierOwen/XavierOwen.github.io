@@ -16,9 +16,12 @@ COMMANDS = [
   ["ruby", "scripts/check_manifesto_home.rb"],
   ["node", "scripts/test_language_preference.js"],
   ["node", "scripts/test_wiki_links.js"],
+  ["node", "scripts/test_nest_vault.mjs"],
   ["node", "--check", "assets/js/language-preference.js"],
   ["node", "--check", "assets/js/toc-scrollspy.js"],
   ["node", "--check", "assets/js/wiki-links.js"],
+  ["node", "--check", "assets/js/nest-vault.mjs"],
+  ["node", "--check", "assets/js/nest-planner.mjs"],
   ["git", "diff", "--check"]
 ].freeze
 

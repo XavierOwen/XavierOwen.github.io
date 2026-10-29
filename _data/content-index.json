@@ -622,6 +622,39 @@
       "backlinks": []
     },
     {
+      "content_id": "marchen-nest",
+      "date": "2026-10-29",
+      "original_language": "zh",
+      "reader_paths": [
+        "projects-creation"
+      ],
+      "representative_paths": [],
+      "aliases": [
+        "A Little Arrival · Pregnancy & Newborn Planner",
+        "小小来客 · 孕育手记"
+      ],
+      "titles": {
+        "zh": "小小来客 · 孕育手记",
+        "en": "A Little Arrival · Pregnancy & Newborn Planner"
+      },
+      "summaries": {
+        "zh": "从备孕、孕期到新生儿的时间清单，附芝加哥就医入口；家庭进度与记录在浏览器中加密保存。",
+        "en": "A pregnancy and newborn timeline with Chicago care resources and encrypted, browser-local family records."
+      },
+      "versions": {
+        "zh": {
+          "language": "zh",
+          "title": "小小来客 · 孕育手记",
+          "summary": "从备孕、孕期到新生儿的时间清单，附芝加哥就医入口；家庭进度与记录在浏览器中加密保存。",
+          "url": "/projects/little-arrival/",
+          "date": "2026-10-29",
+          "collection": "projects",
+          "source_path": "_projects/nest.md"
+        }
+      },
+      "backlinks": []
+    },
+    {
       "content_id": "ms-paint-art",
       "date": "2019-08-25",
       "original_language": "en",

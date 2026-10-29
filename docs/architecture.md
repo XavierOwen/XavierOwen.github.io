@@ -43,11 +43,17 @@ Authored Markdown + front matter
 | Wiki links | `[[Title]]` / `[[Label::URL]]` in rendered content | `assets/js/wiki-links.js` resolves the generated alias index | browser enhancement after render |
 | Article navigation | headings plus `toc: true` | Jekyll TOC include and `toc-scrollspy.js` | generated `.toc__left` links |
 | Publication gate | `npm run verify:site` | `.github/workflows/pages.yml` | verified `_site` artifact before Pages deployment |
+| Family planner | Projects metadata plus `_data/nest-plan.yml` | `nest.html`, `nest-planner.html`, local CSS and modules | public guidance with encrypted browser-local records |
 
 The desired direction is **depth**: callers should add content through a
 small, stable interface (Markdown and front matter), while display complexity
 stays in the module that owns it. For example, article pages should invoke a
 single backlink module rather than each reimplementing detection logic.
+
+The family planner is a standalone interactive tool. Its dedicated layout
+retains content discovery metadata while excluding the article layout's remote
+scripts. Personal records never enter Jekyll data or the generated content
+index. See ADR 0006 for the storage boundary and backup limitations.
 
 ## Change rules
 

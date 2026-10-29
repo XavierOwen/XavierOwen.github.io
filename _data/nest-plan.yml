@@ -1,0 +1,696 @@
+reviewed: '2026-10-29'
+intro: 从备孕到出生后六周，把就医、生活准备和家人分工放在同一条时间线上。孕周由末次月经第一天起算；用预产期时倒推280天。推算日期只帮助安排，医院更正的孕周和医嘱优先。
+sections:
+  - id: before
+    number: '00'
+    title: 准备迎接
+    subtitle: 备孕 · 也适合刚发现怀孕时补上
+    anchor: preconception
+    start: -90
+    end: 0
+    tasks:
+      - id: folic-acid
+        title: 核对叶酸与现有补充剂
+        category: 饮食
+        when: 备孕开始，怀孕后继续与产科核对
+        control: check
+        detail:
+          - 一般备孕人群每天补充400微克（mcg）叶酸。查看复合维生素标签，避免把几种产品重复叠加；高风险情况由医生决定剂量。
+          - 拍下所有维生素、草药和药物的标签，带去首诊。铁、碘、胆碱、维生素D的饮食参考量不等于每个人都要另买同剂量补剂。
+        sources: [folate, nutrition]
+      - id: preconception-visit
+        title: 约一次孕前咨询，整理病史与用药
+        category: 就医
+        when: 备孕时；已怀孕则直接联系产科
+        control: check
+        detail:
+          - 带上既往病史、月经情况、家族史、药物和疫苗记录，问清慢性病管理、遗传筛查及何时需要进一步评估。
+          - 不自行停用处方药。戒烟、避免酒精和二手烟；让医生一起核对工作、家中和日常接触的风险。
+        sources: [prepregnancy]
+      - id: insurance-first
+        title: 查保险，问清产检与分娩分别在哪里
+        category: 协作
+        when: 现在就可以打电话
+        control: progress
+        detail:
+          - 向保险确认产科医生、分娩医院、化验、超声、麻醉和儿科是否在网络内（in-network），记录问询日期及答复编号。
+          - 问清 deductible（先自付的额度）、coinsurance（按比例分担）、out-of-pocket maximum（年度自付上限）及跨保险年度时如何计算。报价不能当作最终账单。
+          - 若用学校保险，从 IIT 当期计划入口查；同时看看是否符合 Illinois Moms & Babies 或 WIC 的申请条件。
+        sources: [iit, moms, wic]
+      - id: shared-plan
+        title: 把分工和预算先谈一遍
+        category: 协作
+        when: 备孕至孕早期
+        control: progress
+        detail:
+          - 确定谁预约、陪诊、做饭、处理保险、联系家人；预留交通、产后帮手和无法工作时的预算。
+          - 先列已有物品、住房空间和可借用的普通用品。大件等尺寸、使用方式和退换政策确定后再买。
+        sources: [tuoba]
+  - id: early
+    number: '01'
+    title: 先把照护接上
+    subtitle: 确认怀孕至9周6天
+    anchor: pregnancy
+    start: 0
+    end: 69
+    tasks:
+      - id: call-ob
+        title: 联系产科或助产士，安排首次评估
+        category: 就医
+        when: 发现怀孕后尽快联系，不等时间线提醒
+        control: check
+        detail:
+          - 告诉诊所末次月经第一天、验孕情况、症状和既往病史，询问首次就诊时间。超声和抽血的时间按症状与个人情况安排。
+          - 索取白天和夜间值班电话，问清分娩医院与急症入口。严重腹痛、明显出血、晕厥等症状需要及时评估。
+        sources: [prenatal, warnings]
+      - id: first-visit-questions
+        title: 准备首诊问题与资料
+        category: 就医
+        when: 首次就诊前
+        control: progress
+        detail:
+          - 带身份证明、保险卡、病史与用药清单、既往检查和疫苗记录；问清初始化验、血型/Rh、感染筛查及检查结果如何查看。
+          - 问医生如何确定和更正预产期、下次何时回诊、是否需要额外随访；把确认后的日期填进手记。
+        sources: [prenatal, routine]
+      - id: prenatal-nutrients
+        title: 继续核对叶酸与孕期维生素
+        category: 饮食
+        when: 已怀孕也要查看标签，并带去首诊
+        control: check
+        detail:
+          - 若备孕清单还未做，从现在核对含叶酸的补充剂。一般建议每天400微克叶酸，高风险情况和个人产品用量请产科确认。
+          - 不按孕月表自行叠加铁、碘、维生素D或草药；把实际饮食与产品标签一起给医生看。
+        sources: [folate, nutrition]
+      - id: food-routine
+        title: 建立一套吃得下、吃得安全的日常饮食
+        category: 饮食
+        when: 全孕期；孕早期可少量多餐
+        control: check
+        detail:
+          - 食物煮熟，选巴氏杀菌奶制品；生熟分开并妥善冷藏。孕期避开生肉、生鱼和未杀菌食品；冷切肉等按 CDC 食品安全指引加热。
+          - 咖啡、茶、能量饮料和巧克力中的咖啡因合计一般低于每天200毫克。避免酒精。
+          - 若吃鱼，每周合计8–12盎司（约227–340克）低汞鱼，按 FDA 的“最佳选择”选种类；不靠多吃鱼油替代饮食。
+          - 连水都留不住、尿量明显减少或持续呕吐时联系诊所，不强行照表进食。
+        sources: [food, caffeine, fish, warnings]
+      - id: season-vaccines
+        title: 核对当季疫苗，留好接种记录
+        category: 就医
+        when: 现在查一次，预约前再确认当季政策
+        control: check
+        detail:
+          - 芝加哥秋冬就诊时询问当季流感疫苗，并与产科核对当前 COVID-19 建议、个人适用产品和既往接种间隔。
+          - Tdap 和母体 RSV 有各自孕周窗口，已单独放在后面的时间线；不要把这项勾选当成所有疫苗均已完成。
+        sources: [vaccines, covid]
+      - id: home-measure-plan
+        title: 问清哪些在家记录有用
+        category: 家中
+        when: 首诊时确认
+        control: check
+        detail:
+          - 体重可用同一台秤、相近时段记录，目标由产科根据孕前情况确定。是否需要在家测血压、血糖，由团队判断。
+          - 若需测血压，确认上臂式设备、适合的袖带和妊娠适用性；问清报告阈值。静坐5分钟、双脚平放、手臂与心脏同高、裸臂测量，不说话。
+          - 手记只记原始数值与症状，不根据单次读数判断正常，也不自动调整药量。
+        sources: [bp]
+  - id: screening
+    number: '02'
+    title: 把筛查选择问明白
+    subtitle: 10至13周6天
+    anchor: pregnancy
+    start: 70
+    end: 97
+    tasks:
+      - id: genetic-discussion
+        title: 讨论遗传筛查与诊断检查的选择
+        category: 就医
+        when: 约10–13周；具体检测各有时间窗
+        control: check
+        detail:
+          - 询问 cfDNA/NIPT（母血中胎盘来源DNA的筛查）、其他筛查及诊断检查各能回答什么、何时做、是否自费。
+          - 筛查只估计风险，不能确诊；异常或不确定结果需要医生解释，并讨论遗传咨询或诊断检查。检查可以选择或拒绝。
+        sources: [genetic]
+      - id: results-followup
+        title: 把检查结果和下一步记在一起
+        category: 就医
+        when: 每次结果出来后
+        control: check
+        detail:
+          - 在备注写医生已解释的结论、待复查事项和下次预约日期。没有收到结果时主动向诊所确认。
+          - 原始化验、影像和诊断仍保留在医疗系统；本页是家庭备忘，不充当完整病历。
+        sources: [prenatal]
+      - id: dental-movement
+        title: 确认牙科照护和适合自己的活动方式
+        category: 家中
+        when: 孕早期开始，后续按情况调整
+        control: check
+        detail:
+          - 告知牙科团队已怀孕，询问现有牙齿问题如何处理；日常继续刷牙和清洁牙缝。
+          - 无禁忌者通常可以保持适度活动；首次或恢复运动前，问产科哪些活动和强度适合自己。身体不适时停止并联系团队。
+        sources: [prepregnancy, exercise]
+  - id: middle
+    number: '03'
+    title: 看清结构，慢慢准备
+    subtitle: 14至23周6天
+    anchor: pregnancy
+    start: 98
+    end: 167
+    tasks:
+      - id: anatomy-scan
+        title: 预约胎儿结构超声
+        category: 就医
+        when: 通常18–22周
+        start: 126
+        end: 160
+        control: check
+        detail:
+          - 提前向诊所预约，问清地点和准备要求；记录检查解释及是否需要补拍或进一步评估。
+          - 这项检查也有局限，不保证发现所有结构或遗传问题。
+        sources: [genetic]
+      - id: food-labels
+        title: 用饮食和化验核对营养，不按孕月自行加补剂
+        category: 饮食
+        when: 孕中期及每次用药变化时
+        control: check
+        detail:
+          - 给饮食留出蛋白质、蔬菜水果、全谷和钙来源；把真正吃得下的食物写成一周菜单，让家人能接手采购和做饭。
+          - 素食、食物过敏、吃不下或化验提示缺乏时，问产科是否需要营养师、化验或调整产品。不要仅凭“这个月该补什么”的旧表增加铁、碘或维生素剂量。
+        sources: [nutrition]
+      - id: gear-shortlist
+        title: 先量空间，再列大件候选
+        category: 采购
+        when: 孕中期做功课，确认后分批购买
+        control: progress
+        detail:
+          - 量卧室、门宽、储物和车辆空间。优先列平坦独立睡眠空间、合适的后向汽车座椅、喂养及尿布用品。
+          - 查看美国召回信息、尺寸、保质/使用年限及退换期。安全座椅若来历、事故史或配件不明，跳过；不用一口气买齐月龄玩具和大包装奶粉。
+        sources: [carseat, recalls, sleep]
+      - id: leave-help
+        title: 核对休假、课程和产后帮手
+        category: 协作
+        when: 孕中期开始联系
+        control: progress
+        detail:
+          - 向学校或雇主核对适用的休假、课程调整、所需证明和工资安排，不把一般政策当作个人已获批准。
+          - 按实际喂养和家庭安排考虑分娩课、婴儿急救/CPR课、哺乳支持与帮手。请帮手前谈清工作内容、费用、替班、感染时如何处理以及尊重照护选择。
+        sources: [tuoba]
+  - id: glucose
+    number: '04'
+    title: 核对检查，也核对日常
+    subtitle: 24至27周6天
+    anchor: pregnancy
+    start: 168
+    end: 195
+    tasks:
+      - id: glucose-screen
+        title: 确认糖筛预约与准备
+        category: 就医
+        when: 常见24–28周；风险因素可能改变安排
+        start: 168
+        end: 202
+        control: check
+        detail:
+          - 询问自己做哪种筛查、是否需要空腹、需留多长时间，以及结果异常后如何复查。不同检测的准备要求不同。
+          - 不提前节食、停药或改变饮食去“通过”筛查。是否在家测血糖及目标值由医疗团队决定。
+        sources: [routine]
+      - id: fetal-pattern
+        title: 问清胎动变化时如何联系产科
+        category: 就医
+        when: 已能感觉胎动后，按团队指导
+        control: check
+        detail:
+          - 留意宝宝相对平常的活动模式，询问何时开始以及如何做胎动计数。每个人、每个孕周不一定用同一个计数标准。
+          - 胎动明显减少或改变时直接联系团队。家用胎心仪听到声音不能排除问题，也不应延迟就医。
+        sources: [movement, warnings]
+      - id: feeding-plan
+        title: 把喂养支持列进产后计划
+        category: 协作
+        when: 孕中期至孕晚期
+        control: progress
+        detail:
+          - 讨论母乳、配方奶或混合喂养的意愿，向医院问哺乳顾问和出院后的求助入口。预先计划夜间如何轮换、照护者怎样休息。
+          - 如需吸奶器，向保险确认是否覆盖、可领取时间与供应商。奶瓶和奶粉先少量准备，之后按宝宝情况及儿科建议调整。
+        sources: [feeding, tuoba]
+  - id: third
+    number: '05'
+    title: 为回家腾出位置
+    subtitle: 28至31周6天
+    anchor: pregnancy
+    start: 196
+    end: 223
+    tasks:
+      - id: tdap
+        title: 与产科安排本次妊娠的 Tdap
+        category: 就医
+        when: 每次妊娠通常27–36周，优先窗口早段
+        start: 189
+        end: 258
+        control: check
+        detail:
+          - Tdap 预防破伤风、白喉和百日咳；孕期接种能把保护性抗体传给宝宝。告诉团队此前的接种和过敏情况。
+          - 家人也可核对自己的常规疫苗状态，但不照搬孕妇的接种安排。
+        sources: [vaccines]
+      - id: safe-sleep-space
+        title: 搭好独立、平坦的睡眠空间
+        category: 家中
+        when: 分娩前准备好；出生后每次睡眠都使用
+        control: progress
+        detail:
+          - 用符合现行安全标准的婴儿床或摇篮，坚实平坦床垫配合身床单。每次睡觉都仰卧，与照护者同室、不同床。
+          - 清走枕头、松软被褥、围栏软垫、毛绒玩具和睡眠定位器；斜躺摇椅、汽车座椅不作为日常睡床。不要因吐奶或胀气改成侧睡或趴睡。
+        sources: [sleep]
+      - id: car-seat
+        title: 准备后向安全座椅并试装
+        category: 采购
+        when: 分娩前完成，预留检查和调整时间
+        control: progress
+        detail:
+          - 按宝宝体型、车辆和厂商说明选择后向座椅；核对召回、有效使用年限、所有标签与配件。安装后学习束带和胸扣的正确位置。
+          - 用官方检查点预约安装核查。回家当天避免在安全带下穿蓬松厚外套，先正确扣好，再在束带外保暖。
+        sources: [carseat, inspection]
+      - id: home-basics
+        title: 少量备齐清洁、喂养和量测用品
+        category: 采购
+        when: 孕晚期分批准备
+        control: progress
+        detail:
+          - 先备适量新生儿/下一号尿布、温和清洁用品、换洗衣物、喂养所需用品与数字体温计；按住房条件安排洗手、换尿布和夜间照明的位置。
+          - 问儿科如何测温。血压计只在产科建议时选购；不把家用胎心仪、婴儿枕头或睡眠定位器列为必需品。
+          - 检查烟雾和一氧化碳报警器。秋冬保证供暖与空气流通，不给宝宝过度包裹。
+        sources: [fever, sleep, co]
+  - id: ready
+    number: '06'
+    title: 把临产前的路走一遍
+    subtitle: 32至36周6天
+    anchor: pregnancy
+    start: 224
+    end: 258
+    tasks:
+      - id: rsv-choice
+        title: 确认 RSV 预防方案与季节窗口
+        category: 就医
+        when: 美国大陆通常9–1月，且孕32周0天至36周6天
+        start: 224
+        end: 258
+        control: check
+        detail:
+          - RSV 是呼吸道合胞病毒。母体疫苗仅 Abrysvo 用于这个孕周窗口；不能因为进入孕晚期就在任意季节或任意孕周接种。
+          - 和产科、未来儿科讨论母体疫苗与宝宝出生后抗体预防的选择，通常不需要两者都用。既往妊娠接种过、预计分娩时间等也会影响方案。
+        sources: [rsv]
+      - id: gbs
+        title: 约好 GBS 筛查并记下处理方案
+        category: 就医
+        when: 通常36周0天至37周6天
+        start: 252
+        end: 265
+        control: check
+        detail:
+          - GBS 是 B 族链球菌。筛查结果帮助团队决定分娩时是否需要抗生素，阳性不等于宝宝已感染。
+          - 既往病史可能改变检查和用药安排；把结果、药物过敏及分娩时计划交给接生团队。
+        sources: [gbs]
+      - id: hospital-bag
+        title: 按实际医院提供的用品整理待产包
+        category: 采购
+        when: 分娩前备好一个小包
+        control: progress
+        detail:
+          - 先问医院会提供哪些产妇、喂养和宝宝用品，再装身份证明、保险资料、药物清单、充电器、洗漱与换洗衣物、回家衣服和个人必需品。
+          - 安全座椅装在车上，不放进大包；常用证件和联系人单独易取。无需照中国医院的品牌和数量清单整套购买。
+        sources: [tuoba]
+      - id: hospital-route
+        title: 核实分娩入口、停车和备用交通
+        category: 协作
+        when: 孕晚期；降雪前再核对路线
+        control: progress
+        detail:
+          - 向实际分娩医院确认白天/夜间入口、何时应先打电话、停车、访客、陪产和是否需要预登记。门诊地点不一定是分娩地点。
+          - 演练出门拿包、车辆或其他交通、冬季路况和备用照护人。急症按医疗团队指示处理，严重情况拨911，不以网约车替代急救。
+        sources: [warnings, birthcenter]
+      - id: pediatrician
+        title: 选好儿科并问清出院后的首诊流程
+        category: 就医
+        when: 分娩前联系
+        control: check
+        detail:
+          - 确认接收新生儿、保险、出院后预约方式、夜间值班电话、喂养和黄疸问题的求助入口。
+          - 问清出生时新生儿筛查、维生素K、疫苗和 RSV 预防的院方安排；计划按当期美国儿科指导确认，不照搬中国卡介苗或旧年度疫苗表。
+        sources: [newborn, southloop]
+      - id: postpartum-food-help
+        title: 安排产后食物、家务与轮休
+        category: 协作
+        when: 孕晚期安排，出院后再调整
+        control: progress
+        detail:
+          - 冷冻几份容易加热的饭菜，准备方便取用的水与零食；分派采购、清洁、洗衣、夜间换尿布和接待访客。
+          - 产后饮食以能吃下、食物多样和充分补水为主；不按“月子第几天”强行断盐、限水或大量吃某种食物。贫血、糖尿病、过敏等按团队的个别方案处理。
+        sources: [nutrition, tuoba]
+  - id: waiting
+    number: '07'
+    title: 留出等待的余地
+    subtitle: 37周起至分娩
+    anchor: pregnancy
+    start: 259
+    end: 294
+    tasks:
+      - id: labor-call-plan
+        title: 写下何时联系产房，不套统一宫缩规则
+        category: 就医
+        when: 临产前与接生团队确认
+        control: check
+        detail:
+          - 问清宫缩、破水、出血、胎动变化和超过预产期时如何联系与到院。个人风险、距离和产次会改变安排。
+          - 保持手机可用，把值班电话和分娩医院入口写在易见处。急症不等网站任务变成“当前”。
+        sources: [labor, warnings]
+      - id: preferences
+        title: 和团队沟通分娩偏好及可能的变化
+        category: 协作
+        when: 产检或入院时
+        control: check
+        detail:
+          - 讨论疼痛缓解、陪伴者、沟通语言、喂养意愿和分娩后安排；问清需要临时改变计划时怎样沟通。
+          - 偏好写成一页简短备忘，陪伴者也读一遍。不要把网络生产经历当成个人分娩方案。
+        sources: [labor]
+      - id: after-birth-admin
+        title: 提前问好新生儿保险与证件流程
+        category: 协作
+        when: 出生前查规则，出生后按期限办理
+        control: progress
+        detail:
+          - 向当前保险问清添加新生儿的期限、材料和生效日期；雇主、学生和 Marketplace 计划可能不同，记录个人适用的截止日。
+          - 向医院问出生登记、出生证明和 Social Security 申请的流程；不在本页保存证件号码或证件照片。
+        sources: [enroll, birthcert, ssn]
+  - id: birth
+    number: '08'
+    title: 出生，先照顾眼前
+    subtitle: 出生至第2天 · 按出院安排
+    anchor: birth
+    start: 0
+    end: 2
+    tasks:
+      - id: discharge-baby
+        title: 核对宝宝出院清单与首诊时间
+        category: 宝宝
+        when: 出院前
+        control: check
+        detail:
+          - 问清喂养、体重、胆红素/黄疸、听力和新生儿筛查结果及待回报项目；带走记录和求助电话。
+          - 按出院指示安排儿科随访。早出院时通常需出院后24–48小时复查，出生后3–5天也是常见的首次检查窗口，具体以团队要求为准。
+        sources: [newborn, firstcheck]
+      - id: discharge-parent
+        title: 写下产妇恢复、用药和复诊安排
+        category: 就医
+        when: 产妇出院前
+        control: check
+        detail:
+          - 问清伤口/会阴护理、疼痛控制、出血、活动、喂养支持、情绪和血压随访；把每项个别医嘱和联系电话记下。
+          - 产后照护需要持续联系，不能只等“六周复查”。ACOG 建议产后3周内联系，12周内完成全面评估；有高血压等情况可能需更早复查。
+        sources: [postpartum, warnings]
+      - id: feeding-support
+        title: 现场练习喂养、抱持和换尿布
+        category: 宝宝
+        when: 在医院学一次，回家后按需求助
+        control: progress
+        detail:
+          - 请护士或哺乳顾问看一次实际喂养，确认宝宝能有效吃奶；问清个人适用的频率、叫醒喂奶、配方配制和何时需要帮助。
+          - 按宝宝饥饿信号喂养，不用固定毫升数或强制拉长间隔去套每个宝宝。配方严格按产品和团队要求配，粉状配方并非无菌。
+          - 两个月以下、早产或免疫力弱的宝宝需额外防范阪崎克罗诺杆菌（Cronobacter）污染。向团队问清是否选无需兑水的液态即食配方；如用奶粉，按 CDC 和团队要求处理热水、冷却和保存，不只照普通温水冲调习惯。
+        sources: [feeding, formula]
+  - id: first-days
+    number: '09'
+    title: 回家后的前两周
+    subtitle: 出生第3至14天
+    anchor: birth
+    start: 3
+    end: 14
+    tasks:
+      - id: first-pediatric-visit
+        title: 带记录去儿科，看体重、黄疸和喂养
+        category: 宝宝
+        when: 按出院指定日期，可能早于本阶段
+        start: 2
+        end: 5
+        control: check
+        detail:
+          - 带出院材料、喂养/尿布记录与问题；医生根据出生周数、体重变化和检查决定是否需验胆红素、调整喂养或更早复查。
+          - 黄疸加深、难叫醒、吃奶明显变差、尿量减少或觉得宝宝不对劲时，提前联系儿科，不等预约日。
+        sources: [firstcheck, newborn]
+      - id: feeding-diapers-log
+        title: 按儿科要求记录喂养与湿尿布
+        category: 宝宝
+        when: 回家初期或团队要求时
+        control: check
+        detail:
+          - 可在“每日记录”记24小时喂养次数、湿尿布片数和备注；宝宝体重和日龄会影响怎样解读这些数值。
+          - 询问维生素D等个人适用补充方案、脐带护理与洗澡方式。睡前仍用仰卧、平坦独立睡床；哭闹时先排查需要，照护者太累时安全放下宝宝并换人。
+        sources: [feeding, sleep]
+      - id: parent-check-in
+        title: 每天留一小段时间问产妇状态
+        category: 协作
+        when: 产后持续，异常时立即求助
+        control: check
+        detail:
+          - 家人主动问睡眠、疼痛、出血、进食、情绪和是否需要帮助；安排能连续休息的时段，按医嘱活动和复查。
+          - 持续低落、焦虑、难以应付或任何伤害自己/宝宝的念头都要及时求助；有即时危险时拨911或去急诊。
+        sources: [postpartum, warnings]
+      - id: complete-admin
+        title: 确认保险已添加，追踪证件申请
+        category: 协作
+        when: 按自己计划规定的期限
+        control: progress
+        detail:
+          - 按已查到的期限提交新生儿保险材料，确认生效日期和儿科账单如何处理；收到确认后留在个人文件夹。
+          - 跟进医院说明的出生证明和 Social Security 流程。页面只记是否完成，不录证件号。
+        sources: [enroll, birthcert, ssn]
+  - id: settling
+    number: '10'
+    title: 让照护慢慢有节奏
+    subtitle: 出生第15至42天 · 产后六周
+    anchor: birth
+    start: 15
+    end: 42
+    tasks:
+      - id: ongoing-checkups
+        title: 按儿科安排随访和当期疫苗计划
+        category: 宝宝
+        when: 个别复查及约1月龄；后续继续随诊
+        control: check
+        detail:
+          - 记录下一次儿科预约和医生确认的疫苗安排；体重、喂养、早产或其他情况可能需要额外随访。
+          - 本页不预填中国接种表，也不把某个旧年份的美国剂次表固定为个人医嘱。预约时核对当期计划。
+        sources: [checkups]
+      - id: postpartum-contact
+        title: 完成产后联系，约好后续评估
+        category: 就医
+        when: 产后3周内联系；全面评估不晚于12周，按医嘱可更早
+        start: 0
+        end: 21
+        control: check
+        detail:
+          - 把恢复、情绪、喂养、慢性病、避孕和后续计划一起问清；查看是否还有需要追踪的血压、化验或伤口问题。
+          - 若产科已指定更早复查，优先执行。胸痛、呼吸困难、严重头痛、视物改变或大量出血随时需要求助。
+        sources: [postpartum, warnings]
+      - id: responsive-care
+        title: 用简单互动认识宝宝，给家人留休息
+        category: 家中
+        when: 宝宝清醒且有人看护时
+        control: check
+        detail:
+          - 抱持、说话、回应声音和目光即可，不必购买成套早教课程。清醒并有成人持续看护时，按儿科建议逐渐练习趴着玩；睡眠仍仰卧。
+          - 调整轮班和求助安排，允许计划随实际喂养、恢复和家庭体力改变。0–12月经验文章放在参考资料，发育疑问交给儿科讨论。
+        sources: [tummy, sleep, tuoba]
+sources:
+  folate:
+    title: CDC · 叶酸
+    url: https://www.cdc.gov/folic-acid/about/safety.html
+    kind: 官方
+  prepregnancy:
+    title: ACOG · 孕前健康
+    url: https://www.acog.org/womens-health/faqs/good-health-before-pregnancy-prepregnancy-care
+    kind: 官方
+  prenatal:
+    title: ACOG · 个体化产前照护
+    url: https://www.acog.org/clinical-information/physician-faqs/tailored-prenatal-care
+    kind: 官方
+  routine:
+    title: ACOG · 孕期常规检查
+    url: https://www.acog.org/womens-health/faqs/routine-tests-during-pregnancy
+    kind: 官方
+  genetic:
+    title: ACOG · 产前遗传筛查
+    url: https://www.acog.org/womens-health/faqs/prenatal-genetic-screening-tests
+    kind: 官方
+  nutrition:
+    title: NIH ODS · 孕期营养
+    url: https://ods.od.nih.gov/factsheets/Pregnancy-HealthProfessional/
+    kind: 官方
+  caffeine:
+    title: ACOG · 孕期咖啡因
+    url: https://www.acog.org/womens-health/experts-and-stories/the-latest/ask-acog-how-much-coffee-can-i-drink-while-pregnant
+    kind: 官方
+  food:
+    title: CDC · 孕期食品安全
+    url: https://www.cdc.gov/food-safety/foods/pregnant-women.html
+    kind: 官方
+  fish:
+    title: FDA · 孕期鱼类选择
+    url: https://www.fda.gov/food/consumers/advice-about-eating-fish
+    kind: 官方
+  vaccines:
+    title: CDC · 孕期疫苗
+    url: https://www.cdc.gov/vaccines-pregnancy/recommended-vaccines/
+    kind: 官方
+  covid:
+    title: CDC · 当前COVID-19疫苗信息（预约时核对）
+    url: https://www.cdc.gov/covid/vaccines/
+    kind: 官方
+  rsv:
+    title: CDC · 母体RSV疫苗窗口
+    url: https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/pregnant-people.html
+    kind: 官方
+  gbs:
+    title: ACOG · B族链球菌筛查
+    url: https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2020/02/prevention-of-group-b-streptococcal-early-onset-disease-in-newborns
+    kind: 官方
+  bp:
+    title: CDC · 正确测量血压
+    url: https://www.cdc.gov/high-blood-pressure/measure/index.html
+    kind: 官方
+  movement:
+    title: ACOG · 胎动与胎儿监测
+    url: https://www.acog.org/womens-health/faqs/special-tests-for-monitoring-fetal-well-being
+    kind: 官方
+  exercise:
+    title: ACOG · 孕期运动
+    url: https://www.acog.org/womens-health/faqs/exercise-during-pregnancy
+    kind: 官方
+  sleep:
+    title: CDC · 婴儿安全睡眠
+    url: https://www.cdc.gov/reproductive-health/features/babies-sleep.html
+    kind: 官方
+  carseat:
+    title: AAP · 家庭安全座椅指南
+    url: https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx
+    kind: 官方
+  inspection:
+    title: NHTSA · 汽车座椅检查点
+    url: https://www.nhtsa.gov/vehicle-safety/car-seats-and-booster-seats
+    kind: 官方
+  recalls:
+    title: CPSC · 产品召回查询
+    url: https://www.cpsc.gov/Recalls
+    kind: 官方
+  co:
+    title: CPSC · 一氧化碳与报警器
+    url: https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Carbon-Monoxide-Information-Center/Carbon-Monoxide-Questions-and-Answers
+    kind: 官方
+  labor:
+    title: ACOG · 怎样知道临产
+    url: https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins
+    kind: 官方
+  postpartum:
+    title: ACOG · 产后持续照护
+    url: https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2018/05/optimizing-postpartum-care
+    kind: 官方
+  feeding:
+    title: CDC · 母乳与新生儿喂养
+    url: https://www.cdc.gov/infant-toddler-nutrition/breastfeeding/newborn-basics.html
+    kind: 官方
+  formula:
+    title: CDC · 配方奶配制与保存
+    url: https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html
+    kind: 官方
+  newborn:
+    title: AAP · 新生儿出院回家
+    url: https://www.healthychildren.org/English/ages-stages/prenatal/delivery-beyond/Pages/Going-Home.aspx
+    kind: 官方
+  firstcheck:
+    title: AAP · 出生后首次检查
+    url: https://www.healthychildren.org/English/ages-stages/Your-Childs-Checkups/Pages/Your-Checkup-Checklist-Newborn-Visit-2-to-5-days-old.aspx
+    kind: 官方
+  fever:
+    title: AAP · 婴儿发热
+    url: https://www.healthychildren.org/English/health-issues/conditions/fever/pages/fever-and-your-baby.aspx
+    kind: 官方
+  tummy:
+    title: AAP · 清醒时趴着玩
+    url: https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/The-Importance-of-Tummy-Time.aspx
+    kind: 官方
+  checkups:
+    title: AAP · 儿童定期健康随访
+    url: https://www.healthychildren.org/English/ages-stages/Your-Childs-Checkups/Pages/default.aspx
+    kind: 官方
+  warnings:
+    title: CDC Hear Her · 孕产期急症信号
+    url: https://www.cdc.gov/hearher/maternal-warning-signs/index.html
+    kind: 官方
+  iit:
+    title: Illinois Tech · 当期学生保险
+    url: https://www.iit.edu/shwc/insurance/plan-info-and-requirements
+    kind: 官方
+  moms:
+    title: Illinois HFS · Moms & Babies / MPE
+    url: https://hfs.illinois.gov/medicalprograms/allkids/momsandbabies.html
+    kind: 官方
+  wic:
+    title: Illinois · WIC营养支持
+    url: https://wegotyouillinois.org/wic/
+    kind: 官方
+  southloop:
+    title: UChicago Medicine · South Loop
+    url: https://www.uchicagomedicine.org/find-a-location/uchicago-medicine-south-loop
+    kind: 官方
+  birthcenter:
+    title: UChicago Medicine · Hyde Park分娩中心
+    url: https://www.uchicagomedicine.org/find-a-location/uchicago-medicine-family-birth-center-hyde-park
+    kind: 官方
+  enroll:
+    title: HealthCare.gov · 新生儿与特别投保期
+    url: https://www.healthcare.gov/coverage-outside-open-enrollment/special-enrollment-period/
+    kind: 官方
+  birthcert:
+    title: Illinois DPH · 出生登记与证明
+    url: https://dph.illinois.gov/topics-services/birth-death-other-records/birth-records.html
+    kind: 官方
+  ssn:
+    title: SSA · 新生儿Social Security申请说明
+    url: https://www.ssa.gov/pubs/EN-05-10023.pdf
+    kind: 官方
+  tuoba:
+    title: 妥爸赵十三 · 家庭准备经验（医疗内容另行核对）
+    url: https://www.zhihu.com/column/c_1108771658776727552
+    kind: 经验
+  tuoba-series:
+    title: 妥爸 · 人类幼崽孕养说明书（经验资料）
+    url: https://zhuanlan.zhihu.com/p/702702705
+    kind: 经验
+  tuoba-bili:
+    title: 妥爸 · B站公开专栏与表格图片
+    url: https://www.bilibili.com/opus/600695131047030109
+    kind: 经验
+local_resources:
+  - title: 产科与儿科门诊 · UChicago South Loop
+    detail: 1101 S. Canal St., Suite 201/202 · 877-336-5667。页面列有产前照护、助产士、超声及儿科；先确认新病人、保险和实际分娩医院。超声需要预约。
+    url: https://www.uchicagomedicine.org/find-a-location/uchicago-medicine-south-loop
+  - title: 分娩中心 · UChicago Hyde Park
+    detail: 5721 S. Maryland Ave. · 773-702-1000。作为可咨询的候选入口；接生团队、保险、入口和夜间流程都需确认。
+    url: https://www.uchicagomedicine.org/find-a-location/uchicago-medicine-family-birth-center-hyde-park
+  - title: Illinois Tech · 学生保险（如适用）
+    detail: 从当期计划查网络、自付额和转诊要求；学生与员工计划不同。本页列出学校入口，不表示个人一定参加该保险。
+    url: https://www.iit.edu/shwc/insurance/plan-info-and-requirements
+  - title: Illinois Moms & Babies / MPE
+    detail: MPE 为符合条件孕妇提供临时门诊覆盖；Moms & Babies 可覆盖孕期、分娩及产后照护。按个人资格申请，不能仅凭住址判断获批。
+    url: https://hfs.illinois.gov/medicalprograms/allkids/momsandbabies.html
+  - title: Illinois WIC · 营养、食品及喂养支持
+    detail: 面向符合条件的孕妇、产后妇女、婴儿和幼儿。通过官方入口查资格及本地办理点。
+    url: https://wegotyouillinois.org/wic/
+  - title: 座椅安装 · NHTSA检查点
+    detail: 按地点寻找并预约检查；携带车辆与座椅说明书。线上看完教程不等于安装已通过检查。
+    url: https://www.nhtsa.gov/vehicle-safety/car-seats-and-booster-seats
+safety:
+  - title: 孕期与产后：不等清单，也不等预约
+    detail: 胸痛、呼吸困难、昏厥、持续严重头痛或视物改变、严重腹痛、大量出血或流液、单侧腿肿痛、胎动明显减少等，立即联系医疗团队；情况严重或无法及时联系时拨911或去急诊。产后一年内也要留意孕产相关警讯。
+    url: https://www.cdc.gov/hearher/maternal-warning-signs/index.html
+  - title: 三个月及以下宝宝发热
+    detail: 直肠温度达到38°C（100.4°F）即应立即联系儿科，即使暂时没有别的症状。呼吸费力、发青、无反应或难叫醒需立即急救；不先自行给退烧药后等待。
+    url: https://www.healthychildren.org/English/health-issues/conditions/fever/pages/fever-and-your-baby.aspx
+  - title: 数字只作记录，症状需要人来评估
+    detail: 本页不诊断血压、体重、黄疸或喂养是否正常。向团队问清个人报告阈值；胎动改变时不靠家用胎心仪排除异常。任何强烈担心都可以提前联系团队。
+    url: https://www.cdc.gov/hearher/maternal-warning-signs/index.html

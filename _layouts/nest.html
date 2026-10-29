@@ -1,0 +1,17 @@
+---
+---
+<!doctype html>
+<html lang="zh" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include seo.html %}
+  {% include base_path %}
+  <link rel="stylesheet" href="{{ base_path }}/assets/css/nest.css?v={{ asset_version }}">
+</head>
+<body class="nest-page">
+  {% include nest-planner.html intro=content %}
+  <script src="{{ base_path }}/assets/js/language-preference.js?v={{ asset_version }}"></script>
+  <script type="module" src="{{ base_path }}/assets/js/nest-planner.mjs?v={{ asset_version }}"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+{% assign plan = site.data.nest-plan %}
+<main class="nest" id="nest">
+  <header class="nest__header">
+    <a class="nest__back" href="{{ '/projects/' | relative_url }}">← Projects</a>
+    {% include article-language.html %}
+    <p class="nest__eyebrow">Märchen · 家庭时间线</p>
+    <h1>{{ page.title }}</h1>
+    <div class="nest__intro">{{ include.intro }}</div>
+    {% assign intro_parts = plan.intro | split: '。' %}
+    <p class="nest__small">{{ intro_parts[1] }}。{{ intro_parts[2] }}。</p>
+    <p class="nest__privacy"><strong>先说明记录存在哪里：</strong>攻略文字是公开网页；日期、清单进度和量测记录会用家庭口令加密，保存在此浏览器。网站无法替你恢复口令；换浏览器前请导出加密备份。</p>
+  </header>
+
+  <section class="nest__gate" id="nest-gate" aria-labelledby="gate-title">
+    <div class="nest__gate-copy">
+      <p class="nest__eyebrow">本地加密记录</p>
+      <h2 id="gate-title">从你们的时间点开始</h2>
+      <p id="gate-hint">家庭口令至少8个字符，可以用一句好记的长句。口令不会上传，也无法重置；请另存加密备份。</p>
+      <form id="nest-unlock-form" class="nest__form" hidden>
+        <label class="nest__field">家庭口令<input id="nest-password" type="password" autocomplete="current-password" required minlength="8"></label>
+        <label class="nest__field" id="nest-confirm-wrap" hidden>再次输入口令<input id="nest-confirm" type="password" autocomplete="new-password" minlength="8"></label>
+        <button class="nest__button nest__button--primary" id="nest-unlock" type="submit">解锁记录</button>
+      </form>
+      <div class="nest__gate-actions">
+        <button type="button" class="nest__button nest__button--quiet" id="nest-create">建立本机记录</button>
+        <label class="nest__button nest__button--quiet nest__file-button" for="nest-restore-gate">从加密备份恢复</label>
+        <input class="nest__visually-hidden" id="nest-restore-gate" type="file" accept="application/json,.json">
+      </div>
+      <p class="nest__status" id="nest-gate-status" role="status" aria-live="polite"></p>
+    </div>
+    <details class="nest__preview">
+      <summary>先看一个只读示例</summary>
+      <p>演示假设预产期为 2027 年 7 月 1 日，仅说明日期如何落在清单上，不会保存也不代表你们的日期。</p>
+      <ol><li>孕早期：联系产科，核对用药与补充剂。</li><li>孕 20 周附近：了解结构超声安排。</li><li>孕 28 周：确认分娩地点、通勤与待产协作。</li><li>宝宝出生后：儿科随访、喂养与安全睡眠。</li></ol>
+    </details>
+  </section>
+
+  <div class="nest__workspace" id="nest-workspace" hidden>
+    <section class="nest__profile" aria-labelledby="profile-title">
+      <div class="nest__section-head"><div><p class="nest__eyebrow">你们的起点</p><h2 id="profile-title">时间线设置</h2></div><button type="button" class="nest__button nest__button--quiet" id="nest-lock">锁定记录</button></div>
+      <div class="nest__profile-grid">
+        <label class="nest__field">当前阶段<select id="nest-stage"><option value="preconception">备孕中</option><option value="pregnancy">已怀孕</option><option value="newborn">宝宝已出生</option></select></label>
+        <fieldset class="nest__field nest__date-type"><legend>孕期日期依据</legend><label><input type="radio" name="nest-date-type" value="due"> 预产期</label><label><input type="radio" name="nest-date-type" value="lmp"> 末次月经第一天</label></fieldset>
+        <label class="nest__field" id="nest-anchor-wrap">日期<input type="date" id="nest-anchor-date"></label>
+        <label class="nest__field" id="nest-birth-wrap">宝宝出生日期<input type="date" id="nest-birth-date"></label>
+      </div>
+      <p class="nest__stage-status" id="nest-stage-status" aria-live="polite"></p>
+      <p class="nest__small">预产期按 40 周倒推估算；孕周和清单日期只是提醒，请以产科医生确认的日期为准。</p>
+    </section>
+
+    <nav class="nest__quick-nav" aria-label="手记导航"><a href="#timeline-title">行动清单</a><a href="#log-title">每日记录</a><a href="#local-title">芝加哥资源</a><a href="#backup-title">加密备份</a></nav>
+    <aside class="nest__safety" aria-labelledby="safety-title">
+      <details><summary id="safety-title">需要立即求助的情况</summary>
+        <ul>{% for item in plan.safety %}<li><strong>{{ item.title }}</strong>：{{ item.detail }} <a href="{{ item.url }}" rel="noreferrer">查看来源</a></li>{% endfor %}</ul>
+      </details>
+      <p>严重不适及时求助，危急情况拨911。三个月及以下宝宝直肠温度达到38°C，立即联系儿科。</p>
+    </aside>
+
+    <section class="nest__timeline" aria-labelledby="timeline-title">
+      <div class="nest__section-head"><div><p class="nest__eyebrow">从备孕到出生后六周</p><h2 id="timeline-title">家庭行动清单</h2></div><p class="nest__reviewed">资料核对：{{ plan.reviewed }}</p></div>
+      <div class="nest__filters"><label class="nest__field">显示阶段<select id="nest-phase"><option value="current">当前阶段</option><option value="all">全部阶段</option><option value="preconception">备孕</option><option value="pregnancy">孕期</option><option value="birth">新生儿/分娩/产后</option></select></label><label class="nest__field">任务类别<select id="nest-category"><option value="all">全部类别</option><option>就医</option><option>饮食</option><option>家中</option><option>采购</option><option>协作</option><option>宝宝</option></select></label><label class="nest__check-filter"><input type="checkbox" id="nest-hide-done"> 隐藏已完成</label></div>
+      <p class="nest__current-hint" id="nest-current-hint" role="status" aria-live="polite"></p>
+      <p class="nest__save-status" id="nest-save-status" role="status" aria-live="polite"></p>
+      <div id="nest-tasks" class="nest__sections"></div>
+    </section>
+
+    <section class="nest__log" aria-labelledby="log-title">
+      <div class="nest__section-head"><div><p class="nest__eyebrow">只做记录，不做诊断</p><h2 id="log-title">每日量测</h2></div></div>
+      <p>同一天再次保存会更新当天记录；数值字段都可留空。体重和血压记孕产妇，体温记宝宝。其他测量对象写在备注里，按医护人员要求记录。</p>
+      <form id="nest-log-form" class="nest__log-grid">
+        <label class="nest__field">日期<input type="date" id="log-date" required></label>
+        <label class="nest__field">孕产妇体重（kg）<input inputmode="decimal" type="number" min="0" step="0.1" id="log-weight"></label>
+        <label class="nest__field">孕产妇收缩压（mmHg）<input inputmode="numeric" type="number" min="0" step="1" id="log-sys"></label>
+        <label class="nest__field">孕产妇舒张压（mmHg）<input inputmode="numeric" type="number" min="0" step="1" id="log-dia"></label>
+        <label class="nest__field">宝宝体温（℃）<input inputmode="decimal" type="number" min="0" step="0.1" id="log-temp"></label>
+        <label class="nest__field">喂养次数<input inputmode="numeric" type="number" min="0" step="1" id="log-feeds"></label>
+        <label class="nest__field">湿尿布片数<input inputmode="numeric" type="number" min="0" step="1" id="log-wet"></label>
+        <label class="nest__field nest__field--wide">备注<textarea id="log-note" rows="2" maxlength="2000" placeholder="例如：记录对象、时间、测量方式或医护要求"></textarea></label>
+        <button class="nest__button nest__button--primary" type="submit">保存当天记录</button>
+        <span class="nest__save-status" id="nest-log-status" role="status" aria-live="polite"></span>
+      </form>
+      <ul class="nest__log-list" id="nest-log-list"></ul>
+    </section>
+
+    <section class="nest__local" aria-labelledby="local-title">
+      <details><summary id="local-title">芝加哥就医与支持 · {{ plan.local_resources.size }}个入口</summary>
+        <ul>{% for resource in plan.local_resources %}<li><strong>{{ resource.title }}</strong>：{{ resource.detail }}{% if resource.url %} <a href="{{ resource.url }}" rel="noreferrer">{{ resource.title }}官方入口</a>{% endif %}</li>{% endfor %}</ul>
+      </details>
+    </section>
+
+    <section class="nest__sources" aria-labelledby="sources-title">
+      <details><summary id="sources-title">核对依据与原始资料</summary>
+        <p>医学与安全事项按专业资料核对。妥爸图文提供家庭准备思路；部分旧文建议与现行指导冲突，不能直接照做。公开文章与作者另行提供的Excel不是同一文件。</p>
+        <ul>{% for source in plan.sources %}<li><a href="{{ source[1].url }}" rel="noreferrer">{{ source[1].title }}</a> · {{ source[1].kind }}</li>{% endfor %}</ul>
+      </details>
+    </section>
+    <section class="nest__backup" aria-label="加密记录备份"><details><summary id="backup-title">记录备份与安全</summary><p>使用同一浏览器、同一网址再次解锁，记录就会保留。更换设备或清除浏览器数据前，导出加密备份；恢复时需要原口令，网站无法重置。解锁后有权使用此设备的人能看到记录。</p><div class="nest__backup-actions"><button class="nest__button nest__button--quiet" type="button" id="nest-export">导出加密备份</button><label class="nest__button nest__button--quiet nest__file-button" for="nest-restore">恢复加密备份</label><input class="nest__visually-hidden" id="nest-restore" type="file" accept="application/json,.json"></div></details></section>
+  </div>
+</main>
+<dialog class="nest__password-dialog" id="nest-password-dialog" aria-labelledby="nest-password-title">
+  <form id="nest-password-form">
+    <h2 id="nest-password-title">打开加密备份</h2>
+    <label class="nest__field">家庭口令<input id="nest-restore-password" type="password" autocomplete="current-password" required minlength="8"></label>
+    <p class="nest__small" id="nest-password-hint">口令只用于在此浏览器解密备份。</p>
+    <div class="nest__backup-actions"><button class="nest__button nest__button--quiet" id="nest-password-cancel" type="button">取消</button><button class="nest__button nest__button--primary" type="submit">继续</button></div>
+  </form>
+</dialog>
+<script type="application/json" id="nest-plan-data">{{ plan | jsonify | replace: '</', '<\/' }}</script>
+<noscript><p class="nest__noscript">此互动时间线需要启用 JavaScript；攻略仅供参考，个人记录加密保存在本机。</p></noscript>
