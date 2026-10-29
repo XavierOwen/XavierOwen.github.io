@@ -1,4 +1,4 @@
-const { newState, validateState, createVault, openVault, sealVault, parseEnvelope, todayChicago, addDays, daysBetween, pregnancyStart, rsvSeasonWindow, stageStatus } = await import(`./nest-vault.mjs${new URL(import.meta.url).search}`);
+const { newState, validateState, supplementDailyAmount, createVault, openVault, sealVault, parseEnvelope, todayChicago, addDays, daysBetween, pregnancyStart, rsvSeasonWindow, stageStatus } = await import(`./nest-vault.mjs${new URL(import.meta.url).search}`);
 
 const STORAGE_KEY = "marchen-nest-v1";
 const plan = JSON.parse(document.querySelector("#nest-plan-data").textContent);
@@ -17,8 +17,9 @@ function clearPrivateDom() {
   byId("nest-log-list").replaceChildren();
   for (const id of ["nest-anchor-date", "nest-birth-date", "log-date", "log-weight", "log-sys", "log-dia", "log-temp", "log-feeds", "log-wet", "log-note"]) byId(id).value = "";
   byId("nest-stage").value = newState().profile.stage;
+  byId("nest-supplement-form").reset();
   document.querySelectorAll('input[name="nest-date-type"]').forEach(input => { input.checked = input.value === "due"; });
-  for (const id of ["nest-stage-status", "nest-current-hint", "nest-save-status", "nest-log-status"]) byId(id).textContent = "";
+  for (const id of ["nest-stage-status", "nest-current-hint", "nest-save-status", "nest-log-status", "nest-supplement-status", "supplement-result"]) byId(id).textContent = "";
   byId("nest-password").value = "";
   byId("nest-confirm").value = "";
 }
@@ -156,6 +157,29 @@ function renderLogs() {
   const logs = [...state.logs].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 15);
   byId("nest-log-list").innerHTML = logs.map(log => `<li><strong>${escapeHtml(log.date)}</strong> · 孕产妇体重 ${escapeHtml(log.weight || "—")} kg · 孕产妇血压 ${escapeHtml(log.bpSys || "—")}/${escapeHtml(log.bpDia || "—")} mmHg · 宝宝体温 ${escapeHtml(log.temp || "—")}℃ · 喂养 ${escapeHtml(log.feeds || "—")} 次 · 湿尿布 ${escapeHtml(log.wet || "—")} 片</li>`).join("");
 }
+function supplementFromForm() {
+  return { person: byId("supplement-person").value, femaleWeight: byId("supplement-female-weight").value, maleWeight: byId("supplement-male-weight").value, substance: byId("supplement-substance").value.trim(), coefficient: byId("supplement-coefficient").value, unit: byId("supplement-unit").value, confirmed: byId("supplement-confirmed").checked };
+}
+function previewSupplement() {
+  const settings = supplementFromForm(), result = byId("supplement-result");
+  try {
+    const amount = supplementDailyAmount(settings);
+    if (amount === null) { status(result, settings.confirmed ? "请填写补充物名称、所选对象的换算体重及每公斤每日系数。" : "未确认完整的医护方案时，仅保存设置，不计算用量。"); return; }
+    const formatted = new Intl.NumberFormat("zh-CN", { maximumSignificantDigits: 10 }).format(amount);
+    status(result, `${settings.person === "female" ? "女方" : "男方"} · ${settings.substance}：${settings[`${settings.person}Weight`]} kg × ${settings.coefficient} ${settings.unit}／kg／日 ≈ ${formatted} ${settings.unit}／日。仅为所填系数的数学结果。`);
+  } catch (error) { status(result, error.message, true); }
+}
+function fillSupplementForm() {
+  const settings = state.supplement;
+  byId("supplement-person").value = settings.person;
+  byId("supplement-female-weight").value = settings.femaleWeight;
+  byId("supplement-male-weight").value = settings.maleWeight;
+  byId("supplement-substance").value = settings.substance;
+  byId("supplement-coefficient").value = settings.coefficient;
+  byId("supplement-unit").value = settings.unit;
+  byId("supplement-confirmed").checked = settings.confirmed;
+  previewSupplement();
+}
 function showWorkspace() {
   setWorkspaceBusy(false);
   gate.hidden = true;
@@ -165,6 +189,7 @@ function showWorkspace() {
   renderProfile();
   fillLogForm();
   renderLogs();
+  fillSupplementForm();
   window.scrollTo(0, 0);
 }
 function snapshot() { return validateState(JSON.parse(JSON.stringify(state))); }
@@ -334,7 +359,7 @@ byId("nest-restore").addEventListener("change", async event => {
     if (conflicted || key !== currentKey || localStorage.getItem(STORAGE_KEY) !== previousRaw) throw new Error("另一标签页已更改记录；本次恢复已取消，请刷新后重试。");
     const serialized = JSON.stringify(replacement);
     localStorage.setItem(STORAGE_KEY, serialized);
-    state = opened.state; lastEnvelope = serialized; dirty = false; renderProfile(); fillLogForm(); renderLogs();
+    state = opened.state; lastEnvelope = serialized; dirty = false; renderProfile(); fillLogForm(); renderLogs(); fillSupplementForm();
     status(saveStatus, "新备份已恢复并加密保存；旧备份已导出。");
   } catch (error) { status(saveStatus, error.message || "恢复失败；原有记录未更改。", true); }
   finally { event.target.value = ""; if (state && !conflicted) setWorkspaceBusy(false); }
@@ -355,6 +380,25 @@ byId("nest-log-form").addEventListener("submit", event => {
   }
 });
 byId("log-date").addEventListener("change", () => { if (state && key && !conflicted) fillLogForm(); });
+
+byId("nest-supplement-form").addEventListener("input", event => {
+  if (!state || !key || conflicted) return;
+  if (["supplement-person", "supplement-substance", "supplement-unit"].includes(event.target.id)) byId("supplement-coefficient").value = "";
+  if (["supplement-person", "supplement-substance", "supplement-unit", "supplement-coefficient"].includes(event.target.id)) byId("supplement-confirmed").checked = false;
+  previewSupplement();
+  status(byId("nest-supplement-status"), "有修改，请点“保存体重与换算设置”。");
+});
+byId("nest-supplement-form").addEventListener("submit", event => {
+  event.preventDefault();
+  if (!state || !key || conflicted) return;
+  try {
+    const candidate = validateState({ ...state, supplement: supplementFromForm() });
+    supplementDailyAmount(candidate.supplement);
+    state = candidate;
+    previewSupplement();
+    saveQuietly(byId("nest-supplement-status"));
+  } catch (error) { status(byId("nest-supplement-status"), `${error.message}。原有换算设置未改动。`, true); }
+});
 
 window.addEventListener("storage", event => {
   if (event.key !== STORAGE_KEY || !key) return;

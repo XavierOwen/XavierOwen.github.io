@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { createVault, openVault, sealVault, newState, validateState, parseEnvelope, addDays, daysBetween, pregnancyStart, rsvSeasonWindow, stageStatus, todayChicago } from "../assets/js/nest-vault.mjs";
+import { createVault, openVault, sealVault, newState, validateState, supplementDailyAmount, parseEnvelope, addDays, daysBetween, pregnancyStart, rsvSeasonWindow, stageStatus, todayChicago } from "../assets/js/nest-vault.mjs";
 
 const assertRejects = async (run, pattern) => assert.rejects(run, pattern);
 const passphrase = "family vault phrase";
@@ -12,9 +12,30 @@ assert.deepEqual(stageStatus(state.profile), { label: "备孕阶段", pregnancyD
 state.profile = { stage: "pregnancy", dateType: "due", anchorDate: "2027-03-01", birthDate: "" };
 state.tasks["first-visit"] = { done: true, progress: 100, note: "call clinic" };
 state.logs.push({ id: "2026-10-29", date: "2026-10-29", weight: "", bpSys: "118", bpDia: "76", temp: "", feeds: "", wet: "", note: "example private note" });
+const legacy = { ...state };
+delete legacy.supplement;
+assert.deepEqual(validateState(legacy).supplement, newState().supplement);
+assert.deepEqual((await openVault(passphrase, (await createVault(passphrase, legacy)).envelope)).state.tasks, validateState(state).tasks);
+state.supplement = { person: "female", femaleWeight: "60", maleWeight: "80", substance: "arithmetic test only", coefficient: "0.5", unit: "mg", confirmed: true };
+assert.equal(supplementDailyAmount(state.supplement), 30);
+assert.equal(supplementDailyAmount({ ...state.supplement, femaleWeight: "62.5" }), 31.25);
+assert.equal(supplementDailyAmount({ ...state.supplement, person: "male" }), 40);
+assert.equal(supplementDailyAmount({ ...state.supplement, unit: "mcg" }), 30);
+assert.equal(supplementDailyAmount({ ...state.supplement, unit: "g" }), 30);
+assert.equal(supplementDailyAmount({ ...state.supplement, confirmed: false }), null);
+assert.equal(supplementDailyAmount({ ...state.supplement, coefficient: "" }), null);
+assert.equal(supplementDailyAmount({ ...state.supplement, substance: " " }), null);
+assert.equal(supplementDailyAmount({ ...state.supplement, femaleWeight: "" }), null);
+for (const value of ["0", "-1", "Infinity", "1e3", "NaN", "0.5 mg", 60]) {
+  assert.throws(() => supplementDailyAmount({ ...state.supplement, femaleWeight: value }), /换算设置/);
+  assert.throws(() => validateState({ ...state, supplement: { ...state.supplement, coefficient: value } }), /换算设置/);
+}
+assert.throws(() => supplementDailyAmount({ ...state.supplement, unit: "IU" }), /换算设置/);
+assert.throws(() => validateState({ ...state, supplement: null }), /换算设置/);
 
 const { envelope, key, salt } = await createVault(passphrase, state);
 assert.equal(JSON.stringify(envelope).includes("example private note"), false);
+assert.equal(JSON.stringify(envelope).includes("arithmetic test only"), false);
 assert.deepEqual((await openVault(passphrase, envelope)).state, validateState(state));
 assert.deepEqual((await openVault(passphrase, await sealVault(state, key, salt))).state, validateState(state));
 await assertRejects(() => openVault("incorrect passphrase", envelope), /口令不正确/);

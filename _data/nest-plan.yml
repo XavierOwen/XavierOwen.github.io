@@ -666,7 +666,54 @@ sections:
           - 抱持、说话、回应声音和目光即可，不必购买成套早教课程。清醒并有成人持续看护时，按儿科建议逐渐练习趴着玩；睡眠仍仰卧。
           - 调整轮班和求助安排，允许计划随实际喂养、恢复和家庭体力改变。0–12月经验文章放在参考资料，发育疑问交给儿科讨论。
         sources: [tummy, sleep, tuoba]
+nutrition_reference:
+  - name: 叶酸（Folate）
+    unit: mcg DFE／日
+    male: 400
+    female: 400
+    pregnancy: 600
+    lactation: 500
+    source: folate-reference
+  - name: 铁（元素量）
+    unit: mg／日
+    male: 8
+    female: 18
+    pregnancy: 27
+    lactation: 9
+    source: iron
+  - name: 碘
+    unit: mcg／日
+    male: 150
+    female: 150
+    pregnancy: 220
+    lactation: 290
+    source: iodine
+  - name: 维生素D
+    unit: mcg／日（15 mcg＝600 IU）
+    male: 15
+    female: 15
+    pregnancy: 15
+    lactation: 15
+    source: vitamin-d
+  - name: 维生素B12
+    unit: mcg／日
+    male: 2.4
+    female: 2.4
+    pregnancy: 2.6
+    lactation: 2.8
+    source: b12
+  - name: 胆碱（AI）
+    unit: mg／日
+    male: 550
+    female: 425
+    pregnancy: 450
+    lactation: 550
+    source: choline
 sources:
+  folate-reference:
+    title: NIH ODS · 叶酸营养参考
+    url: https://ods.od.nih.gov/pdf/factsheets/Folate-Consumer.pdf
+    kind: 官方
   prepregnancy-counseling:
     title: ACOG／ASRM · 孕前咨询
     url: https://integration.asrm.org/globalassets/_asrm/practice-guidance/practice-guidelines/pdf/prepregnancy_counseling.pdf

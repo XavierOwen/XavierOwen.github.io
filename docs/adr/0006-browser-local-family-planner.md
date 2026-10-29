@@ -43,3 +43,8 @@ overwriting records.
 - The checklist estimates dates from user-entered anchors. It does not diagnose
   measurements or replace individual care instructions. Medical windows and
   local service information carry source links and a review date.
+- Supplement settings share the encrypted vault. The calculator multiplies a
+  user-entered, clinician-confirmed daily coefficient by the specified weight;
+  it provides no default coefficients or automatic prescribing. Public nutrient
+  references describe total intake and do not scale with weight. Older version-1
+  records open with empty calculator settings.

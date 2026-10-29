@@ -5,7 +5,7 @@ const encoder = new TextEncoder();
 const decoder = new TextDecoder();
 
 export function newState() {
-  return { version: 1, profile: { stage: "preconception", dateType: "due", anchorDate: "", birthDate: "" }, tasks: {}, logs: [] };
+  return { version: 1, profile: { stage: "preconception", dateType: "due", anchorDate: "", birthDate: "" }, tasks: {}, logs: [], supplement: { person: "female", femaleWeight: "", maleWeight: "", substance: "", coefficient: "", unit: "mg", confirmed: false } };
 }
 
 function isRecord(value) {
@@ -22,6 +22,19 @@ function validDate(value, optional = false) {
 
 function validNumberText(value) {
   return value === "" || (typeof value === "string" && value.length <= 20 && /^-?\d+(?:\.\d+)?$/.test(value) && Number.isFinite(Number(value)));
+}
+
+function validateSupplement(value) {
+  if (!isRecord(value) || !["female", "male"].includes(value.person) || !["g", "mg", "mcg"].includes(value.unit) || typeof value.substance !== "string" || value.substance.length > 80 || typeof value.confirmed !== "boolean" || ["femaleWeight", "maleWeight", "coefficient"].some(field => !validNumberText(value[field]) || (value[field] !== "" && Number(value[field]) <= 0))) throw new TypeError("换算设置无效：体重和系数需为正数或留空，使用普通小数填写");
+  return { person: value.person, femaleWeight: value.femaleWeight, maleWeight: value.maleWeight, substance: value.substance, coefficient: value.coefficient, unit: value.unit, confirmed: value.confirmed };
+}
+
+export function supplementDailyAmount(value) {
+  const settings = validateSupplement(value), weight = settings[`${settings.person}Weight`];
+  if (!settings.confirmed || !settings.substance.trim() || !weight || !settings.coefficient) return null;
+  const amount = Number(weight) * Number(settings.coefficient);
+  if (!Number.isFinite(amount) || amount <= 0) throw new TypeError("数值无法换算，请核对体重、系数和单位");
+  return amount;
 }
 
 export function validateState(value) {
@@ -41,7 +54,8 @@ export function validateState(value) {
     if (!isRecord(log) || typeof log.id !== "string" || log.id.length > 80 || !/^[\w-]+$/.test(log.id) || !validDate(log.date) || typeof log.note !== "string" || log.note.length > 2000 || fields.some(key => !validNumberText(log[key]))) throw new TypeError("每日记录无效");
     return { id: log.id, date: log.date, ...Object.fromEntries(fields.map(key => [key, log[key]])), note: log.note };
   });
-  const state = { version: 1, profile: { stage: profile.stage, dateType: profile.dateType, anchorDate: profile.anchorDate, birthDate: profile.birthDate }, tasks, logs };
+  const supplement = validateSupplement(value.supplement === undefined ? newState().supplement : value.supplement);
+  const state = { version: 1, profile: { stage: profile.stage, dateType: profile.dateType, anchorDate: profile.anchorDate, birthDate: profile.birthDate }, tasks, logs, supplement };
   if (encoder.encode(JSON.stringify(state)).length > MAX_STATE) throw new TypeError("记录文件过大");
   return state;
 }

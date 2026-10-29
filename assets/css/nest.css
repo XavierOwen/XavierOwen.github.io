@@ -15,8 +15,8 @@ body.nest-page { margin: 0; background: var(--nest-paper); color: var(--nest-ink
 .nest h3 { margin: 1.2rem 0 .5rem; font-size: 1rem; }
 .nest__intro { max-width: 54ch; margin: .75rem 0 1rem; color: #373c38; font-size: 1.07rem; }
 .nest__privacy { max-width: 65ch; margin: 1rem 0 0; padding: .8rem 1rem; background: var(--nest-mist); color: #29352c; border-left: 3px solid var(--nest-accent); }
-.nest__gate, .nest__profile, .nest__timeline, .nest__log, .nest__sources, .nest__backup, .nest__local { margin-top: 1.5rem; }
-.nest__gate, .nest__profile, .nest__log { padding: clamp(1rem, 3vw, 1.5rem); background: #faf8f1; }
+.nest__gate, .nest__profile, .nest__timeline, .nest__log, .nest__supplement, .nest__sources, .nest__backup, .nest__local { margin-top: 1.5rem; }
+.nest__gate, .nest__profile, .nest__log, .nest__supplement { padding: clamp(1rem, 3vw, 1.5rem); background: #faf8f1; }
 .nest__gate { display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1.1fr) minmax(15rem, .9fr); align-items: start; }
 .nest__gate-copy { max-width: 36rem; }
 .nest__preview { padding: 1rem; background: var(--nest-mist); }
@@ -84,7 +84,17 @@ body.nest-page { margin: 0; background: var(--nest-paper); color: var(--nest-ink
 .nest__task-note { margin: .65rem 0 0 1.8rem; font-size: .85rem; }
 .nest__task-note summary { cursor: pointer; color: #46534a; }
 .nest__task-note textarea { display: block; width: 100%; min-height: 4rem; margin-top: .4rem; padding: .5rem; border: 1px solid var(--nest-line); background: #fffefa; font: inherit; font-size: .9rem; }
-.nest__log > p { max-width: 68ch; margin: .6rem 0 1rem; color: #424741; font-size: .9rem; }
+.nest__log > p, .nest__supplement > p, .nest__nutrient-reference p { max-width: 68ch; margin: .6rem 0 1rem; color: #424741; font-size: .9rem; }
+.nest__nutrient-reference summary { cursor: pointer; color: #364a39; font-weight: 600; }
+.nest__nutrient-table { max-width: 100%; overflow-x: auto; margin: 1rem 0; }
+.nest__nutrient-table:focus-visible { outline: 3px solid var(--nest-accent); outline-offset: 3px; }
+.nest__nutrient-table table { width: 100%; min-width: 36rem; border-collapse: collapse; text-align: left; font-size: .88rem; }
+.nest__nutrient-table th, .nest__nutrient-table td { padding: .65rem .8rem; border-bottom: 1px solid var(--nest-line); }
+.nest__nutrient-table td, .nest__nutrient-table thead th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.nest__nutrient-table thead { background: var(--nest-mist); }
+.nest__nutrient-table small { display: block; color: var(--nest-muted); font-weight: 400; }
+.nest__dose-result { padding: .85rem 1rem; background: var(--nest-mist); color: #29352c; overflow-wrap: anywhere; }
+.nest__dose-result[data-error="true"] { background: #f2e2dc; color: var(--nest-danger); }
 .nest__log-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; align-items: end; }
 .nest__field--wide { grid-column: 1 / -1; }
 .nest__log-list { margin: 1rem 0 0; padding: 0; list-style: none; }

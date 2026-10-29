@@ -48,7 +48,7 @@
       <p class="nest__small">预产期按 40 周倒推估算；孕周和清单日期只是提醒，请以产科医生确认的日期为准。</p>
     </section>
 
-    <nav class="nest__quick-nav" aria-label="手记导航"><a href="#timeline-title">行动清单</a><a href="#log-title">健康记录</a><a href="#local-title">芝加哥资源</a><a href="#backup-title">加密备份</a></nav>
+    <nav class="nest__quick-nav" aria-label="手记导航"><a href="#timeline-title">行动清单</a><a href="#log-title">健康记录</a><a href="#supplement-title">营养与换算</a><a href="#local-title">芝加哥资源</a><a href="#backup-title">加密备份</a></nav>
     <aside class="nest__safety" aria-labelledby="safety-title">
       <details><summary id="safety-title">需要立即求助的情况</summary>
         <ul>{% for item in plan.safety %}<li><strong>{{ item.title }}</strong>：{{ item.detail }} <a href="{{ item.url }}" rel="noreferrer">查看来源</a></li>{% endfor %}</ul>
@@ -81,6 +81,37 @@
         <span class="nest__save-status" id="nest-log-status" role="status" aria-live="polite"></span>
       </form>
       <ul class="nest__log-list" id="nest-log-list"></ul>
+    </section>
+
+    <section class="nest__supplement" aria-labelledby="supplement-title">
+      <div class="nest__section-head"><div><p class="nest__eyebrow">先分清总摄入量与额外补充量</p><h2 id="supplement-title">营养参考与体重换算</h2></div></div>
+      <p>叶酸、铁、碘、维D、B12和胆碱的一般参考量不按体重等比例增加。体重变化不会自动改变下表；是否另加补剂，还要核对饮食、现有产品、病史和化验。</p>
+      <details class="nest__nutrient-reference">
+        <summary>查看常见营养参考 · 19–50岁</summary>
+        <p id="nutrient-reference-hint">以下是健康19–50岁人群<strong>食物、强化食品和补充剂合计</strong>的每日参考，不是应另外吃下的补剂量。备孕尚未怀孕时看非孕栏；哺乳栏按实际哺乳情况选择。其他年龄和特殊病况需另查。</p>
+        <div class="nest__nutrient-table" role="region" aria-label="每日营养总摄入参考表，可横向滚动" aria-describedby="nutrient-reference-hint" tabindex="0">
+          <table><thead><tr><th scope="col">营养素／每日单位</th><th scope="col">男方</th><th scope="col">女方非孕、非哺乳</th><th scope="col">孕期</th><th scope="col">哺乳期</th></tr></thead><tbody>
+            {% for nutrient in plan.nutrition_reference %}{% assign nutrient_source = plan.sources[nutrient.source] %}<tr><th scope="row"><a href="{{ nutrient_source.url }}" rel="noreferrer">{{ nutrient.name }}</a><small>{{ nutrient.unit }}</small></th><td>{{ nutrient.male }}</td><td>{{ nutrient.female }}</td><td>{{ nutrient.pregnancy }}</td><td>{{ nutrient.lactation }}</td></tr>{% endfor %}
+          </tbody></table>
+        </div>
+        <p>胆碱列的是适宜摄入量（AI），其他列的是推荐膳食供给量（RDA）。上表不用于诊断缺乏，也不把差值直接换成药片。</p>
+        <p><strong>女方备孕叶酸单独看：</strong>一般风险者按<a href="{{ plan.sources.folate-recommendation.url }}" rel="noreferrer">USPSTF</a>建议，每日补充400–800 mcg folic acid，至少提前1个月开始并持续至孕早期。不是按公斤计算，也不是上表的DFE数值；<a href="{{ plan.sources.folate-label.url }}" rel="noreferrer">成分表</a>里“667 mcg DFE (400 mcg folic acid)”应核对括号内400。高风险方案另由产科确定。</p>
+      </details>
+      <h3>已有按公斤方案？在这里核算总日量</h3>
+      <p id="supplement-help">仅在医护已明确给出“每公斤、每天”的系数时填写。这里不提供默认系数，也不判断方案适用性。请按其指定选用当前、孕前或其他体重；上方每日健康记录不会自动替换这里的体重。</p>
+      <form id="nest-supplement-form" class="nest__log-grid" aria-describedby="supplement-help">
+        <label class="nest__field">女方换算体重（kg）<input id="supplement-female-weight" type="number" min="0" step="any" inputmode="decimal"></label>
+        <label class="nest__field">男方换算体重（kg）<input id="supplement-male-weight" type="number" min="0" step="any" inputmode="decimal"></label>
+        <label class="nest__field">本次换算对象<select id="supplement-person"><option value="female">女方</option><option value="male">男方</option></select></label>
+        <label class="nest__field">补充物名称<input id="supplement-substance" type="text" maxlength="80" autocomplete="off" placeholder="按已确认方案填写"></label>
+        <label class="nest__field">每公斤每日系数<input id="supplement-coefficient" type="number" min="0" step="any" inputmode="decimal"></label>
+        <label class="nest__field">系数单位<select id="supplement-unit"><option value="mg">mg／kg／日（毫克）</option><option value="mcg">mcg／kg／日（微克）</option><option value="g">g／kg／日（克）</option></select></label>
+        <label class="nest__check-filter nest__field--wide"><input id="supplement-confirmed" type="checkbox"> 我已与医护确认此对象、补充物、所用体重及每公斤每日系数</label>
+        <output id="supplement-result" class="nest__dose-result nest__field--wide" aria-live="polite">未填写确认的方案时，仅保存体重，不计算用量。</output>
+        <button class="nest__button nest__button--primary" type="submit">保存体重与换算设置</button>
+        <span class="nest__save-status" id="nest-supplement-status" role="status" aria-live="polite"></span>
+      </form>
+      <p class="nest__small">结果仅是所填系数的乘法，不是服用建议；新体重是否仍在原方案适用范围内需核对。更换对象、补充物或单位后重新填写系数并确认。这里只算总日量，不拆成每次量、片数或疗程，不供婴幼儿使用。铁须核对元素铁；IU和DFE不作为通用质量单位；蛋白质总量也不等于蛋白粉重量。</p>
     </section>
 
     <section class="nest__local" aria-labelledby="local-title">
