@@ -48,7 +48,7 @@
       <p class="nest__small">预产期按 40 周倒推估算；孕周和清单日期只是提醒，请以产科医生确认的日期为准。</p>
     </section>
 
-    <nav class="nest__quick-nav" aria-label="手记导航"><a href="#timeline-title">行动清单</a><a href="#log-title">每日记录</a><a href="#local-title">芝加哥资源</a><a href="#backup-title">加密备份</a></nav>
+    <nav class="nest__quick-nav" aria-label="手记导航"><a href="#timeline-title">行动清单</a><a href="#log-title">健康记录</a><a href="#local-title">芝加哥资源</a><a href="#backup-title">加密备份</a></nav>
     <aside class="nest__safety" aria-labelledby="safety-title">
       <details><summary id="safety-title">需要立即求助的情况</summary>
         <ul>{% for item in plan.safety %}<li><strong>{{ item.title }}</strong>：{{ item.detail }} <a href="{{ item.url }}" rel="noreferrer">查看来源</a></li>{% endfor %}</ul>
@@ -65,8 +65,9 @@
     </section>
 
     <section class="nest__log" aria-labelledby="log-title">
-      <div class="nest__section-head"><div><p class="nest__eyebrow">只做记录，不做诊断</p><h2 id="log-title">每日量测</h2></div></div>
-      <p>同一天再次保存会更新当天记录；数值字段都可留空。体重和血压记孕产妇，体温记宝宝。其他测量对象写在备注里，按医护人员要求记录。</p>
+      <div class="nest__section-head"><div><p class="nest__eyebrow">按医护安排填写，不做诊断</p><h2 id="log-title">按需健康记录</h2></div></div>
+      <p>备孕不要求每天测血压或体温；先确认家测需求，再按备孕采购项准备设备。数值都可留空，同一天再次保存会更新当天记录。</p>
+      <p>体重和血压记女方，宝宝体温、喂养和尿布在出生后使用。男方结果、同日多次血压的时间与原始读数可写备注；监测频率和联络阈值请医疗团队确认。</p>
       <form id="nest-log-form" class="nest__log-grid">
         <label class="nest__field">日期<input type="date" id="log-date" required></label>
         <label class="nest__field">孕产妇体重（kg）<input inputmode="decimal" type="number" min="0" step="0.1" id="log-weight"></label>

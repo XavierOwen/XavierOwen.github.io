@@ -82,13 +82,13 @@ function isCurrentSection(section, today) {
   return false;
 }
 function resolvedDate(section, task, today) {
+  if (section.anchor === "preconception") return "备孕准备 · 按计划安排";
   const start = Number.isInteger(task.start) ? task.start : section.start;
   const end = Number.isInteger(task.end) ? task.end : section.end;
   let origin = "";
   if (section.anchor === "now") origin = today;
-  if (section.anchor === "pregnancy" || section.anchor === "preconception") origin = pregnancyStart(state.profile);
+  if (section.anchor === "pregnancy") origin = pregnancyStart(state.profile);
   if (section.anchor === "birth") origin = state.profile.birthDate;
-  if (!origin && section.anchor === "preconception" && state.profile.stage === "preconception") return "当前阶段";
   if (!origin || !Number.isFinite(start) || !Number.isFinite(end)) return "日期待填写";
   const from = addDays(origin, start);
   const to = addDays(origin, end);
@@ -116,7 +116,7 @@ function renderTasks() {
       const seasonalNote = rsvWindow ? `<p class="nest__season-note">${rsvWindow.from ? `按填写日期估算，孕周与9–1月重叠的咨询窗口：${rsvWindow.from} — ${rsvWindow.to}。` : "按填写日期估算，孕32–36周6天不在9–1月季节窗口内。请与团队讨论宝宝出生后的预防方案，不自行安排母体RSV接种。"}</p>` : "";
       const sources = (task.sources || []).map(id => plan.sources?.[id] ? `<a href="${escapeHtml(plan.sources[id].url)}" rel="noreferrer">${escapeHtml(plan.sources[id].title)}</a>` : "").filter(Boolean).join(" · ");
       tasks.push(`<article class="nest__task${saved.done ? " nest__task--done" : ""}" data-task="${escapeHtml(task.id)}">
-        <div class="nest__task-top"><input class="nest__task-check" type="checkbox" data-task-done="${escapeHtml(task.id)}" aria-label="完成：${escapeHtml(task.title)}"${saved.done ? " checked" : ""}><div><h4 class="nest__task-title">${escapeHtml(task.title)}</h4><p class="nest__task-meta"><span class="nest__task-date" data-past="${past}">${escapeHtml(due)}${past ? ` · ${pastLabel}` : ""}</span><span>${escapeHtml(task.when)}</span>${sources ? `<span>${sources}</span>` : ""}</p></div><span class="nest__tag">${escapeHtml(task.category)}</span></div>
+        <div class="nest__task-top"><input class="nest__task-check" type="checkbox" data-task-done="${escapeHtml(task.id)}" aria-label="完成：${escapeHtml(task.title)}"${saved.done ? " checked" : ""}><div><h4 class="nest__task-title">${escapeHtml(task.title)}</h4><p class="nest__task-meta"><span class="nest__task-date" data-past="${past}">${escapeHtml(due)}${past ? ` · ${pastLabel}` : ""}</span><span>${escapeHtml(task.when)}</span>${sources ? `<span>${sources}</span>` : ""}</p></div><span class="nest__tag">${escapeHtml([task.who, task.category].filter(Boolean).join(" · "))}</span></div>
         ${detail ? `<ul class="nest__task-detail">${detail}</ul>` : ""}${seasonalNote}
         ${task.control === "progress" ? `<label class="nest__progress"><span>准备进度（非医学数值）</span><input data-task-progress="${escapeHtml(task.id)}" type="range" min="0" max="100" step="1" value="${saved.progress}" aria-label="${escapeHtml(task.title)}准备进度"><output>${saved.progress}%</output></label>` : ""}
         <details class="nest__task-note"><summary>添加家庭备注</summary><textarea data-task-note="${escapeHtml(task.id)}" maxlength="2000" aria-label="${escapeHtml(task.title)}家庭备注">${escapeHtml(saved.note)}</textarea></details>

@@ -3,32 +3,38 @@ intro: 从备孕到出生后六周，把就医、生活准备和家人分工放�
 sections:
   - id: before
     number: '00'
-    title: 准备迎接
-    subtitle: 备孕 · 也适合刚发现怀孕时补上
+    title: 一起起步
+    subtitle: 从零准备 · 先谈安排、查保险、整理就诊资料
     anchor: preconception
     start: -90
     end: 0
     tasks:
-      - id: folic-acid
-        title: 核对叶酸与现有补充剂
-        category: 饮食
-        when: 备孕开始，怀孕后继续与产科核对
-        control: check
+      - id: shared-plan
+        title: 商量开始尝试的时间、分工和预算
+        who: 共同
+        category: 协作
+        when: 现在即可；先有大致安排，不必先填预产期
+        control: progress
         detail:
-          - 一般备孕人群每天补充400微克（mcg）叶酸。查看复合维生素标签，避免把几种产品重复叠加；高风险情况由医生决定剂量。
-          - 拍下所有维生素、草药和药物的标签，带去首诊。铁、碘、胆碱、维生素D的饮食参考量不等于每个人都要另买同剂量补剂。
-        sources: [folate, nutrition]
+          - 谈清什么时候愿意开始尝试、谁预约和陪诊、怎样分担做饭和家务；预留看诊、交通、产后帮手与休假期间的预算。
+          - 盘点已有物品和住房空间。现阶段优先准备女方叶酸、就诊资料，以及确有需要的检测用品；婴儿床、汽车座椅、奶粉和大量尿布留在后续采购阶段。
+          - 下方有女方、男方和采购分组；也可把“任务类别”选为“采购”，集中查看现在能买、按需买和暂缓买的物品。
+        sources: [prepregnancy, tuoba]
       - id: preconception-visit
-        title: 约一次孕前咨询，整理病史与用药
+        title: 分别整理病史、用药和疫苗记录，安排孕前咨询
+        who: 共同
         category: 就医
-        when: 备孕时；已怀孕则直接联系产科
+        when: 准备开始时；尽量在尝试怀孕前留出就诊和调整时间
         control: check
         detail:
-          - 带上既往病史、月经情况、家族史、药物和疫苗记录，问清慢性病管理、遗传筛查及何时需要进一步评估。
-          - 不自行停用处方药。戒烟、避免酒精和二手烟；让医生一起核对工作、家中和日常接触的风险。
-        sources: [prepregnancy]
+          - 女方可约 OB-GYN（妇产科）或家庭医生，说明希望做 preconception visit（孕前咨询）；男方可先向 PCP（家庭／全科医生）说明生育计划，按病史决定是否另转专科。
+          - 各自准备慢性病、手术与生殖相关病史、家族遗传病史、既往检查结果和疫苗记录；女方再带月经和既往孕产资料。没有记录的写“不清楚”，不必先买一套检查套餐。
+          - 所有处方药、非处方药、草药、维生素和健身补剂都拍下标签；写清每天用多少。请原开药医生参与调整，不自行停药。
+          - 就诊时问清接下来需要哪些检查、是否空腹、保险和费用、何时看结果，以及是否需要在开始尝试前完成治疗或接种。
+        sources: [prepregnancy-counseling, male-health]
       - id: insurance-first
         title: 查保险，问清产检与分娩分别在哪里
+        who: 共同
         category: 协作
         when: 现在就可以打电话
         control: progress
@@ -37,15 +43,177 @@ sections:
           - 问清 deductible（先自付的额度）、coinsurance（按比例分担）、out-of-pocket maximum（年度自付上限）及跨保险年度时如何计算。报价不能当作最终账单。
           - 若用学校保险，从 IIT 当期计划入口查；同时看看是否符合 Illinois Moms & Babies 或 WIC 的申请条件。
         sources: [iit, moms, wic]
-      - id: shared-plan
-        title: 把分工和预算先谈一遍
-        category: 协作
-        when: 备孕至孕早期
-        control: progress
+      - id: preconception-screening
+        title: 一起讨论遗传携带筛查与到期的感染筛查
+        who: 共同
+        category: 就医
+        when: 孕前咨询时讨论，尽量在怀孕前了解选择
+        control: check
         detail:
-          - 确定谁预约、陪诊、做饭、处理保险、联系家人；预留交通、产后帮手和无法工作时的预算。
-          - 先列已有物品、住房空间和可借用的普通用品。大件等尺寸、使用方式和退换政策确定后再买。
-        sources: [tuoba]
+          - carrier screening（遗传病携带者筛查）检查是否携带可能传给孩子的遗传变异；携带不等于本人患病。没有家族史也可以讨论，先查既往结果，选择检测范围。
+          - 如果一方查出有关变异，再讨论伴侣检测与遗传咨询。它不同于怀孕后的胎儿染色体筛查，也不同于男方不育病因的遗传检查。
+          - 把双方 HIV、乙肝／丙肝等既往结果交给医生，核对成人常规筛查是否完成；梅毒、衣原体／淋病等按年龄、症状和暴露风险选择，不把“全套性病检查”当作每对新手都必须购买的套餐。
+        sources: [prepregnancy-counseling, carrier, sti-testing, hepatitis-b-screening]
+      - id: when-to-seek-fertility-care
+        title: 了解尝试节奏，以及何时双方一起就诊
+        who: 共同
+        category: 协作
+        when: 开始尝试前了解；有明确风险可提前就诊
+        control: check
+        detail:
+          - 有规律的无保护性生活比依赖一个“精确排卵日”更实用；易孕期通常是排卵当天和此前5天，期间每1–2天同房较有利，每周2–3次的机会也接近。无需长期禁欲来“攒精”。
+          - 女方小于35岁，规律尝试12个月未孕；35–40岁，6个月未孕时咨询评估。超过40岁可开始时就咨询，讨论尽快评估。
+          - 月经明显不规则、已知输卵管或生殖问题、男方相关风险或性功能问题时，不等上述期限。需要评估时男女同步，不让女方查完一整轮才查男方。
+        sources: [natural-fertility, fertility-evaluation]
+  - id: before-female
+    number: '00A'
+    title: 女方准备
+    subtitle: 叶酸、其他营养、孕前检查与接种
+    anchor: preconception
+    start: -90
+    end: 0
+    tasks:
+      - id: folic-acid
+        title: 买好并核对女方叶酸，安排每天补充
+        who: 女方
+        category: 采购
+        when: 现在准备；至少在预计受孕前1个月开始
+        control: check
+        detail:
+          - 一般风险女方，CDC 建议每日400微克（mcg＝μg，0.4毫克）folic acid；USPSTF 推荐范围为每日400–800微克。单方叶酸或含足量叶酸的 prenatal（孕前／孕期复合维生素），选一种日常来源，先买一瓶即可。
+          - 看 Supplement Facts（成分表）的每份含量和每份几粒。若写“667 mcg DFE (400 mcg folic acid)”，实际这一份含400微克 folic acid；DFE 是膳食叶酸当量，不是要另加的剂量。
+          - 已吃复合维生素时先核对已有叶酸，不自动再加一瓶单方。若标签只写 methylfolate／5-MTHF，不因“活性”“天然”字样就认为预防神经管缺陷的证据更好。
+          - 不等验孕阳性才开始；怀孕后继续与产科核对。既往有神经管缺陷受累妊娠、有关家族史或服影响叶酸的药物者，先确认个人方案，不自行买毫克级高剂量或多吃几份复合维生素。
+        sources: [folate, folate-intake, folate-recommendation, folate-label]
+      - id: female-nutrient-review
+        title: 查饮食缺口，再决定是否另买其他补充剂
+        who: 女方
+        category: 饮食
+        when: 备孕开始时；单方补剂按饮食、病史或化验决定
+        control: check
+        detail:
+          - 纯素或很少吃动物性食品者，现在就安排可靠的 B12 强化食品／补充剂来源，并向医生或营养师核对；B12 缺乏的治疗剂量另定。
+          - 经量多、贫血史、素食或饮食受限时，问是否需要血常规 CBC、铁蛋白等评估；已有含铁 prenatal 时先查含量，不再自行叠加单方铁。
+          - 少吃奶蛋鱼、不用碘盐或有甲状腺病时，核对饮食及产品中的碘。计划怀孕时可与医生／药师讨论含150微克碘的产品；有甲状腺病先问医生，不靠海藻高剂量产品补碘。
+          - 查看强化奶／植物奶、饮食和产品中的维生素D，以及蛋、豆类等胆碱来源。把铁、碘、维D、B12、胆碱的“总摄入参考量”和“额外药片剂量”分开；不因住在芝加哥就自行买高剂量维D。
+        sources: [nutrition, b12, iron, iodine, vitamin-d, choline]
+      - id: female-preconception-checks
+        title: 和医生逐项确定女方要查什么
+        who: 女方
+        category: 就医
+        when: 孕前咨询时；先带记录，再确定化验单
+        control: check
+        detail:
+          - 基础评估包括血压、身高体重、月经与既往孕产情况、用药和慢性病。可讨论血常规 CBC 与血红蛋白病评估；经量多或贫血史等情况尤其要提出，是否加铁蛋白由医生决定。
+          - 糖代谢检查（如糖化血红蛋白 HbA1c）和甲状腺检查（如促甲状腺激素 TSH）看病史、症状与风险；有糖尿病或甲状腺病者应先安排管理，不自行订“甲功＋胰岛素全套”。
+          - 查上次 Pap／HPV（宫颈细胞学／人乳头瘤病毒）筛查的日期与结果，到期或原有异常需随访时安排；备孕本身不要求把未到期的筛查重做一次。感染与遗传携带筛查见“一起起步”。
+          - 刚开始尝试且没有不孕证据时，不默认购买 AMH（卵巢储备相关指标）“卵巢年龄”或整套 TORCH（若干孕期相关感染的组合检查）。AMH 不能单独预测自然受孕能力；请医生说明每项检查解决什么问题。
+        sources: [prepregnancy-counseling, carrier-clinical, cervical-screening, ovarian-reserve, cmv]
+      - id: female-vaccine-review
+        title: 核对风疹、水痘等疫苗，留出接种后的等待时间
+        who: 女方
+        category: 就医
+        when: 准备尝试前尽早核对，缺记录时问医生
+        control: check
+        detail:
+          - 带 MMR（麻疹、腮腺炎、风疹）和水痘等疫苗记录，让医生判断免疫证据、是否需查抗体或补种，不必自己把所有抗体都重验。
+          - MMR 和水痘属于活疫苗，孕期不接种。若需补种，女方 MMR 后避免怀孕28天，水痘疫苗每针后避免怀孕1个月；如需多针，留出整个接种与等待时间。
+          - 其他疫苗按年龄、病史和当季建议核对；上述等待期不套用于所有疫苗。男方是否需接种按成人规则确认，不照搬女方的孕期规则。
+        sources: [prepregnancy-counseling, pregnancy-vaccine-guidance, adult-vaccines]
+  - id: before-male
+    number: '00B'
+    title: 男方准备
+    subtitle: 健康和用药、补充剂取舍、何时需要生育检查
+    anchor: preconception
+    start: -90
+    end: 0
+    tasks:
+      - id: male-health-review
+        title: 核对男方健康、用药、疫苗和生殖相关病史
+        who: 男方
+        category: 就医
+        when: 开始准备时；有相关风险则提前咨询
+        control: check
+        detail:
+          - 向家庭医生说明生育计划，复核慢性病、血压体重、既往手术、隐睾或生殖系统病史、家族史，以及勃起／射精问题；有隐睾、化疗或既往生育问题等风险时主动提出，不必等满一年。
+          - 把睾酮 TRT、健身用合成代谢类固醇，以及全部处方药、草药和补充剂列出来。外源性睾酮可能抑制生精，使用者应尽快联系开药医生讨论，不自行停处方或加生育药。
+          - 戒烟、避免娱乐性药物，保持均衡饮食和适合自己的运动；核对成人疫苗与性健康筛查记录。男方不需要因为伴侣每次怀孕就重打一针 Tdap（破伤风、白喉、百日咳）。
+        sources: [male-health, male-infertility, testosterone, adult-vaccines, sti-screening]
+      - id: male-supplement-review
+        title: 男方先改善饮食，不默认购买“养精补剂套餐”
+        who: 男方
+        category: 饮食
+        when: 现在了解；有饮食限制或已知缺乏时个别处理
+        control: check
+        detail:
+          - 男方不照抄女方用于预防胎儿神经管缺陷的叶酸方案；目前没有适用于所有健康男方的叶酸、锌、硒、CoQ10或抗氧化复合补剂的通用生育剂量。
+          - 对男性不育，AUA／ASRM 指南也认为这类补充剂的临床用途存疑，尚不足以推荐具体制剂。不要把试验剂量、成人营养总量或广告上的“推荐量”当作男方额外服药的方案。
+          - 均衡饮食为基础；长期纯素、饮食明显受限、吸收问题或已知缺乏时，向医生／营养师讨论 B12 等针对性补充。纠正缺乏与人人购买生育补剂是两回事。
+        sources: [male-infertility, male-supplement-trial, infertility-supplements, b12]
+      - id: male-testing-plan
+        title: 分清男方常规健康复核与精液、激素检查
+        who: 男方
+        category: 就医
+        when: 按病史、症状或双方不孕评估安排
+        control: check
+        detail:
+          - 刚起步、没有已知生殖风险时，先做一般健康与用药复核；不把精液、性激素全套、阴囊超声、精子DNA碎片和染色体检查打包成每位男方的孕前必做项目。
+          - 有明确风险或进入不孕评估时，病史加精液分析是常用起点。按实验室说明准备和采样；一次结果不能单独判断“能不能生”，异常时通常需要复查和专科解释。
+          - 是否查与生精有关的 FSH／睾酮等激素、超声或遗传项目，由症状、体检和精液结果决定。这个判断不取代双方另行讨论的遗传病携带者筛查。
+        sources: [male-infertility, fertility-evaluation]
+  - id: before-shopping
+    number: '00C'
+    title: 备孕就能准备的东西
+    subtitle: 叶酸见女方采购项；其余按用途和需要少量准备
+    anchor: preconception
+    start: -90
+    end: 0
+    tasks:
+      - id: buy-blood-pressure-monitor
+        title: 血压计：先确认是否需要家测，再选购
+        who: 共同
+        category: 采购
+        when: 按需购买 · 高血压史、读数异常或医生建议家庭监测时
+        control: check
+        detail:
+          - 孕前就诊可以先测血压；开始备孕不等于必须买血压计，也不等于每天在家测。若医生建议家测，先准备设备，再按其要求记录；男女都可因个人病史需要家测。
+          - 选经过准确性验证的自动上臂式，测量上臂周长后按厂商范围选袖带；孕期使用还需确认在孕妇人群中验证。可用 AHA 链接的 ValidateBP 查设备，再向医生确认适用性。
+          - 下次带设备去诊所，对照读数、确认袖带和操作；购买前可问诊所或保险是否有供给、借用或给付安排，不预设一定覆盖。
+          - 使用时测前30分钟避免吸烟、咖啡因和运动，排空膀胱并静坐至少5分钟；裸露上臂、背部和手臂有支撑、双脚平放，手臂与心脏同高，不说话。每次两次、间隔1分钟，按医生要求记录，联络阈值也请团队给出。
+        sources: [home-bp, validated-bp, bp]
+      - id: home-weight-scale
+        title: 体重秤和普通体温计：先检查家里已有的
+        who: 共同
+        category: 采购
+        when: 可选准备 · 能复用就先不添置
+        control: check
+        detail:
+          - 身高体重可以先在诊所测。家里已有能正常使用的普通体重秤就复用；没有且希望在家记体重时，再买普通款，不必为备孕升级智能体脂或“孕妇专用”设备。
+          - 家用体重记录尽量用同一台秤、相近时段；身高体重及个人健康目标在孕前咨询时讨论，不靠体脂数字自行诊断。
+          - 普通体温计可作日常生病时测温之用，不要求从零开始就每天测基础体温。宝宝的测温方式与用品在孕晚期再按儿科建议准备。
+        sources: [prepregnancy-counseling, natural-fertility, fever]
+      - id: buy-pregnancy-tests
+        title: 验孕试剂：开始尝试时备少量
+        who: 女方
+        category: 采购
+        when: 按需购买 · 开始尝试前后，不用囤大量
+        control: check
+        detail:
+          - 先买少量未过期、说明书清楚的家用尿妊娠试剂，记住检测和读数时间；不把排卵试纸当验孕试纸用。
+          - 月经该来却没来时按产品说明检测；晨尿通常更有利于检出。过早阴性不能排除怀孕，仍怀疑时可隔几天复测；持续不来月经或结果不明时联系医生。
+          - 阳性后联系产科安排照护；明显腹痛、出血、晕厥等症状需要及时评估，不等重复检测或清单提醒。
+        sources: [pregnancy-test, warnings]
+      - id: buy-ovulation-tests
+        title: 排卵试纸：有需要再买，不是必需品
+        who: 共同
+        category: 采购
+        when: 可选购买 · 希望辅助安排同房、且愿意按说明检测时
+        control: check
+        detail:
+          - 检测女方尿液的 LH（促黄体生成素）高峰，帮助估计排卵时机。开始测的日期、取尿时段和判读按该产品说明，不通用套用验孕的晨尿规则。
+          - 阳性提示 LH 上升，不证明一定已排卵或一定会怀孕；不能用来避孕。月经明显不规则时可先问医生，日历App也不能精确确认每个人的排卵日。
+          - 如果测试让人焦虑，可先保持规律同房，不同时囤基础体温设备、激素监测仪和多款试纸。婴儿床、座椅、奶粉和尿布依后面的孕期时间线再准备。
+        sources: [ovulation-test, natural-fertility]
   - id: early
     number: '01'
     title: 先把照护接上
@@ -78,7 +246,7 @@ sections:
         when: 已怀孕也要查看标签，并带去首诊
         control: check
         detail:
-          - 若备孕清单还未做，从现在核对含叶酸的补充剂。一般建议每天400微克叶酸，高风险情况和个人产品用量请产科确认。
+          - 若备孕清单还未做，从现在核对并备好女方含叶酸的补充剂，见备孕区“买好并核对女方叶酸”。不要因已怀孕就把单方和复合产品自动叠加，高风险情况和个人产品用量请产科确认。
           - 不按孕月表自行叠加铁、碘、维生素D或草药；把实际饮食与产品标签一起给医生看。
         sources: [folate, nutrition]
       - id: food-routine
@@ -102,15 +270,16 @@ sections:
           - Tdap 和母体 RSV 有各自孕周窗口，已单独放在后面的时间线；不要把这项勾选当成所有疫苗均已完成。
         sources: [vaccines, covid]
       - id: home-measure-plan
-        title: 问清哪些在家记录有用
+        title: 先确认家测需求、备好设备，再记录
         category: 家中
         when: 首诊时确认
         control: check
         detail:
           - 体重可用同一台秤、相近时段记录，目标由产科根据孕前情况确定。是否需要在家测血压、血糖，由团队判断。
-          - 若需测血压，确认上臂式设备、适合的袖带和妊娠适用性；问清报告阈值。静坐5分钟、双脚平放、手臂与心脏同高、裸臂测量，不说话。
+          - 若需测血压，可在备孕时就按需要购买或借用，不等孕晚期；采购要求见备孕区“血压计：先确认是否需要家测，再选购”。已有设备先确认袖带、准确性验证和妊娠适用性，再向产科问监测频率和联络阈值。
+          - 测前静坐至少5分钟，背部和手臂有支撑、双脚平放、裸露上臂，手臂与心脏同高，不说话。按团队方法保留读数；本页备注可写当天多次测量的时间与原始结果。
           - 手记只记原始数值与症状，不根据单次读数判断正常，也不自动调整药量。
-        sources: [bp]
+        sources: [bp, home-bp]
   - id: screening
     number: '02'
     title: 把筛查选择问明白
@@ -273,7 +442,7 @@ sections:
         control: progress
         detail:
           - 先备适量新生儿/下一号尿布、温和清洁用品、换洗衣物、喂养所需用品与数字体温计；按住房条件安排洗手、换尿布和夜间照明的位置。
-          - 问儿科如何测温。血压计只在产科建议时选购；不把家用胎心仪、婴儿枕头或睡眠定位器列为必需品。
+          - 问儿科如何测温。体重秤、血压计若已在备孕阶段按需要准备，可先核对继续使用；这时重点备宝宝测温用品，不把家用胎心仪、婴儿枕头或睡眠定位器列为必需品。
           - 检查烟雾和一氧化碳报警器。秋冬保证供暖与空气流通，不给宝宝过度包裹。
         sources: [fever, sleep, co]
   - id: ready
@@ -497,6 +666,126 @@ sections:
           - 调整轮班和求助安排，允许计划随实际喂养、恢复和家庭体力改变。0–12月经验文章放在参考资料，发育疑问交给儿科讨论。
         sources: [tummy, sleep, tuoba]
 sources:
+  prepregnancy-counseling:
+    title: ACOG／ASRM · 孕前咨询
+    url: https://integration.asrm.org/globalassets/_asrm/practice-guidance/practice-guidelines/pdf/prepregnancy_counseling.pdf
+    kind: 官方
+  folate-intake:
+    title: CDC · 叶酸来源与摄入
+    url: https://www.cdc.gov/folic-acid/about/intake-and-sources.html
+    kind: 官方
+  folate-recommendation:
+    title: USPSTF · 备孕叶酸剂量与时间
+    url: https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/folic-acid-for-the-prevention-of-neural-tube-defects-preventive-medication
+    kind: 官方
+  folate-label:
+    title: FDA · 看懂叶酸标签与DFE
+    url: https://www.fda.gov/food/nutrition-facts-label/folate-and-folic-acid-nutrition-and-supplement-facts-labels
+    kind: 官方
+  b12:
+    title: NIH ODS · 维生素B12
+    url: https://ods.od.nih.gov/factsheets/VitaminB12-Consumer/
+    kind: 官方
+  iron:
+    title: NIH ODS · 铁
+    url: https://ods.od.nih.gov/factsheets/Iron-Consumer/
+    kind: 官方
+  iodine:
+    title: NIH ODS · 碘
+    url: https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/
+    kind: 官方
+  vitamin-d:
+    title: NIH ODS · 维生素D
+    url: https://ods.od.nih.gov/factsheets/VitaminD-Consumer/
+    kind: 官方
+  choline:
+    title: NIH ODS · 胆碱
+    url: https://ods.od.nih.gov/factsheets/Choline-Consumer/
+    kind: 官方
+  carrier:
+    title: ACOG · 遗传携带筛查选择
+    url: https://www.acog.org/womens-health/faqs/carrier-screening
+    kind: 官方
+  carrier-clinical:
+    title: ACOG · 血红蛋白病与携带筛查
+    url: https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2017/03/carrier-screening-for-genetic-conditions
+    kind: 官方
+  cervical-screening:
+    title: NCI · 宫颈筛查
+    url: https://www.cancer.gov/types/cervical/screening
+    kind: 官方
+  ovarian-reserve:
+    title: ASRM · 卵巢储备检查的用途与局限
+    url: https://integration.asrm.org/globalassets/_asrm/practice-guidance/practice-guidelines/pdf/testing_and_interpreting_measures_of_ovarian_reserve.pdf
+    kind: 官方
+  cmv:
+    title: CDC · CMV筛查的局限
+    url: https://www.cdc.gov/cytomegalovirus/hcp/clinical-overview/index.html
+    kind: 官方
+  pregnancy-vaccine-guidance:
+    title: CDC · MMR与水痘等疫苗的孕前安排
+    url: https://www.cdc.gov/vaccines-pregnancy/hcp/vaccination-guidelines/
+    kind: 官方
+  adult-vaccines:
+    title: CDC · 成人疫苗核对入口
+    url: https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-age.html
+    kind: 官方
+  male-health:
+    title: Utah DHHS · 男性孕前健康
+    url: https://mihp.utah.gov/preconception-health-for-men
+    kind: 官方
+  male-infertility:
+    title: AUA／ASRM · 男性生育评估与补充剂证据（2024修订）
+    url: https://www.auanet.org/documents/Guidelines/PDF/2024%20Guidelines/Male%20Infertility%20Unabridged%20Final.pdf
+    kind: 官方
+  testosterone:
+    title: MedlinePlus · 睾酮用药与生育
+    url: https://www.medlineplus.gov/druginfo/meds/a619028.html
+    kind: 官方
+  male-supplement-trial:
+    title: NICHD · 男性叶酸与锌随机试验
+    url: https://www.nichd.nih.gov/about/org/diphr/officebranch/eb/folic-acid-zinc
+    kind: 官方
+  infertility-supplements:
+    title: FDA · 未经证实的不孕补充剂
+    url: https://www.fda.gov/consumers/health-fraud-scams/unproven-infertility-supplements
+    kind: 官方
+  sti-testing:
+    title: CDC · 性传播感染筛查适用条件
+    url: https://www.cdc.gov/sti/testing/index.html
+    kind: 官方
+  sti-screening:
+    title: CDC · 分人群的感染筛查建议
+    url: https://www.cdc.gov/std/treatment-guidelines/screening-recommendations.htm
+    kind: 官方
+  hepatitis-b-screening:
+    title: CDC · 成人乙肝筛查
+    url: https://www.cdc.gov/mmwr/volumes/72/rr/rr7201a1.htm
+    kind: 官方
+  natural-fertility:
+    title: ASRM · 自然受孕、同房频率与排卵试纸
+    url: https://www.asrm.org/practice-guidance/practice-committee-documents/optimizing-natural-fertility-a-committee-opinion-2021/
+    kind: 官方
+  fertility-evaluation:
+    title: ASRM · 何时进行双方生育评估
+    url: https://integration.asrm.org/globalassets/_asrm/practice-guidance/practice-guidelines/pdf/diagnostic_evaluation_of_the_infertile_female.pdf
+    kind: 官方
+  home-bp:
+    title: AHA · 家用血压计选购与使用
+    url: https://www.heart.org/en/health-topics/high-blood-pressure/understanding-blood-pressure-readings/monitoring-your-blood-pressure-at-home
+    kind: 官方
+  validated-bp:
+    title: ValidateBP · 设备准确性验证查询
+    url: https://www.validatebp.org/
+    kind: 官方
+  pregnancy-test:
+    title: FDA · 家用验孕试剂
+    url: https://www.fda.gov/medical-devices/home-use-tests/pregnancy
+    kind: 官方
+  ovulation-test:
+    title: FDA · 尿液排卵试剂
+    url: https://www.fda.gov/medical-devices/home-use-tests/ovulation-urine-test
+    kind: 官方
   folate:
     title: CDC · 叶酸
     url: https://www.cdc.gov/folic-acid/about/safety.html
