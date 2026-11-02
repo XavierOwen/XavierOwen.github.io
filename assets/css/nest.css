@@ -59,6 +59,8 @@ body.nest-page { margin: 0; background: var(--nest-paper); color: var(--nest-ink
 .nest__local { padding: 1rem 1.2rem; background: var(--nest-mist); }
 .nest__local h2 { font-size: 1.15rem; }
 .nest__current-hint { margin: .6rem 0 0; color: #4b514b; font-size: .88rem; }
+.nest__shopping-entry { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; padding: 1rem; background: var(--nest-mist); }
+.nest__shopping-entry p { flex: 1 1 20rem; max-width: 65ch; margin: 0; color: #29352c; font-size: .9rem; }
 .nest__filters { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; align-items: end; padding: .85rem 0 1rem; border-bottom: 1px solid var(--nest-line); }
 .nest__filters .nest__field { width: min(100%, 13rem); }
 .nest__check-filter { display: flex; gap: .45rem; align-items: center; min-height: 2.65rem; font-size: .9rem; }

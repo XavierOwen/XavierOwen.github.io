@@ -123,7 +123,7 @@ function renderTasks() {
         <details class="nest__task-note"><summary>添加家庭备注</summary><textarea data-task-note="${escapeHtml(task.id)}" maxlength="2000" aria-label="${escapeHtml(task.title)}家庭备注">${escapeHtml(saved.note)}</textarea></details>
       </article>`);
     }
-    if (tasks.length) output.push(`<details class="nest__period" data-current="${isCurrentSection(section, today)}"${isCurrentSection(section, today) ? " open" : ""}><summary><span class="nest__period-number">${escapeHtml(section.number)}</span><h3>${escapeHtml(section.title)}</h3><span class="nest__period-subtitle">${escapeHtml(section.subtitle)}</span></summary><div class="nest__period-body">${tasks.join("")}</div></details>`);
+    if (tasks.length) output.push(`<details class="nest__period" data-current="${isCurrentSection(section, today)}"${category === "采购" || isCurrentSection(section, today) ? " open" : ""}><summary><span class="nest__period-number">${escapeHtml(section.number)}</span><h3>${escapeHtml(section.title)}</h3><span class="nest__period-subtitle">${escapeHtml(section.subtitle)}</span></summary><div class="nest__period-body">${tasks.join("")}</div></details>`);
   }
   byId("nest-tasks").innerHTML = output.join("") || `<p class="nest__empty">当前筛选下没有清单项目。</p>`;
 }
@@ -308,6 +308,13 @@ document.querySelectorAll('input[name="nest-date-type"]').forEach(input => input
   if (selected) updateProfile("dateType", selected.value);
 }));
 for (const id of ["nest-phase", "nest-category", "nest-hide-done"]) byId(id).addEventListener("change", renderTasks);
+byId("nest-shopping").addEventListener("click", () => {
+  byId("nest-phase").value = "all";
+  byId("nest-category").value = "采购";
+  byId("nest-hide-done").checked = false;
+  renderTasks();
+  byId("nest-current-hint").textContent = "采购总览：已展开全部阶段。先完成备孕项，孕晚期用品现在先了解；份数是家庭起步建议，可按实际需要调整。已有可用品也可以勾选为已准备。";
+});
 
 byId("nest-tasks").addEventListener("change", event => {
   if (!state || !key || conflicted) return;

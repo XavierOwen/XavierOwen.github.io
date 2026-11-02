@@ -1,4 +1,4 @@
-reviewed: '2026-10-29'
+reviewed: '2026-11-02'
 intro: 从备孕到出生后六周，把就医、生活准备和家人分工放在同一条时间线上。孕周由末次月经第一天起算；用预产期时倒推280天。推算日期只帮助安排，医院更正的孕周和医嘱优先。
 sections:
   - id: before
@@ -18,7 +18,7 @@ sections:
         detail:
           - 谈清什么时候愿意开始尝试、谁预约和陪诊、怎样分担做饭和家务；预留看诊、交通、产后帮手与休假期间的预算。
           - 盘点已有物品和住房空间。现阶段优先准备女方叶酸、就诊资料，以及确有需要的检测用品；婴儿床、汽车座椅、奶粉和大量尿布留在后续采购阶段。
-          - 下方有女方、男方和采购分组；也可把“任务类别”选为“采购”，集中查看现在能买、按需买和暂缓买的物品。
+          - 点击上方“打开全部采购清单”，可集中看叶酸、验孕棒及以后各阶段要备的用品。现在先看备孕项，其他先了解，不需要一次买齐。
         sources: [prepregnancy, tuoba]
       - id: preconception-visit
         title: 分别整理病史、用药和疫苗记录，安排孕前咨询
@@ -165,11 +165,23 @@ sections:
   - id: before-shopping
     number: '00C'
     title: 备孕就能准备的东西
-    subtitle: 叶酸见女方采购项；其余按用途和需要少量准备
+    subtitle: 先备验孕棒；叶酸见女方采购项，设备按需准备
     anchor: preconception
     start: -90
     end: 0
     tasks:
+      - id: buy-pregnancy-tests
+        title: 验孕棒／早孕试纸：开始尝试前先备1–2次用量
+        who: 女方
+        category: 采购
+        when: 备孕现在可备 · 药店或超市搜 pregnancy test／hCG test
+        control: check
+        detail:
+          - 买什么：任选一种家用尿液验孕棒或早孕试纸即可，先备1–2次检测的量。看有效期、保存条件、每盒几支及说明书；不必为备孕同时买多款或选最贵的电子显示款。
+          - 怎么用：验孕棒可能直接接尿，试纸可能需要干净、干燥的接尿杯，按本款说明准备。事先看懂浸泡或接尿时长、等待几分钟、在什么时限内读结果，过时结果不作判断。
+          - 何时测：月经该来却没来时按说明检测，晨尿通常更有利于检出。过早阴性不能排除怀孕，仍怀疑时可隔几天复测；持续不来月经或结果不明时联系医生。排卵试纸不用于验孕。
+          - 阳性后联系产科安排照护；明显腹痛、出血、晕厥等症状需要及时评估，不等重复检测或清单提醒。
+        sources: [pregnancy-test, warnings]
       - id: buy-blood-pressure-monitor
         title: 血压计：先确认是否需要家测，再选购
         who: 共同
@@ -183,7 +195,7 @@ sections:
           - 使用时测前30分钟避免吸烟、咖啡因和运动，排空膀胱并静坐至少5分钟；裸露上臂、背部和手臂有支撑、双脚平放，手臂与心脏同高，不说话。每次两次、间隔1分钟，按医生要求记录，联络阈值也请团队给出。
         sources: [home-bp, validated-bp, bp]
       - id: home-weight-scale
-        title: 体重秤和普通体温计：先检查家里已有的
+        title: 普通体重秤：没有且想在家记录时再买1台
         who: 共同
         category: 采购
         when: 可选准备 · 能复用就先不添置
@@ -191,19 +203,27 @@ sections:
         detail:
           - 身高体重可以先在诊所测。家里已有能正常使用的普通体重秤就复用；没有且希望在家记体重时，再买普通款，不必为备孕升级智能体脂或“孕妇专用”设备。
           - 家用体重记录尽量用同一台秤、相近时段；身高体重及个人健康目标在孕前咨询时讨论，不靠体脂数字自行诊断。
-          - 普通体温计可作日常生病时测温之用，不要求从零开始就每天测基础体温。宝宝的测温方式与用品在孕晚期再按儿科建议准备。
         sources: [prepregnancy-counseling, natural-fertility, fever]
-      - id: buy-pregnancy-tests
-        title: 验孕试剂：开始尝试时备少量
-        who: 女方
+      - id: adult-thermometer
+        title: 成人数字体温计：家里没有就备1支
+        who: 共同
         category: 采购
-        when: 按需购买 · 开始尝试前后，不用囤大量
+        when: 备孕即可检查家中常备品 · digital thermometer
         control: check
         detail:
-          - 先买少量未过期、说明书清楚的家用尿妊娠试剂，记住检测和读数时间；不把排卵试纸当验孕试纸用。
-          - 月经该来却没来时按产品说明检测；晨尿通常更有利于检出。过早阴性不能排除怀孕，仍怀疑时可隔几天复测；持续不来月经或结果不明时联系医生。
-          - 阳性后联系产科安排照护；明显腹痛、出血、晕厥等症状需要及时评估，不等重复检测或清单提醒。
-        sources: [pregnancy-test, warnings]
+          - 用来在生病时测量并向医生报告体温；先检查已有设备、电池和读数单位℃／℉，能正常用就不用换新。
+          - 不要求每天量基础体温，也不需要为备孕专门升级智能设备。宝宝的测温用品在孕晚期另备，供肛温使用的体温计与口温计分开标记、存放。
+        sources: [temperature]
+      - id: food-thermometer
+        title: 食品温度计：常在家做肉鱼时备1支
+        who: 共同
+        category: 采购
+        when: 备孕或孕早期即可备 · food thermometer，已有就复用
+        control: check
+        detail:
+          - 用来检查食物内部是否达到安全温度；选可清洁、读数清楚的食品探针温度计。烹调时按官方温度表和食品种类操作，不只靠肉色判断熟度。
+          - 同时盘点生熟分开的砧板、刀具、带盖冷藏盒，缺哪件补哪件；无需买一套“孕妇专用餐具”。
+        sources: [food-thermometer, food]
       - id: buy-ovulation-tests
         title: 排卵试纸：有需要再买，不是必需品
         who: 共同
@@ -261,6 +281,16 @@ sections:
           - 若吃鱼，每周合计8–12盎司（约227–340克）低汞鱼，按 FDA 的“最佳选择”选种类；不靠多吃鱼油替代饮食。
           - 连水都留不住、尿量明显减少或持续呕吐时联系诊所，不强行照表进食。
         sources: [food, caffeine, fish, warnings]
+      - id: easy-food-supplies
+        title: 备少量容易吃下的食物和方便取用的水
+        who: 共同
+        category: 采购
+        when: 孕早期有恶心或疲劳时按需添，先试吃再补货
+        control: check
+        detail:
+          - 可先试普通饼干、面包、米饭等自己吃得下的食物，并备能安全加热的日常饭菜。小份购买，记下愿意吃的品种，方便伴侣代买；不用为“孕妇食品”另买整套产品。
+          - 水杯和分餐盒有就复用。孕吐药、维生素B6或草本产品先向产科核对；连水都留不住、尿量减少或持续呕吐时联系诊所，不能只靠换零食处理。
+        sources: [nutrition, warnings]
       - id: season-vaccines
         title: 核对当季疫苗，留好接种记录
         category: 就医
@@ -353,6 +383,16 @@ sections:
           - 量卧室、门宽、储物和车辆空间。优先列平坦独立睡眠空间、合适的后向汽车座椅、喂养及尿布用品。
           - 查看美国召回信息、尺寸、保质/使用年限及退换期。安全座椅若来历、事故史或配件不明，跳过；不用一口气买齐月龄玩具和大包装奶粉。
         sources: [carseat, recalls, sleep]
+      - id: maternity-basics
+        title: 内衣、腰围可调衣裤和防滑鞋：不合身时再添
+        who: 女方
+        category: 采购
+        when: 孕中期起按身体变化准备，现在不必先买全套孕妇装
+        control: check
+        detail:
+          - 先试穿现有衣物；胸围或腰围变化后，少量添舒适内衣、弹性衣裤。需要哺乳内衣时选容易开合、尺码可调的款式，不在孕早期囤固定尺码。
+          - 外出鞋先检查是否合脚、防滑。按芝加哥实际外出季节补保暖层，不因现在是秋冬就给未来出生的宝宝囤冬装。
+        sources: []
       - id: leave-help
         title: 核对休假、课程和产后帮手
         category: 协作
@@ -419,12 +459,13 @@ sections:
           - 家人也可核对自己的常规疫苗状态，但不照搬孕妇的接种安排。
         sources: [vaccines]
       - id: safe-sleep-space
-        title: 搭好独立、平坦的睡眠空间
-        category: 家中
+        title: 婴儿床／摇篮、配套床垫和合身床单
+        category: 采购
         when: 分娩前准备好；出生后每次睡眠都使用
         control: progress
         detail:
           - 用符合现行安全标准的婴儿床或摇篮，坚实平坦床垫配合身床单。每次睡觉都仰卧，与照护者同室、不同床。
+          - 先准备1处睡眠空间即可；床垫按厂商配套要求选择，合身床单可先备2–3条轮换。先量家里摆放位置、门宽和床的高度，不另加软垫或不配套的厚床垫。
           - 清走枕头、松软被褥、围栏软垫、毛绒玩具和睡眠定位器；斜躺摇椅、汽车座椅不作为日常睡床。不要因吐奶或胀气改成侧睡或趴睡。
         sources: [sleep]
       - id: car-seat
@@ -437,15 +478,180 @@ sections:
           - 用官方检查点预约安装核查。回家当天避免在安全带下穿蓬松厚外套，先正确扣好，再在束带外保暖。
         sources: [carseat, inspection]
       - id: home-basics
-        title: 少量备齐清洁、喂养和量测用品
-        category: 采购
+        title: 把换尿布、喂养和夜间照护的位置摆好
+        category: 家中
         when: 孕晚期分批准备
         control: progress
         detail:
-          - 先备适量新生儿/下一号尿布、温和清洁用品、换洗衣物、喂养所需用品与数字体温计；按住房条件安排洗手、换尿布和夜间照明的位置。
+          - 按下面三组采购项盘点尿布、换洗、喂养和宝宝测温用品；按住房条件安排洗手、换尿布和夜间照明的位置。小夜灯有就复用，电线放在宝宝够不到的地方。
           - 问儿科如何测温。体重秤、血压计若已在备孕阶段按需要准备，可先核对继续使用；这时重点备宝宝测温用品，不把家用胎心仪、婴儿枕头或睡眠定位器列为必需品。
           - 检查烟雾和一氧化碳报警器。秋冬保证供暖与空气流通，不给宝宝过度包裹。
         sources: [fever, sleep, co]
+  - id: baby-washing-shopping
+    number: '05A'
+    title: 宝宝用品 · 换洗、衣物和洗澡
+    subtitle: 孕28–36周分批备 · 下列份数是家庭起步量，可按洗衣频率调整
+    anchor: pregnancy
+    start: 196
+    end: 258
+    tasks:
+      - id: buy-diapers
+        title: 尿布：NB／newborn和1号先少量试尺寸
+        who: 宝宝
+        category: 采购
+        when: 孕晚期 · 分娩前先备小包装，不囤整箱
+        control: check
+        detail:
+          - 看包装体重范围，NB和1号可各先备1小包；出生体型、品牌剪裁会影响是否合适，保留退换余地。出生后看贴合、漏尿和皮肤情况，再补合适尺码。
+          - 另备一个有盖垃圾桶或现有垃圾袋收集尿布即可，专用尿布桶可选。换尿布时用品放在伸手能取的位置，始终留手看护宝宝。
+        sources: [layette, diaper-care]
+      - id: buy-wipes
+        title: 无香湿巾或柔软棉片：先选一种清洁办法
+        who: 宝宝
+        category: 采购
+        when: 孕晚期 · 小包试用，已有合适用品可复用
+        control: check
+        detail:
+          - 可准备无香型婴儿湿巾，或柔软棉片／小毛巾配清水，先少量试用；皮肤受刺激时向儿科问如何调整，不一次囤多种香味和功效款。
+          - 可洗换尿布垫先备1张，或用可清洁的平整表面配干净垫布。不要把宝宝独留在高处，取东西前先把宝宝放到安全位置。
+        sources: [diaper-care]
+      - id: buy-diaper-cream
+        title: 护臀屏障膏：先备1小支，按需使用
+        who: 宝宝
+        category: 采购
+        when: 孕晚期可备 · barrier cream／petroleum jelly／zinc oxide
+        control: check
+        detail:
+          - 看实际成分与说明，可先备凡士林或氧化锌类屏障膏，配合及时更换尿布、温和清洁和晾干。它是保护皮肤的用品，不是所有红疹的治疗药。
+          - 不预先囤激素、抗真菌或抗生素药膏，不用爽身粉。皮疹明显、破溃或持续时让儿科判断。
+        sources: [diaper-care]
+      - id: buy-baby-clothes
+        title: 连体衣、睡衣和口水巾：买少量可换洗的
+        who: 宝宝
+        category: 采购
+        when: 孕晚期 · bodysuit／sleeper，按预计出生季节选厚薄
+        control: check
+        detail:
+          - 可先备4–6件方便换尿布的连体衣或睡衣，另备4–6条小口水巾或拍嗝巾；新生儿和0–3月尺码搭配少量试，按家里洗衣频率增减，不囤同一尺码。
+          - 先洗净再收纳；温和洗衣液家里有合适的即可。避开松脱装饰、绳带和易掉小配件。口水巾、拍嗝巾只在照护时用，睡觉前从床上取走。
+        sources: [layette, sleep]
+      - id: buy-sleep-sacks
+        title: 普通睡袋：先备1–2件合身、不加重的款式
+        who: 宝宝
+        category: 采购
+        when: 孕晚期 · wearable blanket／sleep sack，按室温和尺码选
+        control: check
+        detail:
+          - 选择领口和袖口合适、头部不易滑入的普通睡袋，可先从双臂自由活动的款式开始。厚薄看家里室温和衣物，不按季节层层包裹。
+          - 不买加重睡袋、加重襁褓、枕头、床围软垫、斜坡垫或睡眠定位器。若另选包裹手臂的襁褓，宝宝一出现尝试翻身迹象就停用，并与儿科核对使用方法。
+        sources: [sleep, safe-sleep-aap]
+      - id: buy-bath-supplies
+        title: 洗澡用品：小浴盆、柔软毛巾和温和清洁用品
+        who: 宝宝
+        category: 采购
+        when: 孕晚期 · 家里已有合适的盆和毛巾可先盘点
+        control: check
+        detail:
+          - 可备1个适合婴儿、易清洁的小浴盆，2条浴巾、几条柔软洗澡巾和小瓶温和婴儿清洁用品；选择哪些要买，取决于家里已有物品和洗浴位置。
+          - 先向儿科或出院团队学会海绵擦浴及脐带护理；不要求新生儿每天用清洁剂洗澡。浴盆、支撑垫或温度显示都不能代替成人全程用手看护，不留宝宝独自在水里。
+        sources: [baby-bath]
+      - id: buy-baby-nail-care
+        title: 婴儿指甲锉或婴儿指甲剪：选一种小工具
+        who: 宝宝
+        category: 采购
+        when: 孕晚期 · baby nail file／clippers
+        control: check
+        detail:
+          - 先备1件婴儿用软指甲锉或合适的指甲剪即可，在光线好、宝宝安稳时慢慢处理；请出院团队示范如何避开皮肤。
+          - 不需要整套护理礼盒或电动工具；用品清洁后单独放好，放在宝宝够不到的地方。
+        sources: [baby-nails]
+  - id: baby-feeding-shopping
+    number: '05B'
+    title: 宝宝用品 · 喂养和清洁
+    subtitle: 孕28–36周按喂养计划准备 · 先查医院和保险，再少量购买
+    anchor: pregnancy
+    start: 196
+    end: 258
+    tasks:
+      - id: buy-bottles
+        title: 奶瓶和配套奶嘴：计划瓶喂时先备2–3套试用
+        who: 宝宝
+        category: 采购
+        when: 孕晚期按需 · bottle／newborn nipple
+        control: check
+        detail:
+          - 计划瓶喂母乳、配方奶或混合喂养时，可先备2–3个奶瓶和匹配的奶嘴；从适合新生儿、较慢流速的规格了解起，之后按实际喂养情况调整。
+          - 先学会拆装、清洗和按宝宝信号喂养，不因套装折扣囤一整系列或不同阶段奶嘴。直接亲喂且暂不需要瓶喂时，可先问清需要备到什么程度。
+        sources: [feeding, bottle-feeding]
+      - id: buy-feeding-cleaning
+        title: 奶瓶刷、专用清洁盆和晾干位置
+        who: 共同
+        category: 采购
+        when: 与奶瓶／吸奶器一起准备 · bottle brush／wash basin
+        control: check
+        detail:
+          - 手洗时备专门清洗喂养用品的刷子和清洁盆，以及能彻底风干的干净位置；盆和刷不与其他家务混用。使用洗碗机时先核对部件是否适用及清洗、消毒设置。
+          - 每次使用后按CDC和厂商要求清洗部件；小于2个月、早产或免疫功能较弱的宝宝还需每天消毒。可按用品耐受情况选择煮沸、蒸汽等方法，独立消毒柜不必默认购买。
+        sources: [feeding-cleaning]
+      - id: buy-breast-pump
+        title: 吸奶器：需要时先问保险，别急着自费买
+        who: 女方
+        category: 采购
+        when: 孕中晚期咨询领取条件，按计划实际使用
+        control: check
+        detail:
+          - 有挤奶、返校返工或其他需要时，先问保险是否覆盖、指定供应商、什么时候能领取或租借、是否需处方或预授权；不要把一般保险规则当作自己的设备已获批。
+          - 按实际需要选择设备，使用前核对接触乳房部件的尺寸与清洁方法。孕期不为“试机器”自行刺激乳房或开始挤奶；产前挤奶先问产科是否适合。
+        sources: [pump-coverage, feeding-cleaning]
+      - id: buy-milk-storage
+        title: 储奶袋／带盖容器：确定挤奶后少量准备
+        who: 共同
+        category: 采购
+        when: 孕晚期按需 · breast milk storage bags／food-grade containers
+        control: check
+        detail:
+          - 选择母乳专用储奶袋或干净、食品级、带盖的合适容器；小包装先试，不用普通一次性袋代替。准备记号笔或标签记录日期和份量。
+          - 使用前查CDC母乳保存、解冻和剩奶处理指引，核对冰箱、冷冻空间及外出冷藏条件；不因为储奶袋够多就提前设定必须囤多少奶。
+        sources: [milk-storage]
+      - id: buy-formula-if-needed
+        title: 配方奶：确定需要后先备小量，不先囤大罐
+        who: 宝宝
+        category: 采购
+        when: 孕晚期或出院前，与儿科／医院核对喂养计划
+        control: check
+        detail:
+          - 若计划配方奶或需要备用，先问医院使用的产品、是否有特殊需求及出院如何衔接，再按保质期少量准备；并非所有家庭都必须预先买奶粉，不凭广告选特殊配方。
+          - 即食液体配方与粉状配方的使用方法不同，粉状配方不是无菌产品。小于2个月、早产或免疫功能较弱时，向儿科核对更安全的产品和准备方式。
+          - 按实际产品与CDC要求配制、保存；水奶比例不能自行增减。温奶器可选，不用微波炉加热；先确认买到的产品是否需要兑水。
+        sources: [formula]
+  - id: baby-care-shopping
+    number: '05C'
+    title: 宝宝用品 · 测温和鼻腔护理
+    subtitle: 孕28–36周准备基础工具 · 测量和护理方法请儿科示范
+    anchor: pregnancy
+    start: 196
+    end: 258
+    tasks:
+      - id: buy-baby-thermometer
+        title: 宝宝数字体温计：出生前备1支，并学会测温
+        who: 宝宝
+        category: 采购
+        when: 孕晚期 · digital thermometer，先问儿科适合的测量方式
+        control: check
+        detail:
+          - 向儿科询问新生儿测温方法并请其示范；小月龄宝宝直肠测温更准确。若使用肛温计，单独标记和存放，不与口温计混用；不能靠摸额头判断是否发热。
+          - 三个月及以下宝宝直肠温度达到38℃／100.4℉，立即联系儿科。不要为了完成表格而延迟求助，也不按体重换算器自行给宝宝用药。
+        sources: [temperature, fever]
+      - id: buy-nasal-care
+        title: 无药生理盐水和吸鼻器：鼻塞时按需使用
+        who: 宝宝
+        category: 采购
+        when: 孕晚期可少量备 · saline drops／nasal aspirator
+        control: check
+        detail:
+          - 可先备小瓶不含药物的生理盐水滴剂和1个易拆洗的球形或其他婴儿吸鼻器，学会温和使用与清洁。没有鼻塞不需要每天吸鼻，也不为这项买多种电动设备。
+          - 婴儿鼻塞先问儿科合适的护理方法，不自行买药物减充血滴鼻液或感冒药。呼吸费力、发青或明显影响吃奶时及时求助。
+        sources: [nasal-care]
   - id: ready
     number: '06'
     title: 把临产前的路走一遍
@@ -482,9 +688,21 @@ sections:
         when: 分娩前备好一个小包
         control: progress
         detail:
-          - 先问医院会提供哪些产妇、喂养和宝宝用品，再装身份证明、保险资料、药物清单、充电器、洗漱与换洗衣物、回家衣服和个人必需品。
+          - 先问医院住院和出院分别提供哪些产妇、喂养和宝宝用品，以及是否收费，再补缺的。身份证明、保险资料和药物清单先放好；充电线／插头、牙刷牙膏、洗漱用品和防滑拖鞋各备日常所需，已有就复用。
+          - 母亲备宽松前开衣物、内裤、回家衣服；宝宝备1–2套合季节的回家衣物；陪护者备换洗衣物和个人药物。袋子不必大，常用物件放在容易拿到的位置。
           - 安全座椅装在车上，不放进大包；常用证件和联系人单独易取。无需照中国医院的品牌和数量清单整套购买。
         sources: [tuoba]
+      - id: buy-postpartum-care
+        title: 产后卫生巾、舒适内裤与按需护理用品
+        who: 女方
+        category: 采购
+        when: 孕晚期 · 先问医院供给，再补回家后的缺口
+        control: check
+        detail:
+          - 可先备1包大号卫生巾／产褥垫和几条舒适内裤；医院若有出院供给，先核对数量再添，不一次买大量产后护理礼盒。产后用卫生巾观察出血，不自行改用棉条或月经杯。
+          - 温水冲洗挤压瓶、会阴冷敷用品按实际分娩方式、医院供给和出院指导决定是否另买；剖宫产切口护理材料按团队要求，不自己套会阴护理用品。
+          - 哺乳内衣按舒适尺码准备，防溢乳垫可先备小包按需使用；乳头痛、破损或含接困难先找哺乳支持，不只靠买药膏。镇痛药和药膏由团队确认后准备。
+        sources: [postpartum-pain, postpartum]
       - id: hospital-route
         title: 核实分娩入口、停车和备用交通
         category: 协作
@@ -710,6 +928,58 @@ nutrition_reference:
     lactation: 550
     source: choline
 sources:
+  food-thermometer:
+    title: FoodSafety.gov · 食物内部安全温度
+    url: https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures
+    kind: 官方
+  layette:
+    title: AAP · 新生儿起步衣物与用品
+    url: https://www.healthychildren.org/English/ages-stages/prenatal/decisions-to-make/Pages/Choosing-a-Layette.aspx
+    kind: 官方
+  diaper-care:
+    title: AAP · 尿布清洁与皮肤保护
+    url: https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/Diaper-Rash.aspx
+    kind: 官方
+  safe-sleep-aap:
+    title: AAP · 安全睡眠与睡袋
+    url: https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Preventing-SIDS.aspx
+    kind: 官方
+  baby-bath:
+    title: AAP · 婴儿洗浴用品与看护
+    url: https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/Bathing-Your-Newborn.aspx
+    kind: 官方
+  baby-nails:
+    title: AAP · 婴儿指甲护理
+    url: https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/Nail-Care-Fingers-and-Toes.aspx
+    kind: 官方
+  bottle-feeding:
+    title: CDC · 奶瓶喂养
+    url: https://www.cdc.gov/infant-toddler-nutrition/bottle-feeding/index.html
+    kind: 官方
+  feeding-cleaning:
+    title: CDC · 喂养用品清洗与消毒
+    url: https://www.cdc.gov/hygiene/about/clean-sanitize-store-infant-feeding-items.html
+    kind: 官方
+  pump-coverage:
+    title: HealthCare.gov · 吸奶器与哺乳支持保险
+    url: https://www.healthcare.gov/coverage/breast-feeding-benefits/
+    kind: 官方
+  milk-storage:
+    title: CDC · 母乳容器与储存
+    url: https://www.cdc.gov/breastfeeding/breast-milk-preparation-and-storage/handling-breastmilk.html
+    kind: 官方
+  temperature:
+    title: AAP · 数字体温计与测温方式
+    url: https://www.healthychildren.org/English/health-issues/conditions/fever/pages/How-to-Take-a-Childs-Temperature.aspx
+    kind: 官方
+  nasal-care:
+    title: AAP · 生理盐水与鼻塞护理用品
+    url: https://www.healthychildren.org/English/health-issues/conditions/chest-lungs/Pages/cough-and-cold-survival-kit-top-symptom-relief-essentials-for-families.aspx
+    kind: 官方
+  postpartum-pain:
+    title: ACOG · 产后疼痛与护理用品
+    url: https://www.acog.org/womens-health/faqs/postpartum-pain-management
+    kind: 官方
   folate-reference:
     title: NIH ODS · 叶酸营养参考
     url: https://ods.od.nih.gov/pdf/factsheets/Folate-Consumer.pdf
