@@ -127,14 +127,14 @@
         "en": "Ash Promise: Demo"
       },
       "summaries": {
-        "zh": "一段免费的中文 RPG 试玩，从石桥镇启程，前往灯塔港。",
-        "en": "A free Chinese-language RPG demo journeying from Stonebridge to Lighthouse Harbor."
+        "zh": "约十分钟的免费中文 RPG 试玩，从石桥镇出发，打通旧井公路。",
+        "en": "A free Chinese-language RPG opening demo. Repair your tank in Stonebridge and clear Old Well Road."
       },
       "versions": {
         "zh": {
           "language": "zh",
           "title": "灰烬应许：试玩版",
-          "summary": "一段免费的中文 RPG 试玩，从石桥镇启程，前往灯塔港。",
+          "summary": "约十分钟的免费中文 RPG 试玩，从石桥镇出发，打通旧井公路。",
           "url": "/games/ash-promise-demo",
           "date": "2026-10-05",
           "collection": "projects",
